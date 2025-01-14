@@ -1,0 +1,105 @@
+.stickerresults .candidatesdetailsrow {
+    /* border-radius: 110px; */
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.09);
+    /* width: 100%; */
+    font-weight: bold;
+    padding: 3px;
+}
+
+.stickerresults .candidatesdetailsrow > div {
+    /* box-shadow: 0 0 7px 3px rgba(0,0,0,0.09); */
+    border: 0px solid #041f80;
+    padding: 10px;
+}
+
+.EventLogo img { width: 100% }
+
+.EventName {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 8px;
+    text-align: center;
+    text-shadow: 0px 1px 24px #f2f3ecb3;
+}
+
+.stickerresults { /* width: 800px */ }
+
+.goldsticker { background-color: #ce9e00; }
+
+.EventLogo img {
+    margin: 0px auto;
+    max-width: 124px !important;
+}
+
+.OrganizationName {
+    color: #003284;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 1px 3px rgb(89, 91, 98);
+}
+
+.PresentedTo {
+    color: #064d2f;
+    font-size: 17px;
+    font-style: italic;
+    text-align: center;
+    /* text-shadow: 0px 1px 2px #000000; */
+}
+
+.GroupName {
+    color: #1d3d72;
+    font-size: 19px;
+    text-align: center;
+}
+
+.TotalIndividualPoints {
+    color: #ffdc92;
+    font-size: 21px;
+    text-align: center;
+    /* text-shadow: 0px 2px 8px #552525; */
+}
+
+.organizationlistitem {
+    color: white;
+    font-size: 12px;
+    /* text-shadow: 0px 1px 0px #000000; */
+}
+
+.ScoreReport {
+    color: #faff94;
+    font-size: 12px;
+    text-align: center;
+    /* text-shadow: 0px 2px 9px #000000; */
+}
+
+.poweredby {
+    background-color: #0d233e00 !important;
+    /* position: absolute!important; */
+    bottom: 0;
+    font-size: 7px;
+    padding: 0px 0px;
+    padding-top: 9px;
+    right: 0;
+    width: 100%;
+}
+
+.poweredby span.logo {
+    background-image: url(https://talenter2.azurewebsites.net/Content/Images/EMBJ2357.jpg) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    float: left;
+    height: 40px;
+    width: 100%;
+}
+
+.ChampionName {
+    color: #573900;
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(91, 63, 0, 0.68);
+}
+
+#publishedresults > div {width: 432;}

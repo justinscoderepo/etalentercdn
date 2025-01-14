@@ -1,0 +1,50 @@
+﻿.judgesCount span {
+    background-color: #3c763d;
+    border-radius: 19px;
+    display: inline-block;
+    height: 11px;
+    margin-left: 12px;
+    margin-top: 8px;
+    position: relative;
+    top: 2px;
+    width: 11px;
+}
+
+.judgesCount .scorewarning { background-color: #f81f1b }
+
+a.judgesCount { cursor: pointer }
+
+.judgesscoresublist {
+    display: none;
+    max-width: 300px;
+}
+
+.judgesscoresublistrow { padding: 0 12px }
+
+.datacolumn.judgescoreview {
+    max-width: 105px;
+    overflow: visible
+}
+
+
+.resultscorecriteriarow {
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.judgesscoresublist:not([style]) { display: none !important }
+
+.judgesscoresublist {
+    background-color: #fff;
+    box-shadow: 0 1px 2px 1px #000000;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0);
+    display: none;
+    max-width: 100%;
+    padding: 7px 5px !important;
+}
+
+.judgesscoresublistitem[data-key="JudgeUserName"] {
+    line-height: 28px;
+    min-width: 134px
+}

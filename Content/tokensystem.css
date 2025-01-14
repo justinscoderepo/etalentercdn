@@ -1,0 +1,318 @@
+.stagelists { overflow-x: scroll }
+
+.stagelists > div {
+    display: table-cell;
+    float: none;
+    min-width: 255px;
+    vertical-align: top
+}
+
+.stagelist {
+    box-shadow: 0 0 2px 1px #000000;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25098039215686274)
+}
+
+.stagelists > div:nth-child(5n + 1) .stagelist {
+    border-top: 4px solid #071003;
+    border-top: 4px solid rgba(7, 16, 3, 0.7803921568627451)
+}
+
+.stagelists > div:nth-child(5n + 2) .stagelist {
+    border-top: 4px solid #4aa81a;
+    border-top: 4px solid rgba(74, 168, 26, 0.7803921568627451)
+}
+
+.stagelists > div:nth-child(5n + 3) .stagelist {
+    border-top: 4px solid #4aa81a;
+    border-top: 4px solid rgba(74, 168, 26, 0.7803921568627451)
+}
+
+.stagelists > div:nth-child(5n + 4) .stagelist {
+    border-top: 4px solid #4aa81a;
+    border-top: 4px solid rgba(74, 168, 26, 0.7803921568627451)
+}
+
+.stagelists > div:nth-child(5n + 0) .stagelist {
+    border-top: 4px solid #4aa81a;
+    border-top: 4px solid rgba(74, 168, 26, 0.7803921568627451)
+}
+
+.stagename {
+    border-bottom: 1px solid #485252;
+    border-bottom: 1px solid rgba(72, 82, 82, 0.2901960784313726);
+    text-align: center
+}
+
+.CandidateChessCodeToken {
+    color: #8d640b;
+    font-size: 16px;
+    padding: 4px;
+    text-align: center
+}
+
+.tokenactive > div {
+    box-shadow: 0 0 38px 3px #063762;
+    box-shadow: 0 0 38px 3px rgba(6, 55, 98, 0.28);
+    color: green;
+    display: block;
+    float: none;
+    /* border-bottom: 12px solid #ffffff; */
+    font-size: 110px;
+    height: 60vh;
+    line-height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    top: 41px;
+    width: 500px;
+}
+.userImage {
+    display: none;
+}
+.tokenactive .userImage {
+    display: block;
+}
+.tokenactive .tokenWithProfileImage{
+    line-height: 110px;
+
+}
+.startedcompetition .prevtokenactive, .startedcompetition .nexttokenactive {
+    background-color: #012458;
+    background-color: rgba(1, 36, 88, 0.96);
+    border-bottom: 12px solid #f67f19;
+    box-shadow: 0 0 2px 2px #000000;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.10980392156862745);
+    cursor: pointer;
+    font-size: 31px;
+    padding: 38px 23px;
+    position: fixed;
+    right: 50px;
+    width: 170px;
+}
+
+.nexttokenactive .CandidateChessCodeToken, .prevtokenactive .CandidateChessCodeToken { font-size: 33px }
+
+.startedcompetition .prevtokenactive {
+    background-color: #0b2c5f;
+    border-bottom: 12px solid #984f10;
+    left: 50px;
+}
+
+.competitiontoken { position: unset }
+
+.competitionitemvisible { display: none !important }
+
+.tokenlink {
+    color: #0660ae !important;
+    text-decoration: none;
+}
+
+.startedcompetition .nexttokenactive .tokenlink {
+    color: #fff !important;
+    text-shadow: 0 9px 1px #000000;
+    text-shadow: 0 9px 1px rgba(0, 0, 0, 0.3607843137254902)
+}
+
+.startedcompetition .prevtokenactive .tokenlink {
+    color: #fff !important;
+    text-shadow: 0 9px 1px #000000;
+    text-shadow: 0 9px 1px rgba(0, 0, 0, 0.3607843137254902)
+}
+
+.tokenactive {
+    text-shadow: 0 14px 1px #000000;
+    text-shadow: 0 14px 1px rgba(0, 0, 0, 0.3607843137254902)
+}
+
+.stagelists > div:nth-child(5n + 1) .stagelist { border-top: 2px solid rgba(32, 87, 9, 0.7803921568627451) }
+
+.stagelists > div:nth-child(5n + 2) .stagelist { border-top: 2px solid rgba(18, 28, 143, 0.7803921568627451) }
+
+.stagelists > div:nth-child(5n + 3) .stagelist { border-top: 2px solid rgba(17, 114, 98, 0.7803921568627451) }
+
+.stagelists > div:nth-child(5n + 4) .stagelist { border-top: 2px solid rgba(141, 82, 27, 0.7803921568627451) }
+
+.stagelists > div:nth-child(5n + 0) .stagelist { border-top: 2px solid rgba(45, 95, 19, 0.7803921568627451) }
+
+
+a#tokenclosebtn {
+    background-color: #aca6a6;
+    background-color: rgba(172, 166, 166, 0.25);
+    font-size: 34px;
+    height: 48px;
+    line-height: 41px;
+    right: 0;
+    top: 0;
+}
+
+a#tokennextbtn {
+    right: 0;
+    top: 100px
+}
+
+a#tokenprevbtn {
+    left: 0;
+    top: 100px
+}
+
+a.tokenbutton {
+    background-color: #aca6a6;
+    background-color: rgba(172, 166, 166, 0.25);
+    font-size: 46px;
+    font-weight: 700;
+    height: 95px;
+    line-height: 88px;
+    position: fixed;
+    text-align: center;
+    width: 50px;
+    z-index: 99999999;
+}
+
+
+
+competitiontoken.prevtokenactive { text-decoration: bold; }
+
+.ongoingcompetitions {
+    display: block;
+    float: left;
+    font-size: 23px;
+    padding: 1px;
+    width: 100%;
+}
+
+.ongoingcompetitions > span {
+    border-bottom: 2px solid #0c5e99;
+    box-shadow: 0 0 1px 1px #000000;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1607843137254902);
+    float: left;
+    padding: 10px;
+}
+
+.currentevents {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.projectoractive .ongoingcompetitionsdiv {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0 0 38px 3px rgba(6, 55, 98, 0.07);
+    height: 25vh;
+    left: 0;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 999999;
+}
+
+.tokentimerloadercircle {
+    background-color: #00b5e8;
+    border: 2px solid #00b5e8;
+    border-radius: 50%;
+    display: block;
+    float: left;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 10px;
+    position: relative;
+    width: 400px;
+}
+
+.tokentimerloadercircle.warningbell {
+    background-color: #d9534f;
+    border: 2px solid #d9534f
+}
+
+.tokentimerloadercircle .tokentimerloaderneedle {
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    height: 360px;
+    left: 18px;
+    position: absolute;
+    top: 19px;
+    width: 360px;
+}
+
+#time {
+    color: #999;
+    display: none;
+    font-size: 3em;
+    left: 43%;
+    position: absolute;
+    top: 35%;
+}
+
+.tokentimerloadercircle { background-image: linear-gradient(90deg, transparent 50%, white 50%), linear-gradient(90deg, white 50%, transparent 50%) }
+
+.tokentimer {
+    background-color: #fff;
+    display: none;
+    height: 75vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+}
+
+.tokentimerloader {
+    float: none;
+    height: 75vh;
+    margin: 0 auto;
+    position: relative;
+    width: 500px;
+}
+
+.tokentimerneedlebox {
+    float: none;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: 400px;
+}
+
+.tokentimerloadertime {
+    border-bottom: 2px solid #168287;
+    padding: 4px;
+}
+
+.tokentimerloadertimenow {
+    color: #138412;
+    font-size: 22px;
+    padding: 0 4px;
+    text-align: right;
+}
+
+.tokentimerloadertimemax {
+    color: #8f0e0e;
+    font-size: 22px;
+    padding: 0 9px;
+    text-align: left;
+}
+
+.projectoractive .tokentimer { display: block }
+
+.tokentimercontrol {
+    bottom: 0px;
+    position: absolute;
+}
+
+.tokentimercontrol .btn { min-width: 80px }
+
+.startcompetition { min-width: 32px }
+
+.stagename h3 {
+    color: #0a4968;
+    font-size: 20px;
+}
+
+.ongoingcompetitionsdiv marquee {
+    float: left;
+    height: auto;
+    margin-top: 12px;
+}
+
+#tidio-chat { display: none; }
+
+div#contentbox { z-index: 9999999; }

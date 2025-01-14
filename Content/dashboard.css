@@ -1,0 +1,42 @@
+﻿.CountMaterial {
+    color: #5b2c94;
+    font-size: 25px;
+    padding: 12px;
+    text-align: center;
+    text-shadow: 0 0 1px #919191
+}
+
+.countNumber {
+    background: linear-gradient(180deg, #f45ac2 0%, #8f3073 100%);
+    color: #fff;
+    font-size: 70px;
+    line-height: 142px;
+    text-align: center;
+    text-shadow: 0 0 1px #5a5a5a
+}
+
+.dashboardcards > a:nth-child(5n + 1) .CountMaterial { color: #1b4c9c }
+
+.dashboardcards > a:nth-child(5n + 1) .countNumber { background: linear-gradient(180deg, #2e71ec 0%, #2a6cc9 100%) }
+
+.dashboardcards > a:nth-child(5n + 2) .CountMaterial { color: #5b2c94 }
+
+.dashboardcards > a:nth-child(5n + 2) .countNumber { background: linear-gradient(180deg, #f45ac2 0%, #b44490 100%) }
+
+.dashboardcards > a:nth-child(5n + 3) .CountMaterial { color: #093f17 }
+
+.dashboardcards > a:nth-child(5n + 3) .countNumber { background: linear-gradient(180deg, #17aa74 0%, #2e6e0d 100%) }
+
+.dashboardcards > a:nth-child(5n + 4) .CountMaterial { color: #5c410f }
+
+.dashboardcards > a:nth-child(5n + 4) .countNumber { background: linear-gradient(180deg, #bb9f1a 0%, #b9752e 100%) }
+
+.dashboardcards > a:nth-child(5n + 5) .CountMaterial { color: #5b2c94 }
+
+.dashboardcards > a:nth-child(5n + 5) .countNumber { background: linear-gradient(180deg, #f45ac2 0%, #662252 100%) }
+
+.dashboardcards > a:nth-child(5n + 0) .CountMaterial { color: #5b2c94 }
+
+.dashboardcards > a:nth-child(5n + 0) .countNumber { background: linear-gradient(180deg, #f45ac2 0%, #662252 100%) }
+
+.dashboardcards > a { margin-bottom: 12px }
