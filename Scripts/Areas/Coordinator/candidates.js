@@ -731,6 +731,25 @@ var isAllOrganizationsSelected = false;
       ////$('[name="' + 'UsersModel[' + $(this).closest(".orgrow").attr("data-level").replace(/ /ig, '') + ']' + '"]').val($(this).attr("orgid"));
     }
   });
+
+  $("body").on("afterappendcomplete", ".agewisegroups", function (e,data) {
+    let length = data?.rows?.Results?.length;
+    if(length == 1) {
+      $(".agewisegroups").hide();
+      $(".agewisegroups li").trigger("click");
+    }
+  });
+
+  $("body").on("afterappendcomplete", ".participanttypes", function (e,data) {
+    let localStorageKey = "selectedparticipanttypeforbulkedit_/Coordinator/ManageBulkParticipants";
+    let selectedParticipantType = getcache(localStorageKey);
+    if(!selectedParticipantType) {
+      selectedParticipantType = data?.rows?.Results[0]?.EPTId;
+      $(".participanttypes li[eptid=" + selectedParticipantType + "]").trigger("click");
+    }
+
+  });
+
   $("body").on("click", ".agewisegroups li", function (e) {
     ////firsttriggercompetition = true;
 
