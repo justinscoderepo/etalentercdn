@@ -1082,7 +1082,6 @@ var isAllOrganizationsSelected = false;
           );
           isAllOrganizationsSelected = false;
         }
-        debugger;
         $("#UsersNewlist")
           .find(".candidatescompetitionrow")
           .binder(competitionitemsList);
