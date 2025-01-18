@@ -13,42 +13,42 @@ var isAllOrganizationsSelected = false;
       if (data && data.Results && data.Results.length > 0) {
         let event = data.Results[0];
         try {
-        let jsonSettings = JSON.parse(
-          event.JsonSettings ?? "{}"
-        )?.AdditionalSettings;
-        if (jsonSettings) {
-          try {
-            maxCandidateCount = parseInt(
-              jsonSettings.MaximumParticipationPerCandidate
-            );
-          } catch (e) {
-            maxCandidateCount = 10;
-          }
+          let jsonSettings = JSON.parse(
+            event.JsonSettings ?? "{}"
+          )?.AdditionalSettings;
+          if (jsonSettings) {
+            try {
+              maxCandidateCount = parseInt(
+                jsonSettings.MaximumParticipationPerCandidate
+              );
+            } catch (e) {
+              maxCandidateCount = 10;
+            }
 
-          try {
-            maxTeamCount = parseInt(jsonSettings.MaximumParticipationPerGroup);
-          } catch (e) {
-            maxTeamCount = 10;
-          }
+            try {
+              maxTeamCount = parseInt(jsonSettings.MaximumParticipationPerGroup);
+            } catch (e) {
+              maxTeamCount = 10;
+            }
 
-          try {
-            maximumGroupParticipants = parseInt(
-              jsonSettings.MaximumGroupParticipants
-            );
-          } catch (e) {
-            maximumGroupParticipants = 15;
-          }
+            try {
+              maximumGroupParticipants = parseInt(
+                jsonSettings.MaximumGroupParticipants
+              );
+            } catch (e) {
+              maximumGroupParticipants = 15;
+            }
 
-          isPhotoMandatory = jsonSettings.IsPhotoMandatoryForCandidate == "Yes";
-          freezeParticipation = jsonSettings.FreezeParticipation == "Yes";
+            isPhotoMandatory = jsonSettings.IsPhotoMandatoryForCandidate == "Yes";
+            freezeParticipation = jsonSettings.FreezeParticipation == "Yes";
+          }
+        } catch (e) {
+          maxCandidateCount = 10;
+          maxTeamCount = 5;
+          maximumGroupParticipants = 15;
+          isPhotoMandatory = false;
+          freezeParticipation = false;
         }
-      } catch (e) {
-        maxCandidateCount = 10;
-        maxTeamCount = 5;
-        maximumGroupParticipants = 15;
-        isPhotoMandatory = false;
-        freezeParticipation = false;
-      }
       }
     });
 
@@ -156,6 +156,7 @@ var isAllOrganizationsSelected = false;
       );
     }
 
+    $(".checkthiscompetition[competitionstatus=1],.checkthiscompetition[competitionstatus=2],.checkthiscompetition[competitionstatus=4],.checkthiscompetition[competitionstatus=5],.checkthiscompetition[competitionstatus=6]").prop("disabled", true).addClass("disabled");
     if (freezeParticipation) {
       $(
         ".newbulkcheckbox,.addnewbox input,.addnewbox button,.addnewbox .btn,.Candidateleftlist .btn"
@@ -339,8 +340,8 @@ var isAllOrganizationsSelected = false;
       function () {
         var th = $(
           ".candidatescompetitionrow[candidateid=" +
-            thisitem.closest(".Candidateleftlist").attr("candidate") +
-            "]"
+          thisitem.closest(".Candidateleftlist").attr("candidate") +
+          "]"
         ).find(".checkthiscompetition:checked:first");
         if (
           !thisitem.closest(".Candidateleftlist").attr("candidate") ||
@@ -348,8 +349,8 @@ var isAllOrganizationsSelected = false;
         ) {
           th = $(
             ".candidatescompetitionrow[teamid=" +
-              thisitem.closest(".Candidateleftlist").attr("teamid") +
-              "]"
+            thisitem.closest(".Candidateleftlist").attr("teamid") +
+            "]"
           ).find(".checkthiscompetition:checked:first");
         }
         if (th.length > 0) {
@@ -387,8 +388,8 @@ var isAllOrganizationsSelected = false;
         if (
           $(
             ".candidatescompetitionrow[candidateid=" +
-              candidateId +
-              "] input:checked"
+            candidateId +
+            "] input:checked"
           ).length > 0
         ) {
           alert(
@@ -500,10 +501,10 @@ var isAllOrganizationsSelected = false;
         ) {
           alert(
             "Team name starts with <b>" +
-              th.val() +
-              "</b> already exists as <b>" +
-              $(this).text() +
-              "</b>",
+            th.val() +
+            "</b> already exists as <b>" +
+            $(this).text() +
+            "</b>",
             null,
             null,
             "teamexistsid"
@@ -575,10 +576,10 @@ var isAllOrganizationsSelected = false;
         ) {
           alert(
             "Candidate name starts with <b>" +
-              th.val() +
-              "</b> already exists as <b>" +
-              $(this).attr("uname") +
-              "</b>",
+            th.val() +
+            "</b> already exists as <b>" +
+            $(this).attr("uname") +
+            "</b>",
             null,
             null,
             "candidateexistsid"
@@ -633,25 +634,25 @@ var isAllOrganizationsSelected = false;
     $(this).hide();
     $(this).after(
       '<div class="customdate"><input value="' +
-        valuepieces[0] +
-        '" data-formatdate="dd"   data-attr-' +
-        name +
-        '="value"  min="1" max="31" maxlength="2" size="2" type="number" placeholder="DD" class="date dateinput  form-control"/>' +
-        '<input min="1" max="12" maxlength="2" value="' +
-        valuepieces[1] +
-        '" size="2" type="number" data-formatdate="MM"   data-attr-' +
-        name +
-        '="value"  placeholder="MM" class="month dateinput  form-control"/>' +
-        '<input type="number" data-formatdate="yyyy"   data-attr-' +
-        name +
-        '="value"  min="1900" max="' +
-        (year + 20) +
-        '" value="' +
-        valuepieces[2] +
-        '"  maxlength="4" size="4" placeholder="YYYY" class="year dateinput  form-control"/></div>'
+      valuepieces[0] +
+      '" data-formatdate="dd"   data-attr-' +
+      name +
+      '="value"  min="1" max="31" maxlength="2" size="2" type="number" placeholder="DD" class="date dateinput  form-control"/>' +
+      '<input min="1" max="12" maxlength="2" value="' +
+      valuepieces[1] +
+      '" size="2" type="number" data-formatdate="MM"   data-attr-' +
+      name +
+      '="value"  placeholder="MM" class="month dateinput  form-control"/>' +
+      '<input type="number" data-formatdate="yyyy"   data-attr-' +
+      name +
+      '="value"  min="1900" max="' +
+      (year + 20) +
+      '" value="' +
+      valuepieces[2] +
+      '"  maxlength="4" size="4" placeholder="YYYY" class="year dateinput  form-control"/></div>'
     );
   });
-  $("body").on("change", "[type=date]", function () {});
+  $("body").on("change", "[type=date]", function () { });
   $("body").on("change", ".customdate input", function () {
     if (parseInt($(this).val()) > parseInt($(this).attr("max"))) {
       $(this).val($(this).attr("max")).trigger("change");
@@ -732,18 +733,18 @@ var isAllOrganizationsSelected = false;
     }
   });
 
-  $("body").on("afterappendcomplete", ".agewisegroups", function (e,data) {
+  $("body").on("afterappendcomplete", ".agewisegroups", function (e, data) {
     let length = data?.rows?.Results?.length;
-    if(length == 1) {
+    if (length == 1) {
       $(".agewisegroups").hide();
       $(".agewisegroups li").trigger("click");
     }
   });
 
-  $("body").on("afterappendcomplete", ".participanttypes", function (e,data) {
+  $("body").on("afterappendcomplete", ".participanttypes", function (e, data) {
     let localStorageKey = "selectedparticipanttypeforbulkedit_/Coordinator/ManageBulkParticipants";
     let selectedParticipantType = getcache(localStorageKey);
-    if(!selectedParticipantType) {
+    if (!selectedParticipantType) {
       selectedParticipantType = data?.rows?.Results[0]?.EPTId;
       $(".participanttypes li[eptid=" + selectedParticipantType + "]").trigger("click");
     }
@@ -793,7 +794,7 @@ var isAllOrganizationsSelected = false;
       $("select.organizationlistgroup:last").length == 0 ||
       ($("select.organizationlistgroup:last").val() &&
         $("select.oaddnewCandidatebulkrganizationlistgroup:last").val() !=
-          "all")
+        "all")
     ) {
       $(
         ".newbulkcheckbox,.addnewbox input,.addnewbox button,.addnewbox .btn,.Candidateleftlist .btn"
@@ -816,51 +817,51 @@ var isAllOrganizationsSelected = false;
     }
     $(
       '[name="' +
-        "User" +
-        th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-        '"]'
+      "User" +
+      th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+      '"]'
     ).val(th.val());
     $(
       '[name="' +
-        "Candidate" +
-        th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-        '"]'
+      "Candidate" +
+      th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+      '"]'
     ).val(th.val());
     $(
       '[name="' +
-        th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-        '"]'
+      th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+      '"]'
     ).val(th.val());
     $(
       '[name="Team' +
-        th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-        '"]'
+      th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+      '"]'
     ).val(th.val());
     setTimeout(function () {
       if (locallazyi == lazyuseri) {
         if (orglistlength <= orgloaded) {
           $(
             '[name="' +
-              "Candidate" +
-              th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-              '"]'
+            "Candidate" +
+            th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+            '"]'
           ).trigger("change");
           $(
             '[name="' +
-              "User" +
-              th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-              '"]'
+            "User" +
+            th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+            '"]'
           ).trigger("change");
           $(
             '[name="' +
-              "Team" +
-              th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-              '"]'
+            "Team" +
+            th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+            '"]'
           ).trigger("change");
           $(
             '[name="' +
-              th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-              '"]'
+            th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+            '"]'
           ).trigger("change");
         }
       }
@@ -869,17 +870,17 @@ var isAllOrganizationsSelected = false;
       cl.find(".hiddenParentOrganization").val($(this).val()).trigger("change");
       $(
         '[name="' +
-          "UsersRolesModel[" +
-          $(this).closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-          "]" +
-          '"]'
+        "UsersRolesModel[" +
+        $(this).closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+        "]" +
+        '"]'
       ).val($(this).val());
       $(
         '[name="' +
-          "TeamModel[" +
-          $(this).closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-          "]" +
-          '"]'
+        "TeamModel[" +
+        $(this).closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+        "]" +
+        '"]'
       ).val($(this).val());
 
       //// $(".addUserDetails").show();
@@ -893,8 +894,8 @@ var isAllOrganizationsSelected = false;
       if ($("#selectedgroupidforbulkedit").val()) {
         $(
           ".agewisegroups li.list-group-item[groupid='" +
-            $("#selectedgroupidforbulkedit").val() +
-            "']"
+          $("#selectedgroupidforbulkedit").val() +
+          "']"
         ).addClass("active");
       } else if (getcache("selectedgroupidforbulkedit" + postfix)) {
         $("#selectedgroupidforbulkedit").val(
@@ -902,8 +903,8 @@ var isAllOrganizationsSelected = false;
         );
         $(
           ".agewisegroups li.list-group-item[groupid='" +
-            getcache("selectedgroupidforbulkedit" + postfix) +
-            "']"
+          getcache("selectedgroupidforbulkedit" + postfix) +
+          "']"
         ).addClass("active");
       }
       if (
@@ -917,8 +918,8 @@ var isAllOrganizationsSelected = false;
       if ($("#selectedparticipanttypeforbulkedit").val()) {
         $(
           ".participanttypes li.list-group-item[eptid='" +
-            $("#selectedparticipanttypeforbulkedit").val() +
-            "']"
+          $("#selectedparticipanttypeforbulkedit").val() +
+          "']"
         ).addClass("active");
       } else if (getcache("selectedparticipanttypeforbulkedit" + postfix)) {
         $("#selectedparticipanttypeforbulkedit").val(
@@ -926,8 +927,8 @@ var isAllOrganizationsSelected = false;
         );
         $(
           ".participanttypes li.list-group-item[eptid='" +
-            getcache("selectedparticipanttypeforbulkedit" + postfix) +
-            "']"
+          getcache("selectedparticipanttypeforbulkedit" + postfix) +
+          "']"
         ).addClass("active");
       } else {
         //// $(this).find("li:first").trigger("click");
@@ -1081,7 +1082,7 @@ var isAllOrganizationsSelected = false;
           );
           isAllOrganizationsSelected = false;
         }
-
+        debugger;
         $("#UsersNewlist")
           .find(".candidatescompetitionrow")
           .binder(competitionitemsList);
@@ -1128,7 +1129,7 @@ var isAllOrganizationsSelected = false;
         $(".participanttypedepend").hide();
         $(
           ".participanttypedepend.participanttype_" +
-            $("#selectedparticipanttypeforbulkedit").val()
+          $("#selectedparticipanttypeforbulkedit").val()
         ).show();
       }
     }
@@ -1148,7 +1149,7 @@ var isAllOrganizationsSelected = false;
 
     hidespinner(user);
 
-    var cl = th.closest(".bulkcheckbox");
+    var cl = th.closest(".bulkcheckbox");   
 
     showspinner(user);
     if (th.prop("checked") || isdetailschange) {
@@ -1179,7 +1180,7 @@ var isAllOrganizationsSelected = false;
 
         if (
           !formdata.CompetitionParticipantsModel[
-            "CompetitionCompetitionStructureId"
+          "CompetitionCompetitionStructureId"
           ]
         ) {
           formdata.CompetitionParticipantsModel[
@@ -1518,8 +1519,8 @@ var isAllOrganizationsSelected = false;
 
         var th = $(
           ".candidatescompetitionrow[candidateid=" +
-            $(this).closest(".Candidateleftlist").attr("candidate") +
-            "]"
+          $(this).closest(".Candidateleftlist").attr("candidate") +
+          "]"
         ).find(".checkthiscompetition:checked:first");
         if (
           !$(this).closest(".Candidateleftlist").attr("candidate") ||
@@ -1527,8 +1528,8 @@ var isAllOrganizationsSelected = false;
         ) {
           th = $(
             ".candidatescompetitionrow[teamid=" +
-              $(this).closest(".Candidateleftlist").attr("teamid") +
-              "]"
+            $(this).closest(".Candidateleftlist").attr("teamid") +
+            "]"
           ).find(".checkthiscompetition:checked:first");
         }
         // if (th.length > 0) {
@@ -1708,21 +1709,21 @@ var isAllOrganizationsSelected = false;
       if ($(this).attr("data-showfieldblock")) {
         $("body").append(
           "<style>" +
-            $(this).attr("data-showfield") +
-            "{ display:block !important; }</style>"
+          $(this).attr("data-showfield") +
+          "{ display:block !important; }</style>"
         );
       } else {
         $("body").append(
           "<style>" +
-            $(this).attr("data-showfield") +
-            "{ display:table-cell !important; }</style>"
+          $(this).attr("data-showfield") +
+          "{ display:table-cell !important; }</style>"
         );
       }
     } else {
       $("body").append(
         "<style>" +
-          $(this).attr("data-showfield") +
-          "{ display:none !important; }</style>"
+        $(this).attr("data-showfield") +
+        "{ display:none !important; }</style>"
       );
     }
   });
@@ -1787,7 +1788,7 @@ var isAllOrganizationsSelected = false;
       error: function (xhr, status, error) {
         alert(
           "Can't upload image due to some internal issues or network issues, The response is: " +
-            xhr.responseText,
+          xhr.responseText,
           "w"
         );
       },
