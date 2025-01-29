@@ -145,6 +145,7 @@ var allowedRegIdNumbers = [];
                 let matchingRow=allowedRegIdNumbers.find(x=>x.RegistrationNumber==value);
                 if(!matchingRow){
                     $(this).closest(".form-group").addClass("alert-danger");
+                    $(this).closest(".form-group").attr("title","Invalid Registration Number");
                 }
             }
 
