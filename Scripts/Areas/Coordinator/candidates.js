@@ -9,7 +9,6 @@ var allowedRegIdNumbers = [];
 (function ($) {
   $(document).ready(function () {
     let eventID = userObj.user.Event;
-
     $.post("/EventJson/Get", { EvId: eventID }, function (data) {
       if (data && data.Results && data.Results.length > 0) {
         let event = data.Results[0];
@@ -134,6 +133,26 @@ var allowedRegIdNumbers = [];
     setTimeout(() => {
       resizeBox($);
     }, 1000);
+
+
+
+    if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0) {
+     
+      $(".eachcandidateregid").each(function () {
+         let value=$(this).val();
+
+            if(typeof allowedRegIdNumbers !== "undefined" && allowedRegIdNumbers?.length>0){
+                let matchingRow=allowedRegIdNumbers.find(x=>x.RegistrationNumber==value);
+                if(!matchingRow){
+                    $(this).closest(".form-group").addClass("alert-danger");
+                }
+            }
+
+    }) 
+    }
+
+
+
   });
 
   $("body").on("afterappendcomplete", "#GetParticipantsList", function (e) {
