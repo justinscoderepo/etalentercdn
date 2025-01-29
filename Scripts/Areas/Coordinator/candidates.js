@@ -3,8 +3,9 @@ let maxTeamCount = 5;
 let maximumGroupParticipants = 15;
 let isPhotoMandatory = false;
 let freezeParticipation = false;
-
+let isRegIdMandatory = false;
 var isAllOrganizationsSelected = false;
+var allowedRegIdNumbers = [];
 (function ($) {
   $(document).ready(function () {
     let eventID = userObj.user.Event;
@@ -38,9 +39,12 @@ var isAllOrganizationsSelected = false;
             } catch (e) {
               maximumGroupParticipants = 15;
             }
-
             isPhotoMandatory = jsonSettings.IsPhotoMandatoryForCandidate == "Yes";
             freezeParticipation = jsonSettings.FreezeParticipation == "Yes";
+            isRegIdMandatory = jsonSettings.isRegIdMandatoryForCandidate == "Yes";
+            if (jsonSettings.EligibleRegistrationNumbers) {
+              allowedRegIdNumbers = jsonSettings.EligibleRegistrationNumbers;
+            }
           }
         } catch (e) {
           maxCandidateCount = 10;
@@ -1148,7 +1152,7 @@ var isAllOrganizationsSelected = false;
 
     hidespinner(user);
 
-    var cl = th.closest(".bulkcheckbox");   
+    var cl = th.closest(".bulkcheckbox");
 
     showspinner(user);
     if (th.prop("checked") || isdetailschange) {
@@ -1516,6 +1520,22 @@ var isAllOrganizationsSelected = false;
           }
         }
 
+
+        let userRegId = cl.find(".eachcandidateregid").val();
+        if (isRegIdMandatory) {
+          if (!userRegId) {
+            alert("Please enter registration id", "e");
+            return;
+          }
+        }
+
+        if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0) {
+          if (!allowedRegIdNumbers.filter(x => x.RegistrationNumber == userRegId).length) {
+            alert("Please enter valid registration id", "e");
+            return;
+          }
+        }
+
         var th = $(
           ".candidatescompetitionrow[candidateid=" +
           $(this).closest(".Candidateleftlist").attr("candidate") +
@@ -1620,7 +1640,20 @@ var isAllOrganizationsSelected = false;
           }
         }
 
-        //UsersModel[UserImage]
+        let userRegId = $(".addnewbox [name='UsersModel[RegistrationId]']").val();
+        if (isRegIdMandatory) {
+          if (!userRegId) {
+            alert("Please enter registration id", "e");
+            return;
+          }
+        }
+
+        if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0) {
+          if (!allowedRegIdNumbers.filter(x => x.RegistrationNumber == userRegId).length) {
+            alert("Please enter valid registration id", "e");
+            return;
+          }
+        }
 
         var userImage = $(".addnewbox [name='UsersModel[UserImage]']").val();
         if (isPhotoMandatory) {
