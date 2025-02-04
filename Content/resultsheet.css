@@ -53,7 +53,7 @@
 .resultrowborder { padding: 7px; }
 
 .resultcard-background-image {
-    background-image: linear-gradient(to bottom, rgb(245, 181, 0), rgba(255, 255, 255, 0)), url(https://talenter2.azurewebsites.net/Content/Images/result-card/rank-back-img.png);
+    background-image: linear-gradient(to bottom, rgb(245, 181, 0), rgba(255, 255, 255, 0)), url(https://app.etalenter.com/Content/Images/result-card/rank-back-img.png);
     /* background-size: 100%; */
     border-radius: 86px;
     box-shadow: 2px 2px 7px #969494;
@@ -68,7 +68,7 @@
 }
 
 .sectionwiseresults .resultcard-background-image {
-    background-image: linear-gradient(to bottom, rgb(5, 119, 14), rgba(69, 135, 207, 0.19)), url(https://talenter2.azurewebsites.net/Content/Images/result-card/rank-back-img.png);
+    background-image: linear-gradient(to bottom, rgb(5, 119, 14), rgba(69, 135, 207, 0.19)), url(https://app.etalenter.com/Content/Images/result-card/rank-back-img.png);
     box-shadow: 2px 2px 15px #969494;
 }
 
@@ -97,7 +97,7 @@
 .championsingle h3 { color: #ffffff; }
 
 .winner-icon-1 {
-    background-image: url(https://talenter2.azurewebsites.net/Content/Images/result-card/winner_icon_1.png);
+    background-image: url(https://app.etalenter.com/Content/Images/result-card/winner_icon_1.png);
     background-repeat: no-repeat;
     background-size: contain;
     height: 100px;
@@ -109,7 +109,7 @@
 }
 
 .winner-icon-2 {
-    background-image: url(https://talenter2.azurewebsites.net/Content/Images/result-card/winner_icon_2.png);
+    background-image: url(https://app.etalenter.com/Content/Images/result-card/winner_icon_2.png);
     background-repeat: no-repeat;
     background-size: contain;
     height: 100px;
@@ -121,7 +121,7 @@
 }
 
 .winner-icon-3 {
-    background-image: url(https://talenter2.azurewebsites.net/Content/Images/result-card/winner_icon_3.png);
+    background-image: url(https://app.etalenter.com/Content/Images/result-card/winner_icon_3.png);
     background-repeat: no-repeat;
     background-size: contain;
     height: 100px;

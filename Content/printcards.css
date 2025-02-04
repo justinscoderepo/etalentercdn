@@ -196,7 +196,7 @@ img.cardbackgroundimage {
 }
 
 .poweredby span.logo {
-    background-image: url(https://talenter2.azurewebsites.net/Content/Images/ealenterlogo.png) !important;
+    background-image: url(https://app.etalenter.com/Content/Images/ealenterlogo.png) !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: contain !important;
