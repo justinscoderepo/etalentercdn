@@ -760,6 +760,7 @@ var allowedRegIdNumbers = [];
   $("body").on("afterappendcomplete", ".agewisegroups", function (e, data) {
     let length = data?.rows?.Results?.length;
     if (length == 1) {
+      debugger;
       $(".agewisegroups").hide();
       $(".agewisegroups li").trigger("click");
     }
