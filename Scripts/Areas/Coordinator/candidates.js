@@ -1257,10 +1257,11 @@ var allowedRegIdNumbers = [];
           );
 
           expectedStartDate.setFullYear(
-            expectedStartDate.getFullYear() - groupMaxAge
+            expectedStartDate.getFullYear() - groupMaxAge-1
           );
 
           expectedStartDate.setDate(expectedStartDate.getDate() + 1);
+
 
           let expectedEndDate = new Date(
             agestartyear,
@@ -1269,7 +1270,7 @@ var allowedRegIdNumbers = [];
           );
 
           expectedEndDate.setFullYear(
-            expectedEndDate.getFullYear() - groupMinAge + 1
+            expectedEndDate.getFullYear() - groupMinAge 
           );
           try {
             let userdob = $.datepicker.parseDate(
