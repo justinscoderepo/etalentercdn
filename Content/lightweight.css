@@ -2816,7 +2816,7 @@ img.clipimage {
 
 #ScoreLoglist [data-key="Log"] { white-space: pre-wrap; }
 
-[data-key="Log"] { max-width: 300px; }
+[data-key="Log"] {max-width: 300px;/* white-space: normal; */}
 
 [data-key="StackTrace"], [data-key="Message"] { max-width: 300px; }
 
