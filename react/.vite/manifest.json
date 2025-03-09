@@ -6,6 +6,13 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_CheckIcon-BT1XunQt.js": {
+    "file": "dist/CheckIcon-BT1XunQt.js",
+    "name": "CheckIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_CheckIcon-BfX6shV4.js": {
     "file": "dist/CheckIcon-BfX6shV4.js",
     "name": "CheckIcon",
@@ -13,8 +20,29 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_CheckIcon-Braowaoy.js": {
+    "file": "dist/CheckIcon-Braowaoy.js",
+    "name": "CheckIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_CheckIcon-C7FOVaJb.js": {
+    "file": "dist/CheckIcon-C7FOVaJb.js",
+    "name": "CheckIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_CheckIcon-CMs88yog.js": {
     "file": "dist/CheckIcon-CMs88yog.js",
+    "name": "CheckIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_CheckIcon-DQwJ5tzX.js": {
+    "file": "dist/CheckIcon-DQwJ5tzX.js",
     "name": "CheckIcon",
     "imports": [
       "src/web/mainweb.jsx"
@@ -41,8 +69,22 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_CheckIcon-FHSZS5SI.js": {
+    "file": "dist/CheckIcon-FHSZS5SI.js",
+    "name": "CheckIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_CheckIcon-PE-1DXw2.js": {
     "file": "dist/CheckIcon-PE-1DXw2.js",
+    "name": "CheckIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_CheckIcon-P_dZTkDr.js": {
+    "file": "dist/CheckIcon-P_dZTkDr.js",
     "name": "CheckIcon",
     "imports": [
       "src/web/mainweb.jsx"
@@ -53,6 +95,14 @@
     "name": "CheckIcon",
     "imports": [
       "src/web/mainweb.jsx"
+    ]
+  },
+  "_ReactToastify-BI6x-Ptc.js": {
+    "file": "dist/ReactToastify-BI6x-Ptc.js",
+    "name": "ReactToastify",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_clsx-B-dksMZM.js"
     ]
   },
   "_ReactToastify-BgKGfaeA.js": {
@@ -87,8 +137,24 @@
       "_clsx-B-dksMZM.js"
     ]
   },
+  "_ReactToastify-C5WibrYG.js": {
+    "file": "dist/ReactToastify-C5WibrYG.js",
+    "name": "ReactToastify",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_clsx-B-dksMZM.js"
+    ]
+  },
   "_ReactToastify-C8Cq92hy.js": {
     "file": "dist/ReactToastify-C8Cq92hy.js",
+    "name": "ReactToastify",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_clsx-B-dksMZM.js"
+    ]
+  },
+  "_ReactToastify-DOiAS3Ng.js": {
+    "file": "dist/ReactToastify-DOiAS3Ng.js",
     "name": "ReactToastify",
     "imports": [
       "src/web/mainweb.jsx",
@@ -119,6 +185,30 @@
       "_clsx-B-dksMZM.js"
     ]
   },
+  "_ReactToastify-DrP3L9pK.js": {
+    "file": "dist/ReactToastify-DrP3L9pK.js",
+    "name": "ReactToastify",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_clsx-B-dksMZM.js"
+    ]
+  },
+  "_ReactToastify-WD_8J7xu.js": {
+    "file": "dist/ReactToastify-WD_8J7xu.js",
+    "name": "ReactToastify",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_clsx-B-dksMZM.js"
+    ]
+  },
+  "_ReactToastify-upVMJjRf.js": {
+    "file": "dist/ReactToastify-upVMJjRf.js",
+    "name": "ReactToastify",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_clsx-B-dksMZM.js"
+    ]
+  },
   "_TrashIcon-6LRemVS7.js": {
     "file": "dist/TrashIcon-6LRemVS7.js",
     "name": "TrashIcon",
@@ -128,6 +218,13 @@
   },
   "_TrashIcon-BR8BvsCg.js": {
     "file": "dist/TrashIcon-BR8BvsCg.js",
+    "name": "TrashIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_TrashIcon-BYwWUJwP.js": {
+    "file": "dist/TrashIcon-BYwWUJwP.js",
     "name": "TrashIcon",
     "imports": [
       "src/web/mainweb.jsx"
@@ -154,8 +251,43 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_TrashIcon-CWYzhoLb.js": {
+    "file": "dist/TrashIcon-CWYzhoLb.js",
+    "name": "TrashIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_TrashIcon-D4Y7nuS9.js": {
+    "file": "dist/TrashIcon-D4Y7nuS9.js",
+    "name": "TrashIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_TrashIcon-DT5U7cpD.js": {
     "file": "dist/TrashIcon-DT5U7cpD.js",
+    "name": "TrashIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_TrashIcon-DjLseJvy.js": {
+    "file": "dist/TrashIcon-DjLseJvy.js",
+    "name": "TrashIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_TrashIcon-DtWgkYrI.js": {
+    "file": "dist/TrashIcon-DtWgkYrI.js",
+    "name": "TrashIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_TrashIcon-FE4DBwPV.js": {
+    "file": "dist/TrashIcon-FE4DBwPV.js",
     "name": "TrashIcon",
     "imports": [
       "src/web/mainweb.jsx"
@@ -196,6 +328,13 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_XCircleIcon-BjXYXpZi.js": {
+    "file": "dist/XCircleIcon-BjXYXpZi.js",
+    "name": "XCircleIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_XCircleIcon-CBa3QFx6.js": {
     "file": "dist/XCircleIcon-CBa3QFx6.js",
     "name": "XCircleIcon",
@@ -205,6 +344,13 @@
   },
   "_XCircleIcon-D-3qGT2j.js": {
     "file": "dist/XCircleIcon-D-3qGT2j.js",
+    "name": "XCircleIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_XCircleIcon-D1j3ZuzE.js": {
+    "file": "dist/XCircleIcon-D1j3ZuzE.js",
     "name": "XCircleIcon",
     "imports": [
       "src/web/mainweb.jsx"
@@ -224,9 +370,44 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_XCircleIcon-DUN-JCu3.js": {
+    "file": "dist/XCircleIcon-DUN-JCu3.js",
+    "name": "XCircleIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_XCircleIcon-DX06ntrv.js": {
+    "file": "dist/XCircleIcon-DX06ntrv.js",
+    "name": "XCircleIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_XCircleIcon-EL_QNwiT.js": {
     "file": "dist/XCircleIcon-EL_QNwiT.js",
     "name": "XCircleIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_XCircleIcon-KwhAIkYy.js": {
+    "file": "dist/XCircleIcon-KwhAIkYy.js",
+    "name": "XCircleIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_XCircleIcon-glHR7_Dr.js": {
+    "file": "dist/XCircleIcon-glHR7_Dr.js",
+    "name": "XCircleIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_authContext-76Lx-akb.js": {
+    "file": "dist/authContext-76Lx-akb.js",
+    "name": "authContext",
     "imports": [
       "src/web/mainweb.jsx"
     ]
@@ -240,6 +421,27 @@
   },
   "_authContext-B5vmf7cs.js": {
     "file": "dist/authContext-B5vmf7cs.js",
+    "name": "authContext",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_authContext-BNT4NhSJ.js": {
+    "file": "dist/authContext-BNT4NhSJ.js",
+    "name": "authContext",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_authContext-BU53LTi8.js": {
+    "file": "dist/authContext-BU53LTi8.js",
+    "name": "authContext",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_authContext-BjJw7n-6.js": {
+    "file": "dist/authContext-BjJw7n-6.js",
     "name": "authContext",
     "imports": [
       "src/web/mainweb.jsx"
@@ -259,8 +461,22 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_authContext-CCFjaY31.js": {
+    "file": "dist/authContext-CCFjaY31.js",
+    "name": "authContext",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_authContext-D3sF1v5Z.js": {
     "file": "dist/authContext-D3sF1v5Z.js",
+    "name": "authContext",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_authContext-DJhhkbqQ.js": {
+    "file": "dist/authContext-DJhhkbqQ.js",
     "name": "authContext",
     "imports": [
       "src/web/mainweb.jsx"
@@ -287,6 +503,22 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_box-3qxsZxyj.js": {
+    "file": "dist/box-3qxsZxyj.js",
+    "name": "box",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js"
+    ]
+  },
+  "_box-B5vvLH8h.js": {
+    "file": "dist/box-B5vvLH8h.js",
+    "name": "box",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js"
+    ]
+  },
   "_box-BB9Yd4dL.js": {
     "file": "dist/box-BB9Yd4dL.js",
     "name": "box",
@@ -297,6 +529,30 @@
   },
   "_box-BJQT_qKN.js": {
     "file": "dist/box-BJQT_qKN.js",
+    "name": "box",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js"
+    ]
+  },
+  "_box-B_eF5TCH.js": {
+    "file": "dist/box-B_eF5TCH.js",
+    "name": "box",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js"
+    ]
+  },
+  "_box-CPpntBY1.js": {
+    "file": "dist/box-CPpntBY1.js",
+    "name": "box",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js"
+    ]
+  },
+  "_box-CZLD_vDq.js": {
+    "file": "dist/box-CZLD_vDq.js",
     "name": "box",
     "imports": [
       "src/web/mainweb.jsx",
@@ -329,6 +585,14 @@
   },
   "_box-DgZdobm5.js": {
     "file": "dist/box-DgZdobm5.js",
+    "name": "box",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js"
+    ]
+  },
+  "_box-MnIo4zXW.js": {
+    "file": "dist/box-MnIo4zXW.js",
     "name": "box",
     "imports": [
       "src/web/mainweb.jsx",
@@ -383,8 +647,29 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_dialog-BnUSVzKL.js": {
+    "file": "dist/dialog-BnUSVzKL.js",
+    "name": "dialog",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_dialog-CI6DGnYo.js": {
     "file": "dist/dialog-CI6DGnYo.js",
+    "name": "dialog",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_dialog-CgWY2ZuL.js": {
+    "file": "dist/dialog-CgWY2ZuL.js",
+    "name": "dialog",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_dialog-Cv8pq5hN.js": {
+    "file": "dist/dialog-Cv8pq5hN.js",
     "name": "dialog",
     "imports": [
       "src/web/mainweb.jsx"
@@ -404,11 +689,59 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_dialog-DdxxdQtF.js": {
+    "file": "dist/dialog-DdxxdQtF.js",
+    "name": "dialog",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_dialog-DyFqLotY.js": {
+    "file": "dist/dialog-DyFqLotY.js",
+    "name": "dialog",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_dialog-M3fGU-Dz.js": {
+    "file": "dist/dialog-M3fGU-Dz.js",
+    "name": "dialog",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_dialog-hT0OF6Qm.js": {
     "file": "dist/dialog-hT0OF6Qm.js",
     "name": "dialog",
     "imports": [
       "src/web/mainweb.jsx"
+    ]
+  },
+  "_formSubmission-3ebmrssd.js": {
+    "file": "dist/formSubmission-3ebmrssd.js",
+    "name": "formSubmission",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_index.esm-BC6XQsd8.js",
+      "_renderComponents-CjWR1WyQ.js"
+    ]
+  },
+  "_formSubmission-BBN92_p8.js": {
+    "file": "dist/formSubmission-BBN92_p8.js",
+    "name": "formSubmission",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_index.esm-DbTlIsQR.js",
+      "_renderComponents-BvpyA6t5.js"
+    ]
+  },
+  "_formSubmission-BL-UnJSJ.js": {
+    "file": "dist/formSubmission-BL-UnJSJ.js",
+    "name": "formSubmission",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_index.esm-CwJi4AVA.js",
+      "_renderComponents-ld-reMRA.js"
     ]
   },
   "_formSubmission-BMBGMKGe.js": {
@@ -474,6 +807,15 @@
       "_renderComponents-CtuSaSqf.js"
     ]
   },
+  "_formSubmission-D1Ce_fV7.js": {
+    "file": "dist/formSubmission-D1Ce_fV7.js",
+    "name": "formSubmission",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_index.esm-BKo9S9ow.js",
+      "_renderComponents-wLujZ9iO.js"
+    ]
+  },
   "_formSubmission-DIVOqrGN.js": {
     "file": "dist/formSubmission-DIVOqrGN.js",
     "name": "formSubmission",
@@ -483,8 +825,34 @@
       "_renderComponents-t0-HS4Gh.js"
     ]
   },
+  "_formSubmission-DUiaa4xT.js": {
+    "file": "dist/formSubmission-DUiaa4xT.js",
+    "name": "formSubmission",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_index.esm-BVQneQ7s.js",
+      "_renderComponents-DHm3XVkK.js"
+    ]
+  },
+  "_formSubmission-DaQpAzEP.js": {
+    "file": "dist/formSubmission-DaQpAzEP.js",
+    "name": "formSubmission",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_index.esm-buUBo0Wx.js",
+      "_renderComponents-CFhU2xLF.js"
+    ]
+  },
   "_httpService-BDZgG8BL.js": {
     "file": "dist/httpService-BDZgG8BL.js",
+    "name": "httpService",
+    "imports": [
+      "_index-BtuGy7By.js",
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_httpService-BJViEPI0.js": {
+    "file": "dist/httpService-BJViEPI0.js",
     "name": "httpService",
     "imports": [
       "_index-BtuGy7By.js",
@@ -499,8 +867,32 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_httpService-BevrQlvk.js": {
+    "file": "dist/httpService-BevrQlvk.js",
+    "name": "httpService",
+    "imports": [
+      "_index-BtuGy7By.js",
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_httpService-BkMFI5wE.js": {
     "file": "dist/httpService-BkMFI5wE.js",
+    "name": "httpService",
+    "imports": [
+      "_index-BtuGy7By.js",
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_httpService-Bsd728s-.js": {
+    "file": "dist/httpService-Bsd728s-.js",
+    "name": "httpService",
+    "imports": [
+      "_index-BtuGy7By.js",
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_httpService-C1Sg0QQX.js": {
+    "file": "dist/httpService-C1Sg0QQX.js",
     "name": "httpService",
     "imports": [
       "_index-BtuGy7By.js",
@@ -531,6 +923,22 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_httpService-CvOlA1lo.js": {
+    "file": "dist/httpService-CvOlA1lo.js",
+    "name": "httpService",
+    "imports": [
+      "_index-BtuGy7By.js",
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_httpService-DENlTq7U.js": {
+    "file": "dist/httpService-DENlTq7U.js",
+    "name": "httpService",
+    "imports": [
+      "_index-BtuGy7By.js",
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_httpService-Dq75GArv.js": {
     "file": "dist/httpService-Dq75GArv.js",
     "name": "httpService",
@@ -551,8 +959,29 @@
     "file": "dist/index-BtuGy7By.js",
     "name": "index"
   },
+  "_index.esm-BC6XQsd8.js": {
+    "file": "dist/index.esm-BC6XQsd8.js",
+    "name": "index.esm",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_index.esm-BKo9S9ow.js": {
+    "file": "dist/index.esm-BKo9S9ow.js",
+    "name": "index.esm",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_index.esm-BUSOwPG4.js": {
     "file": "dist/index.esm-BUSOwPG4.js",
+    "name": "index.esm",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_index.esm-BVQneQ7s.js": {
+    "file": "dist/index.esm-BVQneQ7s.js",
     "name": "index.esm",
     "imports": [
       "src/web/mainweb.jsx"
@@ -586,8 +1015,22 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_index.esm-CwJi4AVA.js": {
+    "file": "dist/index.esm-CwJi4AVA.js",
+    "name": "index.esm",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_index.esm-DbNLXBHY.js": {
     "file": "dist/index.esm-DbNLXBHY.js",
+    "name": "index.esm",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_index.esm-DbTlIsQR.js": {
+    "file": "dist/index.esm-DbTlIsQR.js",
     "name": "index.esm",
     "imports": [
       "src/web/mainweb.jsx"
@@ -607,6 +1050,13 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_index.esm-buUBo0Wx.js": {
+    "file": "dist/index.esm-buUBo0Wx.js",
+    "name": "index.esm",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_lazyFunction-CEQZ3rnc.js": {
     "file": "dist/lazyFunction-CEQZ3rnc.js",
     "name": "lazyFunction"
@@ -618,6 +1068,18 @@
     "imports": [
       "src/web/mainweb.jsx",
       "_useBackend-DSCC6XHi.js"
+    ],
+    "dynamicImports": [
+      "src/components/teamMembers.jsx"
+    ]
+  },
+  "_manageTeamParticipants-BN14qwH2.js": {
+    "file": "dist/manageTeamParticipants-BN14qwH2.js",
+    "name": "manageTeamParticipants",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BXE_ycfn.js"
     ],
     "dynamicImports": [
       "src/components/teamMembers.jsx"
@@ -683,6 +1145,42 @@
       "src/components/teamMembers.jsx"
     ]
   },
+  "_manageTeamParticipants-CsJF_aQk.js": {
+    "file": "dist/manageTeamParticipants-CsJF_aQk.js",
+    "name": "manageTeamParticipants",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-U0aEHunK.js"
+    ],
+    "dynamicImports": [
+      "src/components/teamMembers.jsx"
+    ]
+  },
+  "_manageTeamParticipants-D-tkUFuT.js": {
+    "file": "dist/manageTeamParticipants-D-tkUFuT.js",
+    "name": "manageTeamParticipants",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BiFso585.js"
+    ],
+    "dynamicImports": [
+      "src/components/teamMembers.jsx"
+    ]
+  },
+  "_manageTeamParticipants-D1NLECHz.js": {
+    "file": "dist/manageTeamParticipants-D1NLECHz.js",
+    "name": "manageTeamParticipants",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-cwOqNhs9.js"
+    ],
+    "dynamicImports": [
+      "src/components/teamMembers.jsx"
+    ]
+  },
   "_manageTeamParticipants-DMV3zFqn.js": {
     "file": "dist/manageTeamParticipants-DMV3zFqn.js",
     "name": "manageTeamParticipants",
@@ -690,6 +1188,30 @@
     "imports": [
       "src/web/mainweb.jsx",
       "_useBackend--i3KrIyN.js"
+    ],
+    "dynamicImports": [
+      "src/components/teamMembers.jsx"
+    ]
+  },
+  "_manageTeamParticipants-Damzo1Iy.js": {
+    "file": "dist/manageTeamParticipants-Damzo1Iy.js",
+    "name": "manageTeamParticipants",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-v8_XmHKl.js"
+    ],
+    "dynamicImports": [
+      "src/components/teamMembers.jsx"
+    ]
+  },
+  "_manageTeamParticipants-OytiLNbq.js": {
+    "file": "dist/manageTeamParticipants-OytiLNbq.js",
+    "name": "manageTeamParticipants",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BPuU1Ayp.js"
     ],
     "dynamicImports": [
       "src/components/teamMembers.jsx"
@@ -716,6 +1238,15 @@
       "_manageTeamParticipants-B_T6mAge.js"
     ]
   },
+  "_modalForm-BXF3fk0a.js": {
+    "file": "dist/modalForm-BXF3fk0a.js",
+    "name": "modalForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_dialog-M3fGU-Dz.js",
+      "_manageTeamParticipants-OytiLNbq.js"
+    ]
+  },
   "_modalForm-Bja_8Qaf.js": {
     "file": "dist/modalForm-Bja_8Qaf.js",
     "name": "modalForm",
@@ -734,6 +1265,42 @@
       "_manageTeamParticipants-xZa5ALkl.js"
     ]
   },
+  "_modalForm-D-_XUkrY.js": {
+    "file": "dist/modalForm-D-_XUkrY.js",
+    "name": "modalForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_dialog-DdxxdQtF.js",
+      "_manageTeamParticipants-BN14qwH2.js"
+    ]
+  },
+  "_modalForm-D4JFynnd.js": {
+    "file": "dist/modalForm-D4JFynnd.js",
+    "name": "modalForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_dialog-CgWY2ZuL.js",
+      "_manageTeamParticipants-D1NLECHz.js"
+    ]
+  },
+  "_modalForm-DOqFgE0d.js": {
+    "file": "dist/modalForm-DOqFgE0d.js",
+    "name": "modalForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_dialog-Cv8pq5hN.js",
+      "_manageTeamParticipants-D-tkUFuT.js"
+    ]
+  },
+  "_modalForm-DQCOGX90.js": {
+    "file": "dist/modalForm-DQCOGX90.js",
+    "name": "modalForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_dialog-DyFqLotY.js",
+      "_manageTeamParticipants-CsJF_aQk.js"
+    ]
+  },
   "_modalForm-DZjac2sM.js": {
     "file": "dist/modalForm-DZjac2sM.js",
     "name": "modalForm",
@@ -741,6 +1308,15 @@
       "src/web/mainweb.jsx",
       "_dialog-CI6DGnYo.js",
       "_manageTeamParticipants-Buvo5gDG.js"
+    ]
+  },
+  "_modalForm-Dh4Kz-cU.js": {
+    "file": "dist/modalForm-Dh4Kz-cU.js",
+    "name": "modalForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_dialog-BnUSVzKL.js",
+      "_manageTeamParticipants-Damzo1Iy.js"
     ]
   },
   "_modalForm-Di_jAZQo.js": {
@@ -779,6 +1355,22 @@
       "_manageTeamParticipants-CFRLu1-x.js"
     ]
   },
+  "_pagination-BpZhpWpc.js": {
+    "file": "dist/pagination-BpZhpWpc.js",
+    "name": "pagination",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_CheckIcon-DQwJ5tzX.js"
+    ]
+  },
+  "_pagination-CIX9BrqS.js": {
+    "file": "dist/pagination-CIX9BrqS.js",
+    "name": "pagination",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_CheckIcon-BT1XunQt.js"
+    ]
+  },
   "_pagination-CId7Shgu.js": {
     "file": "dist/pagination-CId7Shgu.js",
     "name": "pagination",
@@ -811,12 +1403,44 @@
       "_CheckIcon-PE-1DXw2.js"
     ]
   },
+  "_pagination-DfSfDkvc.js": {
+    "file": "dist/pagination-DfSfDkvc.js",
+    "name": "pagination",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_CheckIcon-Braowaoy.js"
+    ]
+  },
   "_pagination-DlqjfNco.js": {
     "file": "dist/pagination-DlqjfNco.js",
     "name": "pagination",
     "imports": [
       "src/web/mainweb.jsx",
       "_CheckIcon-DVfKkB5D.js"
+    ]
+  },
+  "_pagination-Dn3HiKMT.js": {
+    "file": "dist/pagination-Dn3HiKMT.js",
+    "name": "pagination",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_CheckIcon-P_dZTkDr.js"
+    ]
+  },
+  "_pagination-DqQ5dAnI.js": {
+    "file": "dist/pagination-DqQ5dAnI.js",
+    "name": "pagination",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_CheckIcon-FHSZS5SI.js"
+    ]
+  },
+  "_pagination-HcvouxcK.js": {
+    "file": "dist/pagination-HcvouxcK.js",
+    "name": "pagination",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_CheckIcon-C7FOVaJb.js"
     ]
   },
   "_pagination-IiEC5BC5.js": {
@@ -843,6 +1467,14 @@
       "_CheckIcon-BfX6shV4.js"
     ]
   },
+  "_publicRegistrationHelper-7nT8watN.js": {
+    "file": "dist/publicRegistrationHelper-7nT8watN.js",
+    "name": "publicRegistrationHelper",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-Bsd728s-.js"
+    ]
+  },
   "_publicRegistrationHelper-BBB3yVGV.js": {
     "file": "dist/publicRegistrationHelper-BBB3yVGV.js",
     "name": "publicRegistrationHelper",
@@ -857,6 +1489,22 @@
     "imports": [
       "src/web/mainweb.jsx",
       "_httpService-uD8evmeK.js"
+    ]
+  },
+  "_publicRegistrationHelper-Bkxxa6xP.js": {
+    "file": "dist/publicRegistrationHelper-Bkxxa6xP.js",
+    "name": "publicRegistrationHelper",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-C1Sg0QQX.js"
+    ]
+  },
+  "_publicRegistrationHelper-Bs1QK0pu.js": {
+    "file": "dist/publicRegistrationHelper-Bs1QK0pu.js",
+    "name": "publicRegistrationHelper",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-BJViEPI0.js"
     ]
   },
   "_publicRegistrationHelper-Bwa2ZvQv.js": {
@@ -883,6 +1531,14 @@
       "_httpService-Dq75GArv.js"
     ]
   },
+  "_publicRegistrationHelper-CSfeLQGo.js": {
+    "file": "dist/publicRegistrationHelper-CSfeLQGo.js",
+    "name": "publicRegistrationHelper",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-BevrQlvk.js"
+    ]
+  },
   "_publicRegistrationHelper-DBWGNKuB.js": {
     "file": "dist/publicRegistrationHelper-DBWGNKuB.js",
     "name": "publicRegistrationHelper",
@@ -899,6 +1555,22 @@
       "_httpService-BTmy11w7.js"
     ]
   },
+  "_publicRegistrationHelper-HOmj_bYV.js": {
+    "file": "dist/publicRegistrationHelper-HOmj_bYV.js",
+    "name": "publicRegistrationHelper",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-CvOlA1lo.js"
+    ]
+  },
+  "_publicRegistrationHelper-Mu_KIv1v.js": {
+    "file": "dist/publicRegistrationHelper-Mu_KIv1v.js",
+    "name": "publicRegistrationHelper",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-DENlTq7U.js"
+    ]
+  },
   "_publicRegistrationHelper-TsokJoFY.js": {
     "file": "dist/publicRegistrationHelper-TsokJoFY.js",
     "name": "publicRegistrationHelper",
@@ -909,6 +1581,13 @@
   },
   "_react-confetti-6zyW_q7O.js": {
     "file": "dist/react-confetti-6zyW_q7O.js",
+    "name": "react-confetti",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_react-confetti-B6bJyIYr.js": {
+    "file": "dist/react-confetti-B6bJyIYr.js",
     "name": "react-confetti",
     "imports": [
       "src/web/mainweb.jsx"
@@ -935,8 +1614,29 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_react-confetti-C2r3mPoi.js": {
+    "file": "dist/react-confetti-C2r3mPoi.js",
+    "name": "react-confetti",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_react-confetti-C5kOZP2o.js": {
+    "file": "dist/react-confetti-C5kOZP2o.js",
+    "name": "react-confetti",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_react-confetti-CUwPjcAQ.js": {
     "file": "dist/react-confetti-CUwPjcAQ.js",
+    "name": "react-confetti",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_react-confetti-CWGNEAxN.js": {
+    "file": "dist/react-confetti-CWGNEAxN.js",
     "name": "react-confetti",
     "imports": [
       "src/web/mainweb.jsx"
@@ -956,8 +1656,22 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_react-confetti-DAjpFrjo.js": {
+    "file": "dist/react-confetti-DAjpFrjo.js",
+    "name": "react-confetti",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_react-confetti-Dendc2Q2.js": {
     "file": "dist/react-confetti-Dendc2Q2.js",
+    "name": "react-confetti",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_react-confetti-Dn_G1TSy.js": {
+    "file": "dist/react-confetti-Dn_G1TSy.js",
     "name": "react-confetti",
     "imports": [
       "src/web/mainweb.jsx"
@@ -1011,6 +1725,54 @@
       "_index-BtuGy7By.js"
     ]
   },
+  "_renderComponents-BvpyA6t5.js": {
+    "file": "dist/renderComponents-BvpyA6t5.js",
+    "name": "renderComponents",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-cwOqNhs9.js",
+      "_utilities-CN4lTu6a.js",
+      "_validationMessage-B9wWy_Fo.js",
+      "_index.esm-DbTlIsQR.js",
+      "_clsx-B-dksMZM.js",
+      "_CheckIcon-Braowaoy.js",
+      "_manageTeamParticipants-D1NLECHz.js",
+      "_httpService-BevrQlvk.js",
+      "_index-BtuGy7By.js"
+    ]
+  },
+  "_renderComponents-CFhU2xLF.js": {
+    "file": "dist/renderComponents-CFhU2xLF.js",
+    "name": "renderComponents",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BXE_ycfn.js",
+      "_utilities-CN4lTu6a.js",
+      "_validationMessage-cjq8wiCA.js",
+      "_index.esm-buUBo0Wx.js",
+      "_clsx-B-dksMZM.js",
+      "_CheckIcon-DQwJ5tzX.js",
+      "_manageTeamParticipants-BN14qwH2.js",
+      "_httpService-DENlTq7U.js",
+      "_index-BtuGy7By.js"
+    ]
+  },
+  "_renderComponents-CjWR1WyQ.js": {
+    "file": "dist/renderComponents-CjWR1WyQ.js",
+    "name": "renderComponents",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-v8_XmHKl.js",
+      "_utilities-CN4lTu6a.js",
+      "_validationMessage-DsOcFe1S.js",
+      "_index.esm-BC6XQsd8.js",
+      "_clsx-B-dksMZM.js",
+      "_CheckIcon-C7FOVaJb.js",
+      "_manageTeamParticipants-Damzo1Iy.js",
+      "_httpService-Bsd728s-.js",
+      "_index-BtuGy7By.js"
+    ]
+  },
   "_renderComponents-CtuSaSqf.js": {
     "file": "dist/renderComponents-CtuSaSqf.js",
     "name": "renderComponents",
@@ -1040,6 +1802,22 @@
       "_CheckIcon-BfX6shV4.js",
       "_manageTeamParticipants-CFRLu1-x.js",
       "_httpService-C59NAsy7.js",
+      "_index-BtuGy7By.js"
+    ]
+  },
+  "_renderComponents-DHm3XVkK.js": {
+    "file": "dist/renderComponents-DHm3XVkK.js",
+    "name": "renderComponents",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BPuU1Ayp.js",
+      "_utilities-CN4lTu6a.js",
+      "_validationMessage-cNv_lHyq.js",
+      "_index.esm-BVQneQ7s.js",
+      "_clsx-B-dksMZM.js",
+      "_CheckIcon-BT1XunQt.js",
+      "_manageTeamParticipants-OytiLNbq.js",
+      "_httpService-C1Sg0QQX.js",
       "_index-BtuGy7By.js"
     ]
   },
@@ -1075,6 +1853,22 @@
       "_index-BtuGy7By.js"
     ]
   },
+  "_renderComponents-ld-reMRA.js": {
+    "file": "dist/renderComponents-ld-reMRA.js",
+    "name": "renderComponents",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BiFso585.js",
+      "_utilities-CN4lTu6a.js",
+      "_validationMessage-BYFIgwoI.js",
+      "_index.esm-CwJi4AVA.js",
+      "_clsx-B-dksMZM.js",
+      "_CheckIcon-FHSZS5SI.js",
+      "_manageTeamParticipants-D-tkUFuT.js",
+      "_httpService-BJViEPI0.js",
+      "_index-BtuGy7By.js"
+    ]
+  },
   "_renderComponents-t0-HS4Gh.js": {
     "file": "dist/renderComponents-t0-HS4Gh.js",
     "name": "renderComponents",
@@ -1089,6 +1883,41 @@
       "_manageTeamParticipants-CZP5P-jT.js",
       "_httpService-BTmy11w7.js",
       "_index-BtuGy7By.js"
+    ]
+  },
+  "_renderComponents-wLujZ9iO.js": {
+    "file": "dist/renderComponents-wLujZ9iO.js",
+    "name": "renderComponents",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-U0aEHunK.js",
+      "_utilities-CN4lTu6a.js",
+      "_validationMessage-BZVOC9a8.js",
+      "_index.esm-BKo9S9ow.js",
+      "_clsx-B-dksMZM.js",
+      "_CheckIcon-P_dZTkDr.js",
+      "_manageTeamParticipants-CsJF_aQk.js",
+      "_httpService-CvOlA1lo.js",
+      "_index-BtuGy7By.js"
+    ]
+  },
+  "_renderRegistrationForm-7uVyrlmY.js": {
+    "file": "dist/renderRegistrationForm-7uVyrlmY.js",
+    "name": "renderRegistrationForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-U0aEHunK.js",
+      "_useConfirmation-BJ1Y7mO3.js",
+      "_httpService-CvOlA1lo.js",
+      "_utilities-CN4lTu6a.js",
+      "_renderComponents-wLujZ9iO.js",
+      "_box-B_eF5TCH.js",
+      "_publicRegistrationHelper-HOmj_bYV.js",
+      "_dialog-DyFqLotY.js",
+      "_CheckIcon-P_dZTkDr.js",
+      "_TrashIcon-DjLseJvy.js",
+      "_modalForm-DQCOGX90.js",
+      "_formSubmission-D1Ce_fV7.js"
     ]
   },
   "_renderRegistrationForm-C5PhZsub.js": {
@@ -1108,6 +1937,63 @@
       "_TrashIcon-CASJz9VX.js",
       "_modalForm-Di_jAZQo.js",
       "_formSubmission-DIVOqrGN.js"
+    ]
+  },
+  "_renderRegistrationForm-Ccf-D_MM.js": {
+    "file": "dist/renderRegistrationForm-Ccf-D_MM.js",
+    "name": "renderRegistrationForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BXE_ycfn.js",
+      "_useConfirmation-BQ2zT_62.js",
+      "_httpService-DENlTq7U.js",
+      "_utilities-CN4lTu6a.js",
+      "_renderComponents-CFhU2xLF.js",
+      "_box-B5vvLH8h.js",
+      "_publicRegistrationHelper-Mu_KIv1v.js",
+      "_dialog-DdxxdQtF.js",
+      "_CheckIcon-DQwJ5tzX.js",
+      "_TrashIcon-FE4DBwPV.js",
+      "_modalForm-D-_XUkrY.js",
+      "_formSubmission-DaQpAzEP.js"
+    ]
+  },
+  "_renderRegistrationForm-DF3Be5TI.js": {
+    "file": "dist/renderRegistrationForm-DF3Be5TI.js",
+    "name": "renderRegistrationForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BiFso585.js",
+      "_useConfirmation-DK7t5kkR.js",
+      "_httpService-BJViEPI0.js",
+      "_utilities-CN4lTu6a.js",
+      "_renderComponents-ld-reMRA.js",
+      "_box-CPpntBY1.js",
+      "_publicRegistrationHelper-Bs1QK0pu.js",
+      "_dialog-Cv8pq5hN.js",
+      "_CheckIcon-FHSZS5SI.js",
+      "_TrashIcon-DtWgkYrI.js",
+      "_modalForm-DOqFgE0d.js",
+      "_formSubmission-BL-UnJSJ.js"
+    ]
+  },
+  "_renderRegistrationForm-DWMh8tOs.js": {
+    "file": "dist/renderRegistrationForm-DWMh8tOs.js",
+    "name": "renderRegistrationForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-BPuU1Ayp.js",
+      "_useConfirmation-DJZ8Ul1D.js",
+      "_httpService-C1Sg0QQX.js",
+      "_utilities-CN4lTu6a.js",
+      "_renderComponents-DHm3XVkK.js",
+      "_box-3qxsZxyj.js",
+      "_publicRegistrationHelper-Bkxxa6xP.js",
+      "_dialog-M3fGU-Dz.js",
+      "_CheckIcon-BT1XunQt.js",
+      "_TrashIcon-BYwWUJwP.js",
+      "_modalForm-BXF3fk0a.js",
+      "_formSubmission-DUiaa4xT.js"
     ]
   },
   "_renderRegistrationForm-DZBEXBYK.js": {
@@ -1205,6 +2091,44 @@
       "_formSubmission-CdssPdPG.js"
     ]
   },
+  "_renderRegistrationForm-OSNw6Wy4.js": {
+    "file": "dist/renderRegistrationForm-OSNw6Wy4.js",
+    "name": "renderRegistrationForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-v8_XmHKl.js",
+      "_useConfirmation-Cj3fhkgu.js",
+      "_httpService-Bsd728s-.js",
+      "_utilities-CN4lTu6a.js",
+      "_renderComponents-CjWR1WyQ.js",
+      "_box-MnIo4zXW.js",
+      "_publicRegistrationHelper-7nT8watN.js",
+      "_dialog-BnUSVzKL.js",
+      "_CheckIcon-C7FOVaJb.js",
+      "_TrashIcon-D4Y7nuS9.js",
+      "_modalForm-Dh4Kz-cU.js",
+      "_formSubmission-3ebmrssd.js"
+    ]
+  },
+  "_renderRegistrationForm-iVTWl_M2.js": {
+    "file": "dist/renderRegistrationForm-iVTWl_M2.js",
+    "name": "renderRegistrationForm",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_useBackend-cwOqNhs9.js",
+      "_useConfirmation-DUdCr2YO.js",
+      "_httpService-BevrQlvk.js",
+      "_utilities-CN4lTu6a.js",
+      "_renderComponents-BvpyA6t5.js",
+      "_box-CZLD_vDq.js",
+      "_publicRegistrationHelper-CSfeLQGo.js",
+      "_dialog-CgWY2ZuL.js",
+      "_CheckIcon-Braowaoy.js",
+      "_TrashIcon-CWYzhoLb.js",
+      "_modalForm-D4JFynnd.js",
+      "_formSubmission-BBN92_p8.js"
+    ]
+  },
   "_renderRegistrationForm-uH0umY_6.js": {
     "file": "dist/renderRegistrationForm-uH0umY_6.js",
     "name": "renderRegistrationForm",
@@ -1249,6 +2173,30 @@
     "imports": [
       "src/web/mainweb.jsx",
       "_httpService-CgTDqfpN.js"
+    ]
+  },
+  "_useBackend-BPuU1Ayp.js": {
+    "file": "dist/useBackend-BPuU1Ayp.js",
+    "name": "useBackend",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-C1Sg0QQX.js"
+    ]
+  },
+  "_useBackend-BXE_ycfn.js": {
+    "file": "dist/useBackend-BXE_ycfn.js",
+    "name": "useBackend",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-DENlTq7U.js"
+    ]
+  },
+  "_useBackend-BiFso585.js": {
+    "file": "dist/useBackend-BiFso585.js",
+    "name": "useBackend",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-BJViEPI0.js"
     ]
   },
   "_useBackend-ByNAnE3-.js": {
@@ -1299,12 +2247,46 @@
       "_httpService-BkMFI5wE.js"
     ]
   },
+  "_useBackend-U0aEHunK.js": {
+    "file": "dist/useBackend-U0aEHunK.js",
+    "name": "useBackend",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-CvOlA1lo.js"
+    ]
+  },
+  "_useBackend-cwOqNhs9.js": {
+    "file": "dist/useBackend-cwOqNhs9.js",
+    "name": "useBackend",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-BevrQlvk.js"
+    ]
+  },
+  "_useBackend-v8_XmHKl.js": {
+    "file": "dist/useBackend-v8_XmHKl.js",
+    "name": "useBackend",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_httpService-Bsd728s-.js"
+    ]
+  },
   "_useBackend-xn77xIxI.js": {
     "file": "dist/useBackend-xn77xIxI.js",
     "name": "useBackend",
     "imports": [
       "src/web/mainweb.jsx",
       "_httpService-C59NAsy7.js"
+    ]
+  },
+  "_useConfirmation-BJ1Y7mO3.js": {
+    "file": "dist/useConfirmation-BJ1Y7mO3.js",
+    "name": "useConfirmation",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js",
+      "_dialog-DyFqLotY.js",
+      "_CheckIcon-P_dZTkDr.js"
     ]
   },
   "_useConfirmation-BJ3PbXnz.js": {
@@ -1315,6 +2297,16 @@
       "_utilities-CN4lTu6a.js",
       "_dialog-B-mulCa3.js",
       "_CheckIcon-CMs88yog.js"
+    ]
+  },
+  "_useConfirmation-BQ2zT_62.js": {
+    "file": "dist/useConfirmation-BQ2zT_62.js",
+    "name": "useConfirmation",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js",
+      "_dialog-DdxxdQtF.js",
+      "_CheckIcon-DQwJ5tzX.js"
     ]
   },
   "_useConfirmation-BfTI7CO3.js": {
@@ -1357,6 +2349,16 @@
       "_CheckIcon-DVfKkB5D.js"
     ]
   },
+  "_useConfirmation-Cj3fhkgu.js": {
+    "file": "dist/useConfirmation-Cj3fhkgu.js",
+    "name": "useConfirmation",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js",
+      "_dialog-BnUSVzKL.js",
+      "_CheckIcon-C7FOVaJb.js"
+    ]
+  },
   "_useConfirmation-CvZaBzsC.js": {
     "file": "dist/useConfirmation-CvZaBzsC.js",
     "name": "useConfirmation",
@@ -1365,6 +2367,36 @@
       "_utilities-CN4lTu6a.js",
       "_dialog-BBPUEYSN.js",
       "_CheckIcon-BfX6shV4.js"
+    ]
+  },
+  "_useConfirmation-DJZ8Ul1D.js": {
+    "file": "dist/useConfirmation-DJZ8Ul1D.js",
+    "name": "useConfirmation",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js",
+      "_dialog-M3fGU-Dz.js",
+      "_CheckIcon-BT1XunQt.js"
+    ]
+  },
+  "_useConfirmation-DK7t5kkR.js": {
+    "file": "dist/useConfirmation-DK7t5kkR.js",
+    "name": "useConfirmation",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js",
+      "_dialog-Cv8pq5hN.js",
+      "_CheckIcon-FHSZS5SI.js"
+    ]
+  },
+  "_useConfirmation-DUdCr2YO.js": {
+    "file": "dist/useConfirmation-DUdCr2YO.js",
+    "name": "useConfirmation",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_utilities-CN4lTu6a.js",
+      "_dialog-CgWY2ZuL.js",
+      "_CheckIcon-Braowaoy.js"
     ]
   },
   "_useConfirmation-SnWTz0Cv.js": {
@@ -1402,6 +2434,27 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_validationMessage-B9wWy_Fo.js": {
+    "file": "dist/validationMessage-B9wWy_Fo.js",
+    "name": "validationMessage",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_validationMessage-BYFIgwoI.js": {
+    "file": "dist/validationMessage-BYFIgwoI.js",
+    "name": "validationMessage",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_validationMessage-BZVOC9a8.js": {
+    "file": "dist/validationMessage-BZVOC9a8.js",
+    "name": "validationMessage",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_validationMessage-CZGb1ayt.js": {
     "file": "dist/validationMessage-CZGb1ayt.js",
     "name": "validationMessage",
@@ -1430,8 +2483,29 @@
       "src/web/mainweb.jsx"
     ]
   },
+  "_validationMessage-DsOcFe1S.js": {
+    "file": "dist/validationMessage-DsOcFe1S.js",
+    "name": "validationMessage",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
   "_validationMessage-DtJgsVHG.js": {
     "file": "dist/validationMessage-DtJgsVHG.js",
+    "name": "validationMessage",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_validationMessage-cNv_lHyq.js": {
+    "file": "dist/validationMessage-cNv_lHyq.js",
+    "name": "validationMessage",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_validationMessage-cjq8wiCA.js": {
+    "file": "dist/validationMessage-cjq8wiCA.js",
     "name": "validationMessage",
     "imports": [
       "src/web/mainweb.jsx"
@@ -1452,138 +2526,138 @@
     ]
   },
   "src/components/teamMembers.jsx": {
-    "file": "dist/teamMembers-C_dPmXTN.js",
+    "file": "dist/teamMembers-IKGBTGUA.js",
     "name": "teamMembers",
     "src": "src/components/teamMembers.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_index.esm-Tz4C_F66.js",
-      "_httpService-BkMFI5wE.js",
+      "_index.esm-CwJi4AVA.js",
+      "_httpService-BJViEPI0.js",
       "_utilities-CN4lTu6a.js",
-      "_validationMessage-6nYlMK2m.js",
-      "_dialog-hT0OF6Qm.js",
-      "_renderComponents-B1fdUz8Q.js",
-      "_publicRegistrationHelper-Bwa2ZvQv.js",
-      "_modalForm-B-Lge6F1.js",
-      "_XCircleIcon-DRSeOcdM.js",
+      "_validationMessage-BYFIgwoI.js",
+      "_dialog-Cv8pq5hN.js",
+      "_renderComponents-ld-reMRA.js",
+      "_publicRegistrationHelper-Bs1QK0pu.js",
+      "_modalForm-DOqFgE0d.js",
+      "_XCircleIcon-DUN-JCu3.js",
       "_index-BtuGy7By.js",
-      "_useBackend-LuZMgPnD.js",
+      "_useBackend-BiFso585.js",
       "_clsx-B-dksMZM.js",
-      "_CheckIcon-8R30PYaF.js",
-      "_manageTeamParticipants-B_T6mAge.js"
+      "_CheckIcon-FHSZS5SI.js",
+      "_manageTeamParticipants-D-tkUFuT.js"
     ]
   },
   "src/components/viewParticipant.jsx": {
-    "file": "dist/viewParticipant-PdrJkrMM.js",
+    "file": "dist/viewParticipant-BBOf_yqK.js",
     "name": "viewParticipant",
     "src": "src/components/viewParticipant.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_renderRegistrationForm-Dbfroun0.js",
-      "_httpService-BkMFI5wE.js",
-      "_publicRegistrationHelper-Bwa2ZvQv.js",
-      "_box-BB9Yd4dL.js",
-      "_useBackend-LuZMgPnD.js",
-      "_useConfirmation-SnWTz0Cv.js",
+      "_renderRegistrationForm-DF3Be5TI.js",
+      "_httpService-BJViEPI0.js",
+      "_publicRegistrationHelper-Bs1QK0pu.js",
+      "_box-CPpntBY1.js",
+      "_useBackend-BiFso585.js",
+      "_useConfirmation-DK7t5kkR.js",
       "_utilities-CN4lTu6a.js",
-      "_dialog-hT0OF6Qm.js",
-      "_CheckIcon-8R30PYaF.js",
-      "_renderComponents-B1fdUz8Q.js",
-      "_validationMessage-6nYlMK2m.js",
-      "_index.esm-Tz4C_F66.js",
+      "_dialog-Cv8pq5hN.js",
+      "_CheckIcon-FHSZS5SI.js",
+      "_renderComponents-ld-reMRA.js",
+      "_validationMessage-BYFIgwoI.js",
+      "_index.esm-CwJi4AVA.js",
       "_clsx-B-dksMZM.js",
-      "_manageTeamParticipants-B_T6mAge.js",
+      "_manageTeamParticipants-D-tkUFuT.js",
       "_index-BtuGy7By.js",
-      "_TrashIcon-BR8BvsCg.js",
-      "_modalForm-B-Lge6F1.js",
-      "_formSubmission-BMBGMKGe.js"
+      "_TrashIcon-DtWgkYrI.js",
+      "_modalForm-DOqFgE0d.js",
+      "_formSubmission-BL-UnJSJ.js"
     ]
   },
   "src/web/AssignJudgesToCompetition.jsx": {
-    "file": "dist/AssignJudgesToCompetition-DSi3nGXl.js",
+    "file": "dist/AssignJudgesToCompetition-BCyfPRdD.js",
     "name": "AssignJudgesToCompetition",
     "src": "src/web/AssignJudgesToCompetition.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
       "_index-BtuGy7By.js",
-      "_authContext-A7hKIYUi.js"
+      "_authContext-CCFjaY31.js"
     ]
   },
   "src/web/CompetitionSchedule/automateSchedule.jsx": {
-    "file": "dist/automateSchedule-m7xLDl_c.js",
+    "file": "dist/automateSchedule-B1_6sFgY.js",
     "name": "automateSchedule",
     "src": "src/web/CompetitionSchedule/automateSchedule.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_box-BB9Yd4dL.js",
-      "_useBackend-LuZMgPnD.js",
-      "_httpService-BkMFI5wE.js",
+      "_box-CPpntBY1.js",
+      "_useBackend-BiFso585.js",
+      "_httpService-BJViEPI0.js",
       "_lazyFunction-CEQZ3rnc.js",
       "_utilities-CN4lTu6a.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/Coordinator/candidatesDetailedList.jsx": {
-    "file": "dist/candidatesDetailedList-C5hcjuUH.js",
+    "file": "dist/candidatesDetailedList-BrIXtKhI.js",
     "name": "candidatesDetailedList",
     "src": "src/web/Coordinator/candidatesDetailedList.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_index.esm-Tz4C_F66.js",
-      "_box-BB9Yd4dL.js",
-      "_pagination-CId7Shgu.js",
-      "_useBackend-LuZMgPnD.js",
-      "_useConfirmation-SnWTz0Cv.js",
-      "_publicRegistrationHelper-Bwa2ZvQv.js",
+      "_index.esm-CwJi4AVA.js",
+      "_box-CPpntBY1.js",
+      "_pagination-DqQ5dAnI.js",
+      "_useBackend-BiFso585.js",
+      "_useConfirmation-DK7t5kkR.js",
+      "_publicRegistrationHelper-Bs1QK0pu.js",
       "_utilities-CN4lTu6a.js",
-      "_CheckIcon-8R30PYaF.js",
-      "_httpService-BkMFI5wE.js",
+      "_CheckIcon-FHSZS5SI.js",
+      "_httpService-BJViEPI0.js",
       "_index-BtuGy7By.js",
-      "_dialog-hT0OF6Qm.js"
+      "_dialog-Cv8pq5hN.js"
     ],
     "dynamicImports": [
       "src/components/viewParticipant.jsx"
     ]
   },
   "src/web/Coordinator/liveResultPresentation.jsx": {
-    "file": "dist/liveResultPresentation-CpdxgwXW.js",
+    "file": "dist/liveResultPresentation-CIBbgoSy.js",
     "name": "liveResultPresentation",
     "src": "src/web/Coordinator/liveResultPresentation.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_react-confetti-CvPliXmN.js",
-      "_box-BB9Yd4dL.js",
-      "_useBackend-LuZMgPnD.js",
+      "_react-confetti-C2r3mPoi.js",
+      "_box-CPpntBY1.js",
+      "_useBackend-BiFso585.js",
       "_lazyFunction-CEQZ3rnc.js",
       "_utilities-CN4lTu6a.js",
-      "_httpService-BkMFI5wE.js",
+      "_httpService-BJViEPI0.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/Coordinator/resultPresentation.jsx": {
-    "file": "dist/resultPresentation-CWveVyt_.js",
+    "file": "dist/resultPresentation-CrhqfvsR.js",
     "name": "resultPresentation",
     "src": "src/web/Coordinator/resultPresentation.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_react-confetti-CvPliXmN.js",
-      "_box-BB9Yd4dL.js",
-      "_useBackend-LuZMgPnD.js",
+      "_react-confetti-C2r3mPoi.js",
+      "_box-CPpntBY1.js",
+      "_useBackend-BiFso585.js",
       "_lazyFunction-CEQZ3rnc.js",
       "_utilities-CN4lTu6a.js",
-      "_httpService-BkMFI5wE.js",
+      "_httpService-BJViEPI0.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/JudgeScoreCard.jsx": {
-    "file": "dist/JudgeScoreCard-D-zg7rHy.js",
+    "file": "dist/JudgeScoreCard-C3G_EumR.js",
     "name": "JudgeScoreCard",
     "src": "src/web/JudgeScoreCard.jsx",
     "isDynamicEntry": true,
@@ -1593,7 +2667,7 @@
     ]
   },
   "src/web/MainPageUsersAndRoles.jsx": {
-    "file": "dist/MainPageUsersAndRoles-DzKe7CLz.js",
+    "file": "dist/MainPageUsersAndRoles-weZKGJ1n.js",
     "name": "MainPageUsersAndRoles",
     "src": "src/web/MainPageUsersAndRoles.jsx",
     "isDynamicEntry": true,
@@ -1606,59 +2680,59 @@
     ]
   },
   "src/web/UsersAndRoles.jsx": {
-    "file": "dist/UsersAndRoles-DtHyquZN.js",
+    "file": "dist/UsersAndRoles-DNKj7ml8.js",
     "name": "UsersAndRoles",
     "src": "src/web/UsersAndRoles.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_box-BB9Yd4dL.js",
-      "_useConfirmation-SnWTz0Cv.js",
+      "_box-CPpntBY1.js",
+      "_useConfirmation-DK7t5kkR.js",
       "_utilities-CN4lTu6a.js",
-      "_index.esm-Tz4C_F66.js",
-      "_renderComponents-B1fdUz8Q.js",
-      "_modalForm-B-Lge6F1.js",
-      "_XCircleIcon-DRSeOcdM.js",
-      "_pagination-CId7Shgu.js",
-      "_TrashIcon-BR8BvsCg.js",
-      "_useBackend-LuZMgPnD.js",
-      "_dialog-hT0OF6Qm.js",
-      "_CheckIcon-8R30PYaF.js",
-      "_validationMessage-6nYlMK2m.js",
+      "_index.esm-CwJi4AVA.js",
+      "_renderComponents-ld-reMRA.js",
+      "_modalForm-DOqFgE0d.js",
+      "_XCircleIcon-DUN-JCu3.js",
+      "_pagination-DqQ5dAnI.js",
+      "_TrashIcon-DtWgkYrI.js",
+      "_useBackend-BiFso585.js",
+      "_dialog-Cv8pq5hN.js",
+      "_CheckIcon-FHSZS5SI.js",
+      "_validationMessage-BYFIgwoI.js",
       "_clsx-B-dksMZM.js",
-      "_manageTeamParticipants-B_T6mAge.js",
-      "_httpService-BkMFI5wE.js",
+      "_manageTeamParticipants-D-tkUFuT.js",
+      "_httpService-BJViEPI0.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/forgotPassword.jsx": {
-    "file": "dist/forgotPassword-DLBlfeYa.js",
+    "file": "dist/forgotPassword-DyGF9TL8.js",
     "name": "forgotPassword",
     "src": "src/web/forgotPassword.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
       "_index-BtuGy7By.js",
-      "_ReactToastify-Bi4IOqXT.js",
+      "_ReactToastify-DrP3L9pK.js",
       "_clsx-B-dksMZM.js"
     ]
   },
   "src/web/loginPage.jsx": {
-    "file": "dist/loginPage-BNPnO00t.js",
+    "file": "dist/loginPage-CDzYXomx.js",
     "name": "loginPage",
     "src": "src/web/loginPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_ReactToastify-Bi4IOqXT.js",
-      "_authContext-A7hKIYUi.js",
-      "_httpService-BkMFI5wE.js",
+      "_ReactToastify-DrP3L9pK.js",
+      "_authContext-CCFjaY31.js",
+      "_httpService-BJViEPI0.js",
       "_clsx-B-dksMZM.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/mainweb.jsx": {
-    "file": "dist/mainweb-BFccRwdk.js",
+    "file": "dist/mainweb-D-15scZX.js",
     "name": "mainweb",
     "src": "src/web/mainweb.jsx",
     "isEntry": true,
@@ -1667,7 +2741,7 @@
       "src/web/CompetitionSchedule/automateSchedule.jsx",
       "src/web/Coordinator/candidatesDetailedList.jsx",
       "src/web/managePublicRegistrationForm.jsx",
-      "_manageTeamParticipants-B_T6mAge.js",
+      "_manageTeamParticipants-D-tkUFuT.js",
       "src/web/openAiCompetitionStructure.jsx",
       "src/web/publicRegistrationForm.jsx",
       "src/web/JudgeScoreCard.jsx",
@@ -1679,68 +2753,68 @@
     ]
   },
   "src/web/managePublicRegistrationForm.jsx": {
-    "file": "dist/managePublicRegistrationForm-C2AJ3jq8.js",
+    "file": "dist/managePublicRegistrationForm-DoZjMJrO.js",
     "name": "managePublicRegistrationForm",
     "src": "src/web/managePublicRegistrationForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_box-BB9Yd4dL.js",
-      "_useBackend-LuZMgPnD.js",
-      "_httpService-BkMFI5wE.js",
-      "_formSubmission-BMBGMKGe.js",
-      "_renderComponents-B1fdUz8Q.js",
+      "_box-CPpntBY1.js",
+      "_useBackend-BiFso585.js",
+      "_httpService-BJViEPI0.js",
+      "_formSubmission-BL-UnJSJ.js",
+      "_renderComponents-ld-reMRA.js",
       "_v4-BKT09osN.js",
-      "_TrashIcon-BR8BvsCg.js",
+      "_TrashIcon-DtWgkYrI.js",
       "_utilities-CN4lTu6a.js",
       "_index-BtuGy7By.js",
-      "_index.esm-Tz4C_F66.js",
-      "_validationMessage-6nYlMK2m.js",
+      "_index.esm-CwJi4AVA.js",
+      "_validationMessage-BYFIgwoI.js",
       "_clsx-B-dksMZM.js",
-      "_CheckIcon-8R30PYaF.js",
-      "_manageTeamParticipants-B_T6mAge.js"
+      "_CheckIcon-FHSZS5SI.js",
+      "_manageTeamParticipants-D-tkUFuT.js"
     ]
   },
   "src/web/openAiCompetitionStructure.jsx": {
-    "file": "dist/openAiCompetitionStructure-CBeOtRE3.js",
+    "file": "dist/openAiCompetitionStructure-BuJpzPuF.js",
     "name": "openAiCompetitionStructure",
     "src": "src/web/openAiCompetitionStructure.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_index.esm-Tz4C_F66.js",
-      "_httpService-BkMFI5wE.js",
+      "_index.esm-CwJi4AVA.js",
+      "_httpService-BJViEPI0.js",
       "_utilities-CN4lTu6a.js",
-      "_validationMessage-6nYlMK2m.js",
+      "_validationMessage-BYFIgwoI.js",
       "_v4-BKT09osN.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/publicRegistrationForm.jsx": {
-    "file": "dist/publicRegistrationForm-DCn88HHt.js",
+    "file": "dist/publicRegistrationForm-DWMU2UVp.js",
     "name": "publicRegistrationForm",
     "src": "src/web/publicRegistrationForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_httpService-BkMFI5wE.js",
-      "_renderRegistrationForm-Dbfroun0.js",
+      "_httpService-BJViEPI0.js",
+      "_renderRegistrationForm-DF3Be5TI.js",
       "_index-BtuGy7By.js",
-      "_useBackend-LuZMgPnD.js",
-      "_useConfirmation-SnWTz0Cv.js",
+      "_useBackend-BiFso585.js",
+      "_useConfirmation-DK7t5kkR.js",
       "_utilities-CN4lTu6a.js",
-      "_dialog-hT0OF6Qm.js",
-      "_CheckIcon-8R30PYaF.js",
-      "_renderComponents-B1fdUz8Q.js",
-      "_validationMessage-6nYlMK2m.js",
-      "_index.esm-Tz4C_F66.js",
+      "_dialog-Cv8pq5hN.js",
+      "_CheckIcon-FHSZS5SI.js",
+      "_renderComponents-ld-reMRA.js",
+      "_validationMessage-BYFIgwoI.js",
+      "_index.esm-CwJi4AVA.js",
       "_clsx-B-dksMZM.js",
-      "_manageTeamParticipants-B_T6mAge.js",
-      "_box-BB9Yd4dL.js",
-      "_publicRegistrationHelper-Bwa2ZvQv.js",
-      "_TrashIcon-BR8BvsCg.js",
-      "_modalForm-B-Lge6F1.js",
-      "_formSubmission-BMBGMKGe.js"
+      "_manageTeamParticipants-D-tkUFuT.js",
+      "_box-CPpntBY1.js",
+      "_publicRegistrationHelper-Bs1QK0pu.js",
+      "_TrashIcon-DtWgkYrI.js",
+      "_modalForm-DOqFgE0d.js",
+      "_formSubmission-BL-UnJSJ.js"
     ]
   },
   "style.css": {
