@@ -4434,7 +4434,7 @@ option:disabled {
 }
 .reactIframeLayout{
     width: 100%;
-    height: calc(100vh - 73px);
+    height: 2000px;
     /* height: 124%; */
     /* display: none; */
     z-index: 99999;
