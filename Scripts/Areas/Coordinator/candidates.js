@@ -1550,7 +1550,7 @@ var allowedRegIdNumbers = [];
           }
         }
 
-        if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0) {
+        if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0 && userRegId) {
           if (!allowedRegIdNumbers.filter(x => x.RegistrationNumber == userRegId).length) {
             alert("Please enter valid registration id", "e");
             return;
@@ -1669,7 +1669,7 @@ var allowedRegIdNumbers = [];
           }
         }
 
-        if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0) {
+        if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0 && userRegId) {
           if (!allowedRegIdNumbers.filter(x => x.RegistrationNumber == userRegId).length) {
             alert("Please enter valid registration id", "e");
             return;
