@@ -1,35 +1,42 @@
 {
-  "_ReactToastify-yLFHQUz1.js": {
-    "file": "dist/ReactToastify-yLFHQUz1.js",
+  "_ReactToastify-D4Raw86F.js": {
+    "file": "dist/ReactToastify-D4Raw86F.js",
     "name": "ReactToastify",
     "imports": [
       "src/web/mainweb.jsx",
       "_clsx-B-dksMZM.js"
     ]
   },
-  "_TrashIcon-C6gXtQVj.js": {
-    "file": "dist/TrashIcon-C6gXtQVj.js",
+  "_TrashIcon-DkH31bI9.js": {
+    "file": "dist/TrashIcon-DkH31bI9.js",
     "name": "TrashIcon",
     "imports": [
       "src/web/mainweb.jsx"
     ]
   },
-  "_XCircleIcon-rumwEjFB.js": {
-    "file": "dist/XCircleIcon-rumwEjFB.js",
+  "_XCircleIcon-BeByb-PC.js": {
+    "file": "dist/XCircleIcon-BeByb-PC.js",
     "name": "XCircleIcon",
     "imports": [
       "src/web/mainweb.jsx"
     ]
   },
-  "_authContext-LkN8JKnh.js": {
-    "file": "dist/authContext-LkN8JKnh.js",
+  "_XMarkIcon-D2bjrMzO.js": {
+    "file": "dist/XMarkIcon-D2bjrMzO.js",
+    "name": "XMarkIcon",
+    "imports": [
+      "src/web/mainweb.jsx"
+    ]
+  },
+  "_authContext-BD8HGNMr.js": {
+    "file": "dist/authContext-BD8HGNMr.js",
     "name": "authContext",
     "imports": [
       "src/web/mainweb.jsx"
     ]
   },
-  "_box--ubuvYBi.js": {
-    "file": "dist/box--ubuvYBi.js",
+  "_box-CDiPABkR.js": {
+    "file": "dist/box-CDiPABkR.js",
     "name": "box",
     "imports": [
       "src/web/mainweb.jsx",
@@ -40,31 +47,31 @@
     "file": "dist/clsx-B-dksMZM.js",
     "name": "clsx"
   },
-  "_computeTotalAmount-MJ9ZumwH.js": {
-    "file": "dist/computeTotalAmount-MJ9ZumwH.js",
+  "_computeTotalAmount-DrvFMEBG.js": {
+    "file": "dist/computeTotalAmount-DrvFMEBG.js",
     "name": "computeTotalAmount",
     "imports": [
       "src/web/mainweb.jsx"
     ]
   },
-  "_dialog-DnCvuUHD.js": {
-    "file": "dist/dialog-DnCvuUHD.js",
+  "_dialog-Y9Nr_3Hj.js": {
+    "file": "dist/dialog-Y9Nr_3Hj.js",
     "name": "dialog",
     "imports": [
       "src/web/mainweb.jsx"
     ]
   },
-  "_formSubmission-CXMVdLiV.js": {
-    "file": "dist/formSubmission-CXMVdLiV.js",
+  "_formSubmission-CJ4iGBvp.js": {
+    "file": "dist/formSubmission-CJ4iGBvp.js",
     "name": "formSubmission",
     "imports": [
       "src/web/mainweb.jsx",
-      "_index.esm-D1hptpIS.js",
-      "_renderComponents-0aiIcmKE.js"
+      "_index.esm-CS3ZTouT.js",
+      "_renderComponents-D2RhMDzp.js"
     ]
   },
-  "_httpService-DIN8lNTx.js": {
-    "file": "dist/httpService-DIN8lNTx.js",
+  "_httpService-o4uMm2B_.js": {
+    "file": "dist/httpService-o4uMm2B_.js",
     "name": "httpService",
     "imports": [
       "_index-BtuGy7By.js",
@@ -75,8 +82,8 @@
     "file": "dist/index-BtuGy7By.js",
     "name": "index"
   },
-  "_index.esm-D1hptpIS.js": {
-    "file": "dist/index.esm-D1hptpIS.js",
+  "_index.esm-CS3ZTouT.js": {
+    "file": "dist/index.esm-CS3ZTouT.js",
     "name": "index.esm",
     "imports": [
       "src/web/mainweb.jsx"
@@ -86,101 +93,104 @@
     "file": "dist/lazyFunction-CEQZ3rnc.js",
     "name": "lazyFunction"
   },
-  "_manageTeamParticipants-Dh2L5jly.js": {
-    "file": "dist/manageTeamParticipants-Dh2L5jly.js",
+  "_manageTeamParticipants-DmVM44V2.js": {
+    "file": "dist/manageTeamParticipants-DmVM44V2.js",
     "name": "manageTeamParticipants",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_useBackend-JUe05kUa.js"
+      "_useBackend-C31SrMjD.js"
     ],
     "dynamicImports": [
       "src/components/teamMembers.jsx"
     ]
   },
-  "_modalForm-Dz475hhJ.js": {
-    "file": "dist/modalForm-Dz475hhJ.js",
+  "_modalForm-CYmWhm1Z.js": {
+    "file": "dist/modalForm-CYmWhm1Z.js",
     "name": "modalForm",
     "imports": [
       "src/web/mainweb.jsx",
-      "_dialog-DnCvuUHD.js",
-      "_manageTeamParticipants-Dh2L5jly.js"
+      "_dialog-Y9Nr_3Hj.js",
+      "_manageTeamParticipants-DmVM44V2.js"
     ]
   },
-  "_pagination-CW2PDKqT.js": {
-    "file": "dist/pagination-CW2PDKqT.js",
+  "_pagination-EZsgMLP5.js": {
+    "file": "dist/pagination-EZsgMLP5.js",
     "name": "pagination",
     "imports": [
       "src/web/mainweb.jsx",
-      "_computeTotalAmount-MJ9ZumwH.js"
+      "_computeTotalAmount-DrvFMEBG.js"
     ]
   },
-  "_publicRegistrationHelper-Bsys-W2H.js": {
-    "file": "dist/publicRegistrationHelper-Bsys-W2H.js",
+  "_publicRegistrationHelper-CEcj6wY1.js": {
+    "file": "dist/publicRegistrationHelper-CEcj6wY1.js",
     "name": "publicRegistrationHelper",
     "imports": [
       "src/web/mainweb.jsx",
-      "_httpService-DIN8lNTx.js"
+      "_httpService-o4uMm2B_.js",
+      "_computeTotalAmount-DrvFMEBG.js"
     ]
   },
-  "_react-confetti-DqsSoKka.js": {
-    "file": "dist/react-confetti-DqsSoKka.js",
+  "_react-confetti-C3BcGBHy.js": {
+    "file": "dist/react-confetti-C3BcGBHy.js",
     "name": "react-confetti",
     "imports": [
       "src/web/mainweb.jsx"
     ]
   },
-  "_renderComponents-0aiIcmKE.js": {
-    "file": "dist/renderComponents-0aiIcmKE.js",
+  "_renderComponents-D2RhMDzp.js": {
+    "file": "dist/renderComponents-D2RhMDzp.js",
     "name": "renderComponents",
     "imports": [
       "src/web/mainweb.jsx",
-      "_useBackend-JUe05kUa.js",
+      "_useBackend-C31SrMjD.js",
       "_utilities-CN4lTu6a.js",
-      "_validationMessage-ZqVF78zq.js",
-      "_index.esm-D1hptpIS.js",
+      "_validationMessage-BN0a_YZD.js",
+      "_index.esm-CS3ZTouT.js",
       "_clsx-B-dksMZM.js",
-      "_computeTotalAmount-MJ9ZumwH.js",
-      "_manageTeamParticipants-Dh2L5jly.js",
-      "_httpService-DIN8lNTx.js",
-      "_index-BtuGy7By.js"
+      "_computeTotalAmount-DrvFMEBG.js",
+      "_manageTeamParticipants-DmVM44V2.js",
+      "_httpService-o4uMm2B_.js",
+      "_index-BtuGy7By.js",
+      "_box-CDiPABkR.js",
+      "_XMarkIcon-D2bjrMzO.js"
     ]
   },
-  "_renderRegistrationForm-YXYBu2nc.js": {
-    "file": "dist/renderRegistrationForm-YXYBu2nc.js",
+  "_renderRegistrationForm-D5kKP0hz.js": {
+    "file": "dist/renderRegistrationForm-D5kKP0hz.js",
     "name": "renderRegistrationForm",
     "imports": [
       "src/web/mainweb.jsx",
-      "_useBackend-JUe05kUa.js",
-      "_useConfirmation-BQmaB_dQ.js",
-      "_httpService-DIN8lNTx.js",
+      "_useBackend-C31SrMjD.js",
+      "_useConfirmation-DFI2cW9b.js",
+      "_httpService-o4uMm2B_.js",
       "_utilities-CN4lTu6a.js",
-      "_renderComponents-0aiIcmKE.js",
-      "_box--ubuvYBi.js",
-      "_publicRegistrationHelper-Bsys-W2H.js",
-      "_dialog-DnCvuUHD.js",
-      "_computeTotalAmount-MJ9ZumwH.js",
-      "_TrashIcon-C6gXtQVj.js",
-      "_modalForm-Dz475hhJ.js",
-      "_formSubmission-CXMVdLiV.js"
+      "_renderComponents-D2RhMDzp.js",
+      "_box-CDiPABkR.js",
+      "_publicRegistrationHelper-CEcj6wY1.js",
+      "_dialog-Y9Nr_3Hj.js",
+      "_computeTotalAmount-DrvFMEBG.js",
+      "_TrashIcon-DkH31bI9.js",
+      "_modalForm-CYmWhm1Z.js",
+      "_formSubmission-CJ4iGBvp.js"
     ]
   },
-  "_useBackend-JUe05kUa.js": {
-    "file": "dist/useBackend-JUe05kUa.js",
+  "_useBackend-C31SrMjD.js": {
+    "file": "dist/useBackend-C31SrMjD.js",
     "name": "useBackend",
     "imports": [
       "src/web/mainweb.jsx",
-      "_httpService-DIN8lNTx.js"
+      "_httpService-o4uMm2B_.js"
     ]
   },
-  "_useConfirmation-BQmaB_dQ.js": {
-    "file": "dist/useConfirmation-BQmaB_dQ.js",
+  "_useConfirmation-DFI2cW9b.js": {
+    "file": "dist/useConfirmation-DFI2cW9b.js",
     "name": "useConfirmation",
     "imports": [
       "src/web/mainweb.jsx",
       "_utilities-CN4lTu6a.js",
-      "_dialog-DnCvuUHD.js",
-      "_computeTotalAmount-MJ9ZumwH.js"
+      "_dialog-Y9Nr_3Hj.js",
+      "_computeTotalAmount-DrvFMEBG.js"
     ]
   },
   "_utilities-CN4lTu6a.js": {
@@ -191,106 +201,110 @@
     "file": "dist/v4-BKT09osN.js",
     "name": "v4"
   },
-  "_validationMessage-ZqVF78zq.js": {
-    "file": "dist/validationMessage-ZqVF78zq.js",
+  "_validationMessage-BN0a_YZD.js": {
+    "file": "dist/validationMessage-BN0a_YZD.js",
     "name": "validationMessage",
     "imports": [
       "src/web/mainweb.jsx"
     ]
   },
   "src/components/teamMembers.jsx": {
-    "file": "dist/teamMembers-1kkArhN6.js",
+    "file": "dist/teamMembers-C9yBO0JZ.js",
     "name": "teamMembers",
     "src": "src/components/teamMembers.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_index.esm-D1hptpIS.js",
-      "_httpService-DIN8lNTx.js",
+      "_index.esm-CS3ZTouT.js",
+      "_httpService-o4uMm2B_.js",
       "_utilities-CN4lTu6a.js",
-      "_validationMessage-ZqVF78zq.js",
-      "_dialog-DnCvuUHD.js",
-      "_renderComponents-0aiIcmKE.js",
-      "_publicRegistrationHelper-Bsys-W2H.js",
-      "_modalForm-Dz475hhJ.js",
-      "_XCircleIcon-rumwEjFB.js",
+      "_validationMessage-BN0a_YZD.js",
+      "_dialog-Y9Nr_3Hj.js",
+      "_renderComponents-D2RhMDzp.js",
+      "_publicRegistrationHelper-CEcj6wY1.js",
+      "_modalForm-CYmWhm1Z.js",
+      "_XCircleIcon-BeByb-PC.js",
       "_index-BtuGy7By.js",
-      "_useBackend-JUe05kUa.js",
+      "_useBackend-C31SrMjD.js",
       "_clsx-B-dksMZM.js",
-      "_computeTotalAmount-MJ9ZumwH.js",
-      "_manageTeamParticipants-Dh2L5jly.js"
+      "_computeTotalAmount-DrvFMEBG.js",
+      "_manageTeamParticipants-DmVM44V2.js",
+      "_box-CDiPABkR.js",
+      "_XMarkIcon-D2bjrMzO.js"
     ]
   },
   "src/components/viewParticipant.jsx": {
-    "file": "dist/viewParticipant-DyZ1xOGZ.js",
+    "file": "dist/viewParticipant-F0K7g18U.js",
     "name": "viewParticipant",
     "src": "src/components/viewParticipant.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_box--ubuvYBi.js",
-      "_modalForm-Dz475hhJ.js",
-      "_formSubmission-CXMVdLiV.js",
-      "_useBackend-JUe05kUa.js",
-      "_publicRegistrationHelper-Bsys-W2H.js",
-      "_renderRegistrationForm-YXYBu2nc.js",
-      "_httpService-DIN8lNTx.js",
+      "_box-CDiPABkR.js",
+      "_modalForm-CYmWhm1Z.js",
+      "_formSubmission-CJ4iGBvp.js",
+      "_useBackend-C31SrMjD.js",
+      "_publicRegistrationHelper-CEcj6wY1.js",
+      "_renderRegistrationForm-D5kKP0hz.js",
+      "_httpService-o4uMm2B_.js",
+      "_computeTotalAmount-DrvFMEBG.js",
       "_utilities-CN4lTu6a.js",
-      "_dialog-DnCvuUHD.js",
-      "_manageTeamParticipants-Dh2L5jly.js",
-      "_index.esm-D1hptpIS.js",
-      "_renderComponents-0aiIcmKE.js",
-      "_validationMessage-ZqVF78zq.js",
+      "_dialog-Y9Nr_3Hj.js",
+      "_manageTeamParticipants-DmVM44V2.js",
+      "_index.esm-CS3ZTouT.js",
+      "_renderComponents-D2RhMDzp.js",
+      "_validationMessage-BN0a_YZD.js",
       "_clsx-B-dksMZM.js",
-      "_computeTotalAmount-MJ9ZumwH.js",
       "_index-BtuGy7By.js",
-      "_useConfirmation-BQmaB_dQ.js",
-      "_TrashIcon-C6gXtQVj.js"
+      "_XMarkIcon-D2bjrMzO.js",
+      "_useConfirmation-DFI2cW9b.js",
+      "_TrashIcon-DkH31bI9.js"
     ]
   },
   "src/web/AssignJudgesToCompetition.jsx": {
-    "file": "dist/AssignJudgesToCompetition-D0nLbYdg.js",
+    "file": "dist/AssignJudgesToCompetition-SLP233uy.js",
     "name": "AssignJudgesToCompetition",
     "src": "src/web/AssignJudgesToCompetition.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
       "_index-BtuGy7By.js",
-      "_authContext-LkN8JKnh.js"
+      "_authContext-BD8HGNMr.js",
+      "_XMarkIcon-D2bjrMzO.js"
     ]
   },
   "src/web/CompetitionSchedule/automateSchedule.jsx": {
-    "file": "dist/automateSchedule-XvcG-SlP.js",
+    "file": "dist/automateSchedule-BsIShqrq.js",
     "name": "automateSchedule",
     "src": "src/web/CompetitionSchedule/automateSchedule.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_box--ubuvYBi.js",
-      "_useBackend-JUe05kUa.js",
-      "_httpService-DIN8lNTx.js",
+      "_box-CDiPABkR.js",
+      "_useBackend-C31SrMjD.js",
+      "_httpService-o4uMm2B_.js",
       "_lazyFunction-CEQZ3rnc.js",
       "_utilities-CN4lTu6a.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/Coordinator/candidatesDetailedList.jsx": {
-    "file": "dist/candidatesDetailedList-BxZZMBVP.js",
+    "file": "dist/candidatesDetailedList-BNOtcMJs.js",
     "name": "candidatesDetailedList",
     "src": "src/web/Coordinator/candidatesDetailedList.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_index.esm-D1hptpIS.js",
-      "_box--ubuvYBi.js",
-      "_pagination-CW2PDKqT.js",
-      "_useBackend-JUe05kUa.js",
-      "_useConfirmation-BQmaB_dQ.js",
-      "_computeTotalAmount-MJ9ZumwH.js",
-      "_publicRegistrationHelper-Bsys-W2H.js",
-      "_httpService-DIN8lNTx.js",
+      "_index.esm-CS3ZTouT.js",
+      "_box-CDiPABkR.js",
+      "_pagination-EZsgMLP5.js",
+      "_useBackend-C31SrMjD.js",
+      "_useConfirmation-DFI2cW9b.js",
+      "_computeTotalAmount-DrvFMEBG.js",
+      "_publicRegistrationHelper-CEcj6wY1.js",
+      "_httpService-o4uMm2B_.js",
       "_utilities-CN4lTu6a.js",
-      "_dialog-DnCvuUHD.js",
+      "_dialog-Y9Nr_3Hj.js",
       "_index-BtuGy7By.js"
     ],
     "dynamicImports": [
@@ -298,39 +312,39 @@
     ]
   },
   "src/web/Coordinator/liveResultPresentation.jsx": {
-    "file": "dist/liveResultPresentation-soRj2q3U.js",
+    "file": "dist/liveResultPresentation-DFnLgOA0.js",
     "name": "liveResultPresentation",
     "src": "src/web/Coordinator/liveResultPresentation.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_react-confetti-DqsSoKka.js",
-      "_box--ubuvYBi.js",
-      "_useBackend-JUe05kUa.js",
+      "_react-confetti-C3BcGBHy.js",
+      "_box-CDiPABkR.js",
+      "_useBackend-C31SrMjD.js",
       "_lazyFunction-CEQZ3rnc.js",
       "_utilities-CN4lTu6a.js",
-      "_httpService-DIN8lNTx.js",
+      "_httpService-o4uMm2B_.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/Coordinator/resultPresentation.jsx": {
-    "file": "dist/resultPresentation-kBTqoKJy.js",
+    "file": "dist/resultPresentation-17zHoZHm.js",
     "name": "resultPresentation",
     "src": "src/web/Coordinator/resultPresentation.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_react-confetti-DqsSoKka.js",
-      "_box--ubuvYBi.js",
-      "_useBackend-JUe05kUa.js",
+      "_react-confetti-C3BcGBHy.js",
+      "_box-CDiPABkR.js",
+      "_useBackend-C31SrMjD.js",
       "_lazyFunction-CEQZ3rnc.js",
       "_utilities-CN4lTu6a.js",
-      "_httpService-DIN8lNTx.js",
+      "_httpService-o4uMm2B_.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/JudgeScoreCard.jsx": {
-    "file": "dist/JudgeScoreCard-83YLpwuU.js",
+    "file": "dist/JudgeScoreCard-BbglZGfc.js",
     "name": "JudgeScoreCard",
     "src": "src/web/JudgeScoreCard.jsx",
     "isDynamicEntry": true,
@@ -340,7 +354,7 @@
     ]
   },
   "src/web/MainPageUsersAndRoles.jsx": {
-    "file": "dist/MainPageUsersAndRoles-D6cnyHwX.js",
+    "file": "dist/MainPageUsersAndRoles-CmsjyCr4.js",
     "name": "MainPageUsersAndRoles",
     "src": "src/web/MainPageUsersAndRoles.jsx",
     "isDynamicEntry": true,
@@ -353,59 +367,60 @@
     ]
   },
   "src/web/UsersAndRoles.jsx": {
-    "file": "dist/UsersAndRoles-BhHnGXb_.js",
+    "file": "dist/UsersAndRoles-CosS5lqY.js",
     "name": "UsersAndRoles",
     "src": "src/web/UsersAndRoles.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_box--ubuvYBi.js",
-      "_useConfirmation-BQmaB_dQ.js",
+      "_box-CDiPABkR.js",
+      "_useConfirmation-DFI2cW9b.js",
       "_utilities-CN4lTu6a.js",
-      "_index.esm-D1hptpIS.js",
-      "_renderComponents-0aiIcmKE.js",
-      "_modalForm-Dz475hhJ.js",
-      "_XCircleIcon-rumwEjFB.js",
-      "_pagination-CW2PDKqT.js",
-      "_TrashIcon-C6gXtQVj.js",
-      "_useBackend-JUe05kUa.js",
-      "_dialog-DnCvuUHD.js",
-      "_computeTotalAmount-MJ9ZumwH.js",
-      "_validationMessage-ZqVF78zq.js",
+      "_index.esm-CS3ZTouT.js",
+      "_renderComponents-D2RhMDzp.js",
+      "_modalForm-CYmWhm1Z.js",
+      "_XCircleIcon-BeByb-PC.js",
+      "_pagination-EZsgMLP5.js",
+      "_TrashIcon-DkH31bI9.js",
+      "_useBackend-C31SrMjD.js",
+      "_dialog-Y9Nr_3Hj.js",
+      "_computeTotalAmount-DrvFMEBG.js",
+      "_validationMessage-BN0a_YZD.js",
       "_clsx-B-dksMZM.js",
-      "_manageTeamParticipants-Dh2L5jly.js",
-      "_httpService-DIN8lNTx.js",
-      "_index-BtuGy7By.js"
+      "_manageTeamParticipants-DmVM44V2.js",
+      "_httpService-o4uMm2B_.js",
+      "_index-BtuGy7By.js",
+      "_XMarkIcon-D2bjrMzO.js"
     ]
   },
   "src/web/forgotPassword.jsx": {
-    "file": "dist/forgotPassword-CLtBZTYU.js",
+    "file": "dist/forgotPassword-KlxWqLSW.js",
     "name": "forgotPassword",
     "src": "src/web/forgotPassword.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
       "_index-BtuGy7By.js",
-      "_ReactToastify-yLFHQUz1.js",
+      "_ReactToastify-D4Raw86F.js",
       "_clsx-B-dksMZM.js"
     ]
   },
   "src/web/loginPage.jsx": {
-    "file": "dist/loginPage-D_M08JlH.js",
+    "file": "dist/loginPage-B-F5ZUT_.js",
     "name": "loginPage",
     "src": "src/web/loginPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_ReactToastify-yLFHQUz1.js",
-      "_authContext-LkN8JKnh.js",
-      "_httpService-DIN8lNTx.js",
+      "_ReactToastify-D4Raw86F.js",
+      "_authContext-BD8HGNMr.js",
+      "_httpService-o4uMm2B_.js",
       "_clsx-B-dksMZM.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/mainweb.jsx": {
-    "file": "dist/mainweb-BQzHIMLj.js",
+    "file": "dist/mainweb-BeiKRFEr.js",
     "name": "mainweb",
     "src": "src/web/mainweb.jsx",
     "isEntry": true,
@@ -414,7 +429,7 @@
       "src/web/CompetitionSchedule/automateSchedule.jsx",
       "src/web/Coordinator/candidatesDetailedList.jsx",
       "src/web/managePublicRegistrationForm.jsx",
-      "_manageTeamParticipants-Dh2L5jly.js",
+      "_manageTeamParticipants-DmVM44V2.js",
       "src/web/openAiCompetitionStructure.jsx",
       "src/web/publicRegistrationForm.jsx",
       "src/web/JudgeScoreCard.jsx",
@@ -426,72 +441,74 @@
     ]
   },
   "src/web/managePublicRegistrationForm.jsx": {
-    "file": "dist/managePublicRegistrationForm-CM3XDMRN.js",
+    "file": "dist/managePublicRegistrationForm-DoupiTaG.js",
     "name": "managePublicRegistrationForm",
     "src": "src/web/managePublicRegistrationForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_box--ubuvYBi.js",
-      "_useBackend-JUe05kUa.js",
-      "_httpService-DIN8lNTx.js",
-      "_formSubmission-CXMVdLiV.js",
-      "_renderComponents-0aiIcmKE.js",
+      "_box-CDiPABkR.js",
+      "_useBackend-C31SrMjD.js",
+      "_httpService-o4uMm2B_.js",
+      "_formSubmission-CJ4iGBvp.js",
+      "_renderComponents-D2RhMDzp.js",
       "_v4-BKT09osN.js",
-      "_TrashIcon-C6gXtQVj.js",
+      "_TrashIcon-DkH31bI9.js",
       "_utilities-CN4lTu6a.js",
       "_index-BtuGy7By.js",
-      "_index.esm-D1hptpIS.js",
-      "_validationMessage-ZqVF78zq.js",
+      "_index.esm-CS3ZTouT.js",
+      "_validationMessage-BN0a_YZD.js",
       "_clsx-B-dksMZM.js",
-      "_computeTotalAmount-MJ9ZumwH.js",
-      "_manageTeamParticipants-Dh2L5jly.js"
+      "_computeTotalAmount-DrvFMEBG.js",
+      "_manageTeamParticipants-DmVM44V2.js",
+      "_XMarkIcon-D2bjrMzO.js"
     ]
   },
   "src/web/openAiCompetitionStructure.jsx": {
-    "file": "dist/openAiCompetitionStructure-BiANMgMw.js",
+    "file": "dist/openAiCompetitionStructure-B7rDKJp3.js",
     "name": "openAiCompetitionStructure",
     "src": "src/web/openAiCompetitionStructure.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_index.esm-D1hptpIS.js",
-      "_httpService-DIN8lNTx.js",
+      "_index.esm-CS3ZTouT.js",
+      "_httpService-o4uMm2B_.js",
       "_utilities-CN4lTu6a.js",
-      "_validationMessage-ZqVF78zq.js",
+      "_validationMessage-BN0a_YZD.js",
       "_v4-BKT09osN.js",
       "_index-BtuGy7By.js"
     ]
   },
   "src/web/publicRegistrationForm.jsx": {
-    "file": "dist/publicRegistrationForm-B7axUWxh.js",
+    "file": "dist/publicRegistrationForm-i_htZajQ.js",
     "name": "publicRegistrationForm",
     "src": "src/web/publicRegistrationForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/web/mainweb.jsx",
-      "_httpService-DIN8lNTx.js",
-      "_renderRegistrationForm-YXYBu2nc.js",
+      "_httpService-o4uMm2B_.js",
+      "_renderRegistrationForm-D5kKP0hz.js",
       "_index-BtuGy7By.js",
-      "_useBackend-JUe05kUa.js",
-      "_useConfirmation-BQmaB_dQ.js",
+      "_useBackend-C31SrMjD.js",
+      "_useConfirmation-DFI2cW9b.js",
       "_utilities-CN4lTu6a.js",
-      "_dialog-DnCvuUHD.js",
-      "_computeTotalAmount-MJ9ZumwH.js",
-      "_renderComponents-0aiIcmKE.js",
-      "_validationMessage-ZqVF78zq.js",
-      "_index.esm-D1hptpIS.js",
+      "_dialog-Y9Nr_3Hj.js",
+      "_computeTotalAmount-DrvFMEBG.js",
+      "_renderComponents-D2RhMDzp.js",
+      "_validationMessage-BN0a_YZD.js",
+      "_index.esm-CS3ZTouT.js",
       "_clsx-B-dksMZM.js",
-      "_manageTeamParticipants-Dh2L5jly.js",
-      "_box--ubuvYBi.js",
-      "_publicRegistrationHelper-Bsys-W2H.js",
-      "_TrashIcon-C6gXtQVj.js",
-      "_modalForm-Dz475hhJ.js",
-      "_formSubmission-CXMVdLiV.js"
+      "_manageTeamParticipants-DmVM44V2.js",
+      "_box-CDiPABkR.js",
+      "_XMarkIcon-D2bjrMzO.js",
+      "_publicRegistrationHelper-CEcj6wY1.js",
+      "_TrashIcon-DkH31bI9.js",
+      "_modalForm-CYmWhm1Z.js",
+      "_formSubmission-CJ4iGBvp.js"
     ]
   },
   "style.css": {
-    "file": "dist/style-BsxlpBg7.css",
+    "file": "dist/style-CwFW_6Hd.css",
     "src": "style.css"
   }
 }
