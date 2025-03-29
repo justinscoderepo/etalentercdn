@@ -1464,7 +1464,7 @@ var allowedRegIdNumbers = [];
   });
   $("body").on(
     "keyup",
-    ".Candidateleftlist .eachcandidatename,.Candidateleftlist .eachcandidatedob,.Candidateleftlist .eachcandidatemobile,.Candidateleftlist .eachcandidateimage,.Candidateleftlist .eachcandidateemail",
+    ".Candidateleftlist .eachcandidatename,.Candidateleftlist .eachcandidatedob,.Candidateleftlist .eachcandidatemobile,.Candidateleftlist .eachcandidateimage,.Candidateleftlist .eachcandidateemail,.Candidateleftlist .eachcandidategender",
     function (e) {
       if (e.originalEvent) {
         e.stopPropagation();
@@ -1484,6 +1484,14 @@ var allowedRegIdNumbers = [];
         } else {
           cl.find(".form-group").removeClass("is-error");
         }
+
+        if (cl.find(".eachcandidatemobile").length > 0 && !cl.find(".eachcandidatemobile").val()) {
+          cl.find(".form-group").addClass("is-error");
+        }
+        else {
+          cl.find(".form-group").removeClass("is-error");
+        }
+
         if (cl.find(".eachcandidatedob").val()) {
           if (
             !cl.find(".eachcandidatedob").val() ||
@@ -1503,7 +1511,7 @@ var allowedRegIdNumbers = [];
 
   $("body").on(
     "change",
-    ".Candidateleftlist .eachcandidatename,.Candidateleftlist .eachcandidatedob,.Candidateleftlist .eachcandidateregid,.Candidateleftlist .eachcandidateimage,.Candidateleftlist .eachcandidatemobile,.Candidateleftlist .eachcandidateemail",
+    ".Candidateleftlist .eachcandidatename,.Candidateleftlist .eachcandidatedob,.Candidateleftlist .eachcandidateregid,.Candidateleftlist .eachcandidateimage,.Candidateleftlist .eachcandidatemobile,.Candidateleftlist .eachcandidateemail,.Candidateleftlist .eachcandidategender",
     function (e, force) {
       if (e.originalEvent || force) {
         e.stopPropagation();
@@ -1520,6 +1528,13 @@ var allowedRegIdNumbers = [];
           alert("Please enter candidate name", "e");
           return;
         }
+        
+        if(cl.find(".eachcandidategender").length > 0 && !cl.find(".eachcandidategender").val()){
+          alert("Please enter candidate gender", "e");
+          return;
+        }
+          
+
         if (cl.find(".eachcandidatedob").val()) {
           if (
             !cl.find(".eachcandidatedob").val() ||

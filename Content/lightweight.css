@@ -2857,12 +2857,16 @@ input.dateinput {
     padding: 0;
 }
 
-#bulkusersleftlist input.form-control {
+#bulkusersleftlist input.form-control, #bulkusersleftlist select.form-control {
     border-left: 1px solid #ebe9e9;
     border-right: 1px solid #ebe9e9;
     line-height: 47px;
     padding: 1px 10px;
     /* height: 42px; */
+}
+
+#bulkusersleftlist select.form-control{
+    height: 47px !important;
 }
 
 #bulkusersleftlist input.dateinput {
