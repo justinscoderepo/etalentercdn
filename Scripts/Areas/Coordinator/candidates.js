@@ -144,7 +144,7 @@ var allowedRegIdNumbers = [];
             if(typeof allowedRegIdNumbers !== "undefined" && allowedRegIdNumbers?.length>0){
                 let matchingRow=allowedRegIdNumbers.find(x=>x.RegistrationNumber==value);
                 if(!matchingRow){
-                    $(this).closest(".form-group").addClass("alert-danger");
+                    $(this).closest(".form-group").addClass("invalidRegistrationNumber");
                     $(this).closest(".form-group").attr("title","Invalid Registration Number");
                 }
             }
@@ -1684,6 +1684,14 @@ var allowedRegIdNumbers = [];
           }
         }
 
+        let gender = $(".addnewbox [name='UsersModel[UserNameTitle]']").val();
+        if($(".addnewbox [name='UsersModel[UserNameTitle]']").length > 0) {
+          if(!gender) {
+            alert("Please enter gender", "e");
+            return;
+          }
+        }
+
         if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0 && userRegId) {
           if (!allowedRegIdNumbers.filter(x => x.RegistrationNumber == userRegId).length) {
             alert("Please enter valid registration id", "e");
@@ -1825,8 +1833,8 @@ var allowedRegIdNumbers = [];
             .css({
               "background-image": 'url("' + data.Results + '")',
               "background-size": "cover",
-              width: "46px",
-              height: "46px",
+              width: "38px",
+              height: "38px",
               "background-position": "center",
               "background-repeat": "no-repeat",
             })

@@ -2855,14 +2855,29 @@ input.dateinput {
 #bulkusersleftlist .form-group {
     margin-bottom: 2px;
     padding: 0;
+    /* display: flex; */
+    float: none;
+    display: flex;
+    flex-grow: 1;
+}
+
+#bulkusersleftlist .form-group > *{
+    display:flex
+}
+
+#bulkusersleftlist .form-group > .uploadimagebutton.btn{
+        width: 29px !important;
+        max-width: 10% !important;
+        min-width: 0px !important;
+        padding: 8px 8px 10px !important;
 }
 
 #bulkusersleftlist input.form-control, #bulkusersleftlist select.form-control {
     border-left: 1px solid #ebe9e9;
     border-right: 1px solid #ebe9e9;
     line-height: 47px;
-    padding: 1px 10px;
-    /* height: 42px; */
+    padding: 1px 4px;
+    font-size: 12px;
 }
 
 #bulkusersleftlist select.form-control{
@@ -2908,9 +2923,15 @@ input.dateinput {
     text-align: center;
     white-space: nowrap;
     white-space: nowrap;
+    width: auto;
+    flex: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: auto;
+    max-width: min-content;
 }
 
-#bulkusersleftlist { margin-top: 24px; }
+#bulkusersleftlist {margin-top: 28px;display: flex;flex-flow: column;}
 
 #bulkusersleftlist .form-group:after, #bulkusersleftlist .form-group:before { 
     height: 0px;
@@ -2926,9 +2947,17 @@ input.dateinput {
     height: 52px !important;
     /* overflow: hidden; */
     position: relative;
+    justify-content: space-between;
+    display: flex
+;
 }
 
-#bulkusersleftlist > .Candidateleftlist { height: 51px !important; }
+#bulkusersleftlist > .Candidateleftlist {height: 51px !important;/* justify-content: space-between; *//* display: flex; */}
+
+#bulkusersleftlist > .Candidateleftlist > div {
+    display:flex;
+    flex-grow: 1;
+}
 
 .leftmenu li a.active {
         
@@ -4602,7 +4631,7 @@ select#modeSelector option {
 }
 
 span.competitionIdentityNumber {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 
