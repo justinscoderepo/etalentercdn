@@ -1782,7 +1782,7 @@ var allowedRegIdNumbers = [];
 
   $("body").on("change", "[data-showfield]", function () {
     if ($(this).prop("checked")) {
-      if ($(this).attr("data-showfieldblock")) {
+       if ($(this).attr("data-showfieldblock")) {
         $("body").append(
           "<style>" +
           $(this).attr("data-showfield") +
