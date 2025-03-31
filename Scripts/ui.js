@@ -1304,6 +1304,8 @@ applymenustyle();
 $(document).trigger("pageload");
 
 window.reactRender = function (path, data) {
+  // document.getElementById("iframeReactBox")?.remove();
+
   let iframe = document.getElementById("iframeReactBox");
   if (iframe == null) {
     /**  <iframe id="iframeReactBox" src="@(Url.Action("IframeRender","SetUp")+"?Version=" + ConfigValues.Get("Version"))" style="width: 100%;
@@ -1316,20 +1318,25 @@ window.reactRender = function (path, data) {
     iframe = document.createElement("iframe");
     iframe.id = "iframeReactBox";
     iframe.src =
-      "/SetUp/IframeRender?Version=" + $("#Version").val() + "&path=" + path;
+      "/SetUp/IframeRender?Version=" + $("#Version").val() + "&path=" + path+"&json="+encodeURIComponent(JSON.stringify(data));
     iframe.className = "reactIframeLayout";
     iframe.style = `position: absolute;
                                     display: none;`;
     $("#iframeDynamicBox").append(iframe);
     window.detectIframeClickAndCloseMenu();
+  }else{
+    iframe.src =
+      "/SetUp/IframeRender?Version=" + $("#Version").val() + "&path=" + path+"&json="+encodeURIComponent(JSON.stringify(data));
   }
   $("#iframeReactBox").show();
   $("#iframeReactBox").css("position", "absolute");
 
-  iframe.contentWindow.postMessage(
-    JSON.stringify({ path: path, data: data }),
-    "*"
-  );
+  // setTimeout(() => {
+    iframe.contentWindow.postMessage(
+      JSON.stringify({ path: path, data: data }),
+      "*"
+    );
+  // }, 1000);
 };
 window.addEventListener("message", function (event) {
   console.log("Message received from the child: " + event.data); // Message received from child

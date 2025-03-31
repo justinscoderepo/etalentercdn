@@ -217,7 +217,7 @@
           });
 
           item.GroupCompetitions = [];
-          debugger;
+          
           let isValid = false;
           for (let i = arrayItems.length; i < arrayItems.length + 200; i++) {
             if ($(this).find("td:eq(" + i + ")").length > 0) {
