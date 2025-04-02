@@ -1,4 +1,4 @@
-﻿.CountMaterial {
+.CountMaterial {
     color: #5b2c94;
     font-size: 25px;
     padding: 12px;
@@ -39,4 +39,4 @@
 
 .dashboardcards > a:nth-child(5n + 0) .countNumber { background: linear-gradient(180deg, #f45ac2 0%, #662252 100%) }
 
-.dashboardcards > a { margin-bottom: 12px }
+.dashboardcards > a {margin-bottom: 12px;margin-left: 0px;/* width: 100%; */}
