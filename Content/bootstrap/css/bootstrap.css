@@ -2291,7 +2291,7 @@ a.badge:focus {
     color: #337ab7;
 }
 
-.list-group-item > .badge { float: right; }
+.list-group-item > .badge {float: right;margin-top: 12px;}
 
 .list-group-item > .badge + .badge { margin-right: 5px; }
 

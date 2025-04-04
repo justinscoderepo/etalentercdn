@@ -2281,6 +2281,7 @@ body > .spinnerboxglobal > .spinnerbox { position: fixed !important; }
     border-bottom: 1px solid #004668;
     border-bottom: 1px solid rgba(0, 70, 104, 0.3215686274509804);
     position: relative;
+    /* display: flex !important; */!i;!;
 }
 
 #coordinatorcompetitionoptdropdown { font-weight: 700; }
@@ -2293,7 +2294,7 @@ body > .spinnerboxglobal > .spinnerbox { position: fixed !important; }
 }
 
 
-.resultsrow .datacolumn { line-height: 40px; }
+.resultsrow .datacolumn {line-height: 40px;/* flex-grow: 1; */}
 
 .loader1 {
     display: block;
@@ -4650,4 +4651,8 @@ a.editItem {
     right: 0px;
     top: 0px;
     height: 50px;
+}
+
+a.ProblematicJudgesCount{
+    padding: 0px 4px;
 }

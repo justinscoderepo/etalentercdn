@@ -1,4 +1,4 @@
-﻿.judgesCount span {
+.judgesCount span {
     background-color: #3c763d;
     border-radius: 19px;
     display: inline-block;
@@ -22,7 +22,7 @@ a.judgesCount { cursor: pointer }
 .judgesscoresublistrow { padding: 0 12px }
 
 .datacolumn.judgescoreview {
-    max-width: 105px;
+    max-width: 153px;
     overflow: visible
 }
 
