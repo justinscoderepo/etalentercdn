@@ -9,7 +9,8 @@ var allowedRegIdNumbers = [];
 (function ($) {
   $(document).ready(function () {
     let eventID = userObj.user.Event;
-    $.post("/EventJson/Get", { EvId: eventID }, function (data) {
+    if(window.location.href.indexOf("BulkParticipants") > -1){
+    $.post("/EventJson/Get", { EvId: eventID,select:"JsonSettings" }, function (data) {
       if (data && data.Results && data.Results.length > 0) {
         let event = data.Results[0];
         try {
@@ -54,18 +55,7 @@ var allowedRegIdNumbers = [];
         }
       }
     });
-
-    // if (eventID == 146) {
-    //   maxCandidateCount = 2;
-    //   maxTeamCount = 2;
-    // }
-    // if (eventID == 155) {
-    //   isPhotoMandatory = true;
-    // }
-    // if (eventID == 144 || eventID == 147 || eventID == 165) {
-    //   maxCandidateCount = 3;
-    //   maxTeamCount = 1;
-    // }
+  }
   });
   var lazyi = 0;
 
@@ -137,19 +127,19 @@ var allowedRegIdNumbers = [];
 
 
     if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0) {
-     
+
       $(".eachcandidateregid").each(function () {
-         let value=$(this).val();
+        let value = $(this).val();
 
-            if(typeof allowedRegIdNumbers !== "undefined" && allowedRegIdNumbers?.length>0){
-                let matchingRow=allowedRegIdNumbers.find(x=>x.RegistrationNumber==value);
-                if(!matchingRow){
-                    $(this).closest(".form-group").addClass("invalidRegistrationNumber");
-                    $(this).closest(".form-group").attr("title","Invalid Registration Number");
-                }
-            }
+        if (typeof allowedRegIdNumbers !== "undefined" && allowedRegIdNumbers?.length > 0) {
+          let matchingRow = allowedRegIdNumbers.find(x => x.RegistrationNumber == value);
+          if (!matchingRow) {
+            $(this).closest(".form-group").addClass("invalidRegistrationNumber");
+            $(this).closest(".form-group").attr("title", "Invalid Registration Number");
+          }
+        }
 
-    }) 
+      })
     }
 
 
@@ -157,27 +147,30 @@ var allowedRegIdNumbers = [];
   });
 
   $("body").on("afterappendcomplete", "#GetParticipantsList", function (e) {
-    if (
-      $("select.organizationlistgroup:last").length == 0 ||
-      ($("select.organizationlistgroup:last").val() &&
-        $("select.organizationlistgroup:last").val() != "all")
-    ) {
-      $(
-        ".newbulkcheckbox,.addnewbox input,.addnewbox button,.addnewbox .btn,.Candidateleftlist .btn"
-      )
-        .prop("disabled", false)
-        .removeClass("disabled");
-      $("[name='UsersModel[UserName]']").attr("placeholder", "Name");
-    } else {
-      $(
-        ".newbulkcheckbox,.addnewbox input,.addnewbox button,.addnewbox .btn,.Candidateleftlist .btn"
-      )
-        .prop("disabled", true)
-        .addClass("disabled");
-      $("[name='UsersModel[UserName]']").attr(
-        "placeholder",
-        "Missing Local/District/State/Zone/Club Name"
-      );
+    debugger;
+    if ($("select.organizationlistgroup").length) {
+      if (
+        $("select.organizationlistgroup:last").length == 0 ||
+        ($("select.organizationlistgroup:last").val() &&
+          $("select.organizationlistgroup:last").val() != "all")
+      ) {
+        $(
+          ".newbulkcheckbox,.addnewbox input,.addnewbox button,.addnewbox .btn,.Candidateleftlist .btn"
+        )
+          .prop("disabled", false)
+          .removeClass("disabled");
+        $("[name='UsersModel[UserName]']").attr("placeholder", "Name");
+      } else {
+        $(
+          ".newbulkcheckbox,.addnewbox input,.addnewbox button,.addnewbox .btn,.Candidateleftlist .btn"
+        )
+          .prop("disabled", true)
+          .addClass("disabled");
+        $("[name='UsersModel[UserName]']").attr(
+          "placeholder",
+          "Missing Local/District/State/Zone/Club Name"
+        );
+      }
     }
 
     $(".checkthiscompetition[competitionstatus=1],.checkthiscompetition[competitionstatus=2],.checkthiscompetition[competitionstatus=4],.checkthiscompetition[competitionstatus=5],.checkthiscompetition[competitionstatus=6]").prop("disabled", true).addClass("disabled");
@@ -1077,6 +1070,7 @@ var allowedRegIdNumbers = [];
     "afterappendcomplete",
     "#competitionstructureheading",
     function (e, data) {
+      debugger;
       console.log($(this).attr("id"));
       if (e.target == e.currentTarget) {
         console.log($(this).attr("id"));
@@ -1257,7 +1251,7 @@ var allowedRegIdNumbers = [];
           );
 
           expectedStartDate.setFullYear(
-            expectedStartDate.getFullYear() - groupMaxAge-1
+            expectedStartDate.getFullYear() - groupMaxAge - 1
           );
 
           expectedStartDate.setDate(expectedStartDate.getDate() + 1);
@@ -1270,7 +1264,7 @@ var allowedRegIdNumbers = [];
           );
 
           expectedEndDate.setFullYear(
-            expectedEndDate.getFullYear() - groupMinAge 
+            expectedEndDate.getFullYear() - groupMinAge
           );
           try {
             let userdob = $.datepicker.parseDate(
@@ -1528,12 +1522,12 @@ var allowedRegIdNumbers = [];
           alert("Please enter candidate name", "e");
           return;
         }
-        
-        if(cl.find(".eachcandidategender").length > 0 && !cl.find(".eachcandidategender").val()){
+
+        if (cl.find(".eachcandidategender").length > 0 && !cl.find(".eachcandidategender").val()) {
           alert("Please enter candidate gender", "e");
           return;
         }
-          
+
 
         if (cl.find(".eachcandidatedob").val()) {
           if (
@@ -1685,8 +1679,8 @@ var allowedRegIdNumbers = [];
         }
 
         let gender = $(".addnewbox [name='UsersModel[UserNameTitle]']").val();
-        if($(".addnewbox [name='UsersModel[UserNameTitle]']").length > 0) {
-          if(!gender) {
+        if ($(".addnewbox [name='UsersModel[UserNameTitle]']").length > 0) {
+          if (!gender) {
             alert("Please enter gender", "e");
             return;
           }
@@ -1782,7 +1776,7 @@ var allowedRegIdNumbers = [];
 
   $("body").on("change", "[data-showfield]", function () {
     if ($(this).prop("checked")) {
-       if ($(this).attr("data-showfieldblock")) {
+      if ($(this).attr("data-showfieldblock")) {
         $("body").append(
           "<style>" +
           $(this).attr("data-showfield") +

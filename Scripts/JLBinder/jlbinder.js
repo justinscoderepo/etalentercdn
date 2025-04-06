@@ -74,7 +74,8 @@ if (jlbindcache) {
   }
 }
 
-var jlbindsessioncache = getsession("bindmanagercache");
+// var jlbindsessioncache = getsession("bindmanagercache");
+var jlbindsessioncache = {} // disabled for used only server cache
 if (jlbindsessioncache) {
   try {
     bindmanager.cache = {
@@ -2746,8 +2747,8 @@ if (!Date.prototype.isValid) {
           if (selectedItems[stn.json]) {
             selectItems = selectedItems[stn.json];
           }
-
-          if (!stn.caching) {
+// enabled stn caching for select query params because not using localcache at the moment
+          if (!stn.caching ||stn.caching || stn.forceselectfilter) {
             if (selectItems) {
               var templatedetailsobj = this.gettemplatedetails(
                 element,
