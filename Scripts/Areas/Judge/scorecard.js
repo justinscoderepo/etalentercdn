@@ -113,19 +113,22 @@ function changeToFinish() {
     "afterappendcomplete",
     "#competitionoptdropdown",
     function (e, data) {
+    
       competitionoptdropdowndata = data.rows;
       $(this).trigger("change");
 
-      if (competitionoptdropdowndata.Results?.length == 0) {
-        $(this).hide();
+      if ( data.rows.Results?.length == 0) {
+        $(this).prop("disabled", true);
         alert(
-          "There are no competitions available/ not assigned to the judge. Please contact the administrator.",
+          "There are no competitions available/ not assigned to this judge. Please contact the administrator.",
           false,
           false,
           false,
           "w",
-          1000000
+          5000
         );
+      }else {
+        $(this).prop("disabled", false);
       }
     }
   );
