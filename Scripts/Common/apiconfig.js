@@ -267,7 +267,7 @@ $(function () {
           settings.url = "http://localhost:8888" + settings.url;
         }
         else if(window.location.href.indexOf("http")>-1){
-          settings.url = "https://etalenterapi.azurewebsites.net" + settings.url;
+          settings.url = window.siteConfig.apiUrl + settings.url;
         }
 
 
@@ -426,7 +426,7 @@ $(function () {
               requestUrl = "http://localhost:8888" + requestUrl;
             }
           } else if(requestUrl.indexOf("http") == -1){
-            requestUrl = "https://etalenterapi.azurewebsites.net" + requestUrl;
+            requestUrl = window.siteConfig.apiUrl + requestUrl;
           }
 
           myWorker.postMessage([
