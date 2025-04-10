@@ -339,11 +339,13 @@
     border-radius: 38px;
     box-shadow: 0 12px 20px -12px #000000;
     box-shadow: 0 12px 20px -12px rgba(0, 0, 0, .35);
-    height: 250px;
+    max-height: 250px;
+    height: auto;
     min-width: 0%;
     position: relative;
     width: 118px;
     width: auto;
+    max-width: 100%;
 }
 .event { width: 100%; }
 

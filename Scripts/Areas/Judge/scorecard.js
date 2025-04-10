@@ -12,6 +12,10 @@ function changeToFinish() {
     "#competitionoptdropdown option:selected"
   ).attr("allotmentId");
 
+  newcurrentcompetitiondata.competitionCompetitionStatus = $(
+    "#competitionoptdropdown option:selected"
+  ).attr("competitionCompetitionStatus");
+
   $.post(
     "/JudgesAllotmentJson/SaveJudgeStatus",
     newcurrentcompetitiondata,
