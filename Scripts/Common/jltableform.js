@@ -668,9 +668,9 @@ function jldeleterow(f, th, action, callback) {
           }
         },
         error: function (res) {
-          if (res?.responseJSON?.SecurityValidations?.length > 0) {
+          if (res&&res.responseJSON&&res.responseJSON.SecurityValidations&&res.responseJSON.SecurityValidations.length > 0) {
             alert(
-              res?.responseJSON?.SecurityValidations[0],
+              res.responseJSON.SecurityValidations[0],
               false,
               false,
               "SecurityValidations",

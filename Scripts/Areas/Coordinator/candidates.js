@@ -147,7 +147,6 @@ var allowedRegIdNumbers = [];
   });
 
   $("body").on("afterappendcomplete", "#GetParticipantsList", function (e) {
-    debugger;
     if ($("select.organizationlistgroup").length) {
       if (
         $("select.organizationlistgroup:last").length == 0 ||
@@ -1070,7 +1069,6 @@ var allowedRegIdNumbers = [];
     "afterappendcomplete",
     "#competitionstructureheading",
     function (e, data) {
-      debugger;
       console.log($(this).attr("id"));
       if (e.target == e.currentTarget) {
         console.log($(this).attr("id"));

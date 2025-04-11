@@ -25,7 +25,7 @@
     }, timeout);
 };
 
-if (window.Notification) {
+if (window.Notification && Notification.requestPermission) {
     Notification.requestPermission().then(function(result) {
         if (result === 'denied') {
             return;
