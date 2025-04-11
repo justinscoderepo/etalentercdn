@@ -121,7 +121,7 @@ function changeToFinish() {
       competitionoptdropdowndata = data.rows;
       $(this).trigger("change");
 
-      if ( data.rows.Results?.length == 0) {
+      if ( data.rows.Results &&data.rows.Results.length == 0) {
         $(this).prop("disabled", true);
         alert(
           "There are no competitions available/ not assigned to this judge. Please contact the administrator.",

@@ -494,7 +494,7 @@ $(function () {
 
             if (parameters.failObject.xhr.status == 400) {
               if (
-                parameters.failObject.xhr.responseText?.indexOf(
+                parameters.failObject.xhr.responseText && parameters.failObject.xhr.responseText.indexOf(
                   "alternative details exists"
                 ) > -1
               ) {

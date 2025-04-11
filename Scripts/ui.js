@@ -1398,7 +1398,7 @@ const LazyRun = function (fn, timeout) {
 
 window.updateEventSettings = function (eventUserSettings) {
   let userData = JSON.parse(localStorage.getItem("user"));
-  if (userData && userData.user?.Role == 5) {
+  if (userData && userData.user &&userData.user.Role == 5) {
     let changedObjects = {};
 
     let keys = Object.keys(eventUserSettings);
