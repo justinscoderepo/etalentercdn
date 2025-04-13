@@ -987,3 +987,7 @@ div#LocalUnitPoints { page-break-inside: avoid; }
 [data-subjson="OtherOrderedItems"] {
     border-top: 2px solid #111010;
 }
+
+.publishedAwards .resultrowtoshow{
+    margin: 0px auto;
+}
