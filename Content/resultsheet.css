@@ -983,3 +983,7 @@ div#LocalUnitPoints { page-break-inside: avoid; }
         max-width: 700px;
     }
 }
+
+[data-subjson="OtherOrderedItems"] {
+    border-top: 2px solid #111010;
+}
