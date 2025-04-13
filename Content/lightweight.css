@@ -4329,6 +4329,9 @@ ul.linklist li a {
 .candidatescompetitionrow { height: 51px; }
 
 .publishedresults select.form-control { min-height: 32px; }
+.publishedresults select.form-control[multiple] {
+    min-height: 274px;
+}
 
 .multicheckstructure label span {
     float: left;
