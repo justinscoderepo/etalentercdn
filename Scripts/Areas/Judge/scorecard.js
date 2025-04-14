@@ -164,11 +164,12 @@ function changeToFinish() {
     }
   });
 
-  var judgesScoreCarddata = [];
+  var judgesScoreCarddata = {};
   $("body").on(
     "afterappendcomplete",
     ".scorecandidatestabview",
     function (e, data) {
+      judgesScoreCarddata={};
       $.each(data.rows.Results, function (i, d) {
         judgesScoreCarddata[d.ParticipantId] = d;
       });

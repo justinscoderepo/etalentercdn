@@ -158,9 +158,9 @@ if (!String.prototype.startsWith) {
 }
 
 if (!String.prototype.encodeurl) {
-    String.prototype.encodeurl = function () {
-        return encodeURIComponent(this);
-    };
+  String.prototype.encodeurl = function () {
+    return encodeURIComponent(this);
+  };
 }
 if (!Date.prototype.isValid) {
   Date.prototype.isValid = function () {
@@ -380,13 +380,13 @@ if (!Date.prototype.isValid) {
                 typej == "s" ? "Success" : typej == "e" ? "Error" : "Warning";
               console.log(
                 "%c -----------------------JLBinder " +
-                  messagetype +
-                  "  Messages-----------------------",
+                messagetype +
+                "  Messages-----------------------",
                 typej == "s"
                   ? "color:Green"
                   : typej == "e"
-                  ? "color:red"
-                  : "color:#b77702"
+                    ? "color:red"
+                    : "color:#b77702"
               );
               console.log(
                 "%c **********************!!!!!!!!!!!!!!!!!!!!!!!!!!**********************",
@@ -410,8 +410,8 @@ if (!Date.prototype.isValid) {
                             type == "s"
                               ? "color:Green"
                               : type == "e"
-                              ? "color:red"
-                              : "color:#b77702"
+                                ? "color:red"
+                                : "color:#b77702"
                           );
                         } else {
                           console.log(
@@ -419,8 +419,8 @@ if (!Date.prototype.isValid) {
                             type == "s"
                               ? "color:Green"
                               : type == "e"
-                              ? "color:red"
-                              : "color:#b77702"
+                                ? "color:red"
+                                : "color:#b77702"
                           );
                         }
                       } else {
@@ -480,8 +480,11 @@ if (!Date.prototype.isValid) {
   };
 
   $.fn.binder = function (opt, callback) {
+
     for (var bi = 0; bi < this.length; bi++) {
       var t = $(this[bi]);
+
+      
       var mt = $.fn.binder.methods;
       mt.create(t, opt, callback);
     }
@@ -532,11 +535,11 @@ if (!Date.prototype.isValid) {
         el.attr(
           "id",
           "Id_" +
-            idInc +
-            "_" +
-            new Date().getTime().toString() +
-            "" +
-            Math.random().toString().replace(".", "")
+          idInc +
+          "_" +
+          new Date().getTime().toString() +
+          "" +
+          Math.random().toString().replace(".", "")
         );
       } else if (el.attr("id")) {
         if ($("[id='" + el.attr("id") + "']").length > 1) {
@@ -592,8 +595,8 @@ if (!Date.prototype.isValid) {
       return obj.attr("id")
         ? obj.attr("id")
         : (obj.prop("tagName") ? obj.prop("tagName").toLowerCase() : "") +
-            " " +
-            JSONstringify(this.attr(obj)).toLowerCase();
+        " " +
+        JSONstringify(this.attr(obj)).toLowerCase();
     },
     triggerevent: function (
       obj,
@@ -872,10 +875,10 @@ if (!Date.prototype.isValid) {
             var followelements = t
               .find(
                 "[" +
-                  this.data.data_follow +
-                  "]:not([" +
-                  this.data.data_static +
-                  "])"
+                this.data.data_follow +
+                "]:not([" +
+                this.data.data_static +
+                "])"
               )
               .not(excludedelements);
             var excludedwrappers = t
@@ -1017,7 +1020,7 @@ if (!Date.prototype.isValid) {
             }
           }
         });
-      } catch (e) {}
+      } catch (e) { }
     },
 
     applyobjectascondition: function (
@@ -1233,10 +1236,10 @@ if (!Date.prototype.isValid) {
                   } else {
                     consoleit(
                       "'" +
-                        keyv +
-                        "' not matching any attributes for apply value for inline key 'data-" +
-                        keytolower +
-                        "-inline'",
+                      keyv +
+                      "' not matching any attributes for apply value for inline key 'data-" +
+                      keytolower +
+                      "-inline'",
                       "w",
                       "inline attributes of " + this.getelementinfo(tobj)
                     );
@@ -1442,13 +1445,13 @@ if (!Date.prototype.isValid) {
               }
               consoleit(
                 tid +
-                  " is loaded on " +
-                  events +
-                  " event, name is " +
-                  th.attr("name") +
-                  (th.attr("id") ? " id is " + th.attr("id") : "") +
-                  " value is  " +
-                  th.val(),
+                " is loaded on " +
+                events +
+                " event, name is " +
+                th.attr("name") +
+                (th.attr("id") ? " id is " + th.attr("id") : "") +
+                " value is  " +
+                th.val(),
                 "s",
                 tid
               );
@@ -1458,9 +1461,37 @@ if (!Date.prototype.isValid) {
         }
       );
     },
-    validaterequiredfilters: function (tid, stn) {
+    validaterequiredfilters: function (tid, stn,t) {
       var valid = true;
       var th = this;
+
+      // if (stn.json.indexOf("JudgesDetailedScoreCardJson") > -1) {
+      //   if (!$(t.attr("data-filterby-required")).val()) {
+      //     alert("Please select a judge before proceeding.");
+      // debugger
+      //   }
+
+      // }
+      if (t.attr("data-required-ifnot-exists") && t.attr("data-required-ifnot-exists") == "true") {
+        
+        var requireditems = $(stn.filterby_required);
+        var minExpectedCount = stn.filterby_required.split(",").length;
+        if(requireditems.length < minExpectedCount) {
+          valid = false;
+          return valid;
+        }
+        var misseditems = requireditems.filter(function () {
+          return !$(this).val();
+        });
+        if (misseditems.length > 0) {
+          valid = false;
+          return valid;
+        }
+      }
+
+
+
+
       $("[data-requiredonfilter" + tid + "]").each(function (ri, rv) {
         var elementinfo = th.getelementinfo($(this));
         var value = $(this).val();
@@ -1498,11 +1529,11 @@ if (!Date.prototype.isValid) {
         if (!valid) {
           consoleit(
             tid +
-              "'s required field '" +
-              elementinfo +
-              "' have no values and the value is '" +
-              value +
-              "'",
+            "'s required field '" +
+            elementinfo +
+            "' have no values and the value is '" +
+            value +
+            "'",
             "w",
             tid
           );
@@ -1537,12 +1568,12 @@ if (!Date.prototype.isValid) {
       if ($("#" + pageinputid).length == 0) {
         $("body").append(
           '<input type="hidden" id="' +
-            pageinputid +
-            '" name="' +
-            stn.pageservername +
-            '"  value="' +
-            stn.pagestartswith +
-            '" />'
+          pageinputid +
+          '" name="' +
+          stn.pageservername +
+          '"  value="' +
+          stn.pagestartswith +
+          '" />'
         );
       }
       t.attr(
@@ -1779,7 +1810,7 @@ if (!Date.prototype.isValid) {
         } else {
           consoleit(
             "Kindly include your pagination element " +
-              t.attr(kv.data_pagination),
+            t.attr(kv.data_pagination),
             "w",
             stn.tid
           );
@@ -2013,7 +2044,7 @@ if (!Date.prototype.isValid) {
       ) {
         orderbyt
           .find("[data-orderbyfield]")
-          [stn.orderbyiconinsertmethod](stn.orderbyascendingicon);
+        [stn.orderbyiconinsertmethod](stn.orderbyascendingicon);
       }
       if (
         stn.orderbydescendingicon &&
@@ -2022,26 +2053,26 @@ if (!Date.prototype.isValid) {
       ) {
         orderbyt
           .find("[data-orderbyfield]")
-          [stn.orderbyiconinsertmethod](stn.orderbydescendingicon);
+        [stn.orderbyiconinsertmethod](stn.orderbydescendingicon);
       }
       mt.setorderbyicon(orderbyt, firstone, stn.orderby);
       $("body").append(
         '<input type="hidden" id="' +
-          orderfieldinputid +
-          '" name="' +
-          stn.orderfieldname +
-          '" value="' +
-          firstone.attr("data-orderbyfield") +
-          '" />'
+        orderfieldinputid +
+        '" name="' +
+        stn.orderfieldname +
+        '" value="' +
+        firstone.attr("data-orderbyfield") +
+        '" />'
       );
       $("body").append(
         '<input type="hidden" id="' +
-          orderbyinputid +
-          '" name="' +
-          stn.orderbyname +
-          '" value="' +
-          stn.orderby +
-          '" />'
+        orderbyinputid +
+        '" name="' +
+        stn.orderbyname +
+        '" value="' +
+        stn.orderby +
+        '" />'
       );
       if (!t.attr(this.data.data_filterby)) {
         t.attr(this.data.data_filterby, "");
@@ -2049,11 +2080,11 @@ if (!Date.prototype.isValid) {
       t.attr(
         this.data.data_filterby,
         t.attr(this.data.data_filterby) +
-          (t.attr(this.data.data_filterby) ? "," : "") +
-          "#" +
-          orderfieldinputid +
-          ",#" +
-          orderbyinputid
+        (t.attr(this.data.data_filterby) ? "," : "") +
+        "#" +
+        orderfieldinputid +
+        ",#" +
+        orderbyinputid
       );
       var orderfieldinput = $("#" + orderfieldinputid);
       var orderbyinput = $("#" + orderbyinputid);
@@ -2095,12 +2126,12 @@ if (!Date.prototype.isValid) {
       if (scrollerpageinput.length == 0) {
         $("body").append(
           '<input type="hidden" id="' +
-            pageinputid +
-            '" name="' +
-            stn.pageservername +
-            '"  value="' +
-            stn.pagestartswith +
-            '" />'
+          pageinputid +
+          '" name="' +
+          stn.pageservername +
+          '"  value="' +
+          stn.pagestartswith +
+          '" />'
         );
         scrollerpageinput = $("#" + pageinputid);
       }
@@ -2237,7 +2268,7 @@ if (!Date.prototype.isValid) {
                   currentpage = parseInt(scrollerpageinput.val());
                   if (
                     $(window).scrollTop() >=
-                      $(document).height() - $(window).height() - 100 &&
+                    $(document).height() - $(window).height() - 100 &&
                     currentpage < parseInt(t.attr("data-jlpagecount"))
                   ) {
                     if ($.active == 0) {
@@ -2613,10 +2644,9 @@ if (!Date.prototype.isValid) {
           timeout = 0;
         }
         //// setTimeout(function () {
-        var valid = mt.validaterequiredfilters(stn.tid, stn);
+        var valid = mt.validaterequiredfilters(stn.tid, stn,t);
         if (valid) {
           consoleit("all required fields founded", "s", stn.tid);
-
           mt.processrequest(t, stn, inputs, opt, callback);
         } else {
           consoleit("some required fields not found", "w", stn.tid);
@@ -2747,8 +2777,8 @@ if (!Date.prototype.isValid) {
           if (selectedItems[stn.json]) {
             selectItems = selectedItems[stn.json];
           }
-// enabled stn caching for select query params because not using localcache at the moment
-          if (!stn.caching ||stn.caching || stn.forceselectfilter) {
+          // enabled stn caching for select query params because not using localcache at the moment
+          if (!stn.caching || stn.caching || stn.forceselectfilter) {
             if (selectItems) {
               var templatedetailsobj = this.gettemplatedetails(
                 element,
@@ -2764,7 +2794,7 @@ if (!Date.prototype.isValid) {
                   if (item != "*") {
                     if (
                       template.find('[data-subjson="' + item + '"]').length >
-                        0 ||
+                      0 ||
                       item == "Status"
                     ) {
                       stn.selectedQueryParameters.push(item);
@@ -2897,6 +2927,12 @@ if (!Date.prototype.isValid) {
             return false;
           },
           function (data) {
+
+            // if(t.closest("body").length == 0) {
+            //   return true;
+            // }
+
+
             if (stn.caching) {
               bindmanager.cachedata(uniquepost, $.extend({}, data));
             }
@@ -3210,35 +3246,35 @@ if (!Date.prototype.isValid) {
     findjsonfieldelements: function (template, key, deepfind) {
       var htmlelements = template.find(
         "." +
-          key +
-          ",#" +
-          key +
-          ",[name='" +
-          key +
-          "'],[data-key='" +
-          key +
-          "'],[data-jsonkey='" +
-          key +
-          "']"
+        key +
+        ",#" +
+        key +
+        ",[name='" +
+        key +
+        "'],[data-key='" +
+        key +
+        "'],[data-jsonkey='" +
+        key +
+        "']"
       );
       var attrelements = template.find(
         "[data-" +
-          key.toLowerCase() +
-          "-inline],[data-inline-" +
-          key.toLowerCase() +
-          "],[data-" +
-          key.toLowerCase() +
-          "-attr],[data-attr-" +
-          key.toLowerCase() +
-          "],[data-" +
-          key.toLowerCase() +
-          "-if],[data-if-" +
-          key.toLowerCase() +
-          "],[data-attr-" +
-          key.toLowerCase() +
-          "-if],[data-attr-if-" +
-          key.toLowerCase() +
-          "]"
+        key.toLowerCase() +
+        "-inline],[data-inline-" +
+        key.toLowerCase() +
+        "],[data-" +
+        key.toLowerCase() +
+        "-attr],[data-attr-" +
+        key.toLowerCase() +
+        "],[data-" +
+        key.toLowerCase() +
+        "-if],[data-if-" +
+        key.toLowerCase() +
+        "],[data-attr-" +
+        key.toLowerCase() +
+        "-if],[data-attr-if-" +
+        key.toLowerCase() +
+        "]"
       );
       var obj = htmlelements.add(attrelements);
       if (key == "JudgeUserName") {
@@ -3248,10 +3284,10 @@ if (!Date.prototype.isValid) {
         disabledelements = template
           .find(
             "[data-" +
-              key.toLowerCase() +
-              "-disable],[data-disable-" +
-              key.toLowerCase() +
-              "],[data-disablejlbind],[data-json] *"
+            key.toLowerCase() +
+            "-disable],[data-disable-" +
+            key.toLowerCase() +
+            "],[data-disablejlbind],[data-json] *"
           )
           .not(template.find("[data-closest-json]"));
         obj = obj.not(disabledelements);
@@ -3259,10 +3295,10 @@ if (!Date.prototype.isValid) {
         disabledelements = template
           .find(
             "[data-" +
-              key.toLowerCase() +
-              "-disable],[data-disable-" +
-              key.toLowerCase() +
-              "],[data-disablejlbind],[data-json] *,[data-subjson] *"
+            key.toLowerCase() +
+            "-disable],[data-disable-" +
+            key.toLowerCase() +
+            "],[data-disablejlbind],[data-json] *,[data-subjson] *"
           )
           .not(template.find("[data-closest-json]"));
         obj = obj.not(disabledelements);
@@ -3418,31 +3454,31 @@ if (!Date.prototype.isValid) {
             value: value,
           };
           this.triggerevent(obj, "beforeappend", triggerdata);
-          var commentobj = this.getcommentobj(template.children());
-          if (commentobj.length > 0) {
-            $.each(commentobj, function (cmi, cmv) {
-              if (cmv !== false) {
-                var parentname = cmv.next().parent().prop("tagName");
-                var bindobj = $(
-                  "<" +
-                    parentname +
-                    " " +
-                    cmv[0].nodeValue +
-                    ">" +
-                    cmv.next()[0].outerHTML +
-                    "</" +
-                    parentname +
-                    ">"
-                );
-                if (bindobj.attr("data-subjson") == key) {
-                  // subjsonrows.push({ key: key, value: value, commentobj: cmv });
-                  bindobj.binder({ json: { Rows: value } });
-                  cmv.next().after(bindobj.html());
-                  cmv.next().remove();
-                }
-              }
-            });
-          }
+          // var commentobj = this.getcommentobj(template.children());
+          // if (commentobj.length > 0) {
+          //   $.each(commentobj, function (cmi, cmv) {
+          //     if (cmv !== false) {
+          //       var parentname = cmv.next().parent().prop("tagName");
+          //       var bindobj = $(
+          //         "<" +
+          //           parentname +
+          //           " " +
+          //           cmv[0].nodeValue +
+          //           ">" +
+          //           cmv.next()[0].outerHTML +
+          //           "</" +
+          //           parentname +
+          //           ">"
+          //       );
+          //       if (bindobj.attr("data-subjson") == key) {
+          //         // subjsonrows.push({ key: key, value: value, commentobj: cmv });
+          //         bindobj.binder({ json: { Rows: value } });
+          //         cmv.next().after(bindobj.html());
+          //         cmv.next().remove();
+          //       }
+          //     }
+          //   });
+          // }
 
           tempvalue = value;
           for (var obji = 0; obji < obj.length; obji++) {
@@ -3490,10 +3526,10 @@ if (!Date.prototype.isValid) {
                           if (text != "") {
                             tobj.append(
                               "<option selected value=" +
-                                value +
-                                ">" +
-                                text +
-                                "</option>"
+                              value +
+                              ">" +
+                              text +
+                              "</option>"
                             );
                           } else {
                             tobj
