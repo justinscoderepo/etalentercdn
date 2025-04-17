@@ -38,9 +38,9 @@ function changeToFinish() {
         $(".scorecandidateslist").css(
           "margin-top",
           $(window).scrollTop() -
-            $(".scorecandidatestabview").offset().top +
-            50 +
-            "px"
+          $(".scorecandidatestabview").offset().top +
+          50 +
+          "px"
         );
       } else {
         $(".scorecandidateslist").css("margin-top", 0 + "px");
@@ -117,11 +117,11 @@ function changeToFinish() {
     "afterappendcomplete",
     "#competitionoptdropdown",
     function (e, data) {
-    
+
       competitionoptdropdowndata = data.rows;
       $(this).trigger("change");
 
-      if ( data.rows.Results &&data.rows.Results.length == 0) {
+      if (data.rows.Results && data.rows.Results.length == 0) {
         $(this).prop("disabled", true);
         alert(
           "There are no competitions available/ not assigned to this judge. Please contact the administrator.",
@@ -131,7 +131,7 @@ function changeToFinish() {
           "w",
           5000
         );
-      }else {
+      } else {
         $(this).prop("disabled", false);
       }
     }
@@ -169,7 +169,7 @@ function changeToFinish() {
     "afterappendcomplete",
     ".scorecandidatestabview",
     function (e, data) {
-      judgesScoreCarddata={};
+      judgesScoreCarddata = {};
       $.each(data.rows.Results, function (i, d) {
         judgesScoreCarddata[d.ParticipantId] = d;
       });
@@ -365,12 +365,13 @@ function changeToFinish() {
               ].ParticipantIdScorecardId = data.Results;
             } else {
               alert(
-                "Failed to Score, please try again.",
+                typeof data.Results == "string"
+                ? data.Results : "Failed to Score, please try again.",
                 false,
                 false,
                 "Savedalert",
                 "w",
-                500
+                1500
               );
             }
 
@@ -413,9 +414,14 @@ function changeToFinish() {
       var totalscore = 0;
       let allowedTotalScore = false;
       cl.find(".individualscore .scorerowoverlay").each(function () {
+        var indscore = $(this).closest(".scorecriteriarow").find(".scorebyinput").val();
         totalscore += parseFloat(
-          $(this).closest(".scorecriteriarow").find(".scorebyinput").val()
+          indscore
         );
+
+         if(!$(this).is(":visible")){
+        $(this).closest(".scorecriteriarow").find("[name=Score]").val(indscore);
+         }
         let item = $(this).closest(".scorecriteriarow").find(".scorebyinput");
         let score = parseFloat($(this).attr("data-scorepercentage"));
         if (item.attr("maxscore")) {
@@ -425,7 +431,9 @@ function changeToFinish() {
         if (currentElement) {
           item = item.not(currentElement);
         }
-        item.val(score);
+        if($(this).is(":visible")){
+          item.val(score);
+        }
       });
 
       var avearagescore = allowedTotalScore
@@ -500,6 +508,8 @@ function changeToFinish() {
         $(".multicountrowtotal").find("[name]")
       );
 
+      totalrow.IsTotalScore = true;
+
       postdata.Scores.push(totalrow);
       var activetab = $(
         ".scorecandidatestabview .scorecandidatestab.candidateactive"
@@ -530,12 +540,13 @@ function changeToFinish() {
           ].ParticipantIdScorecardId = data.Results;
         } else {
           alert(
-            "Failed to Score, please try again.",
+            typeof data.Results == "string"
+              ? data.Results : "Failed to Score, please try again.",
             false,
             false,
             "Savedalert",
             "w",
-            500
+            1500
           );
         }
       });
@@ -602,16 +613,17 @@ function changeToFinish() {
             ].ParticipantIdScorecardId = data.Results;
           } else {
             alert(
-              "Failed to Score, please try again.",
+              typeof data.Results == "string"
+              ? data.Results : "Failed to Score, please try again.",
               false,
               false,
               "Savedalert",
               "w",
-              500
+              1500
             );
           }
         }
-      );
+      )
     }
   }
 
