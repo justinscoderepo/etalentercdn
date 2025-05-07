@@ -556,3 +556,20 @@ img.medal {
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='User Name']{
     text-transform: uppercase;
 }
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"]{
+display:none !important;
+}
+
+.originallist[stylishgroupid='customtheme2images1'] .priceslist{
+display:none
+}
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'] {
+    font-size: 18px !important;
+    text-transform: uppercase;
+    padding-bottom: 14px;
+    word-spacing: 2px;
+    width: 392px;
+    display: inline-block !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+}
