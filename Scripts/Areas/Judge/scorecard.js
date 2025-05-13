@@ -591,6 +591,8 @@ function changeToFinish() {
       if ($("#SelectedJudgeInScoreCard").val()) {
         postdata.JudgeId = $("#SelectedJudgeInScoreCard").val();
       }
+
+      postdata.notes = $("#Notes").val();
       hidespinner(cl);
 
       showspinner(cl);
