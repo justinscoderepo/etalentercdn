@@ -345,6 +345,7 @@ function changeToFinish() {
         if ($("#SelectedJudgeInScoreCard").val()) {
           postdata.JudgeId = $("#SelectedJudgeInScoreCard").val();
         }
+        postdata.notes = $("#Notes").val();
         $.post(
           cl.find("[data-action]:first").attr("data-action"),
           postdata,
@@ -363,6 +364,9 @@ function changeToFinish() {
               judgesScoreCarddata[
                 currentactiveparticipantId
               ].ParticipantIdScorecardId = data.Results;
+              judgesScoreCarddata[
+                currentactiveparticipantId
+              ].Notes = postdata.notes;
             } else {
               alert(
                 typeof data.Results == "string"
@@ -522,6 +526,7 @@ function changeToFinish() {
       if ($("#SelectedJudgeInScoreCard").val()) {
         postdata.JudgeId = $("#SelectedJudgeInScoreCard").val();
       }
+      postdata.notes = $("#Notes").val();
       hidespinner(cl);
       showspinner(cl);
       $.post("/JudgeJson/SaveScore", postdata, function (data) {
@@ -538,6 +543,9 @@ function changeToFinish() {
           judgesScoreCarddata[
             currentactiveparticipantId
           ].ParticipantIdScorecardId = data.Results;
+          judgesScoreCarddata[
+            currentactiveparticipantId
+          ].Notes = postdata.notes;
         } else {
           alert(
             typeof data.Results == "string"
@@ -613,6 +621,9 @@ function changeToFinish() {
             judgesScoreCarddata[
               currentactiveparticipantId
             ].ParticipantIdScorecardId = data.Results;
+            judgesScoreCarddata[
+              currentactiveparticipantId
+            ].Notes = postdata.notes;
           } else {
             alert(
               typeof data.Results == "string"
