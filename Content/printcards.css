@@ -131,7 +131,7 @@
 }
 .profileimagebox {
     border-radius: 5px;
-    height: 105px;
+    height: 125px;
     max-height: 130px;
     margin: 0 auto;
     overflow: hidden;
@@ -139,7 +139,9 @@
     max-width: 100%;
     display: block;
     background-position: center;
+    background-size: contain !important;
     border: 3px solid #ffffff;
+    background-repeat: no-repeat !important;
 }
 
 
