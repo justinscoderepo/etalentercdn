@@ -138,6 +138,7 @@
     width: 100px;
     max-width: 100%;
     display: block;
+    background-color: #ffffff;
     background-position: center;
     background-size: contain !important;
     border: 3px solid #ffffff;
