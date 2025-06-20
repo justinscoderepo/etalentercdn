@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    setTimeout(function () {
+    function initilizeExcel() {
         var fields = [];
         let items = $('form[data-save="true"] .form-group,.table-addnewrow .form-group').not($('.tab-pane .form-group').not($('.tab-pane.active .form-group')));
         items.each(function (i, z) {
@@ -203,6 +203,15 @@ $(document).ready(function () {
                                     // }
 
                                 }
+                                else
+                                    if (itemobj.find("input").length > 0 && tablecell.find("input").length == 0) {
+                                        let copyofinputhtml = input.clone();
+                                        tablecell.append(copyofinputhtml);
+                                        tablecell.find('input').val(value);
+                                        if (copyofinputhtml.attr("type") == "checkbox") {
+                                            copyofinputhtml.prop("checked", value == "true" || value == "1");
+                                        }
+                                }
                             }
                         });
 
@@ -216,6 +225,7 @@ $(document).ready(function () {
         $('body').on("click",
             ".uploaditems",
             async function (e) {
+                debugger
                 let form = items.first().closest("form");
                 let jlform = items.first().closest("[data-jltableform]");
                 let newRow= items.first().closest(".table-addnewrow");
@@ -257,6 +267,9 @@ $(document).ready(function () {
                         arrayItems.forEach((x, i) => {
                             let itemInput = $(items[i]).find('select,input,textarea').not('[type=hidden],.hidden');
                             let selectInput=$(this).find("td:eq(" + i + ") select");
+                            if (selectInput.length == 0) {
+                                selectInput = $(this).find("td:eq(" + i + ") input");
+                            }
                             
                             if (selectInput.length > 0) {
                                 item[selectInput.attr('name')] = selectInput.val();
@@ -290,5 +303,18 @@ $(document).ready(function () {
 
                 $(".uploaditems,.verifyexcel").hide();
             });
-    }, 3000);
+    }
+
+    if ($(".toggleExcelUpload:visible").length > 0) {
+        initilizeExcel();
+    }
+
+    $('body').on("click", ".toggleExcelUpload", function (e) {
+        if (!$(this).hasClass("initialized")) {
+            $(this).addClass("initialized");
+            initilizeExcel();
+        }
+
+    });
+
 });
