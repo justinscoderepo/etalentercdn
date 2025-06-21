@@ -62,6 +62,14 @@
         count += 1;
         $(".tokentimerloadertimenowvalue").html(count);
 
+        var inMinutes = Math.floor(count / 60);
+        var inSeconds = count - (inMinutes * 60);
+
+        if (inSeconds < 10) {
+          inSeconds = "0" + inSeconds;
+        }
+        $(".tokentimerloadertimenowinMinutes").html(inMinutes + ":" + inSeconds);
+
         if (
           parseInt($(".tokentimerloadertimewarningvalue").text()) != 0 &&
           count == parseInt($(".tokentimerloadertimewarningvalue").text())
@@ -105,6 +113,7 @@
     ispause = true;
     update(0, parseInt($(".tokentimerloadertimemaxvalue").text()));
     $(".tokentimerloadertimenowvalue").html(0);
+    $("#tokentimerloadertimenowinMinutes").html("0:00");
     clearInterval(myCounter);
   });
   $("body").on("click", "#tokentimerpause", function (e) {
@@ -116,6 +125,7 @@
   $("body").on("click", "#tokentimerrestart", function (e) {
     ispause = false;
     $("#time,.tokentimerloadertimenowvalue").html(0);
+    $("#tokentimerloadertimenowinMinutes").html("0:00");
 
     $("#tokentimerstart").trigger("click");
   });
@@ -185,6 +195,12 @@
       }
       $(".tokentimerloadertimemaxvalue").text(totalseconds);
       $(".tokentimerloadertimewarningvalue").text(warningseconds);
+
+      // //tokentimerloadertimeinMinutes
+      // let minutesInSeconds =
+      //   parseInt(totalseconds) * 60;
+      // let secondsInMinutes = totalseconds - (60 * minutesInSeconds);
+      $(".tokentimerloadertimemaxinMinutes").text($(this).attr("CompetitionMaximumMinutes") + ":" + $(this).attr("CompetitionMaximumSeconds"));
 
       var formdata = {};
       formdata.CompetitionStructureId = $(this).attr("Competition");
@@ -374,6 +390,7 @@
       });
       ispause = false;
       $(".tokentimerloadertimenowvalue").html(0);
+      $("#tokentimerloadertimenowinMinutes").html("0:00");
       $("#tokentimerstop").trigger("click");
 
       var additionaltext = "";
