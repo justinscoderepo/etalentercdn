@@ -367,7 +367,10 @@ a:active, a:hover {
     border-bottom: 1px solid rgba(104, 102, 102, 0.34901960784313724);
     display: table-row;
 }
-
+.divtable > #UsersNewlist > div {
+    border-bottom: 2px solid #0dc844;
+    border-bottom: 2px solid rgb(13, 200, 68, 81%);
+}
 /* .divtable > div > div:last-child { border-bottom: 0; } */
  
 
@@ -2281,7 +2284,7 @@ body > .spinnerboxglobal > .spinnerbox { position: fixed !important; }
     border-bottom: 1px solid #004668;
     border-bottom: 1px solid rgba(0, 70, 104, 0.3215686274509804);
     position: relative;
-    /* display: flex !important; */!i;!;
+    /* display: flex !important; */
 }
 
 #coordinatorcompetitionoptdropdown { font-weight: 700; }
@@ -2397,7 +2400,7 @@ body > .spinnerboxglobal > .spinnerbox { position: fixed !important; }
 }
 
 .input-group a.addrow {
-    display: block;
+    display: table-cell;
     float: none;
     line-height: 26px;
     margin: 0px;
@@ -2957,7 +2960,10 @@ input.dateinput {
     display: flex
 ;
 }
-
+#bulkusersleftlist > .addnewbox {
+    border-bottom: 1px solid #0dc844;
+    border-bottom: 2px solid rgb(13, 200, 68, 81%);
+}
 #bulkusersleftlist > .Candidateleftlist {height: 51px !important;/* justify-content: space-between; *//* display: flex; */}
 
 #bulkusersleftlist > .Candidateleftlist > div {

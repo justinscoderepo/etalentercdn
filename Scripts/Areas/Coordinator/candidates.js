@@ -618,7 +618,7 @@ var allowedRegIdNumbers = [];
     if ($(this).val()) {
       var cl = $(this).closest(".input-group");
       cl.find("[name=Name]").val(
-        $(this).val() + " " + cl.find(".input-group-addon").last().text().trim()
+        $(this).val() 
       );
     }
   });
