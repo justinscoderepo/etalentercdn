@@ -123,6 +123,7 @@
 .candidateCard .cardheaderlogo {
     display: block;
     height: auto;
+    width: auto;
 }
 
 .candidateCard .cardheaderlogo2 {

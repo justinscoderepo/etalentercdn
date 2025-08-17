@@ -1058,7 +1058,7 @@ var allowedRegIdNumbers = [];
             $("#CommonGroupId")
               .val(matchingGroup.EventGroupId)
               .trigger("change");
-            $("#IsIncludeCommonCompetitions").val("true").trigger("change");
+            // $("#IsIncludeCommonCompetitions").val("true").trigger("change");
           }
         }
       }
