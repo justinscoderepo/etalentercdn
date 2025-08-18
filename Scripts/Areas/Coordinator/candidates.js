@@ -1047,7 +1047,7 @@ var allowedRegIdNumbers = [];
     if (e.target == e.currentTarget) {
       if (
         !$("#CommonGroupId").val() &&
-        !$("#IsIncludeCommonCompetitions").val()
+        $("#IsIncludeCommonCompetitions").val() !== "false"
       ) {
         //$("#CommonGroupId").val("true");
         if (data && data.rows && data.rows.Results && data.rows.Results) {
