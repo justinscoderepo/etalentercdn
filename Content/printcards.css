@@ -150,6 +150,7 @@
 .candidateCard .cardbackheaderlogo {
     display: block;
     height: auto;
+    width: auto;
 }
 
 .candidateCard .eventDate {
