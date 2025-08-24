@@ -1145,6 +1145,7 @@ if (!Date.prototype.isValid) {
           t.attr("data-forcesetvalue")
         ) {
           t.removeAttr("data-forcesetvalue");
+          t.attr("data-forcesetvalueremoved", true);
           if (t.attr("multiple")) {
             val = val.split(",");
           }
@@ -3092,6 +3093,10 @@ if (!Date.prototype.isValid) {
             t.find("[data-dynamicrows]").not(excludedelements).remove();
           } else {
             dynamicobj.remove();
+            if (t.attr("data-forcesetvalueremoved")) {
+              t.attr("data-forcesetvalue", true);
+              t.removeAttr("data-forcesetvalueremoved");
+            }
             isbindingfreshdata = true;
           }
         } else {
@@ -3100,6 +3105,10 @@ if (!Date.prototype.isValid) {
             t.attr("data-jlpagecount", 0);
             if (stn.currentpage == pagestartswith) {
               dynamicobj.remove();
+              if (t.attr("data-forcesetvalueremoved")) {
+                t.attr("data-forcesetvalue", true);
+                t.removeAttr("data-forcesetvalueremoved");
+              }
               isbindingfreshdata = true;
             }
           } else {
