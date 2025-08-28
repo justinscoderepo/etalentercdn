@@ -97,8 +97,13 @@ div.eventmanagerow > div {
     text-overflow: ellipsis;
     white-space: nowrap;
     width: auto;
+    
 }
-
+@media print {
+    div.eventmanagerow>div {
+        display: none !important;
+    }
+}
 div.eventmanagerow > div > .toggleWrapper { margin-top: -2px; }
 
 div.eventmanagerow > div > div {
