@@ -22,9 +22,11 @@ if(e.target.id == "resultsbody"){
             $(".RankList").show();
             $("#resultautogenerateranks").show();
             $("#resultautogenerateranks3").show();
-            if (userObj?.user?.JsonSettings && userObj?.user?.JsonSettings?.DisableRankForMax2ParticipationCompetitions == "Enabled") {
-               
-                if (data.rows && data.rows.Results && data.rows.Results.length <= 2) {
+    var rankAndGradePointsDisableMaxParticipationCount = userObj?.user?.JsonSettings?.RankAndGradePointsDisableMaxParticipationCount;
+    var allowToAssignRankIfMaxParticipationReached = userObj?.user?.JsonSettings?.AllowToAssignRankIfMaxParticipationReached;
+    if (userObj?.user?.JsonSettings && userObj?.user?.JsonSettings?.DisableRankForMax2ParticipationCompetitions == "Enabled" && allowToAssignRankIfMaxParticipationReached == "Disabled") {
+
+                if (data.rows && data.rows.Results && data.rows.Results.length <= rankAndGradePointsDisableMaxParticipationCount) {
                     $("#resultautogenerateranks").hide();
                     $("#resultautogenerateranks3").hide();
                     $(".RankList").hide();
