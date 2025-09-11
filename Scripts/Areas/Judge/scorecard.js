@@ -272,12 +272,15 @@ function changeToFinish() {
       setTimeout(function () {
         let dotsIndex = th.val().indexOf(".");
         if (dotsIndex != th.val().length - 1) {
-          if (th.attr("maxscore")) {
-            if (th.val() > parseInt(th.attr("maxscore"))) {
+          var maxScoreDisabled = $("#AllowMoreThanMaxScore").is(":checked");
+          if (!maxScoreDisabled) {
+            if (th.attr("maxscore")) {
+              if (th.val() > parseInt(th.attr("maxscore"))) {
+                th.val(0);
+              }
+            } else if (th.val() > 10) {
               th.val(0);
             }
-          } else if (th.val() > 10) {
-            th.val(0);
           }
           var cl = th.closest(".allscores");
           var overlay = th
