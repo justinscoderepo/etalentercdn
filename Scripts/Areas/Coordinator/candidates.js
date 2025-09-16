@@ -1471,18 +1471,18 @@ var allowedRegIdNumbers = [];
         }
 
         var cl = $(this).closest(".Candidateleftlist");
+        var isError = false;
         if (!cl.find(".eachcandidatename").val()) {
           cl.find(".form-group").addClass("is-error");
-        } else {
-          cl.find(".form-group").removeClass("is-error");
-        }
+          isError = true;
+        } 
+
+
 
         if (cl.find(".eachcandidatemobile").length > 0 && !cl.find(".eachcandidatemobile").val()) {
           cl.find(".form-group").addClass("is-error");
-        }
-        else {
-          cl.find(".form-group").removeClass("is-error");
-        }
+          isError = true;
+        } 
 
         if (cl.find(".eachcandidatedob").val()) {
           if (
@@ -1491,10 +1491,11 @@ var allowedRegIdNumbers = [];
             cl.find(".eachcandidatedob").val().length != 10
           ) {
             cl.find(".form-group").addClass("is-error");
-          } else {
-            cl.find(".form-group").removeClass("is-error");
+            isError = true;
           }
-        } else {
+        }
+
+        if (!isError) {
           cl.find(".form-group").removeClass("is-error");
         }
       }
@@ -1538,16 +1539,40 @@ var allowedRegIdNumbers = [];
           }
         }
 
+
+        if (cl.find(".eachcandidatemobile").length > 0 && cl.find(".eachcandidatemobile").attr("data-is-required") == "True" && !cl.find(".eachcandidatemobile").val()) {
+          alert("Please enter mobile number", "e");
+          return;
+        }
+
         if (cl.find(".eachcandidatemobile").val()) {
           if (
             !cl.find(".eachcandidatemobile").val() ||
-            cl.find(".eachcandidatemobile").val().length < 10
+            cl.find(".eachcandidatemobile").val().length < 8
           ) {
             alert("Please enter valid mobile number", "e");
             return;
           }
         }
 
+        if (cl.find(".eachcandidateemail").length > 0 && cl.find(".eachcandidateemail").attr("data-is-required") == "True" && !cl.find(".eachcandidateemail").val()) {
+          alert("Please enter email address", "e");
+          return;
+        }
+
+        if (cl.find(".eachcandidateemail").length > 0 && cl.find(".eachcandidateemail").val()) {
+          if (
+            !cl.find(".eachcandidateemail").val() ||
+            cl.find(".eachcandidateemail").val().split("@").length != 2 ||
+            cl.find(".eachcandidateemail").val().split(".").length < 2 ||
+            cl.find(".eachcandidateemail").val().split(".").pop().length < 2 ||
+            cl.find(".eachcandidateemail").val().split("@").pop().length < 2 ||
+            cl.find(".eachcandidateemail").val().length < 8
+          ) {
+            alert("Please enter valid email address", "e");
+            return;
+          }
+        }
 
         let userRegId = cl.find(".eachcandidateregid").val();
         if (isRegIdMandatory) {
@@ -1635,6 +1660,21 @@ var allowedRegIdNumbers = [];
         //  alert("Please enter mobile", "e");
         //  return;
         //}
+
+        if ($("#BulkCandidateEmail").attr("data-is-required") == "True") {
+          if (!email) {
+            alert("Email field is required", "e");
+            return;
+          }
+        }
+
+        if ($("#BulkCandidateMobileNumber").attr("data-is-required") == "True") {
+          if (!mobile) {
+            alert("Phone Number field is required", "e");
+            return;
+          }
+        }
+
         if (mobile?.length > 0) {
           if (mobile.length < 10) {
             alert("Please enter valid mobile number", "e");
