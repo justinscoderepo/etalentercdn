@@ -754,6 +754,8 @@ var allowedRegIdNumbers = [];
     if (length == 1) {
       $(".agewisegroups").hide();
       $(".agewisegroups li").trigger("click");
+    } else if (length > 1) {
+      $(".agewisegroups").show();
     }
   });
 

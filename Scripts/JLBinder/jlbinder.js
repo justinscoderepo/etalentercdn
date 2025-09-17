@@ -392,11 +392,11 @@ if (!Date.prototype.isValid) {
                 "%c **********************!!!!!!!!!!!!!!!!!!!!!!!!!!**********************",
                 "color:DodgerBlue"
               );
-              console.groupCollapsed("Expand to view all messages");
+              console.log("Expand to view all messages");
               for (var rowj in typeinfo) {
                 if (typeinfo.hasOwnProperty(rowj)) {
                   var consolemessages = typeinfo[rowj];
-                  console.groupCollapsed("Messages Related to " + rowj);
+                  console.log("Messages Related to " + rowj);
 
                   for (var rowi in consolemessages) {
                     if (consolemessages.hasOwnProperty(rowi)) {
@@ -429,15 +429,19 @@ if (!Date.prototype.isValid) {
                     }
                   }
 
-                  console.groupCollapsed("Table View");
-                  console.table(consolemessages);
-                  console.groupEnd();
+                  if (consolemessages && consolemessages.length == 0) {
+                    console.log("%c No messages found", "color:gray");
+                  }
 
-                  console.groupEnd();
+                  console.log("Table View");
+                  console.log(consolemessages);
+                  console.log();
+
+                  console.log();
                 }
               }
 
-              console.groupEnd();
+              console.log();
               console.log(
                 "%c **********************!!!!!!!!!!!!!!!!!!!!!!!!!!**********************",
                 "color:DodgerBlue"
@@ -1494,11 +1498,13 @@ if (!Date.prototype.isValid) {
 
 
       $("[data-requiredonfilter" + tid + "]").each(function (ri, rv) {
+        var isthisInvalid = false;
         var elementinfo = th.getelementinfo($(this));
         var value = $(this).val();
 
         if ($(this).attr("data-jlloading")) {
           valid = false;
+          isthisInvalid = true;
         }
 
         if (
@@ -1513,21 +1519,24 @@ if (!Date.prototype.isValid) {
           case "checkbox": {
             if ($(this).prop("checked") == false) {
               valid = false;
+              isthisInvalid = true;
             }
             break;
           }
           default: {
             if (stn.nullvalue && value == stn.nullvalue) {
               valid = false;
+              isthisInvalid = true;
             }
             if (!value) {
               valid = false;
+              isthisInvalid = true;
             }
             break;
           }
         }
 
-        if (!valid) {
+        if (!valid && isthisInvalid) {
           consoleit(
             tid +
             "'s required field '" +
