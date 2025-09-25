@@ -1160,8 +1160,10 @@ $(function () {
     ////    $(".leftmenuouterbox,.modal").removeAttr("style");
     ////}
     ////$(".leftmenuouterbox").css("height", $(window).height() - 50);
-
-    $("#contentbox").css("min-height", $(window).height());
+    var eventmanagerowHeight = $(".eventmanagerow").outerHeight() > 0 ? $(".eventmanagerow").outerHeight() : 0;
+    var headerHeight = $("header.header").outerHeight() > 0 ? $("header.header").outerHeight() : 0;
+    $("#contentbox").css("min-height", $(window).height() - eventmanagerowHeight - headerHeight);
+    $("#contentboxbody").css("min-height", $(window).height() - eventmanagerowHeight - headerHeight);
     ////if ($(window).width() <= 768 || $(".menubarbox:visible").length == 0) {
     ////    $(".leftmenuouterbox ").removeClass("minimizemenu");
     ////    $("#contentbox").removeAttr("menumaximized");
