@@ -358,13 +358,9 @@ $("body").on("click", ".downloadandprint", function (e) {
   $("#DesignArray")
     .find("[name*='DesignArray']")
     .each(function () {
-      timeout += 2000;
-
       let th = $(this);
       let parentDiv = th.closest(".groupTemplates");
       let groupId = parentDiv.attr("value");
-
-      setTimeout(function () {
       if ($("#DesignArray:visible").length == 0) {
         if ($("#grouplist").val() == groupId) {
           // continue
@@ -373,6 +369,9 @@ $("body").on("click", ".downloadandprint", function (e) {
         }
       }
       if (th.val()) {
+        timeout += 2000;
+
+        setTimeout(function () {
 
         let name = th.attr("name");
         let eventGroup = name.replace("DesignArray", "");
@@ -386,8 +385,8 @@ $("body").on("click", ".downloadandprint", function (e) {
         data.CandidateGroup = eventGroup;
         post(action, data);
 
-      }
     }, timeout);
+      }
     });
 
   // var url = $(this).attr("target") ;

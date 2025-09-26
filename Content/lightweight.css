@@ -4666,3 +4666,36 @@ a.editItem {
 a.ProblematicJudgesCount{
     padding: 0px 4px;
 }
+.position-absolute {
+    position: absolute !important;
+}
+
+.hrlineforletterpad {
+    border-image: linear-gradient(to right,
+            #b0b0b0 0 10%,
+            /* light grey */
+            #4fc1d9 10% 20%,
+            /* light teal-blue */
+            #e07a6a 20% 30%,
+            /* light red/pinkish */
+            #4fd1a3 30% 40%,
+            /* light teal-green */
+            #a66fc1 40% 50%,
+            /* light purple */
+            #c17a6a 50% 60%,
+            /* light brownish-red */
+            #4fbf8f 60% 70%,
+            /* medium-light green */
+            #7a7abf 70% 80%,
+            /* light slate-blue */
+            #4f7ac1 80% 90%,
+            /* light blue */
+            #c14f7a 90% 100%
+            /* light magenta */
+        ) 5;
+    border-width: 5px 0 0 0;
+    border-style: solid;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
