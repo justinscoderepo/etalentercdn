@@ -267,8 +267,19 @@ $("body").on("click", ".downloadandprint", function (e) {
     .find("[name*='DesignArray']")
     .each(function () {
       let th = $(this);
+      let parentDiv = th.closest(".groupTemplates");
+      let groupId = parentDiv.attr("value");
       if (th.val()) {
-        selectedDesigns.push(th.val());
+        if ($("#designArray:visible").length == 0) {
+          if ($("#grouplist").val() == groupId) {
+            selectedDesigns.push(th.val());
+          }
+        } else {
+          selectedDesigns.push(th.val());
+        }
+      } else if (groupId == $("#grouplist").val()) {
+        th.val("darkimages0");
+        selectedDesigns.push("darkimages0");
       }
     });
   if (selectedDesigns.filter((x) => x).length == 0) {
@@ -344,29 +355,40 @@ $("body").on("click", ".downloadandprint", function (e) {
   });
   let action = $(this).attr("target");
   let timeout = 0;
-$("#DesignArray")
-.find("[name*='DesignArray']")
-.each(function () {
-  timeout += 2000;
-  
-  let th = $(this);
-  setTimeout(function () {
-  if (th.val()) {
-    let name = th.attr("name");
-    let eventGroup = name.replace("DesignArray", "");
-    let design = th.val();
+  $("#DesignArray")
+    .find("[name*='DesignArray']")
+    .each(function () {
+      timeout += 2000;
 
-    let customStylesForDesign = customStyles[design];
-    let newCustomStyles = {};
-    newCustomStyles[design] = customStylesForDesign;
-    data.Styles = JSON.stringify(newCustomStyles);
-    data.Template = design;
-    data.CandidateGroup = eventGroup;
-    post(action, data);
- 
-  }
-}, timeout);
-});
+      let th = $(this);
+      let parentDiv = th.closest(".groupTemplates");
+      let groupId = parentDiv.attr("value");
+
+      setTimeout(function () {
+      if ($("#DesignArray:visible").length == 0) {
+        if ($("#grouplist").val() == groupId) {
+          // continue
+        } else {
+          return;
+        }
+      }
+      if (th.val()) {
+
+        let name = th.attr("name");
+        let eventGroup = name.replace("DesignArray", "");
+        let design = th.val();
+
+        let customStylesForDesign = customStyles[design];
+        let newCustomStyles = {};
+        newCustomStyles[design] = customStylesForDesign;
+        data.Styles = JSON.stringify(newCustomStyles);
+        data.Template = design;
+        data.CandidateGroup = eventGroup;
+        post(action, data);
+
+      }
+    }, timeout);
+    });
 
   // var url = $(this).attr("target") ;
   // var link = document.createElement('a');
