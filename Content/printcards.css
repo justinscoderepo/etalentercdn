@@ -44,7 +44,7 @@
   width: 100%;
   height: 100%;
   /* background-color: rgb(2 2 14 / 25%); */ /* Blue overlay with 50% opacity */
-  z-index: 1;
+z-index: -2;
 }
 .printcertificate .candidateCard .box , .printtopcertificate  .candidateCard .box {
     
@@ -578,4 +578,21 @@ display:none
     display: inline-block !important;
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
+}
+.darkimages6 [data-stylish="Identity Card Box"]::after,
+.darkimages7 [data-stylish="Identity Card Box"]::after,
+.darkimages8 [data-stylish="Identity Card Box"]::after,
+.darkimages9 [data-stylish="Identity Card Box"]::after,
+.darkimages10 [data-stylish="Identity Card Box"]::after,
+.darkimages11 [data-stylish="Identity Card Box"]::after,
+.darkimages12 [data-stylish="Identity Card Box"]::after,
+.darkimages13 [data-stylish="Identity Card Box"]::after,
+.darkimages14 [data-stylish="Identity Card Box"]::after,
+.darkimages15 [data-stylish="Identity Card Box"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    /* Dark shade */
+    z-index: 0;
 }
