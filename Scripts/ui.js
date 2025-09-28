@@ -1281,10 +1281,17 @@ function adjustheight(selector) {
     }
   });
   if ($(selector).attr("data-adjustwidth")) {
+    var firstRowLength = 0;
     $.each(itemTops, function (i, v) {
       if (v > 0) {
         var items = $(selector).filter("[data-top='" + i + "']");
         var length = items.length;
+        if (i == 0) {
+          firstRowLength = length;
+        }
+        if (length != firstRowLength) {
+          length = firstRowLength;
+        }
 
         $("body").append(
           "<style selector='" +
