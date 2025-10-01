@@ -8,15 +8,13 @@ var isAllOrganizationsSelected = false;
 var allowedRegIdNumbers = [];
 (function ($) {
   $(document).ready(function () {
-    let eventID = userObj.user.Event;
+    var jsonSettings =
+      userObj.user.JsonSettings;
     if(window.location.href.indexOf("BulkParticipants") > -1){
-    $.post("/EventJson/Get", { EvId: eventID,select:"JsonSettings" }, function (data) {
-      if (data && data.Results && data.Results.length > 0) {
-        let event = data.Results[0];
+
+
         try {
-          let jsonSettings = JSON.parse(
-            event.JsonSettings ?? "{}"
-          )?.AdditionalSettings;
+
           if (jsonSettings) {
             try {
               maxCandidateCount = parseInt(
@@ -53,8 +51,7 @@ var allowedRegIdNumbers = [];
           isPhotoMandatory = false;
           freezeParticipation = false;
         }
-      }
-    });
+
   }
   });
   var lazyi = 0;
