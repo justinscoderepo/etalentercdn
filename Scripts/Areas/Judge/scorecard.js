@@ -1,4 +1,29 @@
+
 function changeToFinish() {
+  var additionalSettings =
+    userObj.user.JsonSettings;
+  if (additionalSettings?.MarkAbsentOrScoreMarkIsMandatory == "Yes") {
+    var allFilled = true;
+    var missingItems = [];
+    $(".scorecandidatestab").each(function () {
+      var th = $(this);
+      var isAbsent = th.find(".CandidateAbsentStatus").is(":visible");
+      var isScored = th.find(".CandidateScore").text().trim() != "" && th.find(".CandidateScore").text().trim() != "0";
+      var participantName = th.find(".CandidateChessCode").text().trim() || th.find(".CandidateName").text().trim() || "Unknown";
+      if (!isAbsent && !isScored) {
+        allFilled = false;
+        missingItems.push(participantName);
+      }
+    });
+
+    if (!allFilled) {
+      alert("Missing Scores/Absent Status for some items: " + missingItems.join(", ") + ". Must fill all scores or mark as absent before finishing.", false, false, false, "w", 5000);
+      return;
+    }
+  }
+
+
+
   showabsolutespinner($("#judgesscorepanel"));
   var newcurrentcompetitiondata = {};
   newcurrentcompetitiondata.Competition = $("#competitionoptdropdown").val();
@@ -174,6 +199,8 @@ function changeToFinish() {
         judgesScoreCarddata[d.ParticipantId] = d;
       });
       ////$(this).trigger("click");
+
+      $('.scorecandidateslist>div[data-noresult="true"]').show();
     }
   );
   $("body").on("click", ".allscores .deleterow", function (e) {
@@ -189,6 +216,8 @@ function changeToFinish() {
     showspinner(cl);
     jldeleterow(th, th, "/JudgesScoreCardJson/Remove", function () {
       $(".scorecandidatestabview").binder();
+      $('.scorecandidateslist>div').hide();
+      $('.scorecandidateslist>div[data-noresult="true"]').show();
     });
   });
 
@@ -207,6 +236,16 @@ function changeToFinish() {
         $(".scorecandidateslist").binder({
           Data: [judgesScoreCard],
         });
+
+        // Check if candidate score is 0 or has no score, then show absent checkbox
+        var hasAbsentStatus = th.find(".CandidateAbsentStatus").is(":visible");
+
+        if (hasAbsentStatus) {
+          $(".markasabsent").prop("checked", true);
+        } else {
+          $(".markasabsent").prop("checked", false);
+        }
+
       }
     }
   );
@@ -282,6 +321,17 @@ function changeToFinish() {
               th.val(0);
             }
           }
+
+          // If user enters a score value > 0, hide absent checkbox
+          if (parseFloat(th.val()) > 0) {
+            $(".markasabsent").closest(".checkbox-label").hide();
+            $(".markasabsent").prop("checked", false);
+          } else if (parseFloat(th.val()) === 0) {
+            // If score becomes 0, show absent checkbox
+            $(".markasabsent").closest(".checkbox-label").show();
+            $(".markasabsent").prop("checked", true);
+          }
+
           var cl = th.closest(".allscores");
           var overlay = th
             .closest(".scorecriteriarow")
@@ -349,6 +399,12 @@ function changeToFinish() {
           postdata.JudgeId = $("#SelectedJudgeInScoreCard").val();
         }
         postdata.notes = $("#Notes").val();
+        postdata.Absent = 2; // Default to not absent
+        $("#Absent").prop("checked", false).trigger("change");
+        $(".markasabsent").closest(".checkbox-label").hide();
+        activetab.find(".CandidateAbsentStatus").hide();
+        activetab.find(".CandidateScore").show();
+
         $.post(
           cl.find("[data-action]:first").attr("data-action"),
           postdata,
@@ -530,6 +586,12 @@ function changeToFinish() {
         postdata.JudgeId = $("#SelectedJudgeInScoreCard").val();
       }
       postdata.notes = $("#Notes").val();
+
+      postdata.Absent = 2; // Default to not absent
+      $("#Absent").prop("checked", false).trigger("change");
+      $(".markasabsent").closest(".checkbox-label").hide();
+      activetab.find(".CandidateAbsentStatus").hide();
+      activetab.find(".CandidateScore").show();
       hidespinner(cl);
       showspinner(cl);
       $.post("/JudgeJson/SaveScore", postdata, function (data) {
@@ -604,6 +666,12 @@ function changeToFinish() {
       }
 
       postdata.notes = $("#Notes").val();
+
+      postdata.Absent = 2;
+      $("#Absent").prop("checked", false).trigger("change");
+      $(".markasabsent").closest(".checkbox-label").hide();
+      activetab.find(".CandidateAbsentStatus").hide();
+      activetab.find(".CandidateScore").show();
       hidespinner(cl);
 
       showspinner(cl);
@@ -766,4 +834,90 @@ function changeToFinish() {
       }
     }
   );
+
+  // Absent functionality
+  $("body").on("change", ".markasabsent", function (e) {
+
+    var activetab = $(".scorecandidatestabview .scorecandidatestab.candidateactive");
+
+    if (activetab.length === 0) {
+      alert("Please select a candidate first.", "w");
+      $(this).prop("checked", false);
+      return;
+    }
+
+    var participantId = activetab.attr("participantid");
+    var isAbsent = $(this).is(":checked") ? "1" : "2";
+
+    var originalStatus = activetab.find(".CandidateAbsentStatus").is(":visible") ? "1" : "2";
+    if (isAbsent === originalStatus) {
+      // No change in status
+      return;
+    }
+    if (isAbsent === "1") {
+      var isTotalEmpty = true;
+      $(".totalscore .scorebyinput").each(function () {
+        if ($(this).val() && parseFloat($(this).val()) > 0) {
+          isTotalEmpty = false;
+          return false; // Break loop
+        }
+      });
+      if (!isTotalEmpty) {
+        alert("Cannot mark as absent. Scores have already been entered for this participant.", "e");
+        $(this).prop("checked", false);
+        return;
+      }
+    }
+
+
+
+    markParticipantAbsent(participantId, isAbsent, activetab);
+
+
+  });
+
+  function markParticipantAbsent(participantId, absentStatus, activetab) {
+    var postdata = {
+      ParticipantId: participantId,
+      Absent: parseInt(absentStatus)
+    };
+
+    if ($("#SelectedJudgeInScoreCard").val()) {
+      postdata.JudgeId = $("#SelectedJudgeInScoreCard").val();
+    }
+
+    showspinner(activetab);
+
+    $.post("/CompetitionParticipantsJson/MarkAbsent", postdata, function (data) {
+      hidespinner(activetab);
+
+      if (data.Results.success) {
+        var statusText = absentStatus === "1" ? "absent" : "present";
+        alert("Participant marked as " + statusText, "s");
+
+        // Update the UI
+        activetab.attr("absent", absentStatus);
+
+        // Update the absent checkbox
+        $(".markasabsent").prop("checked", absentStatus === "1");
+
+
+        // Update the absent indicator
+        if (absentStatus === "1") {
+          activetab.find(".CandidateScore").hide();
+          activetab.find(".CandidateAbsentStatus").show();
+        } else {
+          activetab.find(".CandidateAbsentStatus").hide();
+          activetab.find(".CandidateScore").show();
+        }
+
+      } else {
+        alert(data.Results.Message || "Failed to update absent status. Please try again.", "e");
+      }
+    }).fail(function () {
+      hidespinner(activetab);
+      alert("Failed to update absent status. Please try again.", "e");
+    });
+  }
+
 })(jQuery);

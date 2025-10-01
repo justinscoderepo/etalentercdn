@@ -8,14 +8,40 @@
     "description": "eTalenter - automating competitions",
     "icons": [
       {
-        "src": "/Content/Images/favicon.png",
+        "src": "/Content/Images/icon-192x192.png",
         "sizes": "192x192",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any"
       },
       {
-        "src": "/Content/Images/favicon.png",
+        "src": "/Content/Images/icon-512x512.png",
         "sizes": "512x512",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/Content/Images/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "/Content/Images/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "/Content/Images/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/Content/Images/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png",
+        "purpose": "any"
       }
     ]
   }
