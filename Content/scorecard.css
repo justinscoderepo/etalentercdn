@@ -108,7 +108,8 @@ select#competitionoptdropdown {
     min-height: 150px;
     padding-top: 14px;
 }
-.CandidateScore {
+.CandidateScore,
+.CandidateAbsentStatus {
     border-bottom: 2px solid #000;
     color: #121212;
     font-size: 12px;

@@ -172,11 +172,11 @@ a.tokenbutton {
 competitiontoken.prevtokenactive { text-decoration: bold; }
 
 .ongoingcompetitions {
-    display: block;
+    display: inline;
     float: left;
     font-size: 23px;
     padding: 1px;
-    width: 100%;
+    width: auto;
 }
 
 .ongoingcompetitions > span {
