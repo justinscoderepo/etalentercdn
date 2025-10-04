@@ -1,0 +1,1 @@
+let e=[];const t=(o="Authentication state changed")=>{console.log("RouterReload - Triggering reload:",o),console.log("RouterReload - Notifying",e.length,"callbacks"),e.forEach(r=>{try{r(o)}catch(l){console.error("RouterReload - Callback error:",l)}})};export{t as triggerRouterReload};
