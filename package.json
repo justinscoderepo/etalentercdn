@@ -11,6 +11,7 @@
     "pages:deploy": "wrangler pages deploy . --project-name etalenter-browser-worker",
     "pages:dev": "wrangler pages dev . --project-name etalenter-browser-worker",
     "build": "echo 'Static assets ready for deployment'",
+    "pages:build": "echo 'Pages build completed - static assets ready'",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [

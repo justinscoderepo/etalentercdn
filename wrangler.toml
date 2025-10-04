@@ -23,31 +23,11 @@ binding = "BROWSER_KV_DEMO"
 id = "your-production-kv-id-here"
 preview_id = "your-preview-kv-id-here"
 
-# Build configuration for automatic deployments
+# Build configuration optimized for Pages
 [build]
-command = "echo 'No build required for static assets'"
+command = "npm run pages:build"
 cwd = "./"
 
-# Deployment configuration for consistency
-[env.production]
-name = "etalenter-browser-worker"
-compatibility_date = "2025-10-04"
-
-[env.production.browser]
-binding = "MYBROWSER"
-
-[[env.production.kv_namespaces]]
-binding = "BROWSER_KV_DEMO"
-id = "your-production-kv-id-here"
-
-# Development environment configuration  
-[env.dev]
-name = "etalenter-browser-worker-dev"
-compatibility_date = "2025-10-04"
-
-[env.dev.browser]
-binding = "MYBROWSER"
-
-[[env.dev.kv_namespaces]]
-binding = "BROWSER_KV_DEMO"
-preview_id = "your-preview-kv-id-here"
+# Functions configuration for Pages
+[functions]
+directory = "./"

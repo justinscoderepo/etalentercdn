@@ -1,0 +1,20 @@
+# Redirect rules for Cloudflare Pages
+
+# Main routes
+/api/pdf/* /generate-pdf 200
+/api/screenshot/* /screenshot 200
+
+# Legacy redirects
+/pdf-generator /pdf-generator.html 200
+
+# SPA fallback for any React routes
+/react/* /react/index.html 200
+
+# V2 fallback
+/v2/* /v2/index.html 200
+
+# Default fallback to main index
+/ /index.html 200
+
+# 404 fallback
+/* /index.html 404
