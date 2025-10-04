@@ -3,9 +3,6 @@ main = "_worker.js"
 compatibility_date = "2025-10-04"
 compatibility_flags = ["nodejs_compat"]
 
-# Pages configuration for Git repository integration
-pages_build_output_dir = "./"
-
 # Observability configuration for consistent logging across deployments
 [observability.logs]
 enabled = true
@@ -22,12 +19,3 @@ binding = "MYBROWSER"
 binding = "BROWSER_KV_DEMO"
 id = "your-production-kv-id-here"
 preview_id = "your-preview-kv-id-here"
-
-# Build configuration optimized for Pages
-[build]
-command = "npm run pages:build"
-cwd = "./"
-
-# Functions configuration for Pages
-[functions]
-directory = "./"
