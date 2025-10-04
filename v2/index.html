@@ -35,15 +35,14 @@
 
     
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/v2/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/v2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://justinscoderepo.github.io/etalentercdn/v2/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://justinscoderepo.github.io/etalentercdn/v2/favicon-32x32.png">
     
     <script>
         window.REACT_MODE = 'standalone';
         window.API_BASE_URL = window.location.origin;
         window.IS_DEVELOPMENT = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         window.INITIAL_ROUTE = window.location.pathname === '/v2/' || window.location.pathname === '/v2' ? 'dashboard' : window.location.pathname.replace('/v2/', '');
-        window.IS_DEVELOPMENT = false; // Force production mode for testing CDN
     </script>
     <base href="/v2/">
 </head>
@@ -100,7 +99,7 @@
             };
             document.head.appendChild(mainScript);
         } else {
-            console.log('Production mode - loading from manifest');
+            console.log('Production mode - loading from CDN manifest');
             // Add cache busting parameter to manifest request
             const cacheBuster = Date.now();
             fetch(`https://justinscoderepo.github.io/etalentercdn/v2/vite/manifest.json?v=${cacheBuster}`)
@@ -120,19 +119,19 @@
                             if (css) {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                link.href = `/v2/${css.file}?v=${cacheBuster}`;
+                                link.href = `https://justinscoderepo.github.io/etalentercdn/v2/${css.file}?v=${cacheBuster}`;
                                 document.head.appendChild(link);
-                                console.log('CSS loaded:', css.file);
+                                console.log('CSS loaded from CDN:', css.file);
                             }
                             const script = document.createElement('script');
                             script.type = 'module';
-                            script.src = `/v2/${entry.file}?v=${cacheBuster}`;
+                            script.src = `https://justinscoderepo.github.io/etalentercdn/v2/${entry.file}?v=${cacheBuster}`;
                             script.onload = () => {
-                                console.log('MainWeb script loaded:', entry.file);
+                                console.log('MainWeb script loaded from CDN:', entry.file);
                                 document.body.classList.add('loaded');
                             };
                             script.onerror = () => {
-                                document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">Failed to load app bundle</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
+                                document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">Failed to load app bundle from CDN</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
                             };
                             document.head.appendChild(script);
                         } else { 
