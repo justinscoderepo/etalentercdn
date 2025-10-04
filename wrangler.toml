@@ -3,13 +3,43 @@ main = "_worker.js"
 compatibility_date = "2025-10-04"
 compatibility_flags = ["nodejs_compat"]
 
+# Observability configuration for consistent logging across deployments
+[observability.logs]
+enabled = true
+
+# Browser rendering binding
 [browser]
 binding = "MYBROWSER"
 
+# KV namespace configuration
 # Add your KV namespace IDs after creating them with:
 # npx wrangler kv namespace create BROWSER_KV_DEMO
 # npx wrangler kv namespace create BROWSER_KV_DEMO --preview
 [[kv_namespaces]]
 binding = "BROWSER_KV_DEMO"
 id = "your-production-kv-id-here"
+preview_id = "your-preview-kv-id-here"
+
+# Deployment configuration for consistency
+[env.production]
+name = "etalenter-browser-worker"
+compatibility_date = "2025-10-04"
+
+[env.production.browser]
+binding = "MYBROWSER"
+
+[[env.production.kv_namespaces]]
+binding = "BROWSER_KV_DEMO"
+id = "your-production-kv-id-here"
+
+# Development environment configuration
+[env.dev]
+name = "etalenter-browser-worker-dev"
+compatibility_date = "2025-10-04"
+
+[env.dev.browser]
+binding = "MYBROWSER"
+
+[[env.dev.kv_namespaces]]
+binding = "BROWSER_KV_DEMO"
 preview_id = "your-preview-kv-id-here"
