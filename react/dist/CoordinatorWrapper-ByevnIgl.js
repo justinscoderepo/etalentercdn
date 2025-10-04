@@ -1,1 +1,0 @@
-import{c as a,j as r,r as p,R as i,L as n}from"./main-BTxYPv0w.js";import{g as u}from"./coordinatorRouter-ELCWIs2D.js";import"./layoutUtils-0hSM_lUv.js";import"./navigationUtils-BLWJCr5T.js";const R=({user:o,...t})=>{const e=u(o,t),s=a(e);return r.jsx(p.Suspense,{fallback:r.jsx(n,{from:"CoordinatorWrapper-Router"}),children:r.jsx(i,{router:s})})};export{R as default};

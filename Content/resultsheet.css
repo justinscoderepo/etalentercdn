@@ -1,0 +1,993 @@
+
+.detailsbox {
+    max-width: 100%;
+    width: 100%;
+    /* padding-left: 6px; */
+    /* padding-right: 115px; */
+}
+
+.head-1 {
+    background-color: #122a48;
+    background-image: linear-gradient(to right, #2a488e, #3459b1, #2a488e);
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    font-size: 40px;
+    font-weight: 600;
+    /* line-height: 31px; */
+    margin-bottom: 20px;
+    min-height: 286px;
+    padding: 40px;
+    padding-bottom: 100px;
+    padding-top: 34px;
+    text-align: center;
+    text-shadow: 1px 6px 3px #08192b;
+    text-shadow: 1px 6px 3px rgba(8, 25, 43, 0.45);
+    text-transform: capitalize;
+}
+
+.head-1 span {
+    color: #ffffff;
+    /* text-transform: uppercase; */
+}
+
+.head-2 {
+    color: #1a3963;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.head-2 span {
+    color: #c59700;
+    font-size: 30px;
+}
+
+.table-row h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.resultrowborder { padding: 7px; }
+
+.resultcard-background-image {
+    background-image: linear-gradient(to bottom, rgb(245, 181, 0), rgba(255, 255, 255, 0)), url(https://app.etalenter.com/Content/Images/result-card/rank-back-img.png);
+    /* background-size: 100%; */
+    border-radius: 86px;
+    box-shadow: 2px 2px 7px #969494;
+    /* margin-right: 15px; */
+    margin-bottom: 15px;
+    max-width: 395px;
+    min-height: 259px;
+    padding: 57px 20px !important;
+    padding-bottom: 76px !important;
+    width: 100%;
+    background-size: cover;
+}
+
+.sectionwiseresults .resultcard-background-image {
+    background-image: linear-gradient(to bottom, rgb(5, 119, 14), rgba(69, 135, 207, 0.19)), url(https://app.etalenter.com/Content/Images/result-card/rank-back-img.png);
+    box-shadow: 2px 2px 15px #969494;
+}
+
+.championsingle {
+    border-radius: 60px;
+    /* margin: 0 auto; */
+    /* justify-content: space-between; */
+}
+
+.championsingle > div {
+    /* justify-self: center; */
+    /* -webkit-box-pack: center!important; */
+    -ms-flex-pack: center !important;
+    display: flex;
+    /* margin: 0px auto; */
+    float: none;
+    width: auto;
+    justify-content: center!important;
+}
+
+
+@media (max-width: 992px) {
+    .championsingle > div { justify-content: center; }
+}
+
+.championsingle h3 { color: #ffffff; }
+
+.winner-icon-1 {
+    background-image: url(https://app.etalenter.com/Content/Images/result-card/winner_icon_1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 100px;
+}
+
+.winner-icon-2 {
+    background-image: url(https://app.etalenter.com/Content/Images/result-card/winner_icon_2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 100px;
+}
+
+.winner-icon-3 {
+    background-image: url(https://app.etalenter.com/Content/Images/result-card/winner_icon_3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 100px;
+}
+
+/*------------Common Section---------------*/
+
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.justify-content-center {
+    -ms-flex-pack: center !important;
+    -webkit-box-pack: center !important;
+    justify-content: center !important;
+}
+
+/*------------------------------------------*/
+
+.hr-line {
+    background-color: aliceblue;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .4;
+    width: 90%;
+}
+
+.result-card-label {
+    color: #fff;
+    /* font-family: 'Roboto Condensed', sans-serif; */
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.result-card-value {
+    color: #fff;
+    /* font-family: 'Roboto Condensed', sans-serif; */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.flex-auto {
+    display: flex;
+    width: auto;
+}
+
+.result-checkbox-outer {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    z-index: 9999;
+}
+
+.runnerup-background-image {
+    background-image: linear-gradient(to bottom, rgb(193, 193, 193), rgb(192, 192, 192)), url('https://justinscoderepo.github.io/etalentercdn/Content/Images/result-card/rank-back-img.png');
+    background-size: 100%;
+    border-radius: 30px;
+    box-shadow: 2px 2px 15px #969494;
+    height: 250px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    max-width: 100%;
+    width: 220px;
+}
+
+.runnerup-label {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.runnerup-value {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.runnerupsingle {
+    border-radius: 60px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.runnerupsingle h3 { color: #ffffff; }
+
+.runnerup-checkbox-outer {
+    margin-left: 20px;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 9999;
+}
+
+.rank2 .resultcard-background-image {
+    background-image: linear-gradient(to bottom, rgb(255, 75, 255), rgba(221, 30, 30, 0)), url(https://justinscoderepo.github.io/etalentercdn/Content/Images/result-card/rank-back-img.png);
+    box-shadow: 2px 2px 15px #969494;
+}
+
+.second-runnerup-label {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.second-runnerup-value {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.second-runnerupsingle {
+    border-radius: 60px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.second-runnerupsingle h3 { color: #ffffff; }
+
+.second-runnerup-checkbox-outer {
+    margin-left: 20px;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 9999;
+}
+
+.result-sheet input, [type="checkbox"] + span:not(.lever):before {
+    -webkit-transition: .2s;
+    background-color: #f9f8f8;
+    border: 1px solid rgb(255, 253, 253);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 1px;
+    content: '';
+    height: 18px;
+    left: 0;
+    margin-top: 3px;
+    position: absolute;
+    top: 0;
+    transition: .2s;
+    width: 18px;
+}
+
+.result-sheet input, [type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+    -webkit-transition: .2s;
+    border: 1px solid rgb(255, 253, 253);
+    border-radius: 1px;
+    content: '';
+    height: 18px;
+    left: 0;
+    margin-top: 3px;
+    position: absolute;
+    top: 0;
+    transition: .2s;
+    width: 18px;
+}
+
+.champion-outer { padding-bottom: 15px; }
+
+.wraprow { display: flex; }
+
+.ChampionName {
+    font-size: 23px !important;
+    /* height: 34px; */
+    text-align: center;
+    /* float: left; */
+    width: 100%;
+}
+
+.publishedresults { margin: 0px; }
+
+
+.head-1 img {
+    bottom: 0px;
+    left: 0%;
+    min-width: 100%;
+    position: absolute;
+    width: 2000px;
+}
+
+.head-1 .organization {
+    color: #fdf8e7;
+    font-size: 30px;
+    padding-right: 16px;
+}
+
+.head-1 .organizationlogo {
+    background-color: white;
+    border: 7px solid #ffffff;
+    border-radius: 83px;
+    box-shadow: 0 12px 20px -12px #000000;
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, .35);
+    height: 118px;
+    min-width: 0%;
+    position: relative;
+    width: 118px;
+    width: auto;
+}
+
+.head-1 .eventLogo {
+    background-color: white;
+    border: 7px solid #ffffff;
+    border-radius: 38px;
+    box-shadow: 0 12px 20px -12px #000000;
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, .35);
+    max-height: 250px;
+    height: auto;
+    min-width: 0%;
+    position: relative;
+    width: 118px;
+    width: auto;
+    max-width: 100%;
+}
+.event { width: 100%; }
+
+.publishedresults .nav-tabs li i { color: #0f2238; }
+
+.publishedresults .nav-tabs li.active i { color: #ffffff; }
+
+.publishedresults .nav-tabs li {
+    background-image: linear-gradient(to right, #ffffff, #ffffff, #ffffff);
+    border-radius: 43px;
+    box-shadow: 0px 2px 3px 0px #000000;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.22);
+    color: #0e253e;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: auto;
+    margin-right: 10px;
+    min-width: 220px;
+    padding: 14px;
+    text-align: center;
+}
+
+.publishedresults .nav-tabs li.active {
+    /* text-align: center; */
+    background-image: linear-gradient(to bottom, #3255a9, #2d4e9b, #3256aa);
+    color: #ffffff;
+}
+
+.publishedresults .nav-tabs { border-bottom: 3px solid rgb(52, 89, 176); }
+
+.sectionwiseresults { /* overflow-x: scroll; */ }
+
+
+
+.resultrowtoshow > div { padding-top: 15px; }
+
+.resultrowtoshow .tablehead {
+    border-bottom: 2px solid #5f2c07;
+    border-bottom: 2px solid rgba(95, 44, 7, 0);
+    float: left;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.resultrowtoshow .tablehead > div {
+    border-bottom: 0px solid #fff;
+    height: 50px;
+    line-height: 18px;
+    /* margin-bottom: 20px; */
+    overflow: hidden;
+}
+
+@media print {
+    .nav-tabs { display: none; }
+
+    .forcevisibleonprint { display: block !Important; }
+
+    .forcefitonprint { width: 100% !Important; }
+    .forcevisibleonprint.hidden-print.removethis{
+        display: none !Important;
+    }
+}
+
+ul.groups > li ul { padding-left: 17px; }
+
+ul.groups li > a {
+    background: linear-gradient(45deg, #56ade8, #324fa9);
+    border-radius: 25px;
+    box-shadow: 1px 1px 8px -2px #000000;
+    box-shadow: 1px 1px 8px -2px rgba(0, 0, 0, 0.43137254901960786);
+    color: #FFF;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding: 11px 27px;
+    text-decoration: none !important;
+    width: 90%;
+}
+
+ul.groups > li:nth-child(1) > a { background: linear-gradient(45deg, #56ade8, #324fa9); }
+
+ul.competitions > li > a {
+    background: linear-gradient(45deg, #5dbaef, #5dbaef);
+    font-size: 15px;
+}
+
+
+
+ul.groups > li:nth-child(4n + 2) > a { background: linear-gradient(45deg, #60e051, #35bd36); }
+
+ul.groups > li:nth-child(4n + 2) ul > li > a {
+    background: linear-gradient(45deg, #60e051, #60e051);
+    font-size: 15px;
+}
+
+#publishedresults > div:nth-child(4n + 2) .tablehead { background: linear-gradient(45deg, #5dbb46, #48ad28) !important; }
+
+#publishedresults > div:nth-child(4n + 2) .competitionheading { color: #3f9622 !important; }
+
+#publishedresults > div:nth-child(4n + 2) .groupheading { color: #276113; }
+
+
+
+ul.groups > li:nth-child(4n + 3) > a { background: linear-gradient(45deg, #e13a89, #a92a57); }
+
+ul.groups > li:nth-child(4n + 3) ul > li > a {
+    background: linear-gradient(45deg, #e13a89, #a92a57);
+    font-size: 15px;
+}
+
+#publishedresults > div:nth-child(4n + 3) .tablehead { background: linear-gradient(45deg, #e13a89, #a92a57) !important; }
+
+#publishedresults > div:nth-child(4n + 3) .competitionheading { color: #861c42; }
+
+#publishedresults > div:nth-child(4n + 3) .groupheading { color: #861c42; }
+
+ul.groups > li:nth-child(4n + 4) > a { background: linear-gradient(45deg, #673AB7, #531b8c); }
+
+ul.groups > li:nth-child(4n + 4) ul > li > a {
+    background: linear-gradient(45deg, #673AB7, #673AB7);
+    font-size: 15px;
+}
+
+#publishedresults > div:nth-child(4n + 4) .tablehead { background: linear-gradient(45deg, #673AB7, #3f1f79) !important; }
+
+#publishedresults > div:nth-child(4n + 4) .competitionheading { color: #523090; }
+
+#publishedresults > div:nth-child(4n + 4) .groupheading { color: #3f1f79; }
+
+
+
+
+.tablehead {
+    background: linear-gradient(45deg, #56ade8, #324fa9) !important;
+    border: none !important !important;
+    color: #FFF;
+    padding: 0px;
+    /* border-radius: 35px; */
+}
+
+.divtable .tablehead { border-bottom: 2px solid #fff; }
+
+.tablehead > div {
+    border-right: 0px solid #4485cd !important;
+    border-right: 0px solid rgba(68, 133, 205, 0) !important;
+    padding: 10px 0px !important;
+    /* border-radius: 35px; */
+}
+
+.tablehead .pad-left-10 { padding-left: 10px !important; }
+
+.competitionsstructure {
+    border: 10px solid #fff;
+    overflow: hidden;
+    /* border-radius: 59px; */
+    page-break-inside: avoid;
+    max-width: 95vw;
+}
+
+.userorganizationList span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 95%;
+}
+
+.divtable > div > div > div { padding: 12px 10px; }
+
+.divtable > div > div.tablehead > div { padding: 15px 10px !important; }
+
+.groupheading {
+    color: #234086;
+    padding: 2px 24px;
+    margin: -5px;
+    font-size: 26px;
+}
+
+div#Champion { page-break-inside: avoid; }
+
+div#LocalUnitPoints { page-break-inside: avoid; }
+
+.levelfilterbox {
+    border-left: 5px solid #3d74c2;
+    padding: 8px;
+    padding-left: 12px;
+}
+
+.candidategroupresult .divtable > div > div > div {
+    
+    padding: 0px 10px;
+    
+    padding-top: 0px;
+}
+
+.candidategroupresult .divtable > div > div.tablehead > div.datacolumn:not(.checkrow):not(.actioncolumn):not(.orderrow) {
+    color: white !important;
+    vertical-align: bottom !important;
+}
+
+@page {
+    size: A3;
+    transform: scale(1.1);
+}
+
+.championsingle h2, #Champion h2 {
+    /* max-width: 350px; */
+    padding: 0px 15px;
+    width: 100%;
+}
+
+.ScorecardIdRankNumber {
+    border-radius: 34px;
+    color: #FFF !important;
+    float: left;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 35px;
+}
+
+.ScorecardIdRankNumber.hasValue { background-color: rgb(14, 37, 63) !important; }
+
+.ScorecardIdRankNumber:empty { visibility: hidden; }
+
+.ScorecardIdRankNumber[ranktitle="S"] { background-color: rgb(41, 95, 94) !important; }
+
+.ScorecardIdRankNumber[ranktitle="T"] { background-color: rgb(98, 5, 115) !important; }
+
+.ScorecardIdRankNumber[ranktitle="F"] { background-color: rgb(109, 79, 5) !important; }
+
+.competitionnamehorizontal {
+    color: white !important;
+    float: left;
+    line-height: 35px;
+    text-align: center;
+    transform: rotate(180deg);
+    width: 35px;
+    writing-mode: tb;
+}
+
+.candidategroupresult .grouprow > h2 {
+    
+    color: white;
+    
+    font-size: 40px;
+    
+    left: 20px;
+    
+    margin: 0px;
+    
+    position: absolute;
+    
+    top: 20px;
+    
+    width: auto;
+    
+    z-index: 1;
+    
+    /* padding-right: 40px; */
+    
+    /* border-bottom: 5px solid rgba(255, 255, 255, 0.3); */
+}
+
+.tableheadcompetitionlist {
+    position: relative;
+    z-index: 99999;
+}
+
+.shareicons {
+    background-color: rgba(248, 248, 248, 0.88);
+    border-radius: 28px;
+    box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.16);
+    height: 53px;
+    overflow: hidden;
+    padding: 11px 12px;
+    position: absolute;
+    right: 18px;
+    top: -10px;
+    width: auto;
+    z-index: 82;
+}
+
+.shareicons .a2a_svg svg { /* width: 100%; */ }
+
+.shareicons span {
+    /* height: 30px; */
+    border-radius: 104px !important;
+    box-shadow: 0px 0px 1px 1px #00000047;
+    margin-bottom: 26px;
+    overflow: hidden;
+    padding: 4px;
+}
+
+.shareicons a img {
+    bottom: auto;
+    min-width: 0%;
+    position: relative;
+    width: 100%;
+}
+
+
+
+.championorgdetails { color: white; }
+
+@page {
+    size: A3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper {
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+
+    perspective: 1600px;
+    perspective-origin: 50% -240px;
+
+    -webkit-perspective: 1600px;
+    -webkit-perspective-origin: 50% -240px;
+}
+
+.cube {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.cube.active {
+    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    animation: active 0.5s 1 linear;
+    -webkit-animation: active 0.5s 1 linear;
+}
+
+
+.cube.nonActive {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    animation: nonActive 0.5s 1 linear;
+    -webkit-animation: nonActive 0.5s 1 linear;
+}
+
+.plane {
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: #ccff00;
+    opacity: 0.9;
+
+    transform-origin: 50% 50% 0;
+    -webkit-transform-origin: 50% 50% 0;
+}
+
+.plane:before,
+.plane:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 25;
+}
+
+.plane:before {
+    background: radial-gradient(top left, rgba(0, 0, 0, 0.5), #000000);
+    background: -webkit-radial-gradient(top left, rgba(0, 0, 0, 0.5), #000000);
+}
+
+
+.plane:after {
+    background: radial-gradient(top right, rgba(0, 0, 0, 0.5), #000000);
+    background: -webkit-radial-gradient(top right, rgba(0, 0, 0, 0.5), #000000);
+}
+
+.front {
+    transform: translateZ(150px);
+    -webkit-transform: translateZ(150px);
+}
+
+.nonActive .front:before {
+    animation: frontShading2 0.5s 1 linear;
+    -webkit-animation: frontShading2 0.5s 1 linear;
+}
+
+.active .front:before {
+    animation: frontShading1 0.5s 1 linear;
+    -webkit-animation: frontShading1 0.5s 1 linear;
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(150px);
+    -webkit-transform: rotateY(180deg) translateZ(150px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(150px);
+    -webkit-transform: rotateX(90deg) translateZ(150px);
+    overflow: hidden;
+}
+
+.top:after {
+    opacity: 0.25;
+    width: 200%;
+    height: 200%;
+    margin-left: -50%;
+    margin-top: -50%;
+    background: radial-gradient(bottom, rgba(0, 0, 0, 0), #000000);
+    background: -webkit-radial-gradient(bottom, rgba(0, 0, 0, 0), #000000);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+    -webkit-transform: rotateX(-90deg) translateZ(150px);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(150px);
+    -webkit-transform: rotateY(-90deg) translateZ(150px);
+}
+
+.nonActive .left:before {
+    animation: leftShading2 0.5s 1 linear;
+    -webkit-animation: leftShading2 0.5s 1 linear;
+}
+
+.active .left:before {
+    animation: frontShading1 0.5s 1 linear;
+    -webkit-animation: leftShading1 0.5s 1 linear;
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(150px);
+    -webkit-transform: rotateY(90deg) translateZ(150px);
+}
+
+/* PLANE COLORS */
+.front,
+.back {
+    background: #CCF600;
+}
+
+.top,
+.bottom {
+    background: #E40045;
+}
+
+.left,
+.right {
+    background: #530FAD;
+}
+
+.front,
+.back,
+.top,
+.bottom,
+.left,
+.right {
+    background: #d0d0d0;
+}
+
+/* ANIMATIONS */
+@keyframes active {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(90deg);
+    }
+}
+
+@-webkit-keyframes active {
+    0% {
+        -webkit-transform: rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: rotateY(90deg);
+    }
+}
+
+@keyframes nonActive {
+    0% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@-webkit-keyframes nonActive {
+    0% {
+        -webkit-transform: rotateY(90deg);
+    }
+    100% {
+        -webkit-transform: rotateY(0deg);
+    }
+}
+
+@keyFrames frontShading1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+@-webkit-keyFrames frontShading1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+@keyFrames frontShading2 {
+    0% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyFrames frontShading2 {
+    0% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyFrames leftShading1 {
+    0% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyFrames leftShading1 {
+    0% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyFrames leftShading2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+@-webkit-keyFrames leftShading2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+@keyframes rotateTop1 {
+    0% {
+        transform: rotateZ(0);
+    }
+
+    100% {
+        transform: rotateZ(90deg);
+    }
+}
+
+@-webkit-keyframes rotateTop1 {
+    0% {
+        -webkit-transform: rotateZ(0);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(90deg);
+    }
+}
+.thiscompetitionimage{
+    display: none;
+}
+
+.competitionsstructure:hover .thiscompetitionimage{
+    display: inline;
+    cursor: pointer;
+    float: right;
+}
+
+
+@media print {
+    .individualprint .competitionsstructure {
+        width: auto;
+        margin: 0px auto;
+        float: none;
+        max-width: 700px;
+    }
+}
+
+[data-subjson="OtherOrderedItems"] {
+    border-top: 2px solid #111010;
+}
+
+.publishedAwards .resultrowtoshow{
+    margin: 0px auto;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PWA Logo Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#051424">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Apple PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="eTalenter">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="https://justinscoderepo.github.io/etalentercdn/Content/Images/favicon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://justinscoderepo.github.io/etalentercdn/Content/Images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://justinscoderepo.github.io/etalentercdn/Content/Images/favicon.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://justinscoderepo.github.io/etalentercdn/Content/Images/favicon.png">
+    
+    <!-- Regular favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/Content/Images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Content/Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Content/Images/favicon.png">
+    
+    <!-- Microsoft tiles -->
+    <meta name="msapplication-TileImage" content="https://justinscoderepo.github.io/etalentercdn/Content/Images/favicon.png">
+    <meta name="msapplication-TileColor" content="#051424">
+</head>
+<body>
+    <h1>PWA Logo Test</h1>
+    <p>This page helps test PWA logo configurations.</p>
+    
+    <h2>Icon Tests:</h2>
+    <div>
+        <h3>Local favicon-16x16.png:</h3>
+        <img src="/Content/Images/favicon-16x16.png" alt="16x16 favicon" style="border: 1px solid #ccc;">
+    </div>
+    
+    <div>
+        <h3>Local favicon-32x32.png:</h3>
+        <img src="/Content/Images/favicon-32x32.png" alt="32x32 favicon" style="border: 1px solid #ccc;">
+    </div>
+    
+    <div>
+        <h3>Local favicon.png:</h3>
+        <img src="/Content/Images/favicon.png" alt="Original favicon" style="border: 1px solid #ccc;">
+    </div>
+    
+    <div>
+        <h3>PWA icon-192x192.png:</h3>
+        <img src="/Content/Images/icon-192x192.png" alt="192x192 PWA icon" style="border: 1px solid #ccc;">
+    </div>
+    
+    <div>
+        <h3>PWA icon-512x512.png:</h3>
+        <img src="/Content/Images/icon-512x512.png" alt="512x512 PWA icon" style="border: 1px solid #ccc; max-width: 100px;">
+    </div>
+    
+    <h2>PWA Install Button Test:</h2>
+    <div id="installAppButton" style="display: none;">
+        <button onclick="installApp()" style="padding: 10px 20px; background: #051424; color: white; border: none; border-radius: 5px;">
+            Install App
+        </button>
+    </div>
+    
+    <div id="status">
+        <p>PWA Installation Status: <span id="installStatus">Checking...</span></p>
+    </div>
+    
+    <h2>Manifest Content:</h2>
+    <pre id="manifestContent">Loading...</pre>
+    
+    <script>
+        // Check PWA installation capability
+        let deferredPrompt;
+        let installButton = document.getElementById('installAppButton');
+        let statusElement = document.getElementById('installStatus');
+        
+        // Load and display manifest content
+        fetch('/manifest.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('manifestContent').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById('manifestContent').textContent = 'Error loading manifest: ' + error.message;
+            });
+        
+        if ('serviceWorker' in navigator) {
+            // Register service worker
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered:', registration);
+                })
+                .catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
+            
+            // Handle beforeinstallprompt
+            window.addEventListener('beforeinstallprompt', (event) => {
+                event.preventDefault();
+                deferredPrompt = event;
+                installButton.style.display = 'block';
+                statusElement.textContent = 'Ready to install';
+            });
+            
+            // Install function
+            window.installApp = function() {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            statusElement.textContent = 'App installed successfully';
+                        } else {
+                            statusElement.textContent = 'Installation cancelled';
+                        }
+                        deferredPrompt = null;
+                        installButton.style.display = 'none';
+                    });
+                }
+            };
+            
+            // Handle app installed
+            window.addEventListener('appinstalled', () => {
+                statusElement.textContent = 'App installed!';
+                installButton.style.display = 'none';
+            });
+        } else {
+            statusElement.textContent = 'Service Worker not supported';
+        }
+        
+        // Additional checks
+        setTimeout(() => {
+            if (statusElement.textContent === 'Checking...') {
+                if (window.matchMedia('(display-mode: standalone)').matches) {
+                    statusElement.textContent = 'Already installed as PWA';
+                } else {
+                    statusElement.textContent = 'PWA install prompt not triggered yet';
+                }
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+.candidateCard{
+    font-family: 'Quicksand', sans-serif
+}
+@page {
+    size: A3;
+    margin:20px;
+}
+.candidateCard {
+     page-break-inside: avoid;
+     overflow: hidden;
+     padding: 10px;
+     page-break-inside: avoid;
+     outline: 1px solid rgb(146, 142, 142,0.39);
+}
+
+.candidateCard * {
+    -ms-background-repeat: repeat !important;
+    -ms-background-size: cover !important;
+    background-repeat: repeat !important;
+    width: 100%;
+    background-size: cover !important;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.candidateCard .box {
+    -ms-background-position: center !important;
+    -ms-background-repeat: repeat !important;
+    -ms-background-repeat: repeat !important;
+    background-position: center !important;
+    background-repeat: repeat !important;
+    background-size: cover !important;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px;
+    page-break-inside: avoid !important;
+    position: relative;
+    /* filter: blur(1px); */
+}
+.candidateCard .box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgb(2 2 14 / 25%); */ /* Blue overlay with 50% opacity */
+z-index: -2;
+}
+.printcertificate .candidateCard .box , .printtopcertificate  .candidateCard .box {
+    
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+.candidateCard .eventName {
+    background-color: rgba(255, 255, 255, 0.59);
+    color: #1664b7;
+    text-align: center;
+    white-space: break-spaces;
+    /* color: white; */
+    text-shadow: 1px 1px 1px rgb(105 103 103 / 60%);
+}
+.printcertificate .candidateCard .eventName,
+.printcertificate .candidateCard .eventName{
+    background-color: transparent;
+}
+.candidateCard .UserIdentityNumber {
+    /*background-color: #ffff3d;*/
+    /*background-color: rgba(255, 255, 61, 1);*/
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    /* text-shadow: 3px 2px 1px rgba(0, 0, 0, 0.6); */
+    /* text-shadow: 1px -1px 0 #e6e1e1, -1px 2px 1px #e6e1e1, -2px 4px 1px #e6e1e1; */
+    /* text-shadow: 0.05em 0.05em 0.2em rgba(10,10,10,0.9); */
+    /* text-shadow: -1px 2px 1px #e1d5d5, -2px 4px 1px #bdbbbb, -2px 16px 2px #00000045; */
+}
+
+.candidateCard .userName {
+    border-bottom: 1px solid #fff;
+    color: #944603;
+    padding: 3px;
+    margin: 0px;
+    text-align: center;
+    white-space: break-spaces;
+}
+
+.candidateCard .userOrganizationsList > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.candidateCard .userOrganizationsList {
+    border-left: 5px solid #661c1c;
+    border-left: 5px solid rgba(102, 28, 28, 0.19);
+    min-height: 0;
+    padding-left: 10px;
+}
+
+.candidateCard .userOrganizationsList span span { color: inherit !important }
+
+.candidateCard .conductby {
+    border-right: 5px solid #661c1c;
+    border-right: 5px solid rgba(102, 28, 28, 0.19);
+    color: #ffffff;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.candidateCard .footerbox {
+    /* background-color: #d8d4d4; */
+    /* background-color: rgba(216, 212, 212, 0.21); */
+    border-radius: 2px;
+    color: #fff;
+    padding: 1px
+}
+.printcertificate .candidateCard .footerbox ,.printcertificate .candidateCard .footerbox {
+    background-color: transparent;
+}
+.candidateCard .resultlink {text-align: center;display: none;}
+
+.candidateCard .cardheaderlogo {
+    display: block;
+    height: auto;
+    width: auto;
+}
+
+.candidateCard .cardheaderlogo2 {
+    display: block;
+    height: auto;
+}
+.profileimagebox {
+    border-radius: 5px;
+    height: 125px;
+    /* max-height: 130px; */
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100px;
+    max-width: 100%;
+    display: block;
+    background-color: #ffffff;
+    background-position: center;
+    background-size: contain !important;
+    border: 3px solid #ffffff;
+    background-repeat: no-repeat !important;
+    overflow: hidden;
+}
+
+
+.candidateCard .cardbackheaderlogo {
+    display: block;
+    height: auto;
+    width: auto;
+}
+
+.candidateCard .eventDate {
+    color: #c52ee8;
+    font-size: 18px;
+    text-align: center;
+    /* text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5); */
+    text-shadow: 3px 2px 1px rgba(0, 0, 0, 0.6);
+}
+
+img.cardbackgroundimage {
+    height: 100%;
+    left: 0;
+    object-fit: cover !important;
+    position: absolute;
+    top: 0;
+    vertical-align: top;
+    width: 100%;
+}
+
+.poweredby {
+    background-color: #0d233e !important;
+    bottom: 0;
+    font-size: 7px;
+    padding: 13px 0px;
+    position: absolute !important;
+    right: 0;
+    width: 100%;
+}
+.frontside .footerbox {
+    position: absolute!important;
+    bottom: -21px;
+    right: 0;
+    width: auto;
+    padding: 13px 0px;
+    left: -12px;
+    right: -12px;
+}
+.CertificateCard .poweredby {
+    bottom: 35px;
+    padding: 5px 34px;
+    right: 2px;
+    width: 150px;
+}
+
+.backside {
+    height: 100%;
+    position: unset;
+}
+
+.poweredby span.logo {
+    background-image: url(https://app.etalenter.com/Content/Images/ealenterlogo.png) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    float: left;
+    height: 45px;
+    width: 100%;
+}
+
+.CertificateCard .poweredby span.logo {
+    color: #585353 !important;
+    float: left;
+    padding-right: 0;
+    text-align: right;
+    text-shadow: 0 0 0 #FFF !important;
+    top: -2px;
+}
+
+span.poweredtext {
+    color: #e6f0f3;
+    float: right;
+    width: auto;
+}
+
+.powereddomain {
+    color: #fff !important;
+    float: right;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+.CertificateCard .powereddomain { color: #042541 !important }
+
+#LayoutDesigner {
+    background-color: #fff;
+    border-left: 5px solid #0d85bf;
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    padding: 20px;
+    position: fixed;
+    top: 47px;
+    z-index: 9999999;
+}
+
+.stylishtitle {
+    background-color: rgba(3, 17, 30, 0.8588235294117647);
+    color: #FFF;
+    font-size: 12px;
+    height: 66px;
+    left: 25%;
+    padding: 20px;
+    position: absolute;
+    top: 21px;
+    width: 138px;
+    z-index: 999999;
+}
+
+.conductby span { word-break: break-word; }
+
+.templatelist .candidateCard {
+    cursor: pointer;
+    width: 100%
+}
+
+
+.CertificateCard [data-stylish="Certificate Box"] { background-size: cover !important }
+
+.CertificateCard .eventName {
+    color: #1f7136;
+    font-size: 22px;
+    text-align: center;
+}
+
+.CertificateCard [class*=heading] {
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+}
+
+.CertificateHeading {
+    color: #991c1c;
+    font-size: 27px;
+    text-align: center;
+}
+
+.certificatecontent {
+    padding: 2px 67px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-content: center;
+    height: 334px;
+    /* flex-wrap: wrap; */
+    line-height: 40px;
+}
+.printcertificate .certificatecontent {
+     padding: 2px 28px;
+     margin-top: 13px !important;
+}
+.candidateCard .frontside ,.candidateCard .backside{
+   height: 100%;
+   position: relative;
+   z-index: 1;
+   /* background-color: rgb(0 0 0 / 22%); */
+}
+
+.CertificateCard .frontside {
+    position: unset!important
+}
+.CertificateCard .footerbox {
+    bottom: 0;
+    position: absolute !important;
+}
+
+.CertificateCard .frontside { position: unset !important }
+
+.CertificateCard .footerbox > div {
+    display: inline-block;
+    padding: 12px
+}
+
+.CertificateCardsListBox { width: 1123px }
+
+#LayoutDesigner > div {
+    display: block !important;
+    width: 200px;
+}
+
+div#templateListBox {
+    -webkit-transform-origin: top left;
+    background-color: #FFF;
+    box-shadow: 0 0 1px 4px #fff;
+    height: 200vh;
+    left: 0;
+    max-height: calc(200vh - 94px);
+    overflow-x: visible;
+    overflow-y: scroll;
+    position: fixed;
+    top: 47px;
+    transform: scale(0.5);
+    width: 700px;
+    z-index: 99;
+}
+
+span.closetemplates {
+    background-color: rgba(0, 0, 0, 0.3686274509803922);
+    color: #fff;
+    cursor: pointer;
+    font-size: 45px;
+    height: 70px;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    z-index: 99999;
+}
+
+
+.pagebreaker { /* display: table; */ }
+
+
+.printcertificate .templatelist .candidateCard,.printcertificate .templatelist .candidateCard{
+    width:100% !important;
+}
+
+.frontside [data-stylish='Candidate Group']{
+    /* line-height: 46px; */
+    padding-bottom: 7px;
+}
+.poweredbycertificate{
+    display: none   ;
+}
+
+ .certificateorganization {
+    width: 100%;
+    float: left;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #b233b3;
+}
+.printparticipantcertificate .certificateorganization{
+    
+    line-height: 0px;
+}
+.CompetitionShortTitle {
+    color: #500707 !important;
+    font-weight: bold;
+    margin-top: 0px;
+    line-height: 13px;
+    display: block;
+    font-size: 10px;
+    /* font-size: clamp(1rem, 2vw, 3rem); */
+}
+
+
+.printparticipantcertificate .candidateCardsList.originallist{
+    float:right
+}
+
+.printparticipantcertificate [data-stylish="Content Box"] {
+    /* min-height: 443px; */
+    /* display:flex; */
+}
+
+img.medal {
+    width: 54px;
+    /* background-color: #ffc107b8; */
+    object-fit: contain;
+    filter: invert(1);
+  filter: grayscale(100%) hue-rotate(180deg) brightness(0.7);
+    position: absolute;
+    right: 312px;
+    bottom: 0px;
+}
+
+.afterimage-container img.medal{
+    right: 146px;
+    bottom: 0px;
+}
+
+
+.printcertificate .candidateCard {
+    max-height: 740px;
+}
+@media print{
+.printcertificate  .originallist .candidateCard .box{
+    /* display:none; */
+    /* background-image: none !important; */
+}
+.printcertificate div#contentbox{
+    /* background:transparent; */
+}
+
+.printcertificate{
+    /* background: transparent !important; */
+}
+.printcertificate .box{
+    /* background: transparent !important;
+    box-shadow: none !important; */
+}
+.printcertificate .candidateCard{
+    outline: none !important;
+}
+}
+
+
+
+
+.lightcustomimages0 .backsideview[data-stylish='Identity Card Box'],.lightcustomimages1 .backsideview[data-stylish='Identity Card Box'],.lightcustomimages2 .backsideview[data-stylish='Identity Card Box'],.lightcustomimages3 .backsideview[data-stylish='Identity Card Box'],.lightcustomimages4 .backsideview[data-stylish='Identity Card Box'],.lightcustomimages5 .backsideview[data-stylish='Identity Card Box'],.lightcustomimages6 .backsideview[data-stylish='Identity Card Box'],.lightcustomimages7 .backsideview[data-stylish='Identity Card Box'] { 
+    background-size: 244% !important;
+}
+
+
+
+/*# Custom for Camp*/
+
+.lightcustomimages0 [data-stylish="Logo1 Box"],.lightcustomimages0 [data-stylish="Event Name"],.lightcustomimages0 [data-stylish="Event Date Box"],.lightcustomimages0 [data-stylish="Footer Box"] {
+ display: none  !important;
+}
+
+
+
+.lightcustomimages0 [data-stylish="Profile Image Box"]{
+    margin-top: 188px;
+    margin-left: -6px;
+}
+.lightcustomimages0 .profileimagebox{
+    height: 144px;
+    max-height: 150px;
+    width: 120px;
+    background-position: top;
+}
+
+.lightcustomimages0 .identitybox{
+    /* width: 100px; */
+    margin-left: 76px;
+    padding-top: 3px;
+    line-height: 27px;
+    color: #23180b;
+    font-weight: bold;
+    overflow: hidden;
+    font-size: 19px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 75px;
+    text-transform: uppercase;
+}
+.lightcustomimages0 .identitybox>div{
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition2 Item Name']{
+    width: 40%;
+    display: flex;
+    position: relative;
+    left: 128px;
+    top: -47px;
+    font-size: 10px;
+    white-space: nowrap;
+}
+.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition2 Item Name'] span{
+    width: auto;
+    padding-left: 2px;
+}
+
+.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Rank']{
+    width: 29%;
+    display: flex;
+    position: relative;
+    left: 276px;
+    top: -3px;
+    justify-content: center;
+}
+
+.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Grade']{
+    width: 32%;
+    /* display: flex; */
+    position: relative;
+    left: 75px;
+    top: -7px;
+}
+
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Competition2 Item Name']{
+    width: 32%;
+    display: flex;
+    position: relative;
+    left: 276px;
+    top: -47px;
+}
+
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Rank']{
+    width: 32%;
+    display: flex;
+    position: relative;
+    left: 276px;
+    top: -3px;
+}
+
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Grade']{
+    /* width: 32%; */
+    /* display: flex; */
+    position: relative;
+    left: 141px;
+    top: -7px;
+}
+
+.originallist[stylishgroupid='customtheme2images0'] [data-stylish='User Name']{
+    text-transform: uppercase;
+}
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"]{
+display:none !important;
+}
+
+.originallist[stylishgroupid='customtheme2images1'] .priceslist{
+display:none
+}
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'] {
+    font-size: 18px !important;
+    text-transform: uppercase;
+    padding-bottom: 14px;
+    word-spacing: 2px;
+    width: 392px;
+    display: inline-block !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+}
+.darkimages6 [data-stylish="Identity Card Box"]::after,
+.darkimages7 [data-stylish="Identity Card Box"]::after,
+.darkimages8 [data-stylish="Identity Card Box"]::after,
+.darkimages9 [data-stylish="Identity Card Box"]::after,
+.darkimages10 [data-stylish="Identity Card Box"]::after,
+.darkimages11 [data-stylish="Identity Card Box"]::after,
+.darkimages12 [data-stylish="Identity Card Box"]::after,
+.darkimages13 [data-stylish="Identity Card Box"]::after,
+.darkimages14 [data-stylish="Identity Card Box"]::after,
+.darkimages15 [data-stylish="Identity Card Box"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    /* Dark shade */
+    z-index: 0;
+}
