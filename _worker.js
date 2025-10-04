@@ -1,26 +1,83 @@
+import puppeteer from "@cloudflare/puppeteer";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     
-    // Handle PDF generation requests
+    // Handle screenshot requests (following Cloudflare guide)
+    if (url.pathname === '/screenshot') {
+      const targetUrl = url.searchParams.get("url");
+      
+      if (!targetUrl) {
+        return new Response("Please add an ?url=https://example.com/ parameter", {
+          status: 400,
+          headers: {
+            'Content-Type': 'text/plain',
+            'Access-Control-Allow-Origin': '*'
+          }
+        });
+      }
+      
+      try {
+        const normalizedUrl = new URL(targetUrl).toString();
+        
+        // Check KV cache first
+        let img = null;
+        if (env.BROWSER_KV_DEMO) {
+          img = await env.BROWSER_KV_DEMO.get(normalizedUrl, { type: "arrayBuffer" });
+        }
+        
+        if (img === null) {
+          // Generate new screenshot
+          const browser = await puppeteer.launch(env.MYBROWSER);
+          const page = await browser.newPage();
+          await page.goto(normalizedUrl);
+          img = await page.screenshot();
+          
+          // Cache the screenshot for 24 hours
+          if (env.BROWSER_KV_DEMO) {
+            await env.BROWSER_KV_DEMO.put(normalizedUrl, img, {
+              expirationTtl: 60 * 60 * 24,
+            });
+          }
+          
+          await browser.close();
+        }
+        
+        return new Response(img, {
+          headers: {
+            "content-type": "image/jpeg",
+            'Access-Control-Allow-Origin': '*'
+          },
+        });
+        
+      } catch (error) {
+        return new Response(`Error taking screenshot: ${error.message}`, {
+          status: 500,
+          headers: {
+            'Content-Type': 'text/plain',
+            'Access-Control-Allow-Origin': '*'
+          }
+        });
+      }
+    }
+    
+    // Handle PDF generation requests (enhanced version)
     if (url.pathname === '/generate-pdf') {
       try {
         // Get parameters from query string or POST body
         let params = {};
         
         if (request.method === 'POST') {
-          // Handle POST request with JSON body
           try {
             params = await request.json();
           } catch {
-            // If JSON parsing fails, try form data
             const formData = await request.formData();
             for (const [key, value] of formData.entries()) {
               params[key] = value;
             }
           }
         } else {
-          // Handle GET request with query parameters
           for (const [key, value] of url.searchParams.entries()) {
             params[key] = value;
           }
@@ -41,97 +98,103 @@ export default {
           waitUntil = 'networkidle0',
           width = null,
           height = null,
-          selector = null, // CSS selector to capture specific element
+          selector = null,
           fullPage = 'true',
           omitBackground = 'false',
-          quality = 100, // For JPEG format
-          type = 'pdf' // pdf, png, jpeg
+          quality = 100,
+          type = 'pdf'
         } = params;
         
-        const browser = await env.pdfgenerator.launch();
-        const page = await browser.newPage();
+        // Check cache for PDFs too
+        const cacheKey = `pdf_${JSON.stringify(params)}`;
+        let result = null;
         
-        // Set viewport if width and height are provided
-        if (width && height) {
-          await page.setViewport({
-            width: parseInt(width),
-            height: parseInt(height)
-          });
+        if (env.BROWSER_KV_DEMO && type === 'pdf') {
+          result = await env.BROWSER_KV_DEMO.get(cacheKey, { type: "arrayBuffer" });
         }
         
-        // Navigate to the target URL
-        await page.goto(targetUrl, { 
-          waitUntil: waitUntil,
-          timeout: 30000 
-        });
-        
-        let result;
-        let contentType;
-        let fileExtension;
-        
-        if (type === 'pdf') {
-          // Generate PDF
-          const pdfOptions = {
-            format: format,
-            landscape: orientation === 'landscape',
-            scale: parseFloat(scale),
-            printBackground: printBackground === 'true',
-            margin: {
-              top: margin_top,
-              right: margin_right,
-              bottom: margin_bottom,
-              left: margin_left
-            }
-          };
-          
-          // Add width/height if provided (overrides format)
-          if (width && height) {
-            pdfOptions.width = width;
-            pdfOptions.height = height;
-            delete pdfOptions.format;
-          }
-          
-          result = await page.pdf(pdfOptions);
-          contentType = 'application/pdf';
-          fileExtension = 'pdf';
-        } else {
-          // Generate screenshot (PNG or JPEG)
-          const screenshotOptions = {
-            fullPage: fullPage === 'true',
-            omitBackground: omitBackground === 'true',
-            type: type
-          };
-          
-          if (type === 'jpeg') {
-            screenshotOptions.quality = parseInt(quality);
-          }
+        if (result === null) {
+          const browser = await puppeteer.launch(env.MYBROWSER);
+          const page = await browser.newPage();
           
           if (width && height) {
-            screenshotOptions.clip = {
-              x: 0,
-              y: 0,
+            await page.setViewport({
               width: parseInt(width),
               height: parseInt(height)
+            });
+          }
+          
+          await page.goto(targetUrl, { 
+            waitUntil: waitUntil,
+            timeout: 30000 
+          });
+          
+          let contentType;
+          let fileExtension;
+          
+          if (type === 'pdf') {
+            const pdfOptions = {
+              format: format,
+              landscape: orientation === 'landscape',
+              scale: parseFloat(scale),
+              printBackground: printBackground === 'true',
+              margin: {
+                top: margin_top,
+                right: margin_right,
+                bottom: margin_bottom,
+                left: margin_left
+              }
             };
-          }
-          
-          // If selector is provided, screenshot only that element
-          if (selector) {
-            const element = await page.$(selector);
-            if (element) {
-              result = await element.screenshot(screenshotOptions);
-            } else {
-              throw new Error(`Element with selector "${selector}" not found`);
+            
+            if (width && height) {
+              pdfOptions.width = width;
+              pdfOptions.height = height;
+              delete pdfOptions.format;
             }
+            
+            result = await page.pdf(pdfOptions);
+            contentType = 'application/pdf';
+            fileExtension = 'pdf';
+            
+            // Cache PDF for 1 hour
+            if (env.BROWSER_KV_DEMO) {
+              await env.BROWSER_KV_DEMO.put(cacheKey, result, {
+                expirationTtl: 60 * 60,
+              });
+            }
+            
           } else {
-            result = await page.screenshot(screenshotOptions);
+            const screenshotOptions = {
+              fullPage: fullPage === 'true',
+              omitBackground: omitBackground === 'true',
+              type: type
+            };
+            
+            if (type === 'jpeg') {
+              screenshotOptions.quality = parseInt(quality);
+            }
+            
+            if (selector) {
+              const element = await page.$(selector);
+              if (element) {
+                result = await element.screenshot(screenshotOptions);
+              } else {
+                throw new Error(`Element with selector "${selector}" not found`);
+              }
+            } else {
+              result = await page.screenshot(screenshotOptions);
+            }
+            
+            contentType = type === 'png' ? 'image/png' : 'image/jpeg';
+            fileExtension = type;
           }
           
-          contentType = type === 'png' ? 'image/png' : 'image/jpeg';
-          fileExtension = type;
+          await browser.close();
+        } else {
+          // Using cached result
+          contentType = 'application/pdf';
+          fileExtension = 'pdf';
         }
-        
-        await browser.close();
         
         return new Response(result, {
           headers: {
@@ -169,6 +232,6 @@ export default {
     }
     
     // Serve static assets for all other requests
-    return env.ASSETS.fetch(request);
+    return env.ASSETS ? env.ASSETS.fetch(request) : new Response('Asset serving not available', { status: 404 });
   }
 };

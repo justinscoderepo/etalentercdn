@@ -3,134 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Generator - eTalenter</title>
+    <title>Browser Rendering Worker - eTalenter</title>
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; font-weight: bold; }
         input, select, textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
-        button { background-color: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button { background-color: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
         button:hover { background-color: #005a87; }
         .example { background-color: #f5f5f5; padding: 15px; border-radius: 4px; margin: 10px 0; }
         .code { background-color: #f0f0f0; padding: 10px; border-radius: 4px; font-family: monospace; margin: 10px 0; }
+        .section { margin-bottom: 30px; border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
+        .result { margin-top: 20px; padding: 10px; border-radius: 4px; }
+        .success { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .error { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        img { max-width: 100%; border: 1px solid #ddd; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <h1>PDF Generator</h1>
+    <h1>Browser Rendering Worker - eTalenter</h1>
+    <p>This worker uses Cloudflare's Browser Rendering API with Puppeteer for screenshots and PDF generation.</p>
     
-    <form id="pdfForm">
-        <div class="form-group">
-            <label for="url">URL to Convert:</label>
-            <input type="url" id="url" name="url" value="https://example.com" required>
-        </div>
+    <!-- Screenshot Section -->
+    <div class="section">
+        <h2>📸 Take Screenshot</h2>
+        <form id="screenshotForm">
+            <div class="form-group">
+                <label for="screenshot_url">URL to Screenshot:</label>
+                <input type="url" id="screenshot_url" name="url" value="https://example.com" required>
+            </div>
+            <button type="submit">Take Screenshot</button>
+        </form>
+        <div id="screenshotResult"></div>
         
-        <div class="form-group">
-            <label for="filename">Filename:</label>
-            <input type="text" id="filename" name="filename" value="document.pdf">
+        <div class="example">
+            <h4>API Endpoint:</h4>
+            <div class="code">/screenshot?url=https://example.com</div>
+            <p>Screenshots are cached for 24 hours using Cloudflare KV.</p>
         </div>
-        
-        <div class="form-group">
-            <label for="type">Output Type:</label>
-            <select id="type" name="type">
-                <option value="pdf">PDF</option>
-                <option value="png">PNG Image</option>
-                <option value="jpeg">JPEG Image</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="format">Page Format:</label>
-            <select id="format" name="format">
-                <option value="A4">A4</option>
-                <option value="A3">A3</option>
-                <option value="Letter">Letter</option>
-                <option value="Legal">Legal</option>
-                <option value="Tabloid">Tabloid</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="orientation">Orientation:</label>
-            <select id="orientation" name="orientation">
-                <option value="portrait">Portrait</option>
-                <option value="landscape">Landscape</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="scale">Scale (0.1 - 2.0):</label>
-            <input type="number" id="scale" name="scale" value="1" min="0.1" max="2.0" step="0.1">
-        </div>
-        
-        <div class="form-group">
-            <label for="printBackground">Print Background:</label>
-            <select id="printBackground" name="printBackground">
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="waitUntil">Wait Until:</label>
-            <select id="waitUntil" name="waitUntil">
-                <option value="networkidle0">Network Idle (0 requests)</option>
-                <option value="networkidle2">Network Idle (2 requests)</option>
-                <option value="load">Page Load</option>
-                <option value="domcontentloaded">DOM Content Loaded</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="selector">CSS Selector (optional - capture specific element):</label>
-            <input type="text" id="selector" name="selector" placeholder="e.g., .main-content, #article">
-        </div>
-        
-        <button type="submit">Generate Document</button>
-    </form>
+    </div>
     
+    <!-- PDF Generation Section -->
+    <div class="section">
+        <h2>📄 Generate PDF</h2>
+        <form id="pdfForm">
+            <div class="form-group">
+                <label for="pdf_url">URL to Convert:</label>
+                <input type="url" id="pdf_url" name="url" value="https://example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="filename">Filename:</label>
+                <input type="text" id="filename" name="filename" value="document.pdf">
+            </div>
+            
+            <div class="form-group">
+                <label for="type">Output Type:</label>
+                <select id="type" name="type">
+                    <option value="pdf">PDF</option>
+                    <option value="png">PNG Image</option>
+                    <option value="jpeg">JPEG Image</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="format">Page Format:</label>
+                <select id="format" name="format">
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="Letter">Letter</option>
+                    <option value="Legal">Legal</option>
+                    <option value="Tabloid">Tabloid</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="orientation">Orientation:</label>
+                <select id="orientation" name="orientation">
+                    <option value="portrait">Portrait</option>
+                    <option value="landscape">Landscape</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="scale">Scale (0.1 - 2.0):</label>
+                <input type="number" id="scale" name="scale" value="1" min="0.1" max="2.0" step="0.1">
+            </div>
+            
+            <button type="submit">Generate Document</button>
+        </form>
+        
+        <div class="example">
+            <h4>Features:</h4>
+            <ul>
+                <li>✅ PDF generation with custom formatting</li>
+                <li>✅ Screenshot capture (PNG/JPEG)</li>
+                <li>✅ KV caching for performance</li>
+                <li>✅ Custom margins, scale, orientation</li>
+                <li>✅ CSS selector targeting</li>
+                <li>✅ Multiple output formats</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="example">
-        <h3>API Usage Examples:</h3>
+        <h3>🚀 Next Steps:</h3>
+        <ol>
+            <li><strong>Get Cloudflare API Token:</strong> Visit <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">Cloudflare Dashboard</a></li>
+            <li><strong>Create KV Namespaces:</strong>
+                <div class="code">
+npx wrangler kv namespace create BROWSER_KV_DEMO<br>
+npx wrangler kv namespace create BROWSER_KV_DEMO --preview
+                </div>
+            </li>
+            <li><strong>Update wrangler.toml:</strong> Add the KV namespace IDs</li>
+            <li><strong>Test locally:</strong> <code>npm run dev</code></li>
+            <li><strong>Deploy:</strong> <code>npm run deploy</code></li>
+        </ol>
         
-        <h4>GET Request:</h4>
-        <div class="code">
-/generate-pdf?url=https://example.com&format=A4&orientation=landscape&filename=my-document.pdf
-        </div>
-        
-        <h4>POST Request (JavaScript):</h4>
-        <div class="code">
-fetch('/generate-pdf', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-        url: 'https://example.com',
-        format: 'A4',
-        orientation: 'portrait',
-        scale: 1.2,
-        printBackground: 'true',
-        filename: 'my-document.pdf',
-        type: 'pdf'
-    })
-})
-        </div>
-        
-        <h4>Available Parameters:</h4>
+        <h4>Test URLs:</h4>
         <ul>
-            <li><strong>url</strong>: Target URL (default: https://example.com)</li>
-            <li><strong>format</strong>: Page format - A4, A3, Letter, Legal, Tabloid (default: A4)</li>
-            <li><strong>orientation</strong>: portrait or landscape (default: portrait)</li>
-            <li><strong>scale</strong>: Scale factor 0.1-2.0 (default: 1)</li>
-            <li><strong>printBackground</strong>: true/false (default: true)</li>
-            <li><strong>margin_top/right/bottom/left</strong>: Margins (default: 1cm)</li>
-            <li><strong>filename</strong>: Output filename (default: document.pdf)</li>
-            <li><strong>waitUntil</strong>: When to consider page loaded (default: networkidle0)</li>
-            <li><strong>width/height</strong>: Custom dimensions in pixels</li>
-            <li><strong>selector</strong>: CSS selector for specific element capture</li>
-            <li><strong>type</strong>: pdf, png, or jpeg (default: pdf)</li>
-            <li><strong>quality</strong>: JPEG quality 1-100 (default: 100)</li>
+            <li>Screenshot: <code>/screenshot?url=https://example.com</code></li>
+            <li>PDF: <code>/generate-pdf?url=https://example.com&format=A4</code></li>
         </ul>
     </div>
 
     <script>
+        // Screenshot functionality
+        document.getElementById('screenshotForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const url = document.getElementById('screenshot_url').value;
+            const resultDiv = document.getElementById('screenshotResult');
+            
+            resultDiv.innerHTML = '<p>Taking screenshot...</p>';
+            
+            try {
+                const response = await fetch(`/screenshot?url=${encodeURIComponent(url)}`);
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const imgUrl = URL.createObjectURL(blob);
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+                            <p>✅ Screenshot taken successfully!</p>
+                            <img src="${imgUrl}" alt="Screenshot" />
+                        </div>
+                    `;
+                } else {
+                    const error = await response.text();
+                    resultDiv.innerHTML = `<div class="result error">❌ Error: ${error}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">❌ Error: ${error.message}</div>`;
+            }
+        });
+
+        // PDF generation functionality
         document.getElementById('pdfForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             

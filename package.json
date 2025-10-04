@@ -4,9 +4,9 @@
   "description": "eTalenter Web Application",
   "main": "index.html",
   "scripts": {
- "start": "echo 'Application started'",
-    "dev": "echo 'Development server started'",
-    "deploy": "npm run build"
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [
     "etalenter",
@@ -15,9 +15,21 @@
   ],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@cloudflare/puppeteer": "^1.0.4"
+  },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinscoderepo/etalentercdn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/justinscoderepo/etalentercdn/issues"
+  },
+  "homepage": "https://github.com/justinscoderepo/etalentercdn#readme"
 }

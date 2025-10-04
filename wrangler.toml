@@ -1,9 +1,15 @@
-name = "etalenter-cdn"
+name = "etalenter-browser-worker"
+main = "_worker.js"
 compatibility_date = "2025-10-04"
-pages_build_output_dir = "./"
+compatibility_flags = ["nodejs_compat"]
 
-[env.production]
-name = "etalenter-cdn"
+[browser]
+binding = "MYBROWSER"
 
-[[env.production.browser]]
-binding = "pdfgenerator"
+# Add your KV namespace IDs after creating them with:
+# npx wrangler kv namespace create BROWSER_KV_DEMO
+# npx wrangler kv namespace create BROWSER_KV_DEMO --preview
+[[kv_namespaces]]
+binding = "BROWSER_KV_DEMO"
+id = "your-production-kv-id-here"
+preview_id = "your-preview-kv-id-here"
