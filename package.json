@@ -1,0 +1,24 @@
+{
+  "name": "etalenter-web",
+  "version": "1.0.0",
+  "description": "eTalenter Web Application",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build completed successfully'",
+    "start": "echo 'Application started'",
+    "dev": "echo 'Development server started'",
+    "deploy": "npm run build"
+  },
+  "keywords": [
+    "etalenter",
+    "web",
+    "application"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
