@@ -3,6 +3,9 @@ main = "_worker.js"
 compatibility_date = "2025-10-04"
 compatibility_flags = ["nodejs_compat"]
 
+# Pages configuration for Git repository integration
+pages_build_output_dir = "./"
+
 # Observability configuration for consistent logging across deployments
 [observability.logs]
 enabled = true
@@ -20,6 +23,11 @@ binding = "BROWSER_KV_DEMO"
 id = "your-production-kv-id-here"
 preview_id = "your-preview-kv-id-here"
 
+# Build configuration for automatic deployments
+[build]
+command = "echo 'No build required for static assets'"
+cwd = "./"
+
 # Deployment configuration for consistency
 [env.production]
 name = "etalenter-browser-worker"
@@ -32,7 +40,7 @@ binding = "MYBROWSER"
 binding = "BROWSER_KV_DEMO"
 id = "your-production-kv-id-here"
 
-# Development environment configuration
+# Development environment configuration  
 [env.dev]
 name = "etalenter-browser-worker-dev"
 compatibility_date = "2025-10-04"

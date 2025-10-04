@@ -6,6 +6,11 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
+    "deploy:preview": "wrangler deploy --env dev",
+    "deploy:production": "wrangler deploy --env production",
+    "pages:deploy": "wrangler pages deploy . --project-name etalenter-browser-worker",
+    "pages:dev": "wrangler pages dev . --project-name etalenter-browser-worker",
+    "build": "echo 'Static assets ready for deployment'",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [
