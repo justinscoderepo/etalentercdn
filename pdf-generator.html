@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Generator - eTalenter</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #005a87; }
+        .example { background-color: #f5f5f5; padding: 15px; border-radius: 4px; margin: 10px 0; }
+        .code { background-color: #f0f0f0; padding: 10px; border-radius: 4px; font-family: monospace; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>PDF Generator</h1>
+    
+    <form id="pdfForm">
+        <div class="form-group">
+            <label for="url">URL to Convert:</label>
+            <input type="url" id="url" name="url" value="https://example.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="filename">Filename:</label>
+            <input type="text" id="filename" name="filename" value="document.pdf">
+        </div>
+        
+        <div class="form-group">
+            <label for="type">Output Type:</label>
+            <select id="type" name="type">
+                <option value="pdf">PDF</option>
+                <option value="png">PNG Image</option>
+                <option value="jpeg">JPEG Image</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="format">Page Format:</label>
+            <select id="format" name="format">
+                <option value="A4">A4</option>
+                <option value="A3">A3</option>
+                <option value="Letter">Letter</option>
+                <option value="Legal">Legal</option>
+                <option value="Tabloid">Tabloid</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="orientation">Orientation:</label>
+            <select id="orientation" name="orientation">
+                <option value="portrait">Portrait</option>
+                <option value="landscape">Landscape</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="scale">Scale (0.1 - 2.0):</label>
+            <input type="number" id="scale" name="scale" value="1" min="0.1" max="2.0" step="0.1">
+        </div>
+        
+        <div class="form-group">
+            <label for="printBackground">Print Background:</label>
+            <select id="printBackground" name="printBackground">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="waitUntil">Wait Until:</label>
+            <select id="waitUntil" name="waitUntil">
+                <option value="networkidle0">Network Idle (0 requests)</option>
+                <option value="networkidle2">Network Idle (2 requests)</option>
+                <option value="load">Page Load</option>
+                <option value="domcontentloaded">DOM Content Loaded</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="selector">CSS Selector (optional - capture specific element):</label>
+            <input type="text" id="selector" name="selector" placeholder="e.g., .main-content, #article">
+        </div>
+        
+        <button type="submit">Generate Document</button>
+    </form>
+    
+    <div class="example">
+        <h3>API Usage Examples:</h3>
+        
+        <h4>GET Request:</h4>
+        <div class="code">
+/generate-pdf?url=https://example.com&format=A4&orientation=landscape&filename=my-document.pdf
+        </div>
+        
+        <h4>POST Request (JavaScript):</h4>
+        <div class="code">
+fetch('/generate-pdf', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        url: 'https://example.com',
+        format: 'A4',
+        orientation: 'portrait',
+        scale: 1.2,
+        printBackground: 'true',
+        filename: 'my-document.pdf',
+        type: 'pdf'
+    })
+})
+        </div>
+        
+        <h4>Available Parameters:</h4>
+        <ul>
+            <li><strong>url</strong>: Target URL (default: https://example.com)</li>
+            <li><strong>format</strong>: Page format - A4, A3, Letter, Legal, Tabloid (default: A4)</li>
+            <li><strong>orientation</strong>: portrait or landscape (default: portrait)</li>
+            <li><strong>scale</strong>: Scale factor 0.1-2.0 (default: 1)</li>
+            <li><strong>printBackground</strong>: true/false (default: true)</li>
+            <li><strong>margin_top/right/bottom/left</strong>: Margins (default: 1cm)</li>
+            <li><strong>filename</strong>: Output filename (default: document.pdf)</li>
+            <li><strong>waitUntil</strong>: When to consider page loaded (default: networkidle0)</li>
+            <li><strong>width/height</strong>: Custom dimensions in pixels</li>
+            <li><strong>selector</strong>: CSS selector for specific element capture</li>
+            <li><strong>type</strong>: pdf, png, or jpeg (default: pdf)</li>
+            <li><strong>quality</strong>: JPEG quality 1-100 (default: 100)</li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('pdfForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const params = {};
+            for (let [key, value] of formData.entries()) {
+                params[key] = value;
+            }
+            
+            try {
+                const response = await fetch('/generate-pdf', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(params)
+                });
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = params.filename || 'document.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } else {
+                    const error = await response.text();
+                    alert('Error: ' + error);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
