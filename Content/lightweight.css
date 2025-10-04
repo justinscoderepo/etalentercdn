@@ -1554,6 +1554,8 @@ div#contentbox {
     margin-top: 37px;
 }
 
+div#contentbox.inIframe { margin-top: 0px; }
+
 .candidatescards #contentbox #contentboxbody,.printcertificate  #contentbox #contentboxbody,.printtopcertificate   #contentbox #contentboxbody,.stickerbasedindividualresults  #contentboxbody,.printparticipantcertificate   #contentboxbody{
     width: 1212px !important;/* calculated from A3 size // 1123.2px A3 width*/
     float: right;
