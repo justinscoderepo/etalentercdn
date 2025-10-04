@@ -5,9 +5,13 @@
   "main": "index.html",
   "scripts": {
     "build": "echo 'Build completed successfully'",
-    "start": "echo 'Application started'",
-    "dev": "echo 'Development server started'",
-    "deploy": "npm run build"
+    "start": "npx serve .",
+    "dev": "npx serve . --port 3000",
+    "deploy": "npx serve . --single",
+    "deploy:local": "npx serve .",
+    "deploy:github": "gh-pages -d .",
+    "deploy:netlify": "netlify deploy --prod --dir .",
+    "deploy:vercel": "vercel --prod"
   },
   "keywords": [
     "etalenter",
