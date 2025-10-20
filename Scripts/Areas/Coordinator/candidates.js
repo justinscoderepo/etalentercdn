@@ -2,17 +2,39 @@ let maxCandidateCount = 10;
 let maxTeamCount = 5;
 let maximumGroupParticipants = 15;
 let isPhotoMandatory = false;
-let freezeParticipation = false;
+// Will be overridden from server
 let isRegIdMandatory = false;
 var isAllOrganizationsSelected = false;
 var allowedRegIdNumbers = [];
+var isReadOnlyAccess = false; // Will be overridden from server
 (function ($) {
+  let freezeParticipation = false;
   $(document).ready(function () {
+    // Override with server-side freeze settings if they exist
+    if (typeof window.freezeParticipation !== 'undefined') {
+      freezeParticipation = window.freezeParticipation;
+    }
+    if (typeof window.isReadOnlyAccess !== 'undefined') {
+      isReadOnlyAccess = window.isReadOnlyAccess;
+    }
+
     var jsonSettings =
       userObj.user.JsonSettings;
     if(window.location.href.indexOf("BulkParticipants") > -1){
 
+      // Apply read-only mode if freeze is active
+      if (freezeParticipation || isReadOnlyAccess) {
+        // Disable all input fields
+        $("#bulkusersleftlist input,#bulkusersleftlist  select,#bulkusersleftlist  textarea,#bulkusersleftlist  button[type='submit']").not("[type='hidden']").prop("disabled", true).addClass("disabled");
 
+        // Disable add new buttons
+        $(".addnewCandidatebulk, .createnewuser, .table-addnewrow button").not("[type='hidden']").prop("disabled", true).addClass("disabled");
+
+        // Disable delete/edit buttons
+        $(".deleterow, .resetidentity, .uploadimagebutton").not("[type='hidden']").prop("disabled", true).addClass("disabled");
+
+
+      }
         try {
 
           if (jsonSettings) {

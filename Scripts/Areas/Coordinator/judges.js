@@ -1,8 +1,41 @@
+
+var isReadOnlyAccess = false; // Will be overridden from server
+
 (function ($) {
+  var freezeParticipation = false; // Will be overridden from server
+  $(document).ready(function () {
+    // Override with server-side freeze settings if they exist
+    if (typeof window.freezeParticipation !== 'undefined') {
+      freezeParticipation = window.freezeParticipation;
+    }
+    if (typeof window.isReadOnlyAccess !== 'undefined') {
+      isReadOnlyAccess = window.isReadOnlyAccess;
+    }
+
+    // Apply read-only mode if freeze is active
+    if (freezeParticipation || isReadOnlyAccess) {
+      // Disable all input fields
+      $(".datarow input,.datarow  select,table  textarea,.datarow  button[type='submit']").not("[type='hidden']").prop("disabled", true).addClass("disabled");
+
+      // Disable add new buttons
+      $(".addnewCandidatebulk, .createnewuser, .table-addnewrow button").not("[type='hidden']").prop("disabled", true).addClass("disabled");
+
+      // Disable delete/edit buttons
+      $(".deleterow, .resetidentity, .uploadimagebutton").not("[type='hidden']").prop("disabled", true).addClass("disabled");
+
+      $(".table-cell-actions ").remove();
+
+    }
+  });
+
   $("body").on(
     "aftersavetableformrow",
     "#UsersRolesaddnewrow",
     function (e, data) {
+      if (freezeParticipation || isReadOnlyAccess) {
+        alert("Editing is disabled due to freeze settings.");
+        return false;
+      }
       ////firsttriggercompetition = true;
       if ($(this).find("[name=IdentityNumber]").val()) {
         $("#NewIdentityNumber").val(
@@ -20,6 +53,10 @@
     }
   );
   $("body").on("aftersavetableformrow", ".candidatesrow", function (e, data) {
+    if (freezeParticipation || isReadOnlyAccess) {
+      alert("Editing is disabled due to freeze settings.");
+      return false;
+    }
     ////firsttriggercompetition = true;
     $("#NewUserId").val(data.Results.UId);
     $("#NewUserRoleId").val($(this).attr("data-id")).trigger("change", true);
@@ -32,14 +69,27 @@
   });
 
   $("body").on("change", ".organizationName", function (e) {
+    if (freezeParticipation || isReadOnlyAccess) {
+      e.preventDefault();
+      return false;
+    }
     ////firsttriggercompetition = true;
     if ($(this).val()) {
       var cl = $(this).closest(".input-group");
       cl.find("[name=Name]").trigger("change", true);
     }
   });
-  $("body").on("aftersavetableformrow", ".orgrow", function (e) {});
+  $("body").on("aftersavetableformrow", ".orgrow", function (e) {
+    if (freezeParticipation || isReadOnlyAccess) {
+      alert("Editing is disabled due to freeze settings.");
+      return false;
+    }
+  });
   $("body").on("aftersavetableformrow", ".organizationrow > *", function (e) {
+    if (freezeParticipation || isReadOnlyAccess) {
+      alert("Editing is disabled due to freeze settings.");
+      return false;
+    }
     ////firsttriggercompetition = true;
 
     $.binder.reload($(e.target).find(".organizationlistgroup"));
