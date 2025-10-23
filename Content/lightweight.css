@@ -545,6 +545,17 @@ input[type="search"] { -webkit-appearance: none; }
 
 .is-error.form-group::after { background-color: #ff2e0c; }
 
+.is-completed.forceshow.form-group::after,
+.is-completed.forceshow.form-group::before {
+    background-color: #0c8657;
+    height: 2px !important;
+}
+
+.is-error.forceshow.form-group::after,
+.is-error.forceshow.form-group::before {
+    background-color: #ff2e0c;
+    height: 2px !important;
+}
 .form-control {
     -ms-border-radius: 1px;
     background-color: inherit !important;

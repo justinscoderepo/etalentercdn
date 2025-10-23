@@ -125,6 +125,118 @@ https://www.pixelto.net/cm-to-px-converter
   ////            }
   ////        });
   ////    });
+
+  // Group filtering functionality
+  var allGroups = {
+    candidate: new Set(),
+    competition: new Set()
+  };
+
+  // Collect unique groups after cards are loaded
+  $("body").on("afterappendcomplete", "#CandidateCardsList", function (e, data) {
+    if (e.target == e.currentTarget && data && data.rows && data.rows.Results) {
+      allGroups.candidate.clear();
+      allGroups.competition.clear();
+
+      data.rows.Results.forEach(function (item) {
+        // Collect candidate groups
+        if (item.CandidateGroupGroupName) {
+          allGroups.candidate.add(item.CandidateGroupGroupName);
+        }
+
+        // Collect competition groups from competitions array
+        if (item.Competitions && Array.isArray(item.Competitions)) {
+          item.Competitions.forEach(function (comp) {
+            if (comp.CompetitionGroupGroupName) {
+              allGroups.competition.add(comp.CompetitionGroupGroupName);
+            }
+          });
+        }
+      });
+
+      // Update group select dropdown if filter is active
+      updateGroupSelectOptions();
+    }
+  });
+
+  // Handle filter type change
+  $("body").on("change", "#filterByGroup", function () {
+    var filterType = $(this).val();
+
+    if (filterType) {
+      $("#groupSelectContainer").show();
+      updateGroupSelectOptions();
+    } else {
+      $("#groupSelectContainer").hide();
+      $("#groupSelect").val("");
+      applyGroupFilter();
+    }
+  });
+
+  // Update group select dropdown based on filter type
+  function updateGroupSelectOptions() {
+    var filterType = $("#filterByGroup").val();
+    var groupSelect = $("#groupSelect");
+
+    groupSelect.empty();
+    groupSelect.append('<option value="">All</option>');
+
+    if (filterType === "candidate") {
+      $("#groupSelectLabel").text("Select Candidate/Age Group");
+      Array.from(allGroups.candidate).sort().forEach(function (group) {
+        groupSelect.append('<option value="' + group + '">' + group + '</option>');
+      });
+    } else if (filterType === "competition") {
+      $("#groupSelectLabel").text("Select Competition Group");
+      Array.from(allGroups.competition).sort().forEach(function (group) {
+        groupSelect.append('<option value="' + group + '">' + group + '</option>');
+      });
+    }
+  }
+
+  // Handle group selection change
+  $("body").on("change", "#groupSelect", function () {
+    applyGroupFilter();
+  });
+
+  // Apply the group filter to cards
+  function applyGroupFilter() {
+    var filterType = $("#filterByGroup").val();
+    var selectedGroup = $("#groupSelect").val();
+
+    if (!filterType || !selectedGroup) {
+      // Show all cards
+      $(".candidateCard").show();
+      return;
+    }
+
+    $(".candidateCard").each(function () {
+      var card = $(this);
+      var shouldShow = false;
+
+      if (filterType === "candidate") {
+        // Check candidate group
+        var candidateGroup = card.find('[data-key="CandidateGroupGroupName"]').text().trim();
+        shouldShow = candidateGroup === selectedGroup;
+      } else if (filterType === "competition") {
+        // Check if any competition in this card matches the selected group
+        card.find('[data-inline-CompetitionGroupGroupName="html"]').each(function () {
+          var compGroup = $(this).find('.checkgroupscount').text().trim();
+          if (compGroup === selectedGroup) {
+            shouldShow = true;
+            return false; // break the loop
+          }
+        });
+      }
+
+      if (shouldShow) {
+        card.show();
+      } else {
+        card.hide();
+      }
+    });
+  }
+
 })(jQuery);
 
 $(document).ready(function () {
