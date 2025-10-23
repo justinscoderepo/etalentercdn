@@ -177,8 +177,8 @@ $(function () {
     if (!chrome && !firefox && !edge && !safari) {
       alert(
         "Sorry, We are not supporting this browser, Please use Google Chrome Latest Version to use eTalenter. <a href='https://www.google.com/chrome/' >Download Now/Update</a><b/>. Currently You are using " +
-          (browserText ? browserText + " - " : "") +
-          navigator.userAgent,
+        (browserText ? browserText + " - " : "") +
+        navigator.userAgent,
         false,
         false,
         false,
@@ -190,8 +190,8 @@ $(function () {
         .parent()
         .append(
           "<div class='text-center' style='font-size:10px'>We suport this browser: " +
-            navigator.userAgent +
-            "</div>"
+          navigator.userAgent +
+          "</div>"
         );
     }
 
@@ -263,10 +263,10 @@ $(function () {
           }, 100);
         }
         console.log({ settings: settings });
-        if(window.location.href.indexOf("localhost") >-1){
+        if (window.location.href.indexOf("localhost") > -1) {
           settings.url = "http://localhost:8888" + settings.url;
         }
-        else if(window.location.href.indexOf("http")>-1){
+        else if (window.location.href.indexOf("http") > -1) {
           settings.url = window.siteConfig.apiUrl + settings.url;
         }
 
@@ -421,11 +421,11 @@ $(function () {
           };
           var requestUrl = webApiUrl + url;
           requestUrl = requestUrl.replace("/api/", "");
-          if(window.location.href.indexOf("localhost") > -1){
-            if(requestUrl.indexOf("http") == -1){
+          if (window.location.href.indexOf("localhost") > -1) {
+            if (requestUrl.indexOf("http") == -1) {
               requestUrl = "http://localhost:8888" + requestUrl;
             }
-          } else if(requestUrl.indexOf("http") == -1){
+          } else if (requestUrl.indexOf("http") == -1) {
             requestUrl = window.siteConfig.apiUrl + requestUrl;
           }
 
@@ -496,8 +496,12 @@ $(function () {
               if (parameters.failObject.xhr.responseJSON && parameters.failObject.xhr.responseJSON.SecurityValidations) {
                 var validationErrors = parameters.failObject.xhr.responseJSON.SecurityValidations;
                 var errorMessage = "The following validations failed:\n";
-                for (var i = 0; i < validationErrors.length; i++) {
-                  errorMessage += "- " + validationErrors[i] + "\n";
+                if (validationErrors.length == 1) {
+                  errorMessage = validationErrors[0];
+                } else {
+                  for (var i = 0; i < validationErrors.length; i++) {
+                    errorMessage += "- " + validationErrors[i] + "\n";
+                  }
                 }
                 alert(errorMessage, false, false, false, "w");
               } else if (

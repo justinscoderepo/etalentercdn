@@ -1725,6 +1725,10 @@ a.orderdown {
     background-color: rgb(133, 30, 0);
 }
 
+.alertboxinfo {
+    background: linear-gradient(180deg, rgba(0, 91, 150, 0.88), rgba(1, 113, 194, 0.8));
+    background-color: rgb(0, 91, 150);
+}
 a.alertboxok, a.alertboxcancel {
     font-size: 20px;
     margin: 0;
@@ -4000,6 +4004,21 @@ li.eventitems .downarrow { color: #fff; }
     width: 100px;
 }
 
+.alertboxinfo.alertbox i {
+    display: block;
+    font-size: 56px;
+    line-height: 53px !important;
+    margin-top: -39px;
+    position: absolute;
+    top: 50%;
+    color: #ffffff;
+    border: 24px solid #FFF;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    text-align: center;
+}
 .alertbox i { font-size: 3em; }
 
 .alertboxbuttons i {

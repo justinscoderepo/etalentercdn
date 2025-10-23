@@ -324,16 +324,21 @@ var isReadOnlyAccess = false; // Will be overridden from server
       if (newRow.length > 0) {
         var newRowErrors = validateCandidateRow(newRow);
         var newRowCheckboxes = $("#UsersNewlist .checkthiscompetition");
-        
+        if (newRowErrors.length > 0) {
+          console.error(newRowErrors[0], false, false, "newerror", "i");
+        }
         newRowCheckboxes.each(function () {
           var checkbox = $(this);
           var competitionStatus = checkbox.attr("competitionstatus");
           
           // Disable if errors, enable if no errors (unless gender-restricted)
           if (newRowErrors.length > 0) {
+
             checkbox.prop("disabled", true).addClass("disabled validation-error");
             checkbox.attr("title", "Complete required fields: " + newRowErrors.join(", "));
           } else {
+            debugger;
+            checkbox.removeClass("validation-error");
             if (!checkbox.hasClass("gender-restricted")) {
               checkbox.prop("disabled", false).removeClass("disabled validation-error");
               checkbox.removeAttr("title");
@@ -375,6 +380,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
             checkbox.attr("title", "Complete required fields: " + errors.join(", "));
           } else {
             checkbox.removeClass("validation-error");
+            debugger;
             if (!checkbox.hasClass("gender-restricted")) {
               checkbox.prop("disabled", false).removeClass("disabled validation-error");
               checkbox.removeAttr("title");
@@ -405,6 +411,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
               checkbox.prop("disabled", true).addClass("disabled validation-error");
               checkbox.attr("title", "Complete required fields: " + newRowErrors.join(", "));
             } else {
+              debugger;
               checkbox.removeClass("validation-error");
               if (!checkbox.hasClass("gender-restricted")) {
                 checkbox.prop("disabled", false).removeClass("disabled validation-error");
@@ -458,6 +465,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
                   checkbox.attr("title", "Competition disabled: This competition is for " + genderText + " but candidate is " + candidateGenderText);
                 } else {
                   checkbox.removeClass("gender-restricted");
+                  debugger;
                   if (!checkbox.hasClass("validation-error")) {
                     checkbox.prop("disabled", false).removeClass("disabled gender-restricted");
                     checkbox.removeAttr("title");
@@ -512,6 +520,8 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
                     checkbox.attr("title", "Competition disabled: This competition is for " + genderText + " but candidate is " + candidateGenderText);
                   } else {
+                    checkbox.removeClass("gender-restricted");
+                    debugger;
                     if (!checkbox.hasClass("validation-error")) {
                       checkbox.prop("disabled", false).removeClass("disabled gender-restricted");
                       checkbox.removeAttr("title");
@@ -560,6 +570,8 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
                 checkbox.attr("title", "Competition disabled: This competition is for " + genderText + " but candidate is " + candidateGenderText);
               } else {
+                checkbox.removeClass("gender-restricted");
+                debugger;
                 if (!checkbox.hasClass("validation-error")) {
                   checkbox.prop("disabled", false).removeClass("disabled gender-restricted");
                   checkbox.removeAttr("title");
@@ -1683,7 +1695,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
       let waitingTimer = setTimeout(() => {
         th.prop("checked", false);
-      }, 10000);
+      }, 5000);
 
       $.post(
         $("#saveparticipantinput").val(),
@@ -1712,6 +1724,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
             } else {
               if (participantid > 0) {
                 th.attr("participantid", participantid);
+                if (!th.prop("checked")) {
+                  th.prop("checked", true);
+                }
                 if (pieces.length > 2 && pieces[2]) {
                   var identityNumber = pieces[2];
                   if (identityNumber) {
@@ -1869,9 +1884,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
   $("body").on(
     "keyup change",
-    ".addnewbox #BulkCandidateName,.addnewbox #BulkCandidateDOB,.addnewbox #BulkCandidateMobileNumber,.addnewbox .userprofileimage,.addnewbox #BulkCandidateEmail,.addnewbox #BulkCandidateGender",
-    function (e) {
-      if (e.originalEvent) {
+    ".addnewbox #BulkCandidateName,.addnewbox #BulkCandidateDOB,.addnewbox #BulkCandidateMobileNumber,.addnewbox .userprofileimage,.addnewbox #BulkCandidateEmail,.addnewbox #BulkCandidateGender,.addnewbox [name='UsersModel[UserImage]']",
+    function (e, force) {
+      if (e.originalEvent || force) {
 
         if (freezeParticipation) {
           alert(
@@ -2081,6 +2096,10 @@ var isReadOnlyAccess = false; // Will be overridden from server
         alert("Participation is closed for this event", "e");
         return;
       }
+
+      disableCheckboxesForInvalidRows(null, true);
+      applyGenderBasedCompetitionRestrictions(null, true);
+
       // check if dob is empty
       if (
         $("#BulkCandidateName").val() &&
@@ -2349,6 +2368,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
           .closest(".form-group")
           .find("[name='UsersModel[UserImage]']");
         input.val(data.Results).trigger("change", true);
+
+
+
         th.val("");
       },
       error: function (xhr, status, error) {

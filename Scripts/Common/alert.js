@@ -18,6 +18,7 @@ function alert(content, fn, elsefn, id, boxtype, timeout) {
   }
   var icon = '<i class="check-wrap"></i>';
   var isWarning = false;
+  var isInfo = false;
   var buttons = "";
   if (boxtype) {
     if (boxtype == "c") {
@@ -29,6 +30,9 @@ function alert(content, fn, elsefn, id, boxtype, timeout) {
     } else if (boxtype == "w") {
       isWarning = true;
       icon = '<i class="fas fa-exclamation-triangle"></i>';
+    } else if (boxtype == "i") {
+      isInfo = true;
+      icon = '<i class="fas fa-info-circle"></i>';
     }
   }
   var idstring = "";
@@ -53,6 +57,8 @@ function alert(content, fn, elsefn, id, boxtype, timeout) {
   var alertbox = $("#alertboxes").find(".alertbox:last");
   if (isWarning) {
     alertbox.addClass("alertboxwarning");
+  } else if (isInfo) {
+    alertbox.addClass("alertboxinfo");
   } else if (boxtype != "c") {
     alertbox.find(".alertboxbuttons").remove();
   }
