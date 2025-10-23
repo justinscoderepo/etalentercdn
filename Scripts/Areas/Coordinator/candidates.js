@@ -11,16 +11,16 @@ var isReadOnlyAccess = false; // Will be overridden from server
   let freezeParticipation = false;
   $(document).ready(function () {
     // Override with server-side freeze settings if they exist
-    if (typeof window.freezeParticipation !== 'undefined') {
+    if (typeof window.freezeParticipation !== 'undefined' && window.freezeParticipation === "Yes") {
       freezeParticipation = window.freezeParticipation;
     }
-    if (typeof window.isReadOnlyAccess !== 'undefined') {
+    if (typeof window.isReadOnlyAccess !== 'undefined' && window.isReadOnlyAccess === "Yes") {
       isReadOnlyAccess = window.isReadOnlyAccess;
     }
 
     var jsonSettings =
       userObj.user.JsonSettings;
-    if(window.location.href.indexOf("BulkParticipants") > -1){
+    if (window.location.href.indexOf("BulkParticipants") > -1) {
 
       // Apply read-only mode if freeze is active
       if (freezeParticipation || isReadOnlyAccess) {
@@ -35,46 +35,46 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
 
       }
-        try {
+      try {
 
-          if (jsonSettings) {
-            try {
-              maxCandidateCount = parseInt(
-                jsonSettings.MaximumParticipationPerCandidate
-              );
-            } catch (e) {
-              maxCandidateCount = 10;
-            }
-
-            try {
-              maxTeamCount = parseInt(jsonSettings.MaximumParticipationPerGroup);
-            } catch (e) {
-              maxTeamCount = 10;
-            }
-
-            try {
-              maximumGroupParticipants = parseInt(
-                jsonSettings.MaximumGroupParticipants
-              );
-            } catch (e) {
-              maximumGroupParticipants = 15;
-            }
-            isPhotoMandatory = jsonSettings.IsPhotoMandatoryForCandidate == "Yes";
-            freezeParticipation = jsonSettings.FreezeParticipation == "Yes";
-            isRegIdMandatory = jsonSettings.isRegIdMandatoryForCandidate == "Yes";
-            if (jsonSettings.EligibleRegistrationNumbers) {
-              allowedRegIdNumbers = jsonSettings.EligibleRegistrationNumbers;
-            }
+        if (jsonSettings) {
+          try {
+            maxCandidateCount = parseInt(
+              jsonSettings.MaximumParticipationPerCandidate
+            );
+          } catch (e) {
+            maxCandidateCount = 10;
           }
-        } catch (e) {
-          maxCandidateCount = 10;
-          maxTeamCount = 5;
-          maximumGroupParticipants = 15;
-          isPhotoMandatory = false;
-          freezeParticipation = false;
-        }
 
-  }
+          try {
+            maxTeamCount = parseInt(jsonSettings.MaximumParticipationPerGroup);
+          } catch (e) {
+            maxTeamCount = 10;
+          }
+
+          try {
+            maximumGroupParticipants = parseInt(
+              jsonSettings.MaximumGroupParticipants
+            );
+          } catch (e) {
+            maximumGroupParticipants = 15;
+          }
+          isPhotoMandatory = jsonSettings.IsPhotoMandatoryForCandidate == "Yes";
+
+          isRegIdMandatory = jsonSettings.isRegIdMandatoryForCandidate == "Yes";
+          if (jsonSettings.EligibleRegistrationNumbers) {
+            allowedRegIdNumbers = jsonSettings.EligibleRegistrationNumbers;
+          }
+        }
+      } catch (e) {
+        maxCandidateCount = 10;
+        maxTeamCount = 5;
+        maximumGroupParticipants = 15;
+        isPhotoMandatory = false;
+        freezeParticipation = false;
+      }
+
+    }
   });
   var lazyi = 0;
 
@@ -166,6 +166,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
   });
 
   $("body").on("afterappendcomplete", "#GetParticipantsList", function (e) {
+    if (e.target == e.currentTarget) {
     if ($("select.organizationlistgroup").length) {
       if (
         $("select.organizationlistgroup:last").length == 0 ||
@@ -201,7 +202,197 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
       $(".checkthiscompetition").prop("disabled", true).addClass("disabled");
     }
+
+      // Disable checkboxes for same candidate/team with Male (1) or Female (2) gender
+      applyGenderBasedCompetitionRestrictions();
+
+      // Disable checkboxes for rows with validation errors
+      disableCheckboxesForInvalidRows();
+    }
   });
+
+  // Function to validate candidate/team row required fields
+  function validateCandidateRow(row) {
+    var errors = [];
+
+    // Check name
+    if (!row.find(".eachcandidatename").val()) {
+      errors.push("Name is required");
+    }
+
+    // Check gender if field exists
+    if (row.find(".eachcandidategender").length > 0 && !row.find(".eachcandidategender").val()) {
+      errors.push("Gender is required");
+    }
+
+    // Check DOB if it has value, validate format
+    if (row.find(".eachcandidatedob").val()) {
+      if (
+        row.find(".eachcandidatedob").val().split("-").length != 3 ||
+        row.find(".eachcandidatedob").val().length != 10
+      ) {
+        errors.push("Valid date of birth is required (DD-MM-YYYY)");
+      }
+    }
+
+    // Check mobile if required
+    if (row.find(".eachcandidatemobile").length > 0 &&
+      row.find(".eachcandidatemobile").attr("data-is-required") == "True" &&
+      !row.find(".eachcandidatemobile").val()) {
+      errors.push("Mobile number is required");
+    }
+
+    // Validate mobile format if provided
+    if (row.find(".eachcandidatemobile").val()) {
+      if (row.find(".eachcandidatemobile").val().length < 8) {
+        errors.push("Valid mobile number is required (minimum 8 digits)");
+      }
+    }
+
+    // Check email if required
+    if (row.find(".eachcandidateemail").length > 0 &&
+      row.find(".eachcandidateemail").attr("data-is-required") == "True" &&
+      !row.find(".eachcandidateemail").val()) {
+      errors.push("Email address is required");
+    }
+
+    // Validate email format if provided
+    if (row.find(".eachcandidateemail").length > 0 && row.find(".eachcandidateemail").val()) {
+      var email = row.find(".eachcandidateemail").val();
+      if (
+        email.split("@").length != 2 ||
+        email.split(".").length < 2 ||
+        email.split(".").pop().length < 2 ||
+        email.split("@").pop().length < 2 ||
+        email.length < 8
+      ) {
+        errors.push("Valid email address is required");
+      }
+    }
+
+    // Check registration ID if mandatory
+    var userRegId = row.find(".eachcandidateregid").val();
+    if (isRegIdMandatory && !userRegId) {
+      errors.push("Registration ID is required");
+    }
+
+    // Validate registration ID against allowed list
+    if (allowedRegIdNumbers && allowedRegIdNumbers.length > 0 && userRegId) {
+      if (!allowedRegIdNumbers.filter(x => x.RegistrationNumber == userRegId).length) {
+        errors.push("Valid registration ID is required");
+      }
+    }
+
+    // Check photo if mandatory
+    if (isPhotoMandatory && row.find(".eachcandidateimage").length > 0) {
+      var imageValue = row.find(".eachcandidateimage").val();
+      if (!imageValue || imageValue.indexOf("default") > -1 || imageValue.indexOf("no-image") > -1) {
+        errors.push("Photo is required");
+      }
+    }
+
+    return errors;
+  }
+
+  // Function to disable checkboxes for rows with validation errors
+  function disableCheckboxesForInvalidRows() {
+    $(".Candidateleftlist").each(function () {
+      var row = $(this);
+      var candidateId = row.attr("Candidate");
+      var teamId = row.attr("teamid");
+      var errors = validateCandidateRow(row);
+
+      // Find corresponding checkboxes
+      var checkboxes;
+      if (candidateId && candidateId !== "0" && candidateId !== ZeroValue) {
+        checkboxes = $(".candidatescompetitionrow[candidateid='" + candidateId + "'] .checkthiscompetition");
+      } else if (teamId && teamId !== "0" && teamId !== ZeroValue) {
+        checkboxes = $(".candidatescompetitionrow[teamid='" + teamId + "'] .checkthiscompetition");
+      }
+
+
+      // Disable all checkboxes for this candidate/team
+      checkboxes.each(function () {
+        var checkbox = $(this);
+        var competitionStatus = checkbox.attr("competitionstatus");
+
+        // Don't modify checkboxes already disabled by competition status or freeze
+        if (competitionStatus != "1" && competitionStatus != "2" && competitionStatus != "4" &&
+          competitionStatus != "5" && competitionStatus != "6" && !freezeParticipation) {
+          if (errors.length > 0 && checkboxes) {
+            checkbox.prop("disabled", true).addClass("disabled validation-error");
+            checkbox.attr("title", "Complete required fields: " + errors.join(", "));
+          } else {
+            if (!checkbox.hasClass("gender-restricted")) {
+              checkbox.prop("disabled", false).removeClass("disabled validation-error");
+              checkbox.removeAttr("title");
+            }
+          }
+        }
+      });
+
+    });
+  }
+
+  // Function to apply gender-based competition restrictions
+  // Only applies to individual candidates with gender dropdowns, not teams
+  function applyGenderBasedCompetitionRestrictions() {
+
+    // Loop through each competition row and check gender matching
+    $(".candidatescompetitionrow").each(function () {
+      var row = $(this);
+      var candidateId = row.attr("candidateid") || "_new";
+      var checkboxes = row.find(".checkthiscompetition");
+      if (candidateId && candidateId !== "0" && candidateId !== ZeroValue) {
+        var candidateRow = $(".Candidateleftlist[Candidate='" + candidateId + "']");
+        if (candidateRow.length > 0) {
+          // Check if this candidate row has a gender dropdown
+          var genderDropdown = candidateRow.find(".eachcandidategender");
+          if (genderDropdown.length > 0) {
+            var candidateGender = genderDropdown.val(); // Candidate's gender (1=Male, 2=Female, 3=Other)
+            checkboxes.each(function () {
+              var checkbox = $(this);
+              var competitionGender = checkbox.attr("gender"); // Gender requirement of the competition
+
+              // Only process individual candidates (not teams)
+
+
+              // If competitionGender gender is "3" (Other/Mixed), allow all competitions
+              if (competitionGender === "3") {
+                return; // Skip - allow this competition
+              }
+
+              // If competition has a gender requirement and candidate gender doesn't match, disable
+              if (competitionGender && competitionGender !== "3") {
+                var competitionStatus = checkbox.attr("competitionstatus");
+
+                // Only disable if not already disabled by other rules
+                if (competitionStatus != "1" && competitionStatus != "2" && competitionStatus != "4" &&
+                  competitionStatus != "5" && competitionStatus != "6" && !freezeParticipation) {
+
+                  if (competitionGender !== candidateGender) {
+                    checkbox.prop("disabled", true).addClass("disabled gender-restricted");
+
+                    var genderText = competitionGender === "1" ? "Male" : (competitionGender === "2" ? "Female" : "specific gender");
+                    var candidateGenderText = candidateGender === "1" ? "Male" : (candidateGender === "2" ? "Female" : "Other");
+
+                    checkbox.attr("title", "Competition disabled: This competition is for " + genderText + " but candidate is " + candidateGenderText);
+                  } else {
+                    if (!checkbox.hasClass("validation-error")) {
+                      checkbox.prop("disabled", false).removeClass("disabled gender-restricted");
+                      checkbox.removeAttr("title");
+                    }
+                  }
+                }
+
+              }
+
+            });
+          }
+        }
+      }
+    });
+  }
 
   $("body").on("afterappendcomplete", "div.groupmemberslist", function (e) {
     if (e.target == e.currentTarget) {
@@ -637,7 +828,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
     if ($(this).val()) {
       var cl = $(this).closest(".input-group");
       cl.find("[name=Name]").val(
-        $(this).val() 
+        $(this).val()
       );
     }
   });
@@ -1061,7 +1252,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
     }
   });
   $("body").on("afterappendcomplete", "#Userslist", function (e, data) {
+    if (e.target == e.currentTarget) {  
     $("#Userslist").find(".candidatescompetitionrow").attr("data-json", "");
+    }
   });
 
   $("body").on("afterappendcomplete", "#CommonGroupId", function (e, data) {
@@ -1309,10 +1502,15 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
       formdata.newIdentity = newidentity;
 
+      let waitingTimer = setTimeout(() => {
+        th.prop("checked", false);
+      }, 10000);
+
       $.post(
         $("#saveparticipantinput").val(),
         formdata,
         function (participantid) {
+          clearTimeout(waitingTimer);
           remsession("bindmanagercache");
           var pieces = participantid.split(",");
           participantid = parseInt(pieces[0]);
@@ -1358,12 +1556,15 @@ var isReadOnlyAccess = false; // Will be overridden from server
             th.prop("checked", false);
           }
         }
-      ).fail(function () {
+      ).fail(function (e) {
+        console.log(e);
         hidespinner(user);
         alert(
           "Can't add due to this some internal issues or network issues. Please try again",
           "e"
         );
+
+        th.prop("checked", false);
       });
       // }else{
       //    th.prop("checked", false);
@@ -1427,6 +1628,17 @@ var isReadOnlyAccess = false; // Will be overridden from server
       ) {
         row = $(".Candidateleftlist[teamid=" + th.attr("teamid") + "]");
       }
+
+      // Validate required fields before allowing checkbox change
+      if (th.prop("checked")) {
+        var validationErrors = validateCandidateRow(row);
+        if (validationErrors.length > 0) {
+          alert("Please complete required fields:\n• " + validationErrors.join("\n• "), "e");
+          th.prop("checked", false);
+          return false;
+        }
+      }
+
       let rightBox = $(
         ".candidatescompetitionrow[candidateid=" + th.attr("candidateid") + "]"
       );
@@ -1496,14 +1708,14 @@ var isReadOnlyAccess = false; // Will be overridden from server
         if (!cl.find(".eachcandidatename").val()) {
           cl.find(".form-group").addClass("is-error");
           isError = true;
-        } 
+        }
 
 
 
         if (cl.find(".eachcandidatemobile").length > 0 && !cl.find(".eachcandidatemobile").val()) {
           cl.find(".form-group").addClass("is-error");
           isError = true;
-        } 
+        }
 
         if (cl.find(".eachcandidatedob").val()) {
           if (
@@ -1519,9 +1731,20 @@ var isReadOnlyAccess = false; // Will be overridden from server
         if (!isError) {
           cl.find(".form-group").removeClass("is-error");
         }
+        applyGenderBasedCompetitionRestrictions();
+        // Re-validate and update checkbox states after keyup
+        disableCheckboxesForInvalidRows();
       }
     }
   );
+
+  // Handle gender change to dynamically enable/disable competitions
+  $("body").on("change", ".Candidateleftlist .eachcandidategender", function (e) {
+    // Apply gender-based restrictions whenever gender changes
+    applyGenderBasedCompetitionRestrictions();
+    // Also re-validate in case gender was a required field
+    disableCheckboxesForInvalidRows();
+  });
 
   $("body").on(
     "change",
@@ -1635,6 +1858,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
         // } else {
         //   alert("Please select any competitions", "e");
         // }
+
+        // Re-validate and update checkbox states after field change
+        disableCheckboxesForInvalidRows();
       }
     }
   );

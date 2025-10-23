@@ -3263,7 +3263,6 @@ if (!Date.prototype.isValid) {
     },
     findjsonfieldelements: function (template, key, deepfind) {
       if (key.indexOf(")") > -1) {
-        debugger;
       }
       var htmlelements = template.find(
         "." +

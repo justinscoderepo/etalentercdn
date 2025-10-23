@@ -493,7 +493,14 @@ $(function () {
             $(".spinnerbox").not($(".spinnerboxglobal .spinnerbox")).remove();
 
             if (parameters.failObject.xhr.status == 400) {
-              if (
+              if (parameters.failObject.xhr.responseJSON && parameters.failObject.xhr.responseJSON.SecurityValidations) {
+                var validationErrors = parameters.failObject.xhr.responseJSON.SecurityValidations;
+                var errorMessage = "The following validations failed:\n";
+                for (var i = 0; i < validationErrors.length; i++) {
+                  errorMessage += "- " + validationErrors[i] + "\n";
+                }
+                alert(errorMessage, false, false, false, "w");
+              } else if (
                 parameters.failObject.xhr.responseText && parameters.failObject.xhr.responseText.indexOf(
                   "alternative details exists"
                 ) > -1

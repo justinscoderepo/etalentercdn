@@ -41,65 +41,52 @@ var stylishfill = function (refill, selecteditem, reset, closest, original) {
           prefix = $(this).closest(".form-group").find(".prefix").val();
         }
 
-        if (
-          $(this).val() &&
-          csskey &&
-          $(this).hasClass("stylishmanuallychanged")
-        ) {
+        if ($(this).val() && csskey && $(this).hasClass("stylishmanuallychanged")) {
           var value = $(this).val();
 
           if ($(this).attr("data-customestyles")) {
             $("body").append(
               "<style class='" +
-              designitemclass +
-              "_" +
-              groupprefix +
-              "'>[stylishgroupid='" +
-              groupprefix +
-              "'] [data-stylish='" +
-              designitem +
-              "'] { " +
-              value +
-              "}</style>"
+                designitemclass +
+                "_" +
+                groupprefix +
+                "'>[stylishgroupid='" +
+                groupprefix +
+                "'] [data-stylish='" +
+                designitem +
+                "'] { " +
+                value +
+                "}</style>"
             );
           } else {
             $("body").append(
               "<style class='" +
-              designitemclass +
-              "_" +
-              groupprefix +
-              "'>[stylishgroupid='" +
-              groupprefix +
-              "'] [data-stylish='" +
-              designitem +
-              "'] { " +
-              csskey +
-              ":" +
-              prefix +
-              value +
-              postfix +
-              " !important;}</style>"
+                designitemclass +
+                "_" +
+                groupprefix +
+                "'>[stylishgroupid='" +
+                groupprefix +
+                "'] [data-stylish='" +
+                designitem +
+                "'] { " +
+                csskey +
+                ":" +
+                prefix +
+                value +
+                postfix +
+                " !important;}</style>"
             );
           }
 
           existingrecords[identifier] = value;
           var th = $(this);
 
-          if (
-            th.hasClass("stylishmanuallychanged") &&
-            groupprefix.split("demogroup").length == 1
-          ) {
-            setcache(
-              groupprefix + "_" + designitem,
-              JSON.stringify(existingrecords)
-            );
+          if (th.hasClass("stylishmanuallychanged") && groupprefix.split("demogroup").length == 1) {
+            setcache(groupprefix + "_" + designitem, JSON.stringify(existingrecords));
           }
         } else if (!refill && !$(this).val() && existingrecords[identifier]) {
           delete existingrecords[identifier];
-          setcache(
-            groupprefix + "_" + designitem,
-            JSON.stringify(existingrecords)
-          );
+          setcache(groupprefix + "_" + designitem, JSON.stringify(existingrecords));
         }
       }
     });
@@ -144,40 +131,36 @@ var importstylishfill = function (importfrom, designitem) {
           if (csskey != "googlefontembedcode") {
             $("body").append(
               "<style class='" +
+                designitemclass +
+                "'>[stylishgroupid='" +
+                groupprefix +
+                "'] [data-stylish='" +
+                designitem +
+                "'] { " +
+                $(this).val() +
+                "}</style>"
+            );
+          }
+        } else {
+          $("body").append(
+            "<style class='" +
               designitemclass +
               "'>[stylishgroupid='" +
               groupprefix +
               "'] [data-stylish='" +
               designitem +
               "'] { " +
+              csskey +
+              ":" +
+              prefix +
               $(this).val() +
-              "}</style>"
-            );
-          }
-        } else {
-          $("body").append(
-            "<style class='" +
-            designitemclass +
-            "'>[stylishgroupid='" +
-            groupprefix +
-            "'] [data-stylish='" +
-            designitem +
-            "'] { " +
-            csskey +
-            ":" +
-            prefix +
-            $(this).val() +
-            postfix +
-            " !important;}</style>"
+              postfix +
+              " !important;}</style>"
           );
         }
 
         existingrecords[identifier] = $(this).val();
-        setcache(
-          groupprefix + "_" + designitem,
-          JSON.stringify(existingrecords),
-          true
-        );
+        setcache(groupprefix + "_" + designitem, JSON.stringify(existingrecords), true);
       }
     }
   });
@@ -188,37 +171,29 @@ $("body").on("afterappendcomplete", "[data-stylishjson]", function () {
   var th = $(this);
   var eventGroupSettings = window.EventUserSettings?.GroupsTemplates ?? {};
   var groupid = getcache("stylishgroupid");
-  if (
-    eventGroupSettings &&
-    eventGroupSettings[$("[name='CandidateGroup']").val()]
-  ) {
+  if (eventGroupSettings && eventGroupSettings[$("[name='CandidateGroup']").val()]) {
     groupid = eventGroupSettings[$("[name='CandidateGroup']").val()];
   }
   th.attr("stylishgroupid", groupid);
   $("#Template").val(groupid).trigger("change");
   if (groupid) {
     var value = $("#importsettings").val();
-    $("#importsettings").html(
-      '<option value="">None</option>' + $(th.attr("data-stylishgroup")).html()
-    );
+    $("#importsettings").html('<option value="">None</option>' + $(th.attr("data-stylishgroup")).html());
     $("#importsettings").val(value);
 
     $("#designitemslist option[value]").remove();
     $(this)
       .find("[data-stylish]")
       .each(function () {
-        if (
-          !$("#designitemslist [value='" + $(this).attr("data-stylish") + "']")
-            .length
-        ) {
+        if (!$("#designitemslist [value='" + $(this).attr("data-stylish") + "']").length) {
           $("#designitemslist").append(
             "<option groupid='" +
-            groupid +
-            "' value='" +
-            $(this).attr("data-stylish") +
-            "'>" +
-            $(this).attr("data-stylish") +
-            "</option>"
+              groupid +
+              "' value='" +
+              $(this).attr("data-stylish") +
+              "'>" +
+              $(this).attr("data-stylish") +
+              "</option>"
           );
         }
       });
@@ -308,14 +283,10 @@ $("body").on("click", ".downloadandprint", function (e) {
         var postfix = "";
         var existingrecords = {};
         if (getcache(groupprefix + "_" + designitem)) {
-          existingrecords = JSON.parse(
-            getcache(groupprefix + "_" + designitem)
-          );
+          existingrecords = JSON.parse(getcache(groupprefix + "_" + designitem));
         }
 
-        var el = $(".templatelist[stylishgroupid='" + groupprefix + "']").find(
-          "[data-stylish='" + designitem + "']"
-        );
+        var el = $(".templatelist[stylishgroupid='" + groupprefix + "']").find("[data-stylish='" + designitem + "']");
         var cssvalue = "";
 
         if (!existingrecords[identifier]) {
@@ -343,11 +314,9 @@ $("body").on("click", ".downloadandprint", function (e) {
             customStyles[groupprefix][designitem] = {};
           }
           if ($(this).attr("data-customestyles")) {
-            customStyles[groupprefix][designitem]["customcss"] =
-              existingrecords[identifier];
+            customStyles[groupprefix][designitem]["customcss"] = existingrecords[identifier];
           } else {
-            customStyles[groupprefix][designitem][csskey] =
-              existingrecords[identifier];
+            customStyles[groupprefix][designitem][csskey] = existingrecords[identifier];
           }
         }
       });
@@ -372,20 +341,18 @@ $("body").on("click", ".downloadandprint", function (e) {
         timeout += 2000;
 
         setTimeout(function () {
+          let name = th.attr("name");
+          let eventGroup = name.replace("DesignArray", "");
+          let design = th.val();
 
-        let name = th.attr("name");
-        let eventGroup = name.replace("DesignArray", "");
-        let design = th.val();
-
-        let customStylesForDesign = customStyles[design];
-        let newCustomStyles = {};
-        newCustomStyles[design] = customStylesForDesign;
-        data.Styles = JSON.stringify(newCustomStyles);
-        data.Template = design;
-        data.CandidateGroup = eventGroup;
-        post(action, data);
-
-    }, timeout);
+          let customStylesForDesign = customStyles[design];
+          let newCustomStyles = {};
+          newCustomStyles[design] = customStylesForDesign;
+          data.Styles = JSON.stringify(newCustomStyles);
+          data.Template = design;
+          data.CandidateGroup = eventGroup;
+          post(action, data);
+        }, timeout);
       }
     });
 
@@ -458,10 +425,7 @@ function post(path, params, method = "post") {
 function changeCurrentTemplate(th, force) {
   $(".stylishmanuallychanged").removeClass("stylishmanuallychanged");
   let existingTemplate = getcache("stylishgroupid");
-  setcache(
-    "stylishgroupid",
-    th.closest(".templatelist").attr("stylishgroupid")
-  );
+  setcache("stylishgroupid", th.closest(".templatelist").attr("stylishgroupid"));
   var groupprefix = th.closest("[stylishgroupid]").attr("stylishgroupid");
   $("#Template").val(groupprefix).trigger("change", force);
   $(".candidateCardsList.originallist").attr("stylishgroupid", groupprefix);
@@ -478,9 +442,7 @@ function changeCurrentTemplate(th, force) {
     }
     var lastTemplateRecords = {};
     if (getcache(existingTemplate + "_" + designitem)) {
-      lastTemplateRecords = JSON.parse(
-        getcache(existingTemplate + "_" + designitem)
-      );
+      lastTemplateRecords = JSON.parse(getcache(existingTemplate + "_" + designitem));
     }
     $(".stylish").val("").removeClass("stylishchanged");
     $(".stylish").each(function () {
@@ -505,11 +467,7 @@ function changeCurrentTemplate(th, force) {
         cssvalue = lastTemplateRecords[identifier];
         $(this).val(lastTemplateRecords[identifier]);
         $(this).addClass("stylishchanged");
-        setcache(
-          groupprefix + "_" + designitem,
-          JSON.stringify(lastTemplateRecords),
-          true
-        );
+        setcache(groupprefix + "_" + designitem, JSON.stringify(lastTemplateRecords), true);
       }
 
       if (groupprefix && cssvalue) {
@@ -532,34 +490,34 @@ function changeCurrentTemplate(th, force) {
           if ($(this).attr("data-customestyles")) {
             $("body").append(
               "<style class='" +
-              designitemclass +
-              "_" +
-              groupprefix +
-              "'>.originallist[stylishgroupid='" +
-              groupprefix +
-              "'] [data-stylish='" +
-              designitem +
-              "'] { " +
-              value +
-              "}</style>"
+                designitemclass +
+                "_" +
+                groupprefix +
+                "'>.originallist[stylishgroupid='" +
+                groupprefix +
+                "'] [data-stylish='" +
+                designitem +
+                "'] { " +
+                value +
+                "}</style>"
             );
           } else {
             $("body").append(
               "<style class='" +
-              designitemclass +
-              "_" +
-              groupprefix +
-              "'>.originallist[stylishgroupid='" +
-              groupprefix +
-              "'] [data-stylish='" +
-              designitem +
-              "'] { " +
-              csskey +
-              ":" +
-              prefix +
-              value +
-              postfix +
-              " !important;}</style>"
+                designitemclass +
+                "_" +
+                groupprefix +
+                "'>.originallist[stylishgroupid='" +
+                groupprefix +
+                "'] [data-stylish='" +
+                designitem +
+                "'] { " +
+                csskey +
+                ":" +
+                prefix +
+                value +
+                postfix +
+                " !important;}</style>"
             );
           }
 
@@ -571,25 +529,17 @@ function changeCurrentTemplate(th, force) {
 }
 
 if (!getcache("stylishgroupid")) {
-  changeCurrentTemplate(
-    $(".templatelist .candidateCard,.templatelist .CertificateCard").first()
-  );
+  changeCurrentTemplate($(".templatelist .candidateCard,.templatelist .CertificateCard").first());
 } else {
   changeCurrentTemplate(
     $(
-      ".templatelist[stylishgroupid=" +
-      getcache("stylishgroupid") +
-      "] .candidateCard,.templatelist .CertificateCard"
+      ".templatelist[stylishgroupid=" + getcache("stylishgroupid") + "] .candidateCard,.templatelist .CertificateCard"
     ).first()
   );
 }
-$("body").on(
-  "click",
-  ".templatelist .candidateCard,.templatelist .CertificateCard",
-  function (e) {
-    changeCurrentTemplate($(this), true);
-  }
-);
+$("body").on("click", ".templatelist .candidateCard,.templatelist .CertificateCard", function (e) {
+  changeCurrentTemplate($(this), true);
+});
 
 $("body").on("afterappendcomplete", "#DesignArray", function () {
   $(this)
@@ -609,10 +559,7 @@ $("body").on("change", "#importsettings", function (e, force) {
   var th = $(this);
   if (th.val()) {
     $("#designitemslist option").each(function () {
-      importstylishfill(
-        $("#DesignArray" + th.val()).val(),
-        $(this).attr("value")
-      );
+      importstylishfill($("#DesignArray" + th.val()).val(), $(this).attr("value"));
     });
   }
 });
@@ -622,9 +569,7 @@ $("body").on("change", ".stylish", function (e, force) {
   }
   var designitem = $("#designitemslist").val();
   if (designitem) {
-    var temth = $(
-      ".templatelist[stylishgroupid='" + getcache("stylishgroupid") + "']"
-    );
+    var temth = $(".templatelist[stylishgroupid='" + getcache("stylishgroupid") + "']");
     var designitemclass = designitem.replace(/ /gi, "");
     var groupprefix = getcache("stylishgroupid");
 
@@ -668,49 +613,41 @@ $("body").on("change", ".stylish", function (e, force) {
           if ($(this).attr("data-customestyles")) {
             $("body").append(
               "<style class='" +
-              designitemclass +
-              "_" +
-              groupprefix +
-              "'>.originallist[stylishgroupid='" +
-              groupprefix +
-              "'] [data-stylish='" +
-              designitem +
-              "'] { " +
-              cssvalue +
-              "}</style>"
+                designitemclass +
+                "_" +
+                groupprefix +
+                "'>.originallist[stylishgroupid='" +
+                groupprefix +
+                "'] [data-stylish='" +
+                designitem +
+                "'] { " +
+                cssvalue +
+                "}</style>"
             );
           } else {
             $("body").append(
               "<style class='" +
-              designitemclass +
-              "_" +
-              groupprefix +
-              "'>.originallist[stylishgroupid='" +
-              groupprefix +
-              "'] [data-stylish='" +
-              designitem +
-              "'] { " +
-              csskey +
-              ":" +
-              prefix +
-              cssvalue +
-              postfix +
-              " !important;}</style>"
+                designitemclass +
+                "_" +
+                groupprefix +
+                "'>.originallist[stylishgroupid='" +
+                groupprefix +
+                "'] [data-stylish='" +
+                designitem +
+                "'] { " +
+                csskey +
+                ":" +
+                prefix +
+                cssvalue +
+                postfix +
+                " !important;}</style>"
             );
           }
 
-          setcache(
-            groupprefix + "_" + designitem,
-            JSON.stringify(existingrecords),
-            true
-          );
+          setcache(groupprefix + "_" + designitem, JSON.stringify(existingrecords), true);
         } else if (!$(this).val() && existingrecords[identifier]) {
           delete existingrecords[identifier];
-          setcache(
-            groupprefix + "_" + designitem,
-            JSON.stringify(existingrecords),
-            true
-          );
+          setcache(groupprefix + "_" + designitem, JSON.stringify(existingrecords), true);
         }
       }
     });
@@ -722,9 +659,7 @@ $("body").on("click", ".stylishreset", function () {
 
   changeCurrentTemplate(
     $(
-      ".templatelist[stylishgroupid=" +
-      getcache("stylishgroupid") +
-      "] .candidateCard,.templatelist .CertificateCard"
+      ".templatelist[stylishgroupid=" + getcache("stylishgroupid") + "] .candidateCard,.templatelist .CertificateCard"
     ).first()
   );
   $("#designitemslist").trigger("change", true);
@@ -732,9 +667,7 @@ $("body").on("click", ".stylishreset", function () {
 $("body").on("change", "#designitemslist", function (e, force) {
   if (e.originalEvent || force) {
     $(".stylishmanuallychanged").removeClass("stylishmanuallychanged");
-    var temth = $(
-      ".templatelist[stylishgroupid='" + getcache("stylishgroupid") + "']"
-    );
+    var temth = $(".templatelist[stylishgroupid='" + getcache("stylishgroupid") + "']");
     if ($(this).find("option:selected").length > 0) {
       var groupprefix = getcache("stylishgroupid");
       $(".stylish").removeClass("stylishchanged").val("");
@@ -744,9 +677,7 @@ $("body").on("change", "#designitemslist", function (e, force) {
         var designitemclass = designitem.replace(/ /gi, "");
         var existingrecords = {};
         if (getcache(groupprefix + "_" + designitem)) {
-          existingrecords = JSON.parse(
-            getcache(groupprefix + "_" + designitem)
-          );
+          existingrecords = JSON.parse(getcache(groupprefix + "_" + designitem));
         }
         $(".stylish").each(function () {
           var csskey = $(this).attr("data-csskey");
@@ -841,26 +772,26 @@ $(".templatelist").each(function () {
           if ($(this).attr("data-customestyles")) {
             $("body").append(
               "<style class=''>.templatelist[stylishgroupid='" +
-              groupid +
-              "'] [data-stylish='" +
-              designItem +
-              "'] { " +
-              value +
-              "}</style>"
+                groupid +
+                "'] [data-stylish='" +
+                designItem +
+                "'] { " +
+                value +
+                "}</style>"
             );
           } else {
             $("body").append(
               "<style>.templatelist[stylishgroupid='" +
-              groupid +
-              "'] [data-stylish='" +
-              designItem +
-              "'] { " +
-              csskey +
-              ":" +
-              prefix +
-              value +
-              postfix +
-              " !important;}</style>"
+                groupid +
+                "'] [data-stylish='" +
+                designItem +
+                "'] { " +
+                csskey +
+                ":" +
+                prefix +
+                value +
+                postfix +
+                " !important;}</style>"
             );
           }
         }
@@ -873,8 +804,7 @@ $(".templatelist").each(function () {
 });
 
 function setPageSize() {
-  var pageSize =
-    parseInt($("#CardsPerRow").val()) * parseInt($("#RowsPerPage").val());
+  var pageSize = parseInt($("#CardsPerRow").val()) * parseInt($("#RowsPerPage").val());
   /////pageSize = 100 - (100 % pageSize);
   $(".candidatescards #pagesize_CandidatesCards")
     .html("<option>" + pageSize + "</option>")
@@ -940,9 +870,7 @@ $("body").on(
     $(".signature3heading").text($("#Signature3Heading").val());
 
     $(".eventName[data-stylish='Event Name']").text($("#EventHeading").val());
-    $(".eventName[data-stylish='Back Event Name']").text(
-      $("#EventBackHeading").val()
-    );
+    $(".eventName[data-stylish='Back Event Name']").text($("#EventBackHeading").val());
 
     $(".certificateconfigkeys .globalcachevalues").each(function () {
       if ($("." + $(this).attr("id").toLowerCase()).length > 0) {
@@ -971,9 +899,9 @@ $("body").on(
       $(
         ".candidateCardsList.originallist .candidateCard .backside,.CertificateCardsList.originallist .CertificateCard .backside"
       ).show();
-      $(
-        ".candidateCardsList.originallist .candidateCard,.CertificateCardsList.originallist .CertificateCard"
-      ).addClass("pull-right");
+      $(".candidateCardsList.originallist .candidateCard,.CertificateCardsList.originallist .CertificateCard").addClass(
+        "pull-right"
+      );
     } else {
       $(
         ".candidateCardsList.originallist .candidateCard .frontside,.CertificateCardsList.originallist .CertificateCard .frontside"
@@ -1009,8 +937,7 @@ $("body").on(
       ".candidateCardsList.originallist .candidateCard:visible,.CertificateCardsList.originallist .CertificateCard:visible"
     ).first();
     let height = 0;
-    let requiredHeight =
-      (1547.84 - $("#RowsPerPage").val() * 22) / $("#RowsPerPage").val(); //1587.84 a3 height, 20 for padding and 2 for border 40 for margin in print
+    let requiredHeight = (1547.84 - $("#RowsPerPage").val() * 22) / $("#RowsPerPage").val(); //1587.84 a3 height, 20 for padding and 2 for border 40 for margin in print
     if (firstItem.length) {
       // firstItem.css('min-height', requiredHeight + "px");
       // let _wh = firstItem[0].getBoundingClientRect();
@@ -1047,13 +974,9 @@ $("body").on(
 
     var rem = rowbreakcount % parseInt($("#CardsPerRow").val());
 
-    $(
-      ".candidateCardsList.originallist .rowbreak,.CertificateCardsList.originallist .rowbreak"
-    ).each(function (i) {
+    $(".candidateCardsList.originallist .rowbreak,.CertificateCardsList.originallist .rowbreak").each(function (i) {
       if (i + 1 != 0 && (i + 1) % parseInt($("#RowsPerPage").val()) == 0) {
-        $(this).after(
-          '<div class="col-xs-50 pagebreak hidden-print"><hr/></div>'
-        );
+        $(this).after('<div class="col-xs-50 pagebreak hidden-print"><hr/></div>');
       }
     });
     ////if ($(".candidateCard").last().next(".pagebreak").length == 0) {
@@ -1075,10 +998,7 @@ $("body").on(
           $(this)
             .next()
             .next(".pagebreak")
-            .after(
-              outerhtml +
-              '<div class="col-xs-50 pagebreak hidden-print"><hr/></div>'
-            );
+            .after(outerhtml + '<div class="col-xs-50 pagebreak hidden-print"><hr/></div>');
           outerhtml = "";
         } else {
           ////$(this).closest(".candidateCardsList.originallist,.CertificateCardsList.originallist").find(".candidateCard:visible,.CertificateCard:visible").last().after( '<div class="col-xs-50 pagebreak hidden-print"><hr/></div>'+outerhtml);

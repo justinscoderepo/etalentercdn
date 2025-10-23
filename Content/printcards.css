@@ -43,8 +43,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgb(2 2 14 / 25%); */ /* Blue overlay with 50% opacity */
-z-index: -2;
+background-color: rgb(2 2 14 / 30%);
+    /* Blue overlay with 50% opacity */
+    z-index: 1;
+    /* background-color: aliceblue; */
 }
 .printcertificate .candidateCard .box , .printtopcertificate  .candidateCard .box {
     
@@ -52,7 +54,7 @@ z-index: -2;
     background-size: contain !important;
 }
 .candidateCard .eventName {
-    background-color: rgba(255, 255, 255, 0.59);
+    /* background-color: rgba(255, 255, 255, 0.59); */
     color: #1664b7;
     text-align: center;
     white-space: break-spaces;

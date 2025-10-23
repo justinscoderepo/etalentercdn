@@ -5,10 +5,10 @@ var isReadOnlyAccess = false; // Will be overridden from server
   var freezeParticipation = false; // Will be overridden from server
   $(document).ready(function () {
     // Override with server-side freeze settings if they exist
-    if (typeof window.freezeParticipation !== 'undefined') {
+    if (typeof window.freezeParticipation !== 'undefined' && window.freezeParticipation === "Yes") {
       freezeParticipation = window.freezeParticipation;
     }
-    if (typeof window.isReadOnlyAccess !== 'undefined') {
+    if (typeof window.isReadOnlyAccess !== 'undefined' && window.isReadOnlyAccess === "Yes") {
       isReadOnlyAccess = window.isReadOnlyAccess;
     }
 
@@ -103,27 +103,27 @@ var isReadOnlyAccess = false; // Will be overridden from server
     var th = $(this);
     $(
       '[name="' +
-        "User" +
-        th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-        '"]'
+      "User" +
+      th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+      '"]'
     ).val(th.val());
     $(
       '[name="' +
-        th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-        '"]'
+      th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+      '"]'
     ).val(th.val());
     setTimeout(function () {
       if (locallazyi == lazyuseri) {
         $(
           '[name="' +
-            "User" +
-            th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-            '"]'
+          "User" +
+          th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+          '"]'
         ).trigger("change");
         $(
           '[name="' +
-            th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-            '"]'
+          th.closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+          '"]'
         ).trigger("change");
       }
     }, 1500);
@@ -131,17 +131,17 @@ var isReadOnlyAccess = false; // Will be overridden from server
       cl.find(".hiddenParentOrganization").val($(this).val()).trigger("change");
       $(
         '[name="' +
-          "UsersModel[" +
-          $(this).closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-          "]" +
-          '"]'
+        "UsersModel[" +
+        $(this).closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+        "]" +
+        '"]'
       ).val($(this).val());
       $(
         '[name="' +
-          "TeamModel[" +
-          $(this).closest(".orgrow").attr("data-level").replace(/ /gi, "") +
-          "]" +
-          '"]'
+        "TeamModel[" +
+        $(this).closest(".orgrow").attr("data-level").replace(/ /gi, "") +
+        "]" +
+        '"]'
       ).val($(this).val());
 
       //// $(".addUserDetails").show();
@@ -267,7 +267,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
           });
 
           item.GroupCompetitions = [];
-          
+
           let isValid = false;
           for (let i = arrayItems.length; i < arrayItems.length + 200; i++) {
             if ($(this).find("td:eq(" + i + ")").length > 0) {

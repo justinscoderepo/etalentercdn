@@ -1508,7 +1508,11 @@ a.logout {
     width: 60px;
 }
 
-.headerminimize .open-nav.sidemenu .fas,.headerminimize #dropdown.sidemenu .fas { font-size: 12px; }
+.headerminimize .open-nav.sidemenu .fas,
+.headerminimize #dropdown.sidemenu .fas,
+.headerminimize #versiondropdown.sidemenu .fas {
+    font-size: 12px;
+}
 
 .sidemenu .fas {
     float: left;
@@ -1693,6 +1697,7 @@ a.orderdown {
     top: 55px;
     width: 500px;
     z-index: 99999;
+    white-space: pre-line;
 }
 
 .alertbox {
@@ -2754,7 +2759,13 @@ body.optactivebody, body.disableoverflow { overflow-y: hidden; }
 .pagebreak { background-color: #898787; }
 
 @media print {
-    .CertificateCard .box, .candidateCard .box, .grouprow, .stickerresults .candidatesdetailsrow { page-break-inside: avoid !important; }
+    .CertificateCard .box,
+        .candidateCard .box,
+        .grouprow,
+        .stickerresults .candidatesdetailsrow,
+        .sectionwiseresults {
+            page-break-inside: avoid !important;
+        }
 
     #CandidatesCardsPaginationOuter { display: none; }
 
@@ -2796,11 +2807,21 @@ body.optactivebody, body.disableoverflow { overflow-y: hidden; }
 
     .halfwidth { width: 50%; }
 
+                .publishedresults.results-font-medium .halfwidth,
+                .publishedresults.results-font-large .halfwidth,
+                .publishedresults.results-font-xlarge .halfwidth {
+                    width: 100%;
+                }
     #contentboxbody .box > div { padding: 0px }
 
     .breakpage { height: 0px; }
 }
 
+                .publishedresults.results-font-medium .halfwidth,
+                .publishedresults.results-font-large .halfwidth,
+                .publishedresults.results-font-xlarge .halfwidth {
+                    width: 100%;
+                }
 .optokbox {
     bottom: 0;
     left: 50%;
@@ -4325,7 +4346,8 @@ ul.linklist li a {
         padding: 7px 2px;
         width: 38px;
     }
-    .headerminimize #dropdown {
+        .headerminimize #dropdown,
+        .headerminimize #versiondropdown {
         padding: 7px 2px;
         width: 50px;
     }
@@ -4496,7 +4518,8 @@ option:disabled {
 
 
 /* user menu settings */
-#dropdown {
+#dropdown,
+#versiondropdown {
     display: block;
     padding: 7px 9px;
     padding-top: 11px;
@@ -4510,21 +4533,27 @@ option:disabled {
     font-size: 10px;
     color: #fff !important
   }
-  .headerminimize #dropdown{
+  .headerminimize #dropdown,
+  .headerminimize #versiondropdown {
       float: left;
       line-height: 12px;
       padding: 7px 6px;
       width: 65px;
   }
-  #dropdown:hover { color: #000000; }
+  #dropdown:hover,
+  #versiondropdown:hover {
+      color: #000000;
+  }
   
-  #dropdown.open {
+  #dropdown.open,
+  #versiondropdown.open {
     background: #000000;
     color: #fff;
      border-left: 4px solid #0965ff;
   }
   
-  #dropdown ul { 
+  #dropdown ul,
+  #versiondropdown ul {
     position: absolute;
     top: 100%;
     left: -4px; /* move content -4px because of container left border */
@@ -4540,9 +4569,13 @@ option:disabled {
     font-size: 16px;
         text-align: left;
   }
-  #dropdown ul li { font-size: 0.9em; }
+  #dropdown ul li,
+  #versiondropdown ul li {
+      font-size: 0.9em;
+  }
   
-  #dropdown ul li button { 
+  #dropdown ul li button,
+  #versiondropdown ul li button {
   text-decoration: none;
       display: block;
       color: #FFFFFF;
@@ -4557,7 +4590,10 @@ option:disabled {
           white-space: nowrap;
   }
   
-  #dropdown ul li button .fas,#dropdown ul li button .fa-solid{
+  #dropdown ul li button .fas,
+  #dropdown ul li button .fa-solid,
+  #versiondropdown ul li button .fas,
+  #versiondropdown ul li button .fa-solid {
          width: 25px;
          padding-right: 2px;
          float: none;
@@ -4565,15 +4601,18 @@ option:disabled {
   
   }
   
-  #dropdown ul li button.active .fas{
+  #dropdown ul li button.active .fas,
+  #versiondropdown ul li button.active .fas {
   color: #57fb1d;
   }
-  #dropdown ul li button:hover {
+  #dropdown ul li button:hover,
+  #versiondropdown ul li button:hover {
        color: #FFF;
        background: #2d3741;
   }
   
-  #dropdown ul li button.active{
+  #dropdown ul li button.active,
+  #versiondropdown ul li button.active {
   color: #ffffff;
       background: #0c3f68;
       cursor: default;
