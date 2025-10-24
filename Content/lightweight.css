@@ -394,7 +394,9 @@ a:active, a:hover {
     white-space: nowrap;
     word-break: normal;
 }
-
+.membershipwiseparticipants  .divtable > div > div > div {
+    white-space: normal;
+}
 .divtable > div > div.tablehead > div {
     padding-bottom: 4px;
     text-shadow: 0 0 1px rgba(72, 71, 71, 0.09019607843137255);

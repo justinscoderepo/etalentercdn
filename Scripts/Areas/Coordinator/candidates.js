@@ -207,7 +207,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
       // Disable checkboxes for rows with validation errors
       disableCheckboxesForInvalidRows();
+      if ($("#selectedparticipanttypeforbulkedit").val() == "1") {
       applyGenderBasedCompetitionRestrictions();
+      }
     }
   });
 
@@ -218,6 +220,10 @@ var isReadOnlyAccess = false; // Will be overridden from server
     // Determine if this is a new row (.addnewbox) or existing row (.Candidateleftlist)
     var isNewRow = row.hasClass("addnewbox");
 
+    var participanttype = $("#selectedparticipanttypeforbulkedit").val();
+
+    if (participanttype == "1") {
+
     // Get field values based on row type
     var nameField = isNewRow ? row.find("#BulkCandidateName") : row.find(".eachcandidatename");
     var genderField = isNewRow ? row.find("#BulkCandidateGender") : row.find(".eachcandidategender");
@@ -225,7 +231,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
     var mobileField = isNewRow ? row.find("#BulkCandidateMobileNumber") : row.find(".eachcandidatemobile");
     var emailField = isNewRow ? row.find("#BulkCandidateEmail") : row.find(".eachcandidateemail");
     var regIdField = isNewRow ? row.find("[name='UsersModel[RegistrationId]']") : row.find(".eachcandidateregid");
-    var imageField = isNewRow ? row.find("[name='UsersModel[UserImage]']") : row.find(".eachcandidateimage");
+      var imageField = isNewRow ? row.find("[name='UsersModel[UserImage]']") : row.find(".eachcandidateimage");   
 
     // Check name
     if (!nameField.val()) {
@@ -302,6 +308,13 @@ var isReadOnlyAccess = false; // Will be overridden from server
         errors.push("Photo is required");
       }
     }
+    } else if (participanttype == "2") {
+      // Team validation can be added here if needed
+      var teamNameField = isNewRow ? row.find("#BulkTeamName") : row.find(".eachcandidatename");
+      if (!teamNameField.val()) {
+        errors.push("Team name is required");
+      }
+    }
 
     if (!isNewRow) {
       if (errors.length > 0) {
@@ -337,7 +350,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
             checkbox.prop("disabled", true).addClass("disabled validation-error");
             checkbox.attr("title", "Complete required fields: " + newRowErrors.join(", "));
           } else {
-            debugger;
+
             checkbox.removeClass("validation-error");
             if (!checkbox.hasClass("gender-restricted")) {
               checkbox.prop("disabled", false).removeClass("disabled validation-error");
@@ -380,7 +393,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
             checkbox.attr("title", "Complete required fields: " + errors.join(", "));
           } else {
             checkbox.removeClass("validation-error");
-            debugger;
+
             if (!checkbox.hasClass("gender-restricted")) {
               checkbox.prop("disabled", false).removeClass("disabled validation-error");
               checkbox.removeAttr("title");
@@ -411,7 +424,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
               checkbox.prop("disabled", true).addClass("disabled validation-error");
               checkbox.attr("title", "Complete required fields: " + newRowErrors.join(", "));
             } else {
-              debugger;
+
               checkbox.removeClass("validation-error");
               if (!checkbox.hasClass("gender-restricted")) {
                 checkbox.prop("disabled", false).removeClass("disabled validation-error");
@@ -465,7 +478,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
                   checkbox.attr("title", "Competition disabled: This competition is for " + genderText + " but candidate is " + candidateGenderText);
                 } else {
                   checkbox.removeClass("gender-restricted");
-                  debugger;
+
                   if (!checkbox.hasClass("validation-error")) {
                     checkbox.prop("disabled", false).removeClass("disabled gender-restricted");
                     checkbox.removeAttr("title");
@@ -521,7 +534,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
                     checkbox.attr("title", "Competition disabled: This competition is for " + genderText + " but candidate is " + candidateGenderText);
                   } else {
                     checkbox.removeClass("gender-restricted");
-                    debugger;
+
                     if (!checkbox.hasClass("validation-error")) {
                       checkbox.prop("disabled", false).removeClass("disabled gender-restricted");
                       checkbox.removeAttr("title");
@@ -571,7 +584,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
                 checkbox.attr("title", "Competition disabled: This competition is for " + genderText + " but candidate is " + candidateGenderText);
               } else {
                 checkbox.removeClass("gender-restricted");
-                debugger;
+
                 if (!checkbox.hasClass("validation-error")) {
                   checkbox.prop("disabled", false).removeClass("disabled gender-restricted");
                   checkbox.removeAttr("title");
@@ -1884,7 +1897,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
   $("body").on(
     "keyup change",
-    ".addnewbox #BulkCandidateName,.addnewbox #BulkCandidateDOB,.addnewbox #BulkCandidateMobileNumber,.addnewbox .userprofileimage,.addnewbox #BulkCandidateEmail,.addnewbox #BulkCandidateGender,.addnewbox [name='UsersModel[UserImage]']",
+    ".addnewbox #BulkCandidateName,.addnewbox #BulkCandidateDOB,.addnewbox #BulkCandidateMobileNumber,.addnewbox .userprofileimage,.addnewbox #BulkCandidateEmail,.addnewbox #BulkCandidateGender,.addnewbox [name='UsersModel[UserImage]'],.addnewbox #BulkTeamName",
     function (e, force) {
       if (e.originalEvent || force) {
 
@@ -1897,7 +1910,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
         }
         // Re-validate and update checkbox states after keyup - pass true to only validate new row
         disableCheckboxesForInvalidRows(null, true);
+        if ($("#selectedparticipanttypeforbulkedit").val() == "1") {
         applyGenderBasedCompetitionRestrictions(null, true);
+        }
 
       }
 
@@ -1952,7 +1967,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
         }
         // Re-validate and update checkbox states after keyup - pass the specific row
         disableCheckboxesForInvalidRows(cl, false);
+        if ($("#selectedparticipanttypeforbulkedit").val() == "1") {
         applyGenderBasedCompetitionRestrictions($(".candidatescompetitionrow[candidateid='" + cl.attr("candidate") + "']"), false);
+        }
       }
     }
   );
@@ -1963,7 +1980,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
     // Apply gender-based restrictions whenever gender changes - pass the specific row
     // Also re-validate in case gender was a required field
     disableCheckboxesForInvalidRows(cl, false);
+    if ($("#selectedparticipanttypeforbulkedit").val() == "1") {
     applyGenderBasedCompetitionRestrictions($(".candidatescompetitionrow[candidateid='" + cl.attr("candidate") + "']"), false);
+    }
   });
 
   $("body").on(
@@ -2098,7 +2117,9 @@ var isReadOnlyAccess = false; // Will be overridden from server
       }
 
       disableCheckboxesForInvalidRows(null, true);
+      if ($("#selectedparticipanttypeforbulkedit").val() == "1") {
       applyGenderBasedCompetitionRestrictions(null, true);
+      }
 
       // check if dob is empty
       if (
