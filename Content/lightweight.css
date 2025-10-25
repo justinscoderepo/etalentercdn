@@ -4772,3 +4772,8 @@ a.ProblematicJudgesCount{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+label.checkbox-label{
+    width: auto;
+    padding: 12px 0px;
+}
