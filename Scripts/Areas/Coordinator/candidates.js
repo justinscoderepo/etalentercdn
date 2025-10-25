@@ -239,7 +239,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
     }
 
     // Check gender if field exists
-    if (genderField.length > 0 && !genderField.val()) {
+    if (genderField.length > 0 && !genderField.val() && !genderField.attr("data-value")) {
       errors.push("Gender is required");
     }
 
