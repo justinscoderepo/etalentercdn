@@ -82,11 +82,75 @@ function changeToFinish() {
       return true;
     }
 
+    try {
+      var floatValue = parseFloat(value);
+      return !Number.isNaN(floatValue) && !Number.isInteger(floatValue);
+    } catch (e) {
+      console.error("Error in isFloat:", e);
+    }
+
     return false;
   }
 
   function isInt(n) {
     return n % 1 === 0;
+  }
+
+  // Helper function to toggle save buttons and score inputs based on absent status
+  function toggleScoreInputsAndButtons() {
+    var isDisabled = false;
+    var isBothNotChecked = false;
+    if (!isFloat($(".scorebyinput").val())) {
+      $(".scorebyinput").val(0);
+    }
+    if (!$(".markasabsent").is(":checked") && parseFloat($(".scorebyinput").val()) == 0) {
+      isBothNotChecked = true;
+    } else {
+      if (parseFloat($(".scorebyinput").val()) > 0) {
+        $(".markasabsent").closest(".checkbox-label").hide();
+        $(".markasabsent").prop("checked", false);
+        isDisabled = false;
+      } else {
+        $(".markasabsent").closest(".checkbox-label").show();
+        isDisabled = true;
+      }
+    }
+
+    if (!isBothNotChecked) {
+      if (isDisabled) {
+        // Hide save buttons and disable all score inputs when marking as absent
+        $(".saveindividualscoreinput").hide();
+        $(".scorerow").hide();
+        $(".saveratingscoreinput").hide();
+        $(".savemultiscoreinput").hide();
+        $(".scorebyinput").prop("disabled", true);
+        $(".individualscoreinput").prop("disabled", true);
+        $(".ratingscoreinput").prop("disabled", true);
+        $(".multiscoreinput").prop("disabled", true);
+      } else {
+        // Show save buttons and enable all score inputs when not absent
+        $(".saveindividualscoreinput").show();
+        $(".scorerow").show();
+        $(".saveratingscoreinput").show();
+        $(".savemultiscoreinput").show();
+        $(".scorebyinput").prop("disabled", false);
+        $(".individualscoreinput").prop("disabled", false);
+        $(".ratingscoreinput").prop("disabled", false);
+        $(".multiscoreinput").prop("disabled", false);
+      }
+    } else {
+      // Show save buttons and enable all score inputs when not absent
+      $(".saveindividualscoreinput").show();
+      $(".scorerow").show();
+      $(".saveratingscoreinput").show();
+      $(".savemultiscoreinput").show();
+      $(".scorebyinput").prop("disabled", false);
+      $(".individualscoreinput").prop("disabled", false);
+      $(".ratingscoreinput").prop("disabled", false);
+      $(".multiscoreinput").prop("disabled", false);
+      $(".markasabsent").prop("checked", false);
+      $(".markasabsent").closest(".checkbox-label").show();
+    }
   }
 
   function setscorecolor(th, offset, width, disablesetscore, currentElement) {
@@ -242,8 +306,10 @@ function changeToFinish() {
 
         if (hasAbsentStatus) {
           $(".markasabsent").prop("checked", true);
+          toggleScoreInputsAndButtons(true);
         } else {
           $(".markasabsent").prop("checked", false);
+          toggleScoreInputsAndButtons(false);
         }
 
       }
@@ -327,9 +393,9 @@ function changeToFinish() {
             $(".markasabsent").closest(".checkbox-label").hide();
             $(".markasabsent").prop("checked", false);
           } else if (parseFloat(th.val()) === 0) {
-            // If score becomes 0, show absent checkbox
+            // If score becomes 0, show absent checkbox but don't auto-check it
             $(".markasabsent").closest(".checkbox-label").show();
-            $(".markasabsent").prop("checked", true);
+            $(".markasabsent").prop("checked", false);
           }
 
           var cl = th.closest(".allscores");
@@ -429,7 +495,7 @@ function changeToFinish() {
             } else {
               alert(
                 typeof data.Results == "string"
-                ? data.Results : "Failed to Score, please try again.",
+                  ? data.Results : "Failed to Score, please try again.",
                 false,
                 false,
                 "Savedalert",
@@ -482,9 +548,9 @@ function changeToFinish() {
           indscore
         );
 
-         if(!$(this).is(":visible")){
-        $(this).closest(".scorecriteriarow").find("[name=Score]").val(indscore);
-         }
+        if (!$(this).is(":visible")) {
+          $(this).closest(".scorecriteriarow").find("[name=Score]").val(indscore);
+        }
         let item = $(this).closest(".scorecriteriarow").find(".scorebyinput");
         let score = parseFloat($(this).attr("data-scorepercentage"));
         if (item.attr("maxscore")) {
@@ -494,7 +560,7 @@ function changeToFinish() {
         if (currentElement) {
           item = item.not(currentElement);
         }
-        if($(this).is(":visible")){
+        if ($(this).is(":visible")) {
           item.val(score);
         }
       });
@@ -562,11 +628,14 @@ function changeToFinish() {
 
         if (formdata.Score != "") {
           postdata.Scores.push(formdata);
-          totalScore += parseInt(formdata.Score);
+          totalScore += parseFloat(formdata.Score);
         }
       });
-
-      cl.find('.multicountrowtotal  [name="ScoreCardScore"]').val(totalScore);
+      debugger;
+      cl.find('.multicountrowtotal  [name="ScoreCardScore"]').val(totalScore.toFixed(1));
+      if(totalScore==0){
+       alert("Total score cannot be zero. Please enter valid scores or mark as absent", false, false, "Savedalert", "w", 1500);
+      }
       var totalrow = $.fn.binder.methods.makepostdata(
         $(".multicountrowtotal").find("[name]")
       );
@@ -657,6 +726,10 @@ function changeToFinish() {
         ".scorecandidatestabview .scorecandidatestab.candidateactive"
       );
       var totalscore = cl.find('.totalscore [name="ScoreCardScore"]').val();
+      if(parseFloat(totalscore)==0){
+       alert("Total score cannot be zero. Please enter valid scores or mark as absent", false, false, "Savedalert", "w", 1500);
+       return;
+      }
       var participantid = activetab.attr("participantid");
       var scorecardid = activetab.attr("scorecardid");
       cl.find("[data-jltableformrow]").trigger("beforesavetableform");
@@ -698,7 +771,7 @@ function changeToFinish() {
           } else {
             alert(
               typeof data.Results == "string"
-              ? data.Results : "Failed to Score, please try again.",
+                ? data.Results : "Failed to Score, please try again.",
               false,
               false,
               "Savedalert",
@@ -769,6 +842,11 @@ function changeToFinish() {
     cl.find('.totalscore .scorebyinput[name="ScoreCardScore"]').val(
       cl.find(".totalscore .scorerowoverlay").attr("data-scorepercentage")
     );
+
+    // Check if participant is marked as absent and update UI accordingly
+    debugger;
+    var isAbsent = $(".markasabsent").is(":checked");
+    toggleScoreInputsAndButtons(isAbsent);
   });
   ////$('body').on("aftersavetableformrow",
   ////                ".totalscore div[data-jltableform] > div",
@@ -867,6 +945,10 @@ function changeToFinish() {
         $(this).prop("checked", false);
         return;
       }
+
+      toggleScoreInputsAndButtons(true);
+    } else {
+      toggleScoreInputsAndButtons(false);
     }
 
 
@@ -877,6 +959,56 @@ function changeToFinish() {
   });
 
   function markParticipantAbsent(participantId, absentStatus, activetab) {
+    // Check if marking as absent and existing scores need to be deleted
+    if (absentStatus === "1" && judgesScoreCarddata[participantId]) {
+      var existingScorecardId = judgesScoreCarddata[participantId].ParticipantIdScorecardId;
+      
+      // If there's an existing scorecard or score, delete it first
+      if ((existingScorecardId && existingScorecardId !== "0") ) {
+        showspinner(activetab);
+        
+        // Delete existing score before marking as absent
+        var deletePostData = {
+          ScorecardId: existingScorecardId,
+        };
+          let token = JSON.parse(localStorage.getItem("user"))
+            ? JSON.parse(localStorage.getItem("user")).token
+            : "";
+          let headers = { Authorization: "Bearer " + token };
+
+        $.ajax({
+          url: "/JudgesScoreCardJson/Remove",
+          type: "DELETE",  headers: headers,
+          data: deletePostData,
+          success: function (deleteResponse) {
+            // After successful deletion, proceed with marking as absent
+            if (deleteResponse && deleteResponse.Results) {
+              // Clear the data in judgesScoreCarddata
+              judgesScoreCarddata[participantId].ParticipantIdScorecardId = "0";
+              judgesScoreCarddata[participantId].ParticipantIdScore = 0;
+              
+              // Now mark as absent
+              proceedWithMarkAbsent(participantId, absentStatus, activetab);
+            } else {
+              hidespinner(activetab);
+              alert("Failed to delete existing scores. Please try again.", "e");
+            }
+          },
+          error: function () {
+            hidespinner(activetab);
+            alert("Failed to delete existing scores. Please try again.", "e");
+          }
+        });
+        
+        return; // Exit here, proceedWithMarkAbsent will handle the rest
+      }
+    }
+    
+    // If no existing scores or not marking as absent, proceed directly
+    proceedWithMarkAbsent(participantId, absentStatus, activetab);
+  }
+
+  function proceedWithMarkAbsent(participantId, absentStatus, activetab) {
     var postdata = {
       ParticipantId: participantId,
       Absent: parseInt(absentStatus)
@@ -906,10 +1038,28 @@ function changeToFinish() {
         if (absentStatus === "1") {
           activetab.find(".CandidateScore").hide();
           activetab.find(".CandidateAbsentStatus").show();
+          
+          // Clear the score display
+          activetab.find(".CandidateScore").text("0");
+          
+          // Clear all score inputs
+          $(".scorebyinput").val("");
+          $(".individualscoreinput").val("");
+          $(".ratingscoreinput").val("");
+          $(".multiscoreinput").val("");
         } else {
           activetab.find(".CandidateAbsentStatus").hide();
           activetab.find(".CandidateScore").show();
         }
+
+
+         $(".scorecandidatestabview").binder();
+          
+      $('.scorecandidateslist>div').hide();
+      $('.scorecandidateslist>div[data-noresult="true"]').show();
+
+
+
 
       } else {
         alert(data.Results.Message || "Failed to update absent status. Please try again.", "e");
