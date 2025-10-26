@@ -28,7 +28,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           # No build needed - pure HTML static files
-          app_location: "/" # Root directory with static HTML files
+          app_location: "/v2" # Deploy from v2 folder
           api_location: "" # No API
           output_location: "" # No build output, deploy files as-is
           skip_app_build: true # Skip build process completely
