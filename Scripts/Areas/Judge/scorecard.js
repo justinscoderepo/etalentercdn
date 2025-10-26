@@ -631,7 +631,7 @@ function changeToFinish() {
           totalScore += parseFloat(formdata.Score);
         }
       });
-      debugger;
+      
       cl.find('.multicountrowtotal  [name="ScoreCardScore"]').val(totalScore.toFixed(1));
       if(totalScore==0){
        alert("Total score cannot be zero. Please enter valid scores or mark as absent", false, false, "Savedalert", "w", 1500);
@@ -844,7 +844,7 @@ function changeToFinish() {
     );
 
     // Check if participant is marked as absent and update UI accordingly
-    debugger;
+    
     var isAbsent = $(".markasabsent").is(":checked");
     toggleScoreInputsAndButtons(isAbsent);
   });

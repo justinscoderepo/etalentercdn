@@ -2812,7 +2812,7 @@ ition: relative; }
 ._footer_1m2hx_134 { display: var(--slot-footer-display,block); grid-area: =
 footer; }
 
-._debugger_1m2hx_139 { grid-area: debugger; }
+._debugger_1m2hx_139 { grid-area: }
 
 @container screen-composer (max-width: 700px) {
   ._screenComposer_1m2hx_8 { grid-template: "banner banner" "sidebar header=
