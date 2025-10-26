@@ -38,76 +38,60 @@ div.eventmanagerow {
 .eventmanagerow .form-group:before, .eventmanagerow .form-group:after { display: none; }
 
 div.eventmanagerow label {
-    
-    height: 34px;
-    
-    overflow: hidden;
-    
-    text-overflow: ellipsis;
-    
-    top: 0px;
-    
-    white-space: nowrap;
-    
-    word-break: normal;
+    height: 34px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    top: 0px;
+    white-space: nowrap;
+    word-break: normal;
+    line-height: 20px;
+    display: flex;
+    /* flex-wrap: nowrap; */
 }
 
 .eventmanagerow span {
-    
-    color: #ffffff;
-    
-    float: left;
-    
-    line-height: 30px;
-    
-    margin-top: -5px;
-    
-    padding: 5px 4px;
-    
-    text-align: left;
-    
-    width: 80%;
+    color: #ffffff;
+    float: left;
+    line-height: 28px;
+    /* margin-top: -5px; */
+    padding: 5px 4px;
+    text-align: left;
+    /* width: auto; */
+    /* line-height: 20px; */
 }
 
 .eventmanagerow i {
-
-    float: left;
-
-    min-width: 20%;
-
-    padding: 6px 0px;
-
-    padding-left: 17px;
-
-    padding-right: 17px;
-
-    text-align: center;
+float: left;
+min-width: 20%;
+padding: 6px 0px;
+padding-left: 17px;
+padding-right: 17px;
+text-align: center;
 }
 
 .eventmanagerow div i.fa-bezier-curve { background-color: #4a166a; }
 
-.eventmanagerow div i.fa-calendar-check { background-color: #10511e; }
+.eventmanagerow div i.fa-calendar-check {background-color: #10511e;color: #ffffff;}
 
 .eventmanagerow div i.fa-adjust { background-color: #1a6424; }
 
 div.eventmanagerow > div {
-    display: block;
-    max-width: 50%;
+    display: flex;
+    /* max-width: 50%; */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: auto;
-    
 }
 @media print {
     div.eventmanagerow>div {
         display: none !important;
     }
 }
-div.eventmanagerow > div > .toggleWrapper { margin-top: -2px; }
+div.eventmanagerow > div > .toggleWrapper {margin-top: -14px;}
 
 div.eventmanagerow > div > div {
-    display: block;
+    display: flex;
     /* float: left; */
     max-width: 100%;
     width: auto;
@@ -131,12 +115,9 @@ div.eventmanagerow > div > div {
 }
 
 div.eventmanagerow label * {
-    
-    float: none;
-    
-    min-width: 20px;
-    
-    width: auto;
+    float: none;
+    min-width: 20px;
+    display: flex;
 }
 
 @media (max-width: 768px) {
