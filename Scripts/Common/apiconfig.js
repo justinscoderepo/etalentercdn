@@ -162,6 +162,10 @@ $(function () {
     if (opera) {
       browserText = "Opera";
       chrome = false;
+      // Allow Opera if it's using WebKit engine
+      if (appleWebKit) {
+        safari = true; // Treat WebKit Opera as allowed
+      }
     }
 
     if (firefox) {
@@ -173,6 +177,8 @@ $(function () {
       browserText = "Edge";
       chrome = false;
     }
+
+    
 
     if (!chrome && !firefox && !edge && !safari) {
       alert(
