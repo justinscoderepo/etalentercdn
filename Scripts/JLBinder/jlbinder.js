@@ -893,8 +893,12 @@ if (!Date.prototype.isValid) {
             if (wrappes.length > 0) {
               this.getfollowwrappers(wrappes, tid);
             }
+            var allowToRemoveFollowElement = true;
+            if(tid &&tid.indexOf("{")>=0){
+              allowToRemoveFollowElement = false;
+            }
 
-            if (followelements.length == 1) {
+            if (followelements.length == 1 && allowToRemoveFollowElement) {
               followelements.remove();
             }
           } else {
