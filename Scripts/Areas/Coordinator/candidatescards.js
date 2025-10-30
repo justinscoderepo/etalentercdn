@@ -294,6 +294,57 @@ $(document).ready(function () {
       window.location.reload();
     }, 2000);
   });
+
+  $("body").on("change", "#HideProfileImages", function (e, data) {
+    if ($(this).val() == "2") {
+      let templateId = $("#Template").val();
+      let key = templateId + "_Profile Image Box";
+      setcache(key, '{"display":"none"}', true);
+    } else {
+      let templateId = $("#Template").val();
+      let key = templateId + "_Profile Image Box";
+      remcache(key);
+    }
+
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
+  });
+
+  $("body").on("change", "#UseDefaultGenderIcons", function (e, data) {
+    if ($(this).val() == "2") {
+      // Show default gender icons when enabled
+      $(".default-gender-icon").each(function() {
+        var gender = $(this).attr("data-gender");
+        $(this).show();
+        if (gender && gender.toLowerCase().includes("male")) {
+          $(this).addClass("male-icon");
+        } else if (gender && gender.toLowerCase().includes("female")) {
+          $(this).addClass("female-icon");
+        } else {
+          $(this).addClass("default-icon");
+        }
+      });
+      // Hide profile image container when both image is empty and default icons enabled
+      $(".profileimagecontainer").each(function() {
+        if (!$(this).find("[data-if-UserImage=\"!=''\"]").is(":visible")) {
+          $(this).removeClass("empty-photo");
+        }
+      });
+    } else {
+      // Hide default gender icons and show empty space
+      $(".default-gender-icon").hide();
+      $(".profileimagecontainer").each(function() {
+        if (!$(this).find("[data-if-UserImage=\"!=''\"]").is(":visible")) {
+          $(this).addClass("empty-photo");
+        }
+      });
+    }
+
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
+  });
 });
 
 jQuery("#hedding").on("input", function () {
