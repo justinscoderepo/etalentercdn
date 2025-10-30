@@ -2172,7 +2172,7 @@ p.list-group-item-text { font-size: 9px; }
 }
 
 
-.User [data-orderbyfield="Event"], .User [data-label="event"], .datacolumn[data-orderbyfield="Inherit"], .datacolumn[data-label="inherit"], .datacolumn[data-orderbyfield="InheritFrom"], .datacolumn[data-label="inherit from"], .datacolumn[data-orderbyfield="CreatedBy"], .datacolumn[data-orderbyfield="Phase"], .datacolumn[data-orderbyfield="CreatedBy"], .datacolumn[data-label="created by"], .datacolumn[data-orderbyfield="CreatedDate"], .datacolumn[data-label="created date"], .datacolumn[data-orderbyfield="ModifiedDate"], .datacolumn[data-label="modified date"], .datacolumn[data-orderbyfield="Visibility"], .datacolumn[data-label="visibility"], .datacolumn[data-label="phase"], .datacolumn[data-orderbyfield="ReportedStartTime"], .datacolumn[data-orderbyfield="ReportedEndTime"], .datacolumn[data-label="reported start time"], .datacolumn[data-label="reported end time"] {
+.User [data-orderbyfield="Event"], .User [data-label="event"], .datacolumn[data-orderbyfield="Inherit"], .datacolumn[data-label="inherit"], .datacolumn[data-orderbyfield="InheritFrom"], .datacolumn[data-label="inherit from"], .datacolumn[data-orderbyfield="Phase"], .datacolumn[data-orderbyfield="ModifiedDate"], .datacolumn[data-label="modified date"], .datacolumn[data-orderbyfield="Visibility"], .datacolumn[data-label="visibility"], .datacolumn[data-label="phase"], .datacolumn[data-orderbyfield="ReportedStartTime"], .datacolumn[data-orderbyfield="ReportedEndTime"], .datacolumn[data-label="reported start time"], .datacolumn[data-label="reported end time"] {
     display: none;
 }
 
