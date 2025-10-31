@@ -11,10 +11,10 @@ var isReadOnlyAccess = false; // Will be overridden from server
   let freezeParticipation = false;
   $(document).ready(function () {
     // Override with server-side freeze settings if they exist
-    if (typeof window.freezeParticipation !== 'undefined' && window.freezeParticipation === "Yes") {
+    if (typeof window.freezeParticipation !== 'undefined' && window.freezeParticipation === true) {
       freezeParticipation = window.freezeParticipation;
     }
-    if (typeof window.isReadOnlyAccess !== 'undefined' && window.isReadOnlyAccess === "Yes") {
+    if (typeof window.isReadOnlyAccess !== 'undefined' && window.isReadOnlyAccess === true) {
       isReadOnlyAccess = window.isReadOnlyAccess;
     }
 
