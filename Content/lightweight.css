@@ -4403,6 +4403,9 @@ ul.linklist li a {
 .nowrap .feesfield2 {
     display: inline !important;
 }
+ .candidatescountfield {
+    display: inline !important;
+}
  #ReactWeb{
     width:100%;height: calc(100vh - 67px);border: none;margin: 0px; margin-top: 0px
 }

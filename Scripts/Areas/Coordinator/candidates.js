@@ -2307,6 +2307,13 @@ var isReadOnlyAccess = false; // Will be overridden from server
 
   $("body").on("change", "[data-showfield]", function () {
     if ($(this).prop("checked")) {
+      if ($(this).attr("data-showfieldinlineblock")) {
+        $("body").append(
+          "<style>" +
+          $(this).attr("data-showfield") +
+          "{ display:inline-block !important; }</style>"
+        );
+      } else 
       if ($(this).attr("data-showfieldblock")) {
         $("body").append(
           "<style>" +
