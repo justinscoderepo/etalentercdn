@@ -80,11 +80,12 @@
 
 .candidateCard .userName {
     border-bottom: 1px solid #fff;
-    color: #944603;
+    color: #ffffff;
     padding: 3px;
     margin: 0px;
     text-align: center;
     white-space: break-spaces;
+    font-weight: bold;
 }
 
 .candidateCard .userOrganizationsList > span {
