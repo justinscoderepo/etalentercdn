@@ -3683,6 +3683,12 @@ if (!Date.prototype.isValid) {
               var jlelements = lastappenedwrapper
                 .find("[data-jlelements]")
                 .not(excludedjlelements);
+              
+              // ✅ Update wrapper item count attribute
+              var currentCount = jlelements.length;
+              lastappenedwrapper.attr("data-wrapper-items", currentCount);
+              lastappenedwrapper.attr("data-wrapper-max", wrapperobj.count);
+              
               if (jlelements.length == wrapperobj.count) {
                 allowappend = true;
               } else {
@@ -3694,6 +3700,8 @@ if (!Date.prototype.isValid) {
             if (allowappend) {
               wrapper.append(wrapperobj.html);
               wrapper = t.find("[data-wrapfollow]").last();
+              wrapper.attr("data-wrapper-items", 1);
+              wrapper.attr("data-wrapper-max", wrapperobj.count);
             }
           }
         }
