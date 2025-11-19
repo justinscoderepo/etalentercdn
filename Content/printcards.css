@@ -22,6 +22,25 @@
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
+#Id_11_176351750277803405324253141384 span[data-label="title"] {
+    display: inline-block; /* puts them in the same line */
+    width: auto;
+    margin-right: 11px;     /* optional spacing */
+    white-space: nowrap;
+    brea: normal;
+}
+
+#Id_11_176351750277803405324253141384 span[data-label="title"]::after {
+    content: ", ";
+    position: absolute;
+    right: -4px;
+    top: -4px;
+}
+
+#Id_11_176351750277803405324253141384 span[data-label="title"]:last-child::after {
+    content: "";
+}
+
 .candidateCard .box {
     -ms-background-position: center !important;
     -ms-background-repeat: repeat !important;
@@ -307,7 +326,7 @@ span.poweredtext {
     margin-top: 8px;
 }
 .printcertificate .certificatecontent {
-     padding: 2px 28px;
+     /* padding: 2px 28px; */
      margin-top: 13px !important;
 }
 .candidateCard .frontside ,.candidateCard .backside{
