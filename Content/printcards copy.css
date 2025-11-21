@@ -17,37 +17,10 @@
     -ms-background-repeat: repeat !important;
     -ms-background-size: cover !important;
     background-repeat: repeat !important;
-    width: 100%;
     background-size: cover !important;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
 }
-.gridbythreelist{
-    display:flex;
-    
-}
-.gridbythreelist{
-    display:flex;
-    margin-bottom: 0px;
-    flex-flow: column;
-} 
-.gridrow{
-      display: flex;
-      /* grid-template-columns: repeat(3, 1fr); */
-      margin-bottom: 4px;
-      /* gap: 0px; */
-      padding:
-          0px 60px;
-      flex-wrap: wrap;
-      justify-content: center;
-}
 
-
-
-.gridbythreelist .gridrow>span{
-    min-width: 135px;
-    padding: 0px 5px;
-    width: auto;
-}
 .candidateCard .box {
     -ms-background-position: center !important;
     -ms-background-repeat: repeat !important;
@@ -69,10 +42,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgb(2 2 14 / 30%); */
-    /* Blue overlay with 50% opacity */
+  /* background-color: rgb(2 2 14 / 25%); */ /* Blue overlay with 50% opacity */
   z-index: 1;
-  /* background-color: aliceblue; */
 }
 .printcertificate .candidateCard .box , .printtopcertificate  .candidateCard .box {
     
@@ -80,7 +51,7 @@
     background-size: contain !important;
 }
 .candidateCard .eventName {
-    /* background-color: rgba(255, 255, 255, 0.59); */
+    background-color: rgba(255, 255, 255, 0.59);
     color: #1664b7;
     text-align: center;
     white-space: break-spaces;
@@ -106,12 +77,11 @@
 
 .candidateCard .userName {
     border-bottom: 1px solid #fff;
-    color: #ffffff;
+    color: #944603;
     padding: 3px;
     margin: 0px;
     text-align: center;
     white-space: break-spaces;
-    font-weight: bold;
 }
 
 .candidateCard .userOrganizationsList > span {
@@ -134,7 +104,7 @@
     border-right: 5px solid rgba(102, 28, 28, 0.19);
     color: #ffffff;
     padding-right: 10px;
-    text-align: center;
+    text-align: right;
 }
 
 .candidateCard .footerbox {
@@ -152,7 +122,6 @@
 .candidateCard .cardheaderlogo {
     display: block;
     height: auto;
-    width: auto;
 }
 
 .candidateCard .cardheaderlogo2 {
@@ -161,26 +130,21 @@
 }
 .profileimagebox {
     border-radius: 5px;
-    height: 125px;
-    /* max-height: 130px; */
+    height: 105px;
+    max-height: 130px;
     margin: 0 auto;
     overflow: hidden;
     width: 100px;
     max-width: 100%;
     display: block;
-    background-color: #ffffff;
     background-position: center;
-    background-size: contain !important;
     border: 3px solid #ffffff;
-    background-repeat: no-repeat !important;
-    overflow: hidden;
 }
 
 
 .candidateCard .cardbackheaderlogo {
     display: block;
     height: auto;
-    width: auto;
 }
 
 .candidateCard .eventDate {
@@ -232,7 +196,7 @@ img.cardbackgroundimage {
 }
 
 .poweredby span.logo {
-    background-image: url(https://app.etalenter.com/Content/Images/ealenterlogo.png) !important;
+    background-image: url(https://talenter.azurewebsites.net/Content/Images/ealenterlogo.png) !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: contain !important;
@@ -327,14 +291,11 @@ span.poweredtext {
     flex-flow: column;
     justify-content: space-around;
     align-content: center;
-    height: 314px;
-    /* flex-wrap: wrap; */
-    line-height: normal;
-    margin-top: 8px;
+    height: 323px;
 }
 .printcertificate .certificatecontent {
-     /* padding: 2px 28px; */
-     margin-top: 13px !important;
+     padding: 2px 67px;
+     margin-top: 11px !important;
 }
 .candidateCard .frontside ,.candidateCard .backside{
    height: 100%;
@@ -448,14 +409,14 @@ img.medal {
     /* background-color: #ffc107b8; */
     object-fit: contain;
     filter: invert(1);
-    filter: grayscale(100%) hue-rotate(180deg) brightness(0.7);
+  filter: grayscale(100%) hue-rotate(180deg) brightness(0.7);
     position: absolute;
-    right: 379px;
+    right: 312px;
     bottom: 0px;
 }
 
 .afterimage-container img.medal{
-    right: 233px;
+    right: 146px;
     bottom: 0px;
 }
 
@@ -532,122 +493,3 @@ img.medal {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-
-
-.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition2 Item Name']{
-    width: 40%;
-    display: flex;
-    position: relative;
-    left: 128px;
-    top: -47px;
-    font-size: 10px;
-    white-space: nowrap;
-}
-.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition2 Item Name'] span{
-    width: auto;
-    padding-left: 2px;
-}
-
-.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Rank']{
-    width: 29%;
-    display: flex;
-    position: relative;
-    left: 276px;
-    top: -3px;
-    justify-content: center;
-}
-
-.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Grade']{
-    width: 32%;
-    /* display: flex; */
-    position: relative;
-    left: 75px;
-    top: -7px;
-}
-
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Competition2 Item Name']{
-    width: 32%;
-    display: flex;
-    position: relative;
-    left: 276px;
-    top: -47px;
-}
-
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Rank']{
-    width: 32%;
-    display: flex;
-    position: relative;
-    left: 276px;
-    top: -3px;
-}
-
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Grade']{
-    /* width: 32%; */
-    /* display: flex; */
-    position: relative;
-    left: 141px;
-    top: -7px;
-}
-
-.originallist[stylishgroupid='customtheme2images0'] [data-stylish='User Name']{
-    text-transform: uppercase;
-}
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"]{
-display:none !important;
-}
-
-.originallist[stylishgroupid='customtheme2images1'] .priceslist{
-display:none
-}
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'] {
-    font-size: 18px !important;
-    text-transform: uppercase;
-    padding-bottom: 14px;
-    word-spacing: 2px;
-    width: 392px;
-    display: inline-block !important;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: geometricPrecision;
-}
-.darkimages6 [data-stylish="Identity Card Box"]::after,
-.darkimages7 [data-stylish="Identity Card Box"]::after,
-.darkimages8 [data-stylish="Identity Card Box"]::after,
-.darkimages9 [data-stylish="Identity Card Box"]::after,
-.darkimages10 [data-stylish="Identity Card Box"]::after,
-.darkimages11 [data-stylish="Identity Card Box"]::after,
-.darkimages12 [data-stylish="Identity Card Box"]::after,
-.darkimages13 [data-stylish="Identity Card Box"]::after,
-.darkimages14 [data-stylish="Identity Card Box"]::after,
-.darkimages15 [data-stylish="Identity Card Box"]::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.1);
-    /* Dark shade */
-    z-index: 0;
-}
-
-/* Default Gender Icons */
-.default-gender-icon {
-    display: none;
-    background-size: contain !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-.default-gender-icon.male-icon {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234A90E2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>') !important;
-}
-
-.default-gender-icon.female-icon {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23E91E63"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>') !important;
-}
-
-.default-gender-icon.default-icon {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23757575"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>') !important;
-}
-
-.profileimagecontainer.empty-photo {
-    display: none !important;
-}
-
