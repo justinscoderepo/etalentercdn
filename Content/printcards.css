@@ -334,7 +334,9 @@ span.poweredtext {
 }
 .printcertificate .certificatecontent {
      /* padding: 2px 28px; */
-     margin-top: 13px !important;
+     margin-top: 9px !important;
+     line-height: 15px;
+     height: 302px;
 }
 .candidateCard .frontside ,.candidateCard .backside{
    height: 100%;
@@ -452,6 +454,7 @@ img.medal {
     position: absolute;
     right: 379px;
     bottom: 0px;
+    /* margin-top: 22px; */
 }
 
 .afterimage-container img.medal{
