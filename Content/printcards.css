@@ -453,7 +453,7 @@ img.medal {
     filter: invert(1);
     filter: grayscale(100%) hue-rotate(180deg) brightness(0.7);
     position: absolute;
-    right: 425px;
+    right: 447px;
     bottom: -73px;
     /* margin-top: 22px; */
 }
