@@ -204,8 +204,8 @@ th { padding: 0; }
 
     pre,
     blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
+        /* border: 1px solid #999; */
+        /* page-break-inside: avoid; */
     }
 
     thead { display: table-header-group; }

@@ -335,7 +335,7 @@ span.poweredtext {
 }
 .printcertificate .certificatecontent {
      /* padding: 2px 28px; */
-     margin-top: 14px !important;
+     margin-top: 21px !important;
      line-height: 6px;
      height: 280px;
 }
@@ -486,6 +486,13 @@ img.medal {
 .printcertificate .candidateCard{
     outline: none !important;
 }
+
+    .headerminimize div#contentbox { 
+        
+        margin-top: 0px;
+
+    
+    }
 }
 
 
