@@ -330,13 +330,14 @@ span.poweredtext {
     height: 314px;
     /* flex-wrap: wrap; */
     line-height: normal;
+    position: relative;
     margin-top: 8px;
 }
 .printcertificate .certificatecontent {
      /* padding: 2px 28px; */
-     margin-top: 9px !important;
-     line-height: 15px;
-     height: 302px;
+     margin-top: 14px !important;
+     line-height: 6px;
+     height: 280px;
 }
 .candidateCard .frontside ,.candidateCard .backside{
    height: 100%;
@@ -417,7 +418,7 @@ span.closetemplates {
     width: 100%;
     float: left;
     font-weight: bold;
-    margin-bottom: 4px;
+    /* margin-bottom: 4px; */
     font-size: 13px;
     color: #b233b3;
 }
@@ -452,14 +453,14 @@ img.medal {
     filter: invert(1);
     filter: grayscale(100%) hue-rotate(180deg) brightness(0.7);
     position: absolute;
-    right: 379px;
-    bottom: 0px;
+    right: 425px;
+    bottom: -73px;
     /* margin-top: 22px; */
 }
 
 .afterimage-container img.medal{
-    right: 233px;
-    bottom: 0px;
+    right: 282px;
+    bottom: -73px;
 }
 
 
