@@ -1379,9 +1379,15 @@ var isReadOnlyAccess = false; // Will be overridden from server
     "afterappendcomplete",
     "select.organizationlistgroup",
     function (e) {
-      if ($("select#levelid_" + (orgloaded + 1)).not($(this)).length == 0) {
-        orgloaded++;
-      }
+      // if ($("select#levelid_" + (orgloaded + 1)).not($(this)).length == 0) {
+      //   orgloaded++;
+      // }
+      orgloaded = 0;
+      $("select.organizationlistgroup[id*=levelid_]").each(function () {
+        if ($(this).attr("data-dataloaded")) {
+          orgloaded++;
+        }
+      });
 
       if (orglistlength == orgloaded) {
         $("#allowtoloadparticipantlist").val("true");
