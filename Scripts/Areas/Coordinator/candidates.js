@@ -1379,19 +1379,29 @@ var isReadOnlyAccess = false; // Will be overridden from server
     "afterappendcomplete",
     "select.organizationlistgroup",
     function (e) {
-      // if ($("select#levelid_" + (orgloaded + 1)).not($(this)).length == 0) {
-      //   orgloaded++;
-      // }
-      orgloaded = 0;
-      $("select.organizationlistgroup[id*=levelid_]").each(function () {
-        if ($(this).attr("data-dataloaded")) {
-          orgloaded++;
-        }
-      });
-
-      if (orglistlength == orgloaded) {
-        $("#allowtoloadparticipantlist").val("true");
+      if(e.target != e.currentTarget){
+        return;
       }
+      orgloaded = 0;
+      console.log($(this).attr("id"));
+       $("select.organizationlistgroup[id*=levelid_]").each(function () {
+             if ($(this).attr("data-binderrequested") == "true") {
+               orgloaded++;
+             }
+       });
+
+       if (orglistlength == orgloaded) {
+        if( $("#allowtoloadparticipantlist")
+            .val()!="true"){
+        console.log($(this).attr("id") + " Loading participant list as all organizations are selected");
+        LazyRun(function () {
+          $("#allowtoloadparticipantlist")
+            .val("true")
+            .trigger("change");
+        }, 2000);
+      }
+        // $("#allowtoloadparticipantlist").val("true").trigger("change");
+       }
       ////$(this).find("option:eq(1)").prop("selected", true);
       ////$(this).trigger("change",true);
 
@@ -1420,6 +1430,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
         data.rows &&
         data.rows.Results
       ) {
+      
         competitionitemsList = data.rows.Results.Competitions;
         participantList = data.rows.Results.ParticipantsList;
 
