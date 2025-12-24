@@ -3832,8 +3832,8 @@ a.btn-help {
 .participanttypes.list-group.vertical li {
     display: table-cell;
     float: none;
-    max-width: 1px;
-    width: 2%;
+    /* max-width: 1px; */
+    /* width: 2%; */
 }
 
 .participanttypes.list-group.vertical { display: table; }
@@ -4792,4 +4792,29 @@ label.checkbox-label{
 
     
     }
+}
+
+/* Flex mode wrap for horizontal lists */
+.flexmodewrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.flexmodewrap>div {
+    /* flex: 0 0 auto; */
+    width: auto;
+    /* min-width: 10%; */
+    flex: 0 0 auto;
+    box-sizing: border-box;
+}
+
+.flexmodewrap .table-sort{
+    margin-top: 6px;
+    margin-right: 14px;
+}
+
+.flexmodewrap .datacolumn{
+    padding: 10px 42px;
+    padding-left: 18px;
 }
