@@ -43,7 +43,7 @@
         window.API_BASE_URL = window.location.origin;
         window.IS_DEVELOPMENT = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         window.INITIAL_ROUTE = window.location.pathname === '/v2/' || window.location.pathname === '/v2' ? 'dashboard' : window.location.pathname.replace('/v2/', '');
-        //window.IS_DEVELOPMENT = false; // Force production mode
+        window.IS_DEVELOPMENT = false; // Force production mode
         window.isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     </script>
     <base href="/v2/">
@@ -101,82 +101,84 @@
             };
             document.head.appendChild(mainScript);
         } else {
-            // Determine base URL: use localhost if running locally, otherwise use CDN
-            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-            const baseUrl = isLocalhost 
-                ? `http://localhost:${window.location.port || 8000}`
-                : 'https://justinscoderepo.github.io/etalentercdn';
-            
-            console.log(`Production mode - loading from ${isLocalhost ? 'localhost' : 'CDN'} manifest`);
-            
-            // Add cache busting parameter to manifest request
-            const cacheBuster = Date.now();
-            fetch(`${baseUrl}/v2/vite/manifest.json?v=${cacheBuster}`)
-                .then(r => { 
-                    console.log('Manifest response status:', r.status);
-                    if (!r.ok) throw new Error(`Manifest not found: ${r.status}`); 
-                    return r.text();
-                })
-                .then(text => {
-                    console.log('Manifest raw text:', text.substring(0, 100) + '...');
-                    try {
+            const localBaseUrl = window.location.origin;
+            const cdnBaseUrl = 'https://justinscoderepo.github.io/etalentercdn';
+            const canUseCdnFallback = !window.isLocalhost;
+
+            const loadFromManifest = (baseUrl, sourceLabel) => {
+                console.log(`Production mode - loading manifest from ${sourceLabel}:`, baseUrl);
+
+                // Prevent accidental double-injection (can lead to duplicate React trees).
+                if (window.__ETALENTER_V2_MAIN_LOADED__) {
+                    console.warn('V2 main bundle already loaded; skipping script injection.');
+                    document.body.classList.add('loaded');
+                    return Promise.resolve();
+                }
+
+                return fetch(`${baseUrl}/v2/vite/manifest.json`, { cache: 'no-store' })
+                    .then(r => {
+                        console.log('Manifest response status:', r.status);
+                        if (!r.ok) throw new Error(`Manifest not found: ${r.status}`);
+                        return r.text();
+                    })
+                    .then(text => {
+                        console.log('Manifest raw text:', text.substring(0, 100) + '...');
                         const manifest = JSON.parse(text);
-                        console.log('Manifest parsed successfully:', manifest);
+
                         const entry = manifest['src/web/mainweb.jsx'];
-                        if (entry) {
-                            // Load CSS - check for style.css entry or look in entry.css array
+                        if (!entry || !entry.file) {
+                            throw new Error('App entry not found in manifest');
+                        }
+
+                        if (entry.css && entry.css.length > 0) {
+                            entry.css.forEach(cssFile => {
+                                const link = document.createElement('link');
+                                link.rel = 'stylesheet';
+                                link.href = `${baseUrl}/v2/${cssFile}`;
+                                document.head.appendChild(link);
+                                console.log('CSS loaded:', cssFile);
+                            });
+                        } else {
                             const cssEntry = manifest['style.css'] || manifest['src/web/index.css'];
                             if (cssEntry && cssEntry.file) {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                link.href = `${baseUrl}/v2/${cssEntry.file}?v=${cacheBuster}`;
+                                link.href = `${baseUrl}/v2/${cssEntry.file}`;
                                 document.head.appendChild(link);
-                                console.log('CSS loaded from:', cssEntry.file);
-                            } else if (entry.css && entry.css.length > 0) {
-                                // Fallback: load from entry.css array
-                                entry.css.forEach(cssFile => {
-                                    const link = document.createElement('link');
-                                    link.rel = 'stylesheet';
-                                    link.href = `${baseUrl}/v2/${cssFile}?v=${cacheBuster}`;
-                                    document.head.appendChild(link);
-                                    console.log('CSS loaded from entry:', cssFile);
-                                });
+                                console.log('CSS loaded:', cssEntry.file);
                             } else {
                                 console.warn('No CSS found in manifest');
                             }
-                            const script = document.createElement('script');
-                            script.type = 'module';
-                            script.src = `${baseUrl}/v2/${entry.file}?v=${cacheBuster}`;
-                            script.onload = () => {
-                                console.log('MainWeb script loaded from:', entry.file);
-                                document.body.classList.add('loaded');
-                            };
-                            script.onerror = () => {
-                                document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">Failed to load app bundle from ${isLocalhost ? 'localhost' : 'CDN'}</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
-                            };
-                            document.head.appendChild(script);
-                        } else { 
-                            console.error('Entry not found in manifest:', manifest);
-                            document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">App entry not found in manifest</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
                         }
-                    } catch (parseError) {
-                        console.error('JSON parse error:', parseError);
-                        console.error('Manifest text causing error:', text);
-                        document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">Manifest JSON parse error: ${parseError.message}</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
-                    }
+
+                        const script = document.createElement('script');
+                        script.type = 'module';
+                        script.src = `${baseUrl}/v2/${entry.file}`;
+                        script.onload = () => {
+                            window.__ETALENTER_V2_MAIN_LOADED__ = true;
+                            console.log('MainWeb script loaded from:', entry.file);
+                            document.body.classList.add('loaded');
+                        };
+                        script.onerror = () => {
+                            document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">Failed to load app bundle from ${sourceLabel}</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
+                        };
+                        document.head.appendChild(script);
+                    });
+            };
+
+            loadFromManifest(localBaseUrl, window.isLocalhost ? 'localhost (current-origin)' : 'current-origin')
+                .catch((error) => {
+                    if (!canUseCdnFallback) throw error;
+                    console.warn('Current-origin manifest load failed; falling back to CDN.', error);
+                    return loadFromManifest(cdnBaseUrl, 'CDN');
                 })
-                .catch(error => { 
-                    console.error('Manifest fetch error:', error);
-                    document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">Build files not found: ${error.message}. Please run: npm run build</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
+                .catch(error => {
+                    console.error('Manifest load failed:', error);
+                    document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">Build files not found: ${error.message}</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
                 });
+
         }
-        
-        setTimeout(() => { 
-            if (!document.body.classList.contains('loaded')) { 
-                console.error('App loading timeout');
-                document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">App took too long to load</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
-            } 
-        }, 15000);
+
     </script>
 </body>
 </html>
