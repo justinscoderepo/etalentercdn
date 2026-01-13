@@ -138,7 +138,7 @@
                             entry.css.forEach(cssFile => {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                link.href = `${preferredAssetSource}/${cssFile}`;
+                                link.href = `${preferredAssetSource.replace('/dist', '')}/${cssFile}`;
                                 document.head.appendChild(link);
                                 console.log('CSS loaded:', cssFile);
                             });
