@@ -138,7 +138,7 @@
                             entry.css.forEach(cssFile => {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                link.href = `${preferredAssetSource.replace('/dist', '')}/${cssFile}`;
+                                link.href = `${preferredAssetSource}/${cssFile}`;
                                 document.head.appendChild(link);
                                 console.log('CSS loaded:', cssFile);
                             });
@@ -147,7 +147,7 @@
                             if (cssEntry && cssEntry.file) {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                 link.href = `${preferredAssetSource.replace('/dist', '')}/${cssEntry.file}`;
+                                link.href = `${preferredAssetSource}/${cssEntry.file.replace("/dist/","")}`;
                                 document.head.appendChild(link);
                                 console.log('CSS loaded:', cssEntry.file);
                             } else {
