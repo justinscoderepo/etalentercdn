@@ -102,11 +102,15 @@
             document.head.appendChild(mainScript);
         } else {
             const localBaseUrl = window.location.origin;
-            const cdnBaseUrl = 'https://justinscoderepo.github.io/etalentercdn';
+            const cdnBaseUrl = 'https://justinscoderepo.github.io/etalentercdn/v2';
             const canUseCdnFallback = !window.isLocalhost;
+            const preferredAssetSource = localBaseUrl;
+            if(window.isLocalhost){
+                preferredAssetSource = localBaseUrl;
+            }
 
             const loadFromManifest = (baseUrl, sourceLabel) => {
-                console.log(`Production mode - loading manifest from ${sourceLabel}:`, baseUrl);
+                console.log(`Production mode - loading manifest from ${sourceLabel}:`, preferredAssetSource);
 
                 // Prevent accidental double-injection (can lead to duplicate React trees).
                 if (window.__ETALENTER_V2_MAIN_LOADED__) {
@@ -115,7 +119,7 @@
                     return Promise.resolve();
                 }
 
-                return fetch(`${baseUrl}/v2/vite/manifest.json`, { cache: 'no-store' })
+                return fetch(`${preferredAssetSource}/vite/manifest.json`, { cache: 'no-store' })
                     .then(r => {
                         console.log('Manifest response status:', r.status);
                         if (!r.ok) throw new Error(`Manifest not found: ${r.status}`);
@@ -134,7 +138,7 @@
                             entry.css.forEach(cssFile => {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                link.href = `${baseUrl}/v2/${cssFile}`;
+                                link.href = `${preferredAssetSource}/${cssFile}`;
                                 document.head.appendChild(link);
                                 console.log('CSS loaded:', cssFile);
                             });
@@ -143,7 +147,7 @@
                             if (cssEntry && cssEntry.file) {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                link.href = `${baseUrl}/v2/${cssEntry.file}`;
+                                link.href = `${preferredAssetSource}/${cssEntry.file}`;
                                 document.head.appendChild(link);
                                 console.log('CSS loaded:', cssEntry.file);
                             } else {
@@ -153,7 +157,7 @@
 
                         const script = document.createElement('script');
                         script.type = 'module';
-                        script.src = `${baseUrl}/v2/${entry.file}`;
+                        script.src = `${preferredAssetSource}/${entry.file}`;
                         script.onload = () => {
                             window.__ETALENTER_V2_MAIN_LOADED__ = true;
                             console.log('MainWeb script loaded from:', entry.file);
