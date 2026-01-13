@@ -147,7 +147,7 @@
                             if (cssEntry && cssEntry.file) {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                link.href = `${preferredAssetSource}/${cssEntry.file}`;
+                                 link.href = `${preferredAssetSource.replace('/dist', '')}/${cssEntry.file}`;
                                 document.head.appendChild(link);
                                 console.log('CSS loaded:', cssEntry.file);
                             } else {
