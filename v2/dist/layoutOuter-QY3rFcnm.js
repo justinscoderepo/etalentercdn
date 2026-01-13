@@ -1,0 +1,1 @@
+import{j as e}from"./main-CalEMNEI.js";const o=({children:r})=>e.jsx("div",{className:"p-5 pt-0 lg:pt-5",children:e.jsx("div",{className:"flex grow rounded-xl bg-contentBgOuter border border-border ",children:e.jsx("div",{className:"flex flex-col grow  pt-2",children:e.jsx("div",{className:"p-5 px-7",children:r})})})});export{o as L};
