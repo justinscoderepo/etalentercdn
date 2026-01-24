@@ -2186,7 +2186,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
         }
 
         if (mobile?.length > 0) {
-          if (mobile.length < 10) {
+          if (mobile.length < 8) {
             alert("Please enter valid mobile number", "e");
             return;
           }
