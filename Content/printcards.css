@@ -337,7 +337,7 @@ span.poweredtext {
      /* padding: 2px 28px; */
      margin-top: 21px !important;
      line-height: 6px;
-     height: 280px;
+     height: 350px;
 }
 .candidateCard .frontside ,.candidateCard .backside{
    height: 100%;
@@ -602,6 +602,7 @@ img.medal {
 
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='User Name']{
     text-transform: uppercase;
+    float: left;
 }
 .originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"]{
 display:none !important;
@@ -662,3 +663,18 @@ display:none
     display: none !important;
 }
 
+.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition Item Name'] {
+    padding-top: 6px !important;
+    width: 336px;
+    float: left;
+    text-align: left !important;
+}
+
+.originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition Item Name'] {
+    padding-top: 6px !important;
+    width: 336px;
+    float: left;
+    text-align: left !important;
+    position: relative;
+    top: 12px;
+}
