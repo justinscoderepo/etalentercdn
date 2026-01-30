@@ -1,0 +1,1 @@
+import{j as r,r as a,_ as e}from"./main-C93JHIOS.js";const i=a.lazy(()=>e(()=>import("./IframeRender-BApkR1Yq.js"),[])),n=a.lazy(()=>e(()=>import("./ConditionalLayoutWrapper-ZMaxLvBE.js"),[])),s=(t,o={})=>r.jsx(n,{children:r.jsx(t,{...o})}),d=(t="Loading...",o={})=>s(i,{title:t,...o});export{s as a,d as w};
