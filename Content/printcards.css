@@ -323,7 +323,7 @@ span.poweredtext {
 .certificatecontent {
     padding: 2px 67px;
     text-align: center;
-    display: flex;
+    /* display: flex; */
     flex-flow: column;
     justify-content: space-around;
     align-content: center;
@@ -411,7 +411,7 @@ span.closetemplates {
     padding-bottom: 7px;
 }
 .poweredbycertificate{
-    display: none   ;
+    display: none;
 }
 
  .certificateorganization {
@@ -547,12 +547,13 @@ img.medal {
 
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition2 Item Name']{
     width: 40%;
-    display: flex;
+    /* display: flex; */
     position: relative;
-    left: 128px;
-    top: -47px;
+    left: 69px;
+    top: 11px;
     font-size: 10px;
     white-space: nowrap;
+    font-style: italic;
 }
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition2 Item Name'] span{
     width: auto;
@@ -560,12 +561,13 @@ img.medal {
 }
 
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='Rank']{
-    width: 29%;
-    display: flex;
+    /* width: 29%; */
+    display: block;
     position: relative;
     left: 276px;
     top: -3px;
-    justify-content: center;
+    float: right;
+     font-style: italic;
 }
 
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='Grade']{
@@ -573,7 +575,7 @@ img.medal {
     /* display: flex; */
     position: relative;
     left: 75px;
-    top: -7px;
+    top: -7px; font-style: italic;
 }
 
 .originallist[stylishgroupid='customtheme2images1'] [data-stylish='Competition2 Item Name']{
@@ -581,7 +583,7 @@ img.medal {
     display: flex;
     position: relative;
     left: 276px;
-    top: -47px;
+    top: -47px; font-style: italic;
 }
 
 .originallist[stylishgroupid='customtheme2images1'] [data-stylish='Rank']{
@@ -589,7 +591,7 @@ img.medal {
     display: flex;
     position: relative;
     left: 276px;
-    top: -3px;
+    top: -3px; font-style: italic;
 }
 
 .originallist[stylishgroupid='customtheme2images1'] [data-stylish='Grade']{
@@ -597,12 +599,15 @@ img.medal {
     /* display: flex; */
     position: relative;
     left: 141px;
-    top: -7px;
+    top: -7px; font-style: italic;
 }
 
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='User Name']{
     text-transform: uppercase;
     float: left;
+    position: relative;
+    top: -27px;
+    /* font-style: italic; */
 }
 .originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"]{
 display:none !important;
@@ -672,9 +677,10 @@ display:none
 
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition Item Name'] {
     padding-top: 6px !important;
-    width: 336px;
+    /* width: 186px; */
     float: left;
     text-align: left !important;
     position: relative;
-    top: 12px;
+    top: -12px;
+    font-style: italic;
 }
