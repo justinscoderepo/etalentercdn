@@ -2760,8 +2760,12 @@ if (!Date.prototype.isValid) {
         if (selectItems.hasOwnProperty(itemi)) {
           var item = selectItems[itemi];
           if (item != "*") {
+            var itemCapitalized = item.charAt(0).toUpperCase() + item.slice(1);
+            var itemCamelCase = item.charAt(0).toLowerCase() + item.slice(1);
+            var subjsonSelector = '[data-subjson="' + item + '"],[data-subjson="' + itemCapitalized + '"],[data-subjson="' + itemCamelCase + '"]';
+            
             if (
-              template.find('[data-subjson="' + item + '"]').length > 0 ||
+              template.find(subjsonSelector).length > 0 ||
               item == "Status"
             ) {
               stn.selectedQueryParameters.push(item);
@@ -2806,8 +2810,11 @@ if (!Date.prototype.isValid) {
                 if (selectItems.hasOwnProperty(itemi)) {
                   var item = selectItems[itemi];
                   if (item != "*") {
+                    var itemCapitalized = item.charAt(0).toUpperCase() + item.slice(1);
+                    var itemCamelCase = item.charAt(0).toLowerCase() + item.slice(1);
+                    var subjsonSelector = '[data-subjson="' + item + '"],[data-subjson="' + itemCapitalized + '"],[data-subjson="' + itemCamelCase + '"]';
                     if (
-                      template.find('[data-subjson="' + item + '"]').length >
+                      template.find(subjsonSelector).length >
                       0 ||
                       item == "Status"
                     ) {
@@ -3449,9 +3456,12 @@ if (!Date.prototype.isValid) {
           if (stn.dynamicinsert) {
             template.children().attr(this.data.data_dynamicrows, true);
           }
+          var keyCapitalized = key.charAt(0).toUpperCase() + key.slice(1);
+          var keyCamelCase = key.charAt(0).toLowerCase() + key.slice(1);
+          var subjsonKeySelector = "[data-subjson='" + key + "'],[data-subjson='" + keyCapitalized + "'],[data-subjson='" + keyCamelCase + "']";
           if (
             template
-              .find("[data-subjson='" + key + "']")
+              .find(subjsonKeySelector)
               .not(
                 template
                   .find("[data-subjson] [data-subjson]")
@@ -3767,14 +3777,17 @@ if (!Date.prototype.isValid) {
       this.triggerevent(lastrow, "afterappendrow", triggerdatarow);
       for (var ji = 0; ji < subjsonrows.length; ji++) {
         var jv = subjsonrows[ji];
+        var jvKeyCapitalized = jv.key.charAt(0).toUpperCase() + jv.key.slice(1);
+        var jvKeyCamelCase = jv.key.charAt(0).toLowerCase() + jv.key.slice(1);
+        var subjsonJvSelector = "[data-subjson='" + jv.key + "'],[data-subjson='" + jvKeyCapitalized + "'],[data-subjson='" + jvKeyCamelCase + "']";
         var subjsonelements = lastrow
-          .find("[data-subjson='" + jv.key + "']")
+          .find(subjsonJvSelector)
           .not(
             lastrow
               .find("[data-subjson] [data-subjson]")
               .not("[data-subjsonglobal]")
           );
-        if (lastrow.attr("data-subjson") == jv.key) {
+        if (lastrow.attr("data-subjson") == jv.key || lastrow.attr("data-subjson") == jvKeyCapitalized || lastrow.attr("data-subjson") == jvKeyCamelCase) {
           subjsonelements.push(lastrow);
         }
         if (subjsonelements.length > 0) {
