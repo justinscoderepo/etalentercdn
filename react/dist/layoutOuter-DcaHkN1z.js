@@ -1,0 +1,1 @@
+import{j as e}from"./main-yugBdkhv.js";const s=({children:r})=>e.jsx("div",{className:"p-5 pt-2 lg:pt-5",children:e.jsx("div",{className:"flex grow rounded-xl bg-contentBgOuter border border-border ",children:e.jsx("div",{className:"flex flex-col grow w-full pt-2",children:e.jsx("div",{className:"p-5 px-7 w-full",children:r})})})});export{s as L};
