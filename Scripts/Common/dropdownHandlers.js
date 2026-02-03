@@ -63,13 +63,24 @@
 
     $(".clearcachebutton").on("click", function(e){
         e.preventDefault();
-        remcache("bindmanagercache");  
-        remsession("bindmanagercache");
 
+        var nonRemovableKeys = ["user","signalr_tracking_image","app_theme","CardsZoom"];
+
+        // Clear localStorage except nonRemovableKeys
         let keys = Object.keys(localStorage);
-        keys.forEach(function(key){                    
-            if(!key.includes("user") && !key.includes("/")) {
-                remcache(key);
+        keys.forEach(function(key){
+            var shouldKeep = nonRemovableKeys.some(k => key.includes(k));
+            if (!shouldKeep) {
+                localStorage.removeItem(key);
+            }
+        });
+        
+        // Clear sessionStorage except nonRemovableKeys
+        let keys2 = Object.keys(sessionStorage);
+        keys2.forEach(function(key){
+            var shouldKeep = nonRemovableKeys.some(k => key.includes(k));
+            if (!shouldKeep) {
+                sessionStorage.removeItem(key);
             }
         });
         
