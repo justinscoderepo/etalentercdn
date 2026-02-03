@@ -1,0 +1,1 @@
+import{j as o,r as a,_ as e}from"./main-B0PLAsTY.js";import{P as i}from"./navigationUtils--LKLkTlO.js";const s=a.lazy(()=>e(()=>import("./IframeRender-BFIFkWIA.js"),[])),n=a.lazy(()=>e(()=>import("./ConditionalLayoutWrapper-DZSRrSd1.js"),[])),_=(r,t={})=>o.jsx(n,{children:o.jsx(i,{children:o.jsx(r,{...t})})}),p=(r="Loading...",t={})=>_(s,{title:r,...t});export{_ as a,p as w};
