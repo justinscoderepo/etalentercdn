@@ -74,7 +74,7 @@
   z-index: 1;
   /* background-color: aliceblue; */
 }
-.printcertificate .candidateCard .box , .printtopcertificate  .candidateCard .box {
+.printcertificate .candidateCard .box, .printparticipantcertificate .candidateCard .box, .printtopcertificate .candidateCard .box {
     
     background-repeat: no-repeat !important;
     background-size: contain !important;
@@ -88,6 +88,7 @@
     text-shadow: 1px 1px 1px rgb(105 103 103 / 60%);
 }
 .printcertificate .candidateCard .eventName,
+.printparticipantcertificate .candidateCard .eventName,
 .printcertificate .candidateCard .eventName{
     background-color: transparent;
 }
@@ -144,7 +145,7 @@
     color: #fff;
     padding: 1px
 }
-.printcertificate .candidateCard .footerbox ,.printcertificate .candidateCard .footerbox {
+.printcertificate .candidateCard .footerbox, .printparticipantcertificate .candidateCard .footerbox, .printcertificate .candidateCard .footerbox {
     background-color: transparent;
 }
 .candidateCard .resultlink {text-align: center;display: none;}
@@ -402,7 +403,7 @@ span.closetemplates {
 .pagebreaker { /* display: table; */ }
 
 
-.printcertificate .templatelist .candidateCard,.printcertificate .templatelist .candidateCard{
+.printcertificate .templatelist .candidateCard, .printparticipantcertificate .templatelist .candidateCard, .printcertificate .templatelist .candidateCard{
     width:100% !important;
 }
 
@@ -465,26 +466,26 @@ img.medal {
 }
 
 
-.printcertificate .candidateCard {
+.printcertificate .candidateCard, .printparticipantcertificate .candidateCard {
     max-height: 740px;
 }
 @media print{
-.printcertificate  .originallist .candidateCard .box{
+.printcertificate .originallist .candidateCard .box, .printparticipantcertificate .originallist .candidateCard .box{
     /* display:none; */
     /* background-image: none !important; */
 }
-.printcertificate div#contentbox{
+.printcertificate div#contentbox, .printparticipantcertificate div#contentbox{
     /* background:transparent; */
 }
 
-.printcertificate{
+.printcertificate, .printparticipantcertificate{
     /* background: transparent !important; */
 }
-.printcertificate .box{
+.printcertificate .box, .printparticipantcertificate .box{
     /* background: transparent !important;
     box-shadow: none !important; */
 }
-.printcertificate .candidateCard{
+.printcertificate .candidateCard, .printparticipantcertificate .candidateCard{
     outline: none !important;
 }
 
@@ -545,6 +546,12 @@ img.medal {
     text-overflow: ellipsis;
 }
 
+.printcertificate .certificatecontent{
+     /* padding: 2px 28px; */
+     margin-top: 21px !important;
+     line-height: 6px;
+     height: 350px;
+}
 
 .originallist[stylishgroupid='customtheme2images0'] [data-stylish='Competition2 Item Name']{
     width: 40%;
@@ -735,4 +742,9 @@ display:none
 
 .printparticipantcertificate .originallist[stylishgroupid='customtheme2images2'] .subdatacolumn.priceslist{
     height: 23px;
+}
+
+.event_295.printparticipantcertificate .originallist[stylishgroupid='customtheme2images2'] [data-stylish='Content'] {
+    
+padding-top: 178px !important;
 }
