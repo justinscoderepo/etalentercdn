@@ -49,6 +49,13 @@
         waitForSignalRService(function() {
             console.log('✅ Using SignalRService from React build (single source of truth)');
             
+            // Verify html-to-image library is available
+            if (window.htmlToImage) {
+                console.log('✅ html-to-image library loaded (screenshot capture enabled)');
+            } else {
+                console.warn('⚠️ html-to-image library not found (screenshot capture disabled)');
+            }
+            
             // Connect using the shared SignalR service
             window.SignalRService.connect(userData.user, userData.token);
 
