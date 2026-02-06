@@ -429,10 +429,10 @@ span.closetemplates {
 .CompetitionShortTitle {
     color: #500707 !important;
     font-weight: bold;
-    margin-top: 0px;
+    margin-top: 1px;
     line-height: 13px;
     display: block;
-    font-size: 10px;
+    font-size: 12px;
     /* font-size: clamp(1rem, 2vw, 3rem); */
 }
 
@@ -683,4 +683,39 @@ display:none
     position: relative;
     top: -12px;
     font-style: italic;
+}
+.printparticipantcertificate .originallist[stylishgroupid='customtheme2images0'] [data-stylish='Content'] {
+    height: 292px !important;
+    padding-top: 220px !important;
+}
+
+.printparticipantcertificate .subdatacolumn.priceslist{
+    white-space: nowrap;
+    display: flex;
+    margin-top: 11px;
+    height: 50px;
+    background-color: #eeedd9;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: baseline;
+    /* background-color: #e0d6c3; */
+    justify-content: center;
+    /* font-size: 19px; */
+}
+
+.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images0'] .subdatacolumn.priceslist [data-label="title"]{
+    width:auto;
+    padding-right:12px;
+}
+
+.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"]{display:block !important;height: 24px;font-size: 17px !important;padding-top: 0px;}
+
+.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'] 
+ {
+    padding-bottom: 4px;
+ }
+
+.printparticipantcertificate .originallist[stylishgroupid='customtheme2images1'] [data-stylish='Content']{
+    padding-top: 194px !important;
+    padding-left: 71px !important;
 }
