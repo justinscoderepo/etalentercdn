@@ -1,0 +1,1 @@
+import{_ as e}from"./main-J3Jv0MPe.js";const s=async(t,a)=>{const{getIconPaths:o}=await e(async()=>{const{getIconPaths:r}=await import("./allPaths-BAu9ePFS.js");return{getIconPaths:r}},[]);return o(t,a)};export{s as allPathsLoader};
