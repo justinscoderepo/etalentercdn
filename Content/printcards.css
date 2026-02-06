@@ -33,7 +33,7 @@
 .gridrow{
       display: flex;
       /* grid-template-columns: repeat(3, 1fr); */
-      margin-bottom: 4px;
+      /* margin-bottom: 4px; */
       /* gap: 0px; */
       padding:
           0px 60px;
@@ -432,7 +432,8 @@ span.closetemplates {
     margin-top: 1px;
     line-height: 13px;
     display: block;
-    font-size: 12px;
+    font-size: 14px;
+    margin-bottom: 4px;
     /* font-size: clamp(1rem, 2vw, 3rem); */
 }
 
@@ -578,7 +579,7 @@ img.medal {
     top: -7px; font-style: italic;
 }
 
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Competition2 Item Name']{
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Competition2 Item Name'],.originallist[stylishgroupid='customtheme2images2'] [data-stylish='Competition2 Item Name']{
     width: 32%;
     display: flex;
     position: relative;
@@ -586,7 +587,7 @@ img.medal {
     top: -47px; font-style: italic;
 }
 
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Rank']{
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish='Rank'],.originallist[stylishgroupid='customtheme2images2'] [data-stylish='Rank']{
     width: 32%;
     display: flex;
     position: relative;
@@ -609,14 +610,14 @@ img.medal {
     top: -27px;
     /* font-style: italic; */
 }
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"]{
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"],.originallist[stylishgroupid='customtheme2images2'] [data-stylish="Group Item Name"]{
 display:none !important;
 }
 
-.originallist[stylishgroupid='customtheme2images1'] .priceslist{
+.originallist[stylishgroupid='customtheme2images1'] .priceslist,.originallist[stylishgroupid='customtheme2images2'] .priceslist{
 display:none
 }
-.originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'] {
+.originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'],.originallist[stylishgroupid='customtheme2images2'] [data-stylish='User Name'] {
     font-size: 18px !important;
     text-transform: uppercase;
     padding-bottom: 14px;
@@ -692,15 +693,17 @@ display:none
 .printparticipantcertificate .subdatacolumn.priceslist{
     white-space: nowrap;
     display: flex;
-    margin-top: 11px;
-    height: 50px;
-    background-color: #eeedd9;
+    margin-top: 6px;
+    height: 57px;
+    /* background-color: #eeedd9; */
     width: 100%;
     flex-wrap: wrap;
     align-items: baseline;
     /* background-color: #e0d6c3; */
     justify-content: center;
     /* font-size: 19px; */
+    place-items: center;
+    align-content: space-evenly;
 }
 
 .printparticipantcertificate  .originallist[stylishgroupid='customtheme2images0'] .subdatacolumn.priceslist [data-label="title"]{
@@ -708,14 +711,28 @@ display:none
     padding-right:12px;
 }
 
-.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"]{display:block !important;height: 24px;font-size: 17px !important;padding-top: 0px;}
+.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images1'] [data-stylish="Group Item Name"],.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images2'] [data-stylish="Group Item Name"]{
+    display:block !important;height: 24px;font-size: 17px !important;padding-top: 0px;
+}
 
-.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'] 
+.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'],.printparticipantcertificate  .originallist[stylishgroupid='customtheme2images2'] [data-stylish='User Name'] 
  {
     padding-bottom: 4px;
  }
 
-.printparticipantcertificate .originallist[stylishgroupid='customtheme2images1'] [data-stylish='Content']{
-    padding-top: 194px !important;
+.printparticipantcertificate .originallist[stylishgroupid='customtheme2images1'] [data-stylish='Content'],.printparticipantcertificate .originallist[stylishgroupid='customtheme2images2'] [data-stylish='Content']{
+    padding-top: 205px !important;
     padding-left: 71px !important;
+}
+
+.printparticipantcertificate .originallist[stylishgroupid='customtheme2images1'] [data-stylish='User Name'],.printparticipantcertificate .originallist[stylishgroupid='customtheme2images2'] [data-stylish='User Name'] {
+    padding-left: 0px !important;
+    text-align: center !important;
+    /* margin-left: 67px; */
+    width: 235px;
+    white-space: nowrap;
+}
+
+.printparticipantcertificate .originallist[stylishgroupid='customtheme2images2'] .subdatacolumn.priceslist{
+    height: 23px;
 }
