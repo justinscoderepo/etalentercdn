@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     color: white;
     display: flex;
-    font-size: 40px;
+    font-size: 28px;
     font-weight: 600;
     /* line-height: 31px; */
     margin-bottom: 20px;
@@ -28,7 +28,9 @@
 
 .head-1 span {
     color: #ffffff;
-    /* text-transform: uppercase; */
+    white-space: normal;
+    max-width: 100%;
+    /* line-break: anywhere; */
 }
 
 .head-2 {
@@ -990,4 +992,8 @@ div#LocalUnitPoints { page-break-inside: avoid; }
 
 .publishedAwards .resultrowtoshow{
     margin: 0px auto;
+}
+
+.publishedresults .center-block{
+    max-width:100%;
 }
