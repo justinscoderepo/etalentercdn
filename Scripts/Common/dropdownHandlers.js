@@ -64,7 +64,7 @@
     $(".clearcachebutton").on("click", function(e){
         e.preventDefault();
 
-        var nonRemovableKeys = ["user","signalr_tracking_image","app_theme","CardsZoom"];
+        var nonRemovableKeys = ["user","signalr_tracking_image","app_theme","PrintParticipantCertificate","PrintCertificate","PodiumAutoscroll","PublishResults","PublishResultsWithAwards","PublishPodiumResults","PublishIndividualResults","ResultPresentation","PublishToSocialMedia","PrintJudgesScore","PrintResult","PrintScoreCard","PrintCompetitionCandidates","ScrollSpeed"];
 
         // Clear localStorage except nonRemovableKeys
         let keys = Object.keys(localStorage);
