@@ -1081,8 +1081,8 @@ function changeToFinish() {
 
          $(".scorecandidatestabview").binder();
           
-      $('.scorecandidateslist>div').hide();
-      $('.scorecandidateslist>div[data-noresult="true"]').show();
+      $('.scorecandidateslist .scorecandidateview').hide();
+      $('.scorecandidateslist>div[data-noresult="true"]').attr("style","display:block !important");
 
 
 
