@@ -2,7 +2,7 @@
 function changeToFinish() {
   var additionalSettings =
     userObj.user.JsonSettings;
-  if (additionalSettings?.MarkAbsentOrScoreMarkIsMandatory == "Yes") {
+  if (additionalSettings && additionalSettings.MarkAbsentOrScoreMarkIsMandatory == "Yes") {
     var allFilled = true;
     var missingItems = [];
     $(".scorecandidatestab").each(function () {
@@ -325,9 +325,19 @@ function changeToFinish() {
         if ($(window).width() < 1000) {
           timeout = 0;
         }
+        // Calculate offsetX for both mouse and touch events (iPad compatibility)
+        var offsetX;
+        if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches.length > 0) {
+          var rect = this.getBoundingClientRect();
+          offsetX = e.originalEvent.touches[0].clientX - rect.left;
+        } else {
+          offsetX = e.offsetX;
+        }
+        // Clamp to element bounds
+        offsetX = Math.max(0, Math.min(offsetX, th.width()));
         setscorecolor(
           $(this).next(".scorerowoverlay"),
-          e.offsetX,
+          offsetX,
           th.width(),
           true
         );
@@ -342,7 +352,7 @@ function changeToFinish() {
         $(this)
           .closest(".scorecriteriarow")
           .find(".scorebyinput")
-          .val(((e.offsetX / th.width()) * 10).toFixed(1));
+          .val(((offsetX / th.width()) * 10).toFixed(1));
         setTimeout(function () {
           if (localoverlayi == th.attr("localoverlayi")) {
             th.closest(".scorecriteriarow")
@@ -830,14 +840,25 @@ function changeToFinish() {
   $("body").on("click", ".scorerowoverlaymousetracker", function (e) {
     var th = $(this);
 
-    setscorecolor(th.next(".scorerowoverlay"), e.offsetX, th.width());
+    // Calculate offsetX for both mouse and touch-synthesized click events (iPad compatibility)
+    var offsetX;
+    if (e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches.length > 0) {
+      var rect = this.getBoundingClientRect();
+      offsetX = e.originalEvent.changedTouches[0].clientX - rect.left;
+    } else {
+      offsetX = e.offsetX;
+    }
+    // Clamp to element bounds
+    offsetX = Math.max(0, Math.min(offsetX, th.width()));
+
+    setscorecolor(th.next(".scorerowoverlay"), offsetX, th.width());
     th.attr("data-prevented", true);
     setTimeout(function () {
       th.removeAttr("data-prevented");
     }, 3000);
 
     var cl = th.closest(".allscores");
-    settotalscore(cl, th, e.offsetX);
+    settotalscore(cl, th, offsetX);
 
     cl.find('.totalscore .scorebyinput[name="ScoreCardScore"]').val(
       cl.find(".totalscore .scorerowoverlay").attr("data-scorepercentage")
