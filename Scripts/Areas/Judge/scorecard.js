@@ -265,6 +265,7 @@ function changeToFinish() {
       ////$(this).trigger("click");
 
       $('.scorecandidateslist>div[data-noresult="true"]').show();
+      updateConfirmCompletedVisibility();
     }
   );
   $("body").on("click", ".allscores .deleterow", function (e) {
@@ -506,6 +507,7 @@ function changeToFinish() {
               judgesScoreCarddata[
                 currentactiveparticipantId
               ].Notes = postdata.notes;
+              updateConfirmCompletedVisibility();
             } else {
               alert(
                 typeof data.Results == "string"
@@ -551,6 +553,29 @@ function changeToFinish() {
       }
     }
   });
+
+  function updateConfirmCompletedVisibility() {
+    var additionalSettings = userObj && userObj.user && userObj.user.JsonSettings;
+    if (additionalSettings && additionalSettings.MarkAbsentOrScoreMarkIsMandatory == "Yes") {
+      var allFilled = true;
+      var missingCount = 0;
+      $(".scorecandidatestab").each(function () {
+        var th = $(this);
+        var isAbsent = th.find(".CandidateAbsentStatus").is(":visible");
+        var isScored = th.find(".CandidateScore").text().trim() != "" && th.find(".CandidateScore").text().trim() != "0";
+        if (!isAbsent && !isScored) {
+          allFilled = false;
+          missingCount++;
+        }
+      });
+      var btn = $(".confirmcompletedOuter #confirmcompleted");
+      if (allFilled && $(".scorecandidatestab").length > 0) {
+        btn.removeClass("disabled").prop("disabled", false).attr("title", "").text("Mark As Finished");
+      } else {
+        btn.addClass("disabled").prop("disabled", true).attr("title", missingCount + " candidate(s) still need a score or absent status.").text("Mark As Finished (" + missingCount + " pending)");
+      }
+    }
+  }
 
   function settotalscore(cl, th, offset, currentElement) {
     if (th.closest(".individualscore").length > 0) {
@@ -693,6 +718,7 @@ function changeToFinish() {
           judgesScoreCarddata[
             currentactiveparticipantId
           ].Notes = postdata.notes;
+          updateConfirmCompletedVisibility();
         } else {
           alert(
             typeof data.Results == "string"
@@ -781,6 +807,7 @@ function changeToFinish() {
             judgesScoreCarddata[
               currentactiveparticipantId
             ].Notes = postdata.notes;
+            updateConfirmCompletedVisibility();
           } else {
             alert(
               typeof data.Results == "string"
@@ -1077,6 +1104,7 @@ function changeToFinish() {
           activetab.find(".CandidateAbsentStatus").hide();
           activetab.find(".CandidateScore").show();
         }
+        updateConfirmCompletedVisibility();
 
 
          $(".scorecandidatestabview").binder();
