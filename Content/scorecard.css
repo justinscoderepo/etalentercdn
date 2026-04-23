@@ -13,7 +13,9 @@
     margin-bottom: 10px;
     padding: 7px;
     padding-bottom: 8px;
-    position: relative
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .scorerowoverlay {
@@ -42,6 +44,9 @@
     top: 0;
     width: 100%;
     z-index: 4;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 

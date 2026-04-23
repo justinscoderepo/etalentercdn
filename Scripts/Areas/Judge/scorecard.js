@@ -554,18 +554,15 @@ function changeToFinish() {
       let allowedTotalScore = false;
       cl.find(".individualscore .scorerowoverlay").each(function () {
         var indscore = $(this).closest(".scorecriteriarow").find(".scorebyinput").val();
-        totalscore += parseFloat(
-          indscore
-        );
+        totalscore += parseFloat(indscore) || 0;
 
         if (!$(this).is(":visible")) {
           $(this).closest(".scorecriteriarow").find("[name=Score]").val(indscore);
         }
         let item = $(this).closest(".scorecriteriarow").find(".scorebyinput");
-        let score = parseFloat($(this).attr("data-scorepercentage"));
+        let score = parseFloat($(this).attr("data-scorepercentage")) || 0;
         if (item.attr("maxscore")) {
           allowedTotalScore = true;
-          //     score=(score/cl.find(".individualscore .scorerowoverlay").length).toFixed(1);
         }
         if (currentElement) {
           item = item.not(currentElement);
@@ -577,18 +574,19 @@ function changeToFinish() {
 
       var avearagescore = allowedTotalScore
         ? totalscore
-        : totalscore / cl.find(".individualscore .scorerowoverlay").length;
+        : totalscore / (cl.find(".individualscore .scorerowoverlay").length || 1);
       var total = cl.find(".totalscore .scorerowoverlay");
+      var trackerWidth = total.prev(".scorerowoverlaymousetracker").width() || 0;
 
-      var totalpixel =
-        (total.prev(".scorerowoverlaymousetracker").width() / 10) *
-        avearagescore;
+      var totalpixel = (trackerWidth / 10) * avearagescore;
 
-      setscorecolor(
-        total,
-        totalpixel,
-        total.prev(".scorerowoverlaymousetracker").width()
-      );
+      if (total.length > 0 && trackerWidth > 0) {
+        setscorecolor(
+          total,
+          totalpixel,
+          trackerWidth
+        );
+      }
     } else {
       let allowedTotalScore = false;
       cl.find(".individualscore .scorerowoverlay").each(function () {
@@ -609,10 +607,11 @@ function changeToFinish() {
         );
       } else {
         let totalScore = th.val();
+        var overlayCcount = cl.find(".individualscore .scorerowoverlay").length || 1;
         cl.find(".individualscore .scorerowoverlay").each(function () {
           let item = $(this).closest(".scorecriteriarow").find(".scorebyinput");
-          score = (
-            totalScore / cl.find(".individualscore .scorerowoverlay").length
+          var score = (
+            totalScore / overlayCcount
           ).toFixed(1);
           item.val(score);
           let item2 = $(this)
@@ -889,17 +888,18 @@ function changeToFinish() {
           .find(".totalscore .scorerowoverlay")
           .each(function () {
             var totalObj = $(this);
-            var avearagescore = totalObj.attr("data-scorepercentage");
+            var avearagescore = parseFloat(totalObj.attr("data-scorepercentage")) || 0;
+            var trackerWidth = totalObj.prev(".scorerowoverlaymousetracker").width() || 0;
 
-            var totalpixel =
-              (totalObj.prev(".scorerowoverlaymousetracker").width() / 10) *
-              avearagescore;
+            var totalpixel = (trackerWidth / 10) * avearagescore;
 
-            setscorecolor(
-              totalObj,
-              totalpixel,
-              totalObj.prev(".scorerowoverlaymousetracker").width()
-            );
+            if (trackerWidth > 0) {
+              setscorecolor(
+                totalObj,
+                totalpixel,
+                trackerWidth
+              );
+            }
           });
         if ($(".multicountrowtotal").length > 0) {
           if ($(".filterScoreCard").val() == 0) {
@@ -918,17 +918,18 @@ function changeToFinish() {
           .find(".scorerowoverlay")
           .each(function () {
             var obj = $(this);
-            var avearagescore = obj.attr("data-scorepercentage");
+            var avearagescore = parseFloat(obj.attr("data-scorepercentage")) || 0;
+            var trackerWidth = obj.prev(".scorerowoverlaymousetracker").width() || 0;
 
-            var totalpixel =
-              (obj.prev(".scorerowoverlaymousetracker").width() / 10) *
-              avearagescore;
+            var totalpixel = (trackerWidth / 10) * avearagescore;
 
-            setscorecolor(
-              obj,
-              totalpixel,
-              obj.prev(".scorerowoverlaymousetracker").width()
-            );
+            if (trackerWidth > 0) {
+              setscorecolor(
+                obj,
+                totalpixel,
+                trackerWidth
+              );
+            }
           });
       }
     }

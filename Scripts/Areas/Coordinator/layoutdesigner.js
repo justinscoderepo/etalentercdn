@@ -169,7 +169,7 @@ var importstylishfill = function (importfrom, designitem) {
 $("body").on("afterappendcomplete", "[data-stylishjson]", function () {
   $("#designitemslist").html("<option value=''>Please Select</option>");
   var th = $(this);
-  var eventGroupSettings = window.EventUserSettings?.GroupsTemplates ?? {};
+  var eventGroupSettings = (window.EventUserSettings && window.EventUserSettings.GroupsTemplates) ? window.EventUserSettings.GroupsTemplates : {};
   var groupid = getcache("stylishgroupid");
   if (eventGroupSettings && eventGroupSettings[$("[name='CandidateGroup']").val()]) {
     groupid = eventGroupSettings[$("[name='CandidateGroup']").val()];
@@ -547,7 +547,7 @@ $("body").on("afterappendcomplete", "#DesignArray", function () {
     .each(function () {
       var th = $(this);
       var groupid = th.attr("name").replace("DesignArray", "");
-      if (window.EventUserSettings?.GroupsTemplates) {
+      if (window.EventUserSettings && window.EventUserSettings.GroupsTemplates) {
         if (window.EventUserSettings.GroupsTemplates[groupid]) {
           th.val(window.EventUserSettings.GroupsTemplates[groupid]);
         }

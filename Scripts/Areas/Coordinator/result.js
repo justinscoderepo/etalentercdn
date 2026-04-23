@@ -22,9 +22,9 @@ if(e.target.id == "resultsbody"){
             $(".RankList").show();
             $("#resultautogenerateranks").show();
             $("#resultautogenerateranks3").show();
-    var rankAndGradePointsDisableMaxParticipationCount = userObj?.user?.JsonSettings?.RankAndGradePointsDisableMaxParticipationCount;
-    var allowToAssignRankIfMaxParticipationReached = userObj?.user?.JsonSettings?.AllowToAssignRankIfMaxParticipationReached;
-    if (userObj?.user?.JsonSettings && userObj?.user?.JsonSettings?.DisableRankForMax2ParticipationCompetitions == "Enabled" && allowToAssignRankIfMaxParticipationReached == "Disabled") {
+    var rankAndGradePointsDisableMaxParticipationCount = userObj && userObj.user && userObj.user.JsonSettings ? userObj.user.JsonSettings.RankAndGradePointsDisableMaxParticipationCount : undefined;
+    var allowToAssignRankIfMaxParticipationReached = userObj && userObj.user && userObj.user.JsonSettings ? userObj.user.JsonSettings.AllowToAssignRankIfMaxParticipationReached : undefined;
+    if (userObj && userObj.user && userObj.user.JsonSettings && userObj.user.JsonSettings.DisableRankForMax2ParticipationCompetitions == "Enabled" && allowToAssignRankIfMaxParticipationReached == "Disabled") {
 
                 if (data.rows && data.rows.Results && data.rows.Results.length <= rankAndGradePointsDisableMaxParticipationCount) {
                     $("#resultautogenerateranks").hide();
