@@ -100,10 +100,10 @@ function changeToFinish() {
   function toggleScoreInputsAndButtons() {
     var isDisabled = false;
     var isBothNotChecked = false;
-    if (!isFloat($(".scorebyinput").val())) {
-      $(".scorebyinput").val(0);
+    if (!isFloat($(".individualscore .scorebyinput").val())) {
+      $(".individualscore .scorebyinput").val(0);
     }
-    if (!$(".markasabsent").is(":checked") && parseFloat($(".scorebyinput").val()) == 0) {
+    if (!$(".markasabsent").is(":checked") && parseFloat($(".individualscore .scorebyinput").val()) == 0) {
       isBothNotChecked = true;
     } else {
       if (parseFloat($(".scorebyinput").val()) > 0) {
@@ -296,6 +296,10 @@ function changeToFinish() {
         );
         th.addClass("candidateactive");
         var judgesScoreCard = judgesScoreCarddata[th.attr("ParticipantId")];
+
+        // Inject competition-level data so data-if-CompetitionItemScoreLabel conditions work in totalscore
+        var scoreLabel = parseInt($("#competitionoptdropdown option:selected").attr("scorelabel")) || 0;
+        judgesScoreCard.CompetitionItemScoreLabel = scoreLabel;
 
         $(".scorecandidateslist").binder({
           Data: [judgesScoreCard],
