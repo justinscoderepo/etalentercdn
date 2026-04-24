@@ -152,5 +152,5 @@ select#competitionoptdropdown {
 }
 
 .scorerow[data-isactive="false"]{
-    display: none;
+    display: none !important;
 }
