@@ -98,12 +98,13 @@ function changeToFinish() {
 
   // Helper function to toggle save buttons and score inputs based on absent status
   function toggleScoreInputsAndButtons() {
+ 
     var isDisabled = false;
     var isBothNotChecked = false;
     if (!isFloat($(".individualscore .scorebyinput").val())) {
       $(".individualscore .scorebyinput").val(0);
     }
-    if (!$(".markasabsent").is(":checked") && parseFloat($(".individualscore .scorebyinput").val()) == 0) {
+    if (!$(".markasabsent").is(":checked") && (parseFloat($(".individualscore .scorebyinput").val()) == 0 || !$(".individualscore .scorebyinput").val())) {
       isBothNotChecked = true;
     } else {
       if (parseFloat($(".scorebyinput").val()) > 0) {

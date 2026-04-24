@@ -150,3 +150,7 @@ select#competitionoptdropdown {
 .scorecriteriarow > div {
     overflow: hidden;
 }
+
+.scorerow[data-isactive="false"]{
+    display: none;
+}
