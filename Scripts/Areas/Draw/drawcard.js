@@ -161,6 +161,7 @@
         ParticipantId: participantId,
         IdentityNumber: (index + 1).toString(),
         Order: isActive ? "1" : "2",
+        PermanentAbsent: isActive ? false : true,
       });
     });
 
