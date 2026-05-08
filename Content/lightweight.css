@@ -2176,6 +2176,10 @@ p.list-group-item-text { font-size: 9px; }
     display: none;
 }
 
+.subidfield.idfield{
+    display:inline!important;
+}
+
 .competitionstatus { color: #000; }
 
 .competitionstatus[competitionstatus='7'] {
@@ -4713,7 +4717,9 @@ select#modeSelector option {
     padding: 0px 10px;
     page-break-inside: avoid;
 }
-
+.ItemWiseView > .CompetitionStructure:first-child {
+    page-break-inside: auto;
+}
 .hclearfix.col-xs-50 {
     /* break-after: page; */
     /* overflow: hidden; */
