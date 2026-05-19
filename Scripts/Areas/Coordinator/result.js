@@ -72,9 +72,12 @@ $('body').on("change",
                 return c.CompetitionStructureId == th.val();
             });
             if (competition && competition.length > 0) {
+                currentcompetitiondata = competition[0];
+                if (typeof applyStatusTransitionFilter === "function") {
+                    applyStatusTransitionFilter(currentcompetitiondata.CompetitionStatus);
+                }
                 $("#resultcompetitionstatus").val(competition[0].CompetitionStatus).trigger("change");
                 $("#resultcompetitionstatus").attr("data-value", competition[0].CompetitionStatus).attr("data-forcesetvalue", true);
-                currentcompetitiondata = competition[0];
             }
             $('#resultpanel').binder({
                 Data: competition
