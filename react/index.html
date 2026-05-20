@@ -104,7 +104,7 @@
             const localBaseUrl = window.location.origin;
             const cdnBaseUrl = 'https://justinscoderepo.github.io/etalentercdn/v2';
             const canUseCdnFallback = !window.isLocalhost;
-            let preferredAssetSource = localBaseUrl;
+            const preferredAssetSource = localBaseUrl;
             if(window.isLocalhost){
                 preferredAssetSource = localBaseUrl;
             }
