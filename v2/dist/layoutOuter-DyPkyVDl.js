@@ -1,0 +1,1 @@
+import{j as r}from"./main-O7zbwJoH.js";const s=({children:e})=>r.jsx("div",{className:"p-5 pt-2 lg:pt-5 print:p-0",children:r.jsx("div",{className:"flex grow rounded-xl bg-contentBgOuter border border-border ",children:r.jsx("div",{className:"flex flex-col grow w-full pt-2 print:p-0",children:r.jsx("div",{className:"p-5 px-7 w-full print:p-0",children:e})})})});export{s as L};

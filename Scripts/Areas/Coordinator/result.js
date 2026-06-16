@@ -22,9 +22,9 @@ if(e.target.id == "resultsbody"){
             $(".RankList").show();
             $("#resultautogenerateranks").show();
             $("#resultautogenerateranks3").show();
-    var rankAndGradePointsDisableMaxParticipationCount = userObj?.user?.JsonSettings?.RankAndGradePointsDisableMaxParticipationCount;
-    var allowToAssignRankIfMaxParticipationReached = userObj?.user?.JsonSettings?.AllowToAssignRankIfMaxParticipationReached;
-    if (userObj?.user?.JsonSettings && userObj?.user?.JsonSettings?.DisableRankForMax2ParticipationCompetitions == "Enabled" && allowToAssignRankIfMaxParticipationReached == "Disabled") {
+    var rankAndGradePointsDisableMaxParticipationCount = userObj && userObj.user && userObj.user.JsonSettings ? userObj.user.JsonSettings.RankAndGradePointsDisableMaxParticipationCount : undefined;
+    var allowToAssignRankIfMaxParticipationReached = userObj && userObj.user && userObj.user.JsonSettings ? userObj.user.JsonSettings.AllowToAssignRankIfMaxParticipationReached : undefined;
+    if (userObj && userObj.user && userObj.user.JsonSettings && userObj.user.JsonSettings.DisableRankForMax2ParticipationCompetitions == "Enabled" && allowToAssignRankIfMaxParticipationReached == "Disabled") {
 
                 if (data.rows && data.rows.Results && data.rows.Results.length <= rankAndGradePointsDisableMaxParticipationCount) {
                     $("#resultautogenerateranks").hide();
@@ -72,9 +72,12 @@ $('body').on("change",
                 return c.CompetitionStructureId == th.val();
             });
             if (competition && competition.length > 0) {
+                currentcompetitiondata = competition[0];
+                if (typeof applyStatusTransitionFilter === "function") {
+                    applyStatusTransitionFilter(currentcompetitiondata.CompetitionStatus);
+                }
                 $("#resultcompetitionstatus").val(competition[0].CompetitionStatus).trigger("change");
                 $("#resultcompetitionstatus").attr("data-value", competition[0].CompetitionStatus).attr("data-forcesetvalue", true);
-                currentcompetitiondata = competition[0];
             }
             $('#resultpanel').binder({
                 Data: competition

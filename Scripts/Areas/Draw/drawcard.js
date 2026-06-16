@@ -161,6 +161,7 @@
         ParticipantId: participantId,
         IdentityNumber: (index + 1).toString(),
         Order: isActive ? "1" : "2",
+        PermanentAbsent: isActive ? false : true,
       });
     });
 
@@ -216,10 +217,47 @@
       }
     }
   );
+  // Cache static status options once on page load
+  var allDrawStatusOptions = [];
+  $(function () {
+    $("#resultcompetitionstatus").find("option[data-jlelements]").each(function () {
+      allDrawStatusOptions.push({ value: $(this).val(), text: $(this).text() });
+    });
+  });
+
+  // When competition changes, re-populate status options with only allowed values
+  $("body").on("change", "#competitionoptdropdown", function () {
+    var currentStatus = parseInt($(this).find("option:selected").attr("data-competitionstatus")) || 0;
+    var $statusSelect = $("#resultcompetitionstatus");
+    $statusSelect.find("option[data-jlelements]").remove();
+    $.each(allDrawStatusOptions, function (_, opt) {
+      var to = parseInt(opt.value);
+      var allowed = true;
+      if (currentStatus === 1) allowed = false; // Published: none of the 3 draw statuses apply
+      else if (currentStatus === 2 || currentStatus === 4 || currentStatus === 6) allowed = (to !== 3);
+      // 5=Yet To Begin, 3=Not Started → all allowed
+      if (allowed) {
+        $statusSelect.append($('<option>').attr("data-jlelements", "true").val(opt.value).text(opt.text));
+      }
+    });
+    $statusSelect.val("");
+  });
+
   $("body").on("change", "#resultcompetitionstatus", function (e, force) {
     ////firsttriggercompetition = true;
     if ($(this).val()) {
       if ($(this).val() && (e.originalEvent || force)) {
+        // Safety net: block disallowed transitions even if somehow an option was available
+        var currentStatus = parseInt($("#competitionoptdropdown").find("option:selected").attr("data-competitionstatus")) || 0;
+        var newStatus = parseInt($(this).val());
+        var blocked = false;
+        if (currentStatus === 1 && newStatus !== 2) blocked = true;
+        if ((currentStatus === 2 || currentStatus === 4 || currentStatus === 6) && newStatus === 3) blocked = true;
+        if (blocked) {
+          $(this).val("");
+          return;
+        }
+
         var newcurrentcompetitiondata = {};
         newcurrentcompetitiondata.CompetitionStructureId = $(
           "#competitionoptdropdown"

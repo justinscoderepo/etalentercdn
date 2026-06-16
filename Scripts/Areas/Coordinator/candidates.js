@@ -150,7 +150,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
       $(".eachcandidateregid").each(function () {
         let value = $(this).val();
 
-        if (typeof allowedRegIdNumbers !== "undefined" && allowedRegIdNumbers?.length > 0) {
+        if (typeof allowedRegIdNumbers !== "undefined" && allowedRegIdNumbers && allowedRegIdNumbers.length > 0) {
           let matchingRow = allowedRegIdNumbers.find(x => x.RegistrationNumber == value);
           if (!matchingRow) {
             $(this).closest(".form-group").addClass("invalidRegistrationNumber");
@@ -1164,7 +1164,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
   });
 
   $("body").on("afterappendcomplete", ".agewisegroups", function (e, data) {
-    let length = data?.rows?.Results?.length;
+    let length = data && data.rows && data.rows.Results ? data.rows.Results.length : undefined;
     if (length == 1) {
       $(".agewisegroups").hide();
       $(".agewisegroups li").trigger("click");
@@ -1177,7 +1177,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
     let localStorageKey = "selectedparticipanttypeforbulkedit_/Coordinator/ManageBulkParticipants";
     let selectedParticipantType = getcache(localStorageKey);
     if (!selectedParticipantType) {
-      selectedParticipantType = data?.rows?.Results[0]?.EPTId;
+      selectedParticipantType = data && data.rows && data.rows.Results && data.rows.Results[0] ? data.rows.Results[0].EPTId : undefined;
       $(".participanttypes li[eptid=" + selectedParticipantType + "]").trigger("click");
     }
 
@@ -1453,7 +1453,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
           item.List.forEach(function (item2) {
             if (item2.List) {
               item2.List.forEach(function (item3) {
-                if (item3.First?.UserImage) {
+                if (item3.First && item3.First.UserImage) {
                   item3.First.UserImage = item3.First.UserImage.replace(
                     "https:/files",
                     "https://files"
@@ -1461,7 +1461,7 @@ var isReadOnlyAccess = false; // Will be overridden from server
                 }
               });
             }
-            if (item2?.UserImage) {
+            if (item2 && item2.UserImage) {
               item2.UserImage = item2.UserImage.replace(
                 "https:/files",
                 "https://files"
@@ -2185,13 +2185,13 @@ var isReadOnlyAccess = false; // Will be overridden from server
           }
         }
 
-        if (mobile?.length > 0) {
+        if (mobile && mobile.length > 0) {
           if (mobile.length < 8) {
             alert("Please enter valid mobile number", "e");
             return;
           }
         }
-        if (email?.length > 0) {
+        if (email && email.length > 0) {
           if (email.length < 5) {
             alert("Please enter valid email", "e");
             return;

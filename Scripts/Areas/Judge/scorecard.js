@@ -2,7 +2,7 @@
 function changeToFinish() {
   var additionalSettings =
     userObj.user.JsonSettings;
-  if (additionalSettings?.MarkAbsentOrScoreMarkIsMandatory == "Yes") {
+  if (additionalSettings && additionalSettings.MarkAbsentOrScoreMarkIsMandatory == "Yes") {
     var allFilled = true;
     var missingItems = [];
     $(".scorecandidatestab").each(function () {
@@ -98,12 +98,13 @@ function changeToFinish() {
 
   // Helper function to toggle save buttons and score inputs based on absent status
   function toggleScoreInputsAndButtons() {
+ 
     var isDisabled = false;
     var isBothNotChecked = false;
-    if (!isFloat($(".scorebyinput").val())) {
-      $(".scorebyinput").val(0);
+    if (!isFloat($(".individualscore .scorebyinput").val())) {
+      $(".individualscore .scorebyinput").val(0);
     }
-    if (!$(".markasabsent").is(":checked") && parseFloat($(".scorebyinput").val()) == 0) {
+    if (!$(".markasabsent").is(":checked") && (parseFloat($(".individualscore .scorebyinput").val()) == 0 || !$(".individualscore .scorebyinput").val())) {
       isBothNotChecked = true;
     } else {
       if (parseFloat($(".scorebyinput").val()) > 0) {
@@ -265,6 +266,7 @@ function changeToFinish() {
       ////$(this).trigger("click");
 
       $('.scorecandidateslist>div[data-noresult="true"]').show();
+      updateConfirmCompletedVisibility();
     }
   );
   $("body").on("click", ".allscores .deleterow", function (e) {
@@ -297,6 +299,10 @@ function changeToFinish() {
         th.addClass("candidateactive");
         var judgesScoreCard = judgesScoreCarddata[th.attr("ParticipantId")];
 
+        // Inject competition-level data so data-if-CompetitionItemScoreLabel conditions work in totalscore
+        var scoreLabel = parseInt($("#competitionoptdropdown option:selected").attr("scorelabel")) || 0;
+        judgesScoreCard.CompetitionItemScoreLabel = scoreLabel;
+
         $(".scorecandidateslist").binder({
           Data: [judgesScoreCard],
         });
@@ -325,9 +331,19 @@ function changeToFinish() {
         if ($(window).width() < 1000) {
           timeout = 0;
         }
+        // Calculate offsetX for both mouse and touch events (iPad compatibility)
+        var offsetX;
+        if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches.length > 0) {
+          var rect = this.getBoundingClientRect();
+          offsetX = e.originalEvent.touches[0].clientX - rect.left;
+        } else {
+          offsetX = e.offsetX;
+        }
+        // Clamp to element bounds
+        offsetX = Math.max(0, Math.min(offsetX, th.width()));
         setscorecolor(
           $(this).next(".scorerowoverlay"),
-          e.offsetX,
+          offsetX,
           th.width(),
           true
         );
@@ -342,7 +358,7 @@ function changeToFinish() {
         $(this)
           .closest(".scorecriteriarow")
           .find(".scorebyinput")
-          .val(((e.offsetX / th.width()) * 10).toFixed(1));
+          .val(((offsetX / th.width()) * 10).toFixed(1));
         setTimeout(function () {
           if (localoverlayi == th.attr("localoverlayi")) {
             th.closest(".scorecriteriarow")
@@ -492,6 +508,7 @@ function changeToFinish() {
               judgesScoreCarddata[
                 currentactiveparticipantId
               ].Notes = postdata.notes;
+              updateConfirmCompletedVisibility();
             } else {
               alert(
                 typeof data.Results == "string"
@@ -538,24 +555,44 @@ function changeToFinish() {
     }
   });
 
+  function updateConfirmCompletedVisibility() {
+    var additionalSettings = userObj && userObj.user && userObj.user.JsonSettings;
+    if (additionalSettings && additionalSettings.MarkAbsentOrScoreMarkIsMandatory == "Yes") {
+      var allFilled = true;
+      var missingCount = 0;
+      $(".scorecandidatestab").each(function () {
+        var th = $(this);
+        var isAbsent = th.find(".CandidateAbsentStatus").is(":visible");
+        var isScored = th.find(".CandidateScore").text().trim() != "" && th.find(".CandidateScore").text().trim() != "0";
+        if (!isAbsent && !isScored) {
+          allFilled = false;
+          missingCount++;
+        }
+      });
+      var btn = $(".confirmcompletedOuter #confirmcompleted");
+      if (allFilled && $(".scorecandidatestab").length > 0) {
+        btn.removeClass("disabled").prop("disabled", false).attr("title", "").text("Mark As Finished");
+      } else {
+        btn.addClass("disabled").prop("disabled", true).attr("title", missingCount + " candidate(s) still need a score or absent status.").text("Mark As Finished (" + missingCount + " pending)");
+      }
+    }
+  }
+
   function settotalscore(cl, th, offset, currentElement) {
     if (th.closest(".individualscore").length > 0) {
       var totalscore = 0;
       let allowedTotalScore = false;
       cl.find(".individualscore .scorerowoverlay").each(function () {
         var indscore = $(this).closest(".scorecriteriarow").find(".scorebyinput").val();
-        totalscore += parseFloat(
-          indscore
-        );
+        totalscore += parseFloat(indscore) || 0;
 
         if (!$(this).is(":visible")) {
           $(this).closest(".scorecriteriarow").find("[name=Score]").val(indscore);
         }
         let item = $(this).closest(".scorecriteriarow").find(".scorebyinput");
-        let score = parseFloat($(this).attr("data-scorepercentage"));
+        let score = parseFloat($(this).attr("data-scorepercentage")) || 0;
         if (item.attr("maxscore")) {
           allowedTotalScore = true;
-          //     score=(score/cl.find(".individualscore .scorerowoverlay").length).toFixed(1);
         }
         if (currentElement) {
           item = item.not(currentElement);
@@ -567,18 +604,19 @@ function changeToFinish() {
 
       var avearagescore = allowedTotalScore
         ? totalscore
-        : totalscore / cl.find(".individualscore .scorerowoverlay").length;
+        : totalscore / (cl.find(".individualscore .scorerowoverlay").length || 1);
       var total = cl.find(".totalscore .scorerowoverlay");
+      var trackerWidth = total.prev(".scorerowoverlaymousetracker").width() || 0;
 
-      var totalpixel =
-        (total.prev(".scorerowoverlaymousetracker").width() / 10) *
-        avearagescore;
+      var totalpixel = (trackerWidth / 10) * avearagescore;
 
-      setscorecolor(
-        total,
-        totalpixel,
-        total.prev(".scorerowoverlaymousetracker").width()
-      );
+      if (total.length > 0 && trackerWidth > 0) {
+        setscorecolor(
+          total,
+          totalpixel,
+          trackerWidth
+        );
+      }
     } else {
       let allowedTotalScore = false;
       cl.find(".individualscore .scorerowoverlay").each(function () {
@@ -599,10 +637,11 @@ function changeToFinish() {
         );
       } else {
         let totalScore = th.val();
+        var overlayCcount = cl.find(".individualscore .scorerowoverlay").length || 1;
         cl.find(".individualscore .scorerowoverlay").each(function () {
           let item = $(this).closest(".scorecriteriarow").find(".scorebyinput");
-          score = (
-            totalScore / cl.find(".individualscore .scorerowoverlay").length
+          var score = (
+            totalScore / overlayCcount
           ).toFixed(1);
           item.val(score);
           let item2 = $(this)
@@ -680,6 +719,7 @@ function changeToFinish() {
           judgesScoreCarddata[
             currentactiveparticipantId
           ].Notes = postdata.notes;
+          updateConfirmCompletedVisibility();
         } else {
           alert(
             typeof data.Results == "string"
@@ -768,6 +808,7 @@ function changeToFinish() {
             judgesScoreCarddata[
               currentactiveparticipantId
             ].Notes = postdata.notes;
+            updateConfirmCompletedVisibility();
           } else {
             alert(
               typeof data.Results == "string"
@@ -830,14 +871,25 @@ function changeToFinish() {
   $("body").on("click", ".scorerowoverlaymousetracker", function (e) {
     var th = $(this);
 
-    setscorecolor(th.next(".scorerowoverlay"), e.offsetX, th.width());
+    // Calculate offsetX for both mouse and touch-synthesized click events (iPad compatibility)
+    var offsetX;
+    if (e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches.length > 0) {
+      var rect = this.getBoundingClientRect();
+      offsetX = e.originalEvent.changedTouches[0].clientX - rect.left;
+    } else {
+      offsetX = e.offsetX;
+    }
+    // Clamp to element bounds
+    offsetX = Math.max(0, Math.min(offsetX, th.width()));
+
+    setscorecolor(th.next(".scorerowoverlay"), offsetX, th.width());
     th.attr("data-prevented", true);
     setTimeout(function () {
       th.removeAttr("data-prevented");
     }, 3000);
 
     var cl = th.closest(".allscores");
-    settotalscore(cl, th, e.offsetX);
+    settotalscore(cl, th, offsetX);
 
     cl.find('.totalscore .scorebyinput[name="ScoreCardScore"]').val(
       cl.find(".totalscore .scorerowoverlay").attr("data-scorepercentage")
@@ -868,17 +920,18 @@ function changeToFinish() {
           .find(".totalscore .scorerowoverlay")
           .each(function () {
             var totalObj = $(this);
-            var avearagescore = totalObj.attr("data-scorepercentage");
+            var avearagescore = parseFloat(totalObj.attr("data-scorepercentage")) || 0;
+            var trackerWidth = totalObj.prev(".scorerowoverlaymousetracker").width() || 0;
 
-            var totalpixel =
-              (totalObj.prev(".scorerowoverlaymousetracker").width() / 10) *
-              avearagescore;
+            var totalpixel = (trackerWidth / 10) * avearagescore;
 
-            setscorecolor(
-              totalObj,
-              totalpixel,
-              totalObj.prev(".scorerowoverlaymousetracker").width()
-            );
+            if (trackerWidth > 0) {
+              setscorecolor(
+                totalObj,
+                totalpixel,
+                trackerWidth
+              );
+            }
           });
         if ($(".multicountrowtotal").length > 0) {
           if ($(".filterScoreCard").val() == 0) {
@@ -897,17 +950,18 @@ function changeToFinish() {
           .find(".scorerowoverlay")
           .each(function () {
             var obj = $(this);
-            var avearagescore = obj.attr("data-scorepercentage");
+            var avearagescore = parseFloat(obj.attr("data-scorepercentage")) || 0;
+            var trackerWidth = obj.prev(".scorerowoverlaymousetracker").width() || 0;
 
-            var totalpixel =
-              (obj.prev(".scorerowoverlaymousetracker").width() / 10) *
-              avearagescore;
+            var totalpixel = (trackerWidth / 10) * avearagescore;
 
-            setscorecolor(
-              obj,
-              totalpixel,
-              obj.prev(".scorerowoverlaymousetracker").width()
-            );
+            if (trackerWidth > 0) {
+              setscorecolor(
+                obj,
+                totalpixel,
+                trackerWidth
+              );
+            }
           });
       }
     }
@@ -1051,12 +1105,13 @@ function changeToFinish() {
           activetab.find(".CandidateAbsentStatus").hide();
           activetab.find(".CandidateScore").show();
         }
+        updateConfirmCompletedVisibility();
 
 
          $(".scorecandidatestabview").binder();
           
-      $('.scorecandidateslist>div').hide();
-      $('.scorecandidateslist>div[data-noresult="true"]').show();
+      $('.scorecandidateslist .scorecandidateview').hide();
+      $('.scorecandidateslist>div[data-noresult="true"]').attr("style","display:block !important");
 
 
 
