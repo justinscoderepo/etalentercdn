@@ -311,6 +311,21 @@ $(document).ready(function () {
     }, 2000);
   });
 
+  $("body").on("change", "#ProfileImageFit", function (e, data) {
+    let templateId = $("#Template").val();
+    let key = templateId + "_Profile Image";
+    let fitValue = $(this).val();
+    if (fitValue === "contain") {
+      setcache(key, '{"backgroundSize":"contain","width":"auto"}', true);
+    } else {
+      setcache(key, '{"backgroundSize":"cover","width":"100px"}', true);
+    }
+
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
+  });
+
   $("body").on("change", "#UseDefaultGenderIcons", function (e, data) {
     if ($(this).val() == "2") {
       // Show default gender icons when enabled
