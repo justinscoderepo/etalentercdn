@@ -1,3 +1,10 @@
+function hasUnit(val) {
+  return /(?:px|%|em|rem|vh|vw)$/.test(val);
+}
+function addPostfix(val, postfix) {
+  return hasUnit(val) ? val : val + postfix;
+}
+
 var stylishfill = function (refill, selecteditem, reset, closest, original) {
   var designitem = selecteditem ? selecteditem : $("#designitemslist").val();
   if (designitem) {
@@ -72,8 +79,7 @@ var stylishfill = function (refill, selecteditem, reset, closest, original) {
                 csskey +
                 ":" +
                 prefix +
-                value +
-                postfix +
+                addPostfix(value, postfix) +
                 " !important;}</style>"
             );
           }
@@ -515,8 +521,7 @@ function changeCurrentTemplate(th, force) {
                 csskey +
                 ":" +
                 prefix +
-                value +
-                postfix +
+                addPostfix(value, postfix) +
                 " !important;}</style>"
             );
           }
@@ -789,8 +794,7 @@ $(".templatelist").each(function () {
                 csskey +
                 ":" +
                 prefix +
-                value +
-                postfix +
+                addPostfix(value, postfix) +
                 " !important;}</style>"
             );
           }
