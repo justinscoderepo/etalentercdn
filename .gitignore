@@ -248,3 +248,6 @@ Web/Log.txt
 Web/Log.txt
 /Web/Downloads
 .idea/
+# CodeG bug-capture output (AutoJS "Report a Bug")
+bug-reports/
+qa-reports/
