@@ -1,0 +1,1 @@
+import{r as e,j as a}from"./main-DWi1ztyP.js";const s=e.createContext({suppressed:!1,setSuppressed:()=>{},items:null,setItems:()=>{}}),n=({children:t,items:r})=>{const[o,u]=e.useState(!1);return a.jsx(s.Provider,{value:{suppressed:o,setSuppressed:u,items:r},children:t})},m=()=>e.useContext(s);export{n as B,m as u};

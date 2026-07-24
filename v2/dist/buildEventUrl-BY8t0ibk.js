@@ -1,0 +1,1 @@
+const t=(r,e={})=>{if(!r)return"#";const n=new URLSearchParams;e.ev&&n.set("ev",String(e.ev)),e.ec&&n.set("ec",String(e.ec)),e.eventName&&n.set("en",e.eventName);const s=n.toString();return s?`${r}?${s}`:r};export{t as b};
