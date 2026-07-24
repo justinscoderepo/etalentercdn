@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700">
+  <defs>
+    <linearGradient id="eGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgb(5,20,36)"/>
+      <stop offset="22%" stop-color="rgb(14,34,56)"/>
+      <stop offset="52%" stop-color="rgb(7,91,155)"/>
+      <stop offset="75%" stop-color="rgb(15,59,97)"/>
+      <stop offset="100%" stop-color="rgb(13,35,60)"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgb(5,20,36)"/>
+      <stop offset="22%" stop-color="rgb(14,34,56)"/>
+      <stop offset="52%" stop-color="rgb(7,91,155)"/>
+      <stop offset="75%" stop-color="rgb(15,59,97)"/>
+      <stop offset="100%" stop-color="rgb(13,35,60)"/>
+    </linearGradient>
+
+    <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e90ff"/>
+      <stop offset="100%" stop-color="#4b1fd1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="white"/>
+
+  <path d="M520 190 Q900 50 1180 130" fill="none" stroke="url(#arcGrad)" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M1235 85
+           L1247 118
+           L1280 130
+           L1247 142
+           L1235 175
+           L1223 142
+           L1190 130
+           L1223 118 Z"
+        fill="#ff9500"/>
+
+  <text x="80" y="390"
+        font-family="Poppins, Montserrat, Arial, sans-serif"
+        font-size="250"
+        font-weight="700"
+        fill="url(#eGrad)">e</text>
+
+  <text x="245" y="390"
+        font-family="Poppins, Montserrat, Arial, sans-serif"
+        font-size="250"
+        font-weight="700"
+        fill="url(#textGrad)">talenter</text>
+
+  <text x="320" y="560"
+        font-family="Poppins, Arial, sans-serif"
+        font-size="72"
+        font-weight="600"
+        fill="#0f5b9b">compete</text>
+
+  <text x="720" y="560"
+        font-family="Poppins, Arial, sans-serif"
+        font-size="72"
+        fill="#777">|</text>
+
+  <text x="800" y="560"
+        font-family="Poppins, Arial, sans-serif"
+        font-size="72"
+        font-weight="600"
+        fill="#4724d6">judge</text>
+
+  <text x="1110" y="560"
+        font-family="Poppins, Arial, sans-serif"
+        font-size="72"
+        fill="#777">|</text>
+
+  <text x="1190" y="560"
+        font-family="Poppins, Arial, sans-serif"
+        font-size="72"
+        font-weight="600"
+        fill="#ff9500">win</text>
+</svg>
