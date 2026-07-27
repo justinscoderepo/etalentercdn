@@ -102,7 +102,7 @@
             };
             document.head.appendChild(mainScript);
         } else {
-            const localBaseUrl = window.location.origin;
+            const localBaseUrl = window.location.origin + '/v2';
             const cdnBaseUrl = 'https://justinscoderepo.github.io/etalentercdn/v2';
             const canUseCdnFallback = !window.isLocalhost;
             let preferredAssetSource = localBaseUrl;
