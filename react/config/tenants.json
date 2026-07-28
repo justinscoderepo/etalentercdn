@@ -28,6 +28,21 @@
       "backgroundColor": "transparent",
       "isLocalHost": false,
       "redirectUrl": "https://app.etalenter.com",
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
+    },
+    "talenter3.azurewebsites.net": {
+      "emailConfigFrom": "Justin eTalenter",
+      "emailConfigLogo": "https://justinscoderepo.github.io/etalentercdn/Content/Images/EMBJ2357.JPG",
+      "siteLogo": "https://justinscoderepo.github.io/etalentercdn/Content/Images/ealenterlogo.png",
+      "emailConfigSiteUrl": "https://app.etalenter.com",
+      "emailConfigFacebook": "https://www.facebook.com/etalenter",
+      "emailConfigLinkedin": "https://www.linkedin.com/company/etalenter",
+      "emailConfigSupportEmail": "support@etalenter.com",
+      "emailConfigCompany": "eTalenter",
+      "emailSupportWhatsApp": "+919605656508",
+      "backgroundColor": "transparent",
+      "isLocalHost": false,
+      "redirectUrl": "https://app.etalenter.com",
       "apiUrl": "https://etalenterapi2.azurewebsites.net"
     },
     "app.etalenter.com": {
@@ -43,7 +58,7 @@
       "backgroundColor": "transparent",
       "isLocalHost": false,
       "redirectUrl": "https://app.etalenter.com",
-      "apiUrl": "https://etalenterapi2.azurewebsites.net"
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "etalenter2.azurewebsites.net": {
       "emailConfigFrom": "Justin eTalenter",
@@ -57,14 +72,14 @@
       "emailSupportWhatsApp": "+919605656508",
       "backgroundColor": "transparent",
       "isLocalHost": false,
-      "apiUrl": "https://etalenterapi2.azurewebsites.net"
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "gcckalotsavam.bksbahrain.com": {
-      "allowedEvents": "195",
+      "allowedEvents": "292",
       "isCandidateOnly": true,
       "emailConfigFrom": "GCC Kalotsavam",
-      "emailConfigLogo": "https://bksbahrain.com/images/logo-2.png",
-      "siteLogo": "https://bksbahrain.com/images/logo-2.png",
+      "emailConfigLogo": "https://etalenter.com/wp-content/uploads/2026/01/logo-2.png",
+      "siteLogo": "https://etalenter.com/wp-content/uploads/2026/01/logo-2.png",
       "emailConfigSiteUrl": "https://gcckalotsavam.bksbahrain.com",
       "emailConfigFacebook": "https://www.facebook.com/bks.samajamofficial",
       "emailConfigLinkedin": "https://www.linkedin.com/company/bahrain-keraleeya-samajam",
@@ -73,7 +88,7 @@
       "emailSupportWhatsApp": "+97338360489",
       "backgroundColor": "#FFFFFF",
       "isLocalHost": false,
-      "apiUrl": "https://etalenterapi2.azurewebsites.net"
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "youthfestival.akgma.com": {
       "allowedEvents": "202,201",
@@ -88,7 +103,8 @@
       "emailConfigCompany": "AKGMA",
       "emailSupportWhatsApp": "+971506742653",
       "backgroundColor": "#FFFFFF",
-      "isLocalHost": false
+      "isLocalHost": false,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "kalolsavam.akgma.com": {
       "isCandidateOnly": true,
@@ -102,7 +118,8 @@
       "emailConfigCompany": "AKGMA",
       "emailSupportWhatsApp": "+971506742653",
       "backgroundColor": "#FFFFFF",
-      "isLocalHost": false
+      "isLocalHost": false,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "kalolsavamadmin.yuvakalasahithyuae.org": {
       "emailConfigFrom": "Yuvakalasahithy Kalotsavam",
@@ -115,7 +132,8 @@
       "emailConfigCompany": "Yuvakalasahithy Kalotsavam",
       "emailSupportWhatsApp": "+971552035233",
       "backgroundColor": "#FFFFFF",
-      "isLocalHost": false
+      "isLocalHost": false,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "registration.yuvakalasahithyuae.org": {
       "emailConfigFrom": "Yuvakalasahithy Kalotsavam",
@@ -126,9 +144,10 @@
       "emailConfigLinkedin": "https://www.linkedin.com/",
       "emailConfigSupportEmail": "kalolsavam@yuvakalasahithyuae.org",
       "emailConfigCompany": "Yuvakalasahithy Kalotsavam",
-      "emailSupportWhatsApp": "+971552035233",
+      "emailSupportWhatsApp": "+971507878685",
       "backgroundColor": "#FFFFFF",
-      "isLocalHost": false
+      "isLocalHost": false,
+      "apiUrl": "https://etalenterapi2.azurewebsites.net"
     },
     "camp.pypa.live": {
       "emailConfigFrom": "PYPA Camp",
@@ -142,7 +161,8 @@
       "emailSupportWhatsApp": "+919847223885",
       "backgroundColor": "#FFFFFF",
       "isLocalHost": false,
-      "eventImport": true
+      "eventImport": true,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "talentmaster.pypa.live": {
       "emailConfigFrom": "PYPA TalentMaster",
@@ -156,10 +176,11 @@
       "emailSupportWhatsApp": "+919400449891",
       "backgroundColor": "#FFFFFF",
       "isLocalHost": false,
-      "eventImport": true
+      "eventImport": true,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "ipcebenezerdubai.pypa.live": {
-      "allowedEvents": "208",
+      "allowedEvents": "304",
       "isCandidateOnly": true,
       "emailConfigFrom": "PYPA Ebenezer Dubai",
       "emailConfigLogo": "https://etalenter.com/wp-content/uploads/2024/10/WhatsApp-Image-2024-09-23-at-11.44.20_ddb29b7d-150x150.jpg",
@@ -167,15 +188,16 @@
       "emailConfigSiteUrl": "https://ipcebenezerdubai.pypa.live",
       "emailConfigFacebook": "https://www.facebook.com/ipcebenezerdubai/",
       "emailConfigLinkedin": "https://ipcebenezerdubai.pypa.live",
-      "emailConfigSupportEmail": "pypaawake2k25@gmail.com",
+      "emailConfigSupportEmail": "pypaawake2k26@gmail.com",
       "emailConfigCompany": "PYPA Ebenezer Dubai",
       "emailSupportWhatsApp": "+971586388066",
       "backgroundColor": "#FFFFFF",
       "isLocalHost": false,
-      "eventImport": true
+      "eventImport": true,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "ipcuaeregion.pypa.live": {
-      "allowedEvents": "211",
+      "allowedEvents": "317",
       "isCandidateOnly": true,
       "emailConfigFrom": "PYPA Dubai",
       "emailConfigLogo": "https://etalenter.com/wp-content/uploads/2024/10/WhatsApp-Image-2024-09-23-at-11.44.20_ddb29b7d-150x150.jpg",
@@ -188,7 +210,8 @@
       "emailSupportWhatsApp": "+971568367622",
       "backgroundColor": "#FFFFFF",
       "isLocalHost": false,
-      "eventImport": true
+      "eventImport": true,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "quiz.pypa.live": {
       "emailConfigLogo": "https://etalenter.com/wp-content/uploads/2025/02/Arive-20251.png",
@@ -201,7 +224,8 @@
       "emailSupportWhatsApp": "+919995801000",
       "backgroundColor": "#FFFFFF",
       "isLocalHost": false,
-      "eventImport": false
+      "eventImport": false,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "kalamela.ocymkollamdiocese.com": {
       "emailConfigFrom": "Kalamela OCYM Kollam Diocese",
@@ -214,7 +238,8 @@
       "emailConfigCompany": "Kalamela OCYM Kollam Diocese",
       "emailSupportWhatsApp": "+918590418246",
       "backgroundColor": "#FFFFFF",
-      "isLocalHost": false
+      "isLocalHost": false,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "sahithyolsavam.kscabudhabi.com": {
       "allowedEvents": "295",
@@ -230,7 +255,8 @@
       "emailConfigCompany": "KSC Abu Dhabi",
       "emailSupportWhatsApp": "+971559979783",
       "backgroundColor": "#FFFFFF",
-      "isLocalHost": false
+      "isLocalHost": false,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "youthfestival.kscabudhabi.com": {
       "allowedEvents": "294",
@@ -246,7 +272,8 @@
       "emailConfigCompany": "KSC Abu Dhabi",
       "emailSupportWhatsApp": "+971505713780",
       "backgroundColor": "#FFFFFF",
-      "isLocalHost": false
+      "isLocalHost": false,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "uaeopenwintersports.kscabudhabi.com": {
       "allowedEvents": "296",
@@ -254,7 +281,7 @@
       "emailConfigFrom": "KSC Abu Dhabi",
       "emailConfigLogo": "https://www.kscabudhabi.com/wp-content/themes/Nextline_V5-main/images/logo-new2.png",
       "siteLogo": "https://www.kscabudhabi.com/wp-content/uploads/2023/08/favicon.png",
-      "emailConfigSiteUrl": "http://uaeopenwintersports.kscabudhabi.com",
+      "emailConfigSiteUrl": "https://uaeopenwintersports.kscabudhabi.com",
       "emailConfigFacebook": "https://www.facebook.com/kscauh",
       "emailConfigTwitter": "https://x.com/kscauh",
       "emailConfigInstagram": "https://www.instagram.com/kscauh",
@@ -262,7 +289,8 @@
       "emailConfigCompany": "KSC Abu Dhabi",
       "emailSupportWhatsApp": "+971504915241",
       "backgroundColor": "#FFFFFF",
-      "isLocalHost": false
+      "isLocalHost": false,
+      "apiUrl": "https://etalenterapi.azurewebsites.net"
     },
     "localhost1": {
       "emailConfigFrom": "Justin eTalenter",
@@ -292,7 +320,6 @@
   },
   "defaults": {
     "apiUrl": "https://etalenterapi.azurewebsites.net",
- 
     "version": "1.0.0",
     "enableGuardianLogin": false,
     "enableNewUserRegistration": false,
