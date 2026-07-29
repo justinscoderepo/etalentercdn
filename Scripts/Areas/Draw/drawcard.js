@@ -42,15 +42,10 @@
     let selectedCompetitionItem = $("#competitionoptdropdown").find(
       "option:selected"
     );
-    let json = {};
-    if (selectedCompetitionItem.attr("data-json")) {
-      json = JSON.parse(selectedCompetitionItem.attr("data-json"));
-    }
     let drawBatches = parseInt($(this).val());
-    json.DrawBatches = drawBatches;
     let postData = {};
     postData.CompetitionStructureId = selectedCompetitionItem.val();
-    postData.JsonSettings = JSON.stringify(json);
+    postData.DrawSettingsJson = JSON.stringify({ DrawBatches: drawBatches });
 
     $.post("/CompetitionStructureJson/Save", postData, function (data) {
       alert("Draw Batches Updated");
