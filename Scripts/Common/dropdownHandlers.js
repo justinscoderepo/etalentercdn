@@ -9,9 +9,9 @@
 
     $("#dropdown, #versiondropdown").on("click", function(e){
         e.stopPropagation();
-        
-        if ($(e.target).not($(".rolemanager,.rolemanager *,.versionswitchbutton,.versionswitchbutton *")).length){
-            
+        var isActionButton = $(e.target).closest(".rolemanager,.versionswitchbutton").length > 0;
+        if (!isActionButton){
+
             e.preventDefault();
             if($(this).hasClass("open")) {
                 $(this).removeClass("open");

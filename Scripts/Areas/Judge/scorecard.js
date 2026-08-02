@@ -1,4 +1,22 @@
 
+// Decimal-exact away-from-zero rounding to 1 decimal place, matching the backend's
+// C# decimal Math.Round(..., 1, MidpointRounding.AwayFromZero). Plain toFixed(1) rounds
+// based on the number's binary double representation, which disagrees with decimal
+// midpoint rounding for values like 7.45 (stored as 7.44999999999999...).
+function roundAwayFromZero1(n) {
+  var sign = n < 0 ? -1 : 1;
+  var abs = Math.abs(n);
+  var fixed = abs.toPrecision(15);
+  var parts = fixed.split(".");
+  var intPart = parts[0];
+  var fracPart = parts[1] || "";
+  var firstDecimal = fracPart[0] || "0";
+  var secondDecimal = fracPart[1] || "0";
+  var truncated = parseInt(intPart + firstDecimal, 10) || 0;
+  if (parseInt(secondDecimal, 10) >= 5) truncated += 1;
+  return (sign * truncated / 10).toFixed(1);
+}
+
 function changeToFinish() {
   var additionalSettings =
     userObj.user.JsonSettings;
@@ -298,9 +316,28 @@ function changeToFinish() {
         );
         th.addClass("candidateactive");
         var judgesScoreCard = judgesScoreCarddata[th.attr("ParticipantId")];
+        if (!judgesScoreCard) {
+          // The tab list has re-rendered for a different competition but its rows have not been
+          // mapped yet. Reading the score card here throws and kills the whole click handler, so
+          // leave the panel as it is - the next click, once the rows are mapped, renders it.
+          return;
+        }
 
-        // Inject competition-level data so data-if-CompetitionItemScoreLabel conditions work in totalscore
-        var scoreLabel = parseInt($("#competitionoptdropdown option:selected").attr("scorelabel")) || 0;
+        // Make sure CompetitionItemScoreLabel is present on the bound object so the
+        // data-if-CompetitionItemScoreLabel conditions run in totalscore. The tab rows are fetched
+        // with a restricted data-select and do not carry the label, so read it from the selected
+        // <option>, which the view binds per competition. The <optgroup> also carries a "scorelabel",
+        // but it is grouped by age group and one group can hold competitions with different labels,
+        // so it is only a last resort.
+        var scoreLabel = parseInt(judgesScoreCard.CompetitionItemScoreLabel) || 0;
+        if (!scoreLabel) {
+          var selectedcompetitionoption = $("#competitionoptdropdown option:selected");
+          scoreLabel =
+            parseInt(
+              selectedcompetitionoption.attr("scorelabel") ||
+              selectedcompetitionoption.parent().attr("scorelabel")
+            ) || 0;
+        }
         judgesScoreCard.CompetitionItemScoreLabel = scoreLabel;
 
         $(".scorecandidateslist").binder({
@@ -671,7 +708,7 @@ function changeToFinish() {
         }
       });
       
-      cl.find('.multicountrowtotal  [name="ScoreCardScore"]').val(totalScore.toFixed(1));
+      cl.find('.multicountrowtotal  [name="ScoreCardScore"]').val(roundAwayFromZero1(totalScore));
       if(totalScore==0){
        alert("Total score cannot be zero. Please enter valid scores or mark as absent", false, false, "Savedalert", "w", 1500);
       }
@@ -850,7 +887,7 @@ function changeToFinish() {
         }
       });
 
-      cl.find('.multicountrowtotal  [name="ScoreCardScore"]').val(totalScore);
+      cl.find('.multicountrowtotal  [name="ScoreCardScore"]').val(roundAwayFromZero1(totalScore));
     }
   });
   $("body").on("click", ".saveratingscoreinput", function (e, force) {

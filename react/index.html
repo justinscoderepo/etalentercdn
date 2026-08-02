@@ -44,7 +44,6 @@
         window.API_BASE_URL = window.location.origin;
         window.IS_DEVELOPMENT = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         window.INITIAL_ROUTE = window.location.pathname === '/v2/' || window.location.pathname === '/v2' ? 'dashboard' : window.location.pathname.replace('/v2/', '');
-        window.IS_DEVELOPMENT = false; // Force production mode
         window.isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     </script>
     <base href="/v2/">
