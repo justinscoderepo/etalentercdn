@@ -13,6 +13,8 @@
     'use strict';
 
     var ACTIVE_POLL_MS = 30000;
+    var AUTO_CLOSE_SECONDS = 8;
+    var BANNER_LINGER_MS = 20000;
     var STARTED = 'started';
     var COMPLETED = 'completed';
 
@@ -24,7 +26,7 @@
                     ' minutes, but you can continue working on this page - the API is active. The portal comes back on its own when the release finishes.';
             },
             doneTitle: 'Release finished',
-            doneBody: 'This portal has been updated. Links and redirections work again.'
+            doneBody: 'The release has finished and this portal is fully active again. Links and redirections work as normal.'
         },
         react: {
             title: 'New portal update in progress',
@@ -46,8 +48,9 @@
         }
     };
 
-    var state = { key: null };
+    var state = { key: null, doneKey: null };
     var pollTimer = null;
+    var autoCloseTimer = null;
 
     function field(source, name) {
         if (!source) return undefined;
@@ -123,6 +126,8 @@
         if (document.getElementById('etalenter-release-modal')) return;
 
         var copy = NOTICES[notice.target];
+        var isDone = notice.phase === COMPLETED;
+        var accent = isDone ? '#059669' : '#d97706';
 
         var overlay = document.createElement('div');
         overlay.id = 'etalenter-release-modal';
@@ -139,24 +144,26 @@
         ].join(';');
 
         var heading = document.createElement('h2');
-        heading.textContent = '🚀 ' + copy.title;
+        heading.textContent = (isDone ? '✅ ' : '🚀 ') + (isDone ? copy.doneTitle : copy.title);
         heading.style.cssText = 'margin:0 0 12px;font-size:18px;font-weight:600;color:#111827';
 
         var text = document.createElement('p');
-        text.textContent = notice.message || copy.body(minutesRemaining(notice));
+        text.textContent = isDone ? copy.doneBody : (notice.message || copy.body(minutesRemaining(notice)));
         text.style.cssText = 'margin:0 0 8px;font-size:14px;line-height:1.5;color:#374151';
 
         var meta = document.createElement('p');
-        meta.textContent = 'Expected to finish in about ' + minutesRemaining(notice) + ' minutes.' +
-            (notice.releaseId ? ' (Release ' + notice.releaseId + ')' : '');
+        meta.textContent = isDone
+            ? autoCloseText(AUTO_CLOSE_SECONDS)
+            : 'Expected to finish in about ' + minutesRemaining(notice) + ' minutes.' +
+              (notice.releaseId ? ' (Release ' + notice.releaseId + ')' : '');
         meta.style.cssText = 'margin:0 0 20px;font-size:12px;color:#6b7280';
 
         var button = document.createElement('button');
         button.type = 'button';
-        button.textContent = 'Continue working';
+        button.textContent = isDone ? 'Close' : 'Continue working';
         button.style.cssText = [
             'display:block', 'margin-left:auto', 'padding:8px 16px', 'border:0',
-            'border-radius:4px', 'background:#d97706', 'color:#fff', 'font-size:14px',
+            'border-radius:4px', 'background:' + accent, 'color:#fff', 'font-size:14px',
             'font-weight:500', 'cursor:pointer'
         ].join(';');
         button.onclick = function () {
@@ -169,9 +176,36 @@
         box.appendChild(button);
         overlay.appendChild(box);
         document.body.appendChild(overlay);
+
+        // The all clear is information, not a decision - it takes itself off the screen.
+        if (isDone) startAutoClose(meta);
+    }
+
+    function autoCloseText(seconds) {
+        return 'This message closes automatically in ' + seconds + ' second' + (seconds === 1 ? '' : 's') + '.';
+    }
+
+    function startAutoClose(meta) {
+        var secondsLeft = AUTO_CLOSE_SECONDS;
+
+        autoCloseTimer = setInterval(function () {
+            secondsLeft--;
+
+            if (secondsLeft <= 0) {
+                closeModal();
+                return;
+            }
+
+            meta.textContent = autoCloseText(secondsLeft);
+        }, 1000);
     }
 
     function closeModal() {
+        if (autoCloseTimer) {
+            clearInterval(autoCloseTimer);
+            autoCloseTimer = null;
+        }
+
         var modal = document.getElementById('etalenter-release-modal');
         if (modal && modal.parentNode) modal.parentNode.removeChild(modal);
     }
@@ -183,10 +217,18 @@
         if (!notice) return;
 
         if (notice.phase === COMPLETED) {
+            var doneKey = notice.target + ':done:' + (notice.releaseId || notice.startedAtUtc || '');
+
+            state.key = null;
             closeModal();
             renderBanner(notice);
-            state.key = null;
-            setTimeout(removeBanner, 20000);
+
+            // Once per release, however many times the all clear reaches us.
+            if (state.doneKey !== doneKey) {
+                state.doneKey = doneKey;
+                showModal(notice);
+                setTimeout(removeBanner, BANNER_LINGER_MS);
+            }
             return;
         }
 
