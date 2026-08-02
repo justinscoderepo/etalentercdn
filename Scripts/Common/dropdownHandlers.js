@@ -42,21 +42,14 @@
                 e.preventDefault();
                 e.stopPropagation();
 
-                $.post(window.location.origin + "/Version/SwitchToV2", {}, function (data) {
-                    if (data && data.success) {
-                        window.location.href = data.redirectUrl;
-                    } else {
-                        console.error("Failed to switch to V2 mode:", data.message);
-                        // Fallback: manually add v2 to URL
-                        var currentUrl = window.location.href;
-                        var host = window.location.protocol + "//" + window.location.host;
-                        window.location.href = host + "/v2/index.html";
-                    }
-                }).fail(function () {
-                    // Fallback if API call fails
-                    var host = window.location.protocol + "//" + window.location.host;
-                    window.location.href = host + "/v2/index.html";
-                });
+                // Plain top-level navigation, not AJAX: /Version/SwitchToV2 issues a
+                // server-side redirect that may cross to v2.etalenter.com, which the
+                // browser follows natively. An AJAX POST here goes through apiconfig.js's
+                // $.post override (absolute URL -> worker fetch with a Bearer auth header),
+                // turning the redirect into a cross-origin preflighted request that
+                // v2.etalenter.com has no Access-Control-Allow-Origin for. Mirrors the
+                // same-pattern fix already used for SwitchToClassic in v2Header.jsx.
+                window.location.href = window.location.origin + "/Version/SwitchToV2";
             }
         }
     });
