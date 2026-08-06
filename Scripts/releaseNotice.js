@@ -48,9 +48,34 @@
         }
     };
 
-    var state = { key: null, doneKey: null };
+    var state = { key: null };
     var pollTimer = null;
     var autoCloseTimer = null;
+    var runningModalMeta = null;
+    var runningModalKey = null;
+
+    // Classic MVC pages fully reload on every navigation, which would otherwise re-show the
+    // popup on every single page during a release. sessionStorage remembers "already shown for
+    // this release id" per tab, so the intrusive popup appears once per release; the banner
+    // still renders on every page load, since that is informational rather than intrusive.
+    var SHOWN_STORAGE_PREFIX = 'etalenter_release_shown:';
+
+    function hasShown(key) {
+        try {
+            return sessionStorage.getItem(SHOWN_STORAGE_PREFIX + key) === '1';
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function markShown(key) {
+        try {
+            sessionStorage.setItem(SHOWN_STORAGE_PREFIX + key, '1');
+        } catch (e) {
+            // Storage unavailable (privacy mode, etc.) - the in-memory guards still cover this
+            // page load, they just cannot survive a full navigation.
+        }
+    }
 
     function field(source, name) {
         if (!source) return undefined;
@@ -122,7 +147,7 @@
         if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
     }
 
-    function showModal(notice) {
+    function showModal(notice, key) {
         if (document.getElementById('etalenter-release-modal')) return;
 
         var copy = NOTICES[notice.target];
@@ -177,8 +202,21 @@
         overlay.appendChild(box);
         document.body.appendChild(overlay);
 
-        // The all clear is information, not a decision - it takes itself off the screen.
-        if (isDone) startAutoClose(meta);
+        // The all clear is information, not a decision - it takes itself off the screen. The
+        // running popup instead keeps its ETA current for as long as it stays open.
+        if (isDone) {
+            startAutoClose(meta);
+        } else {
+            runningModalMeta = meta;
+            runningModalKey = key;
+        }
+    }
+
+    function updateRunningModalMeta(notice, key) {
+        if (!runningModalMeta || runningModalKey !== key) return;
+
+        runningModalMeta.textContent = 'Expected to finish in about ' + minutesRemaining(notice) + ' minutes.' +
+            (notice.releaseId ? ' (Release ' + notice.releaseId + ')' : '');
     }
 
     function autoCloseText(seconds) {
@@ -205,6 +243,9 @@
             clearInterval(autoCloseTimer);
             autoCloseTimer = null;
         }
+
+        runningModalMeta = null;
+        runningModalKey = null;
 
         var modal = document.getElementById('etalenter-release-modal');
         if (modal && modal.parentNode) modal.parentNode.removeChild(modal);
@@ -233,8 +274,8 @@
             renderBanner(notice);
 
             // Once per release, however many times the all clear reaches us.
-            if (state.doneKey !== doneKey) {
-                state.doneKey = doneKey;
+            if (!hasShown(doneKey)) {
+                markShown(doneKey);
                 showModal(notice);
                 setTimeout(removeBanner, BANNER_LINGER_MS);
             }
@@ -244,11 +285,16 @@
         if (notice.phase !== STARTED) return;
 
         var key = notice.target + ':' + (notice.releaseId || notice.startedAtUtc || '');
-        if (state.key !== key) {
-            state.key = key;
-            showModal(notice);
+        state.key = key;
+
+        // The intrusive popup shows once per release per tab, remembered across the classic
+        // portal's full-page reloads. The banner below still renders on every page load.
+        if (!hasShown(key)) {
+            markShown(key);
+            showModal(notice, key);
         }
 
+        updateRunningModalMeta(notice, key);
         renderBanner(notice);
     }
 
