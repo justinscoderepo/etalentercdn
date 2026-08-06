@@ -212,11 +212,20 @@
 
     // ---------------------------------------------------------------- state
 
-    function apply(raw) {
+    function apply(raw, fromSignalR) {
         var notice = normalize(raw);
         if (!notice) return;
 
         if (notice.phase === COMPLETED) {
+            // The all clear is announced live, once, to the pages that were showing the release.
+            // The API keeps a finished release readable for a few minutes so a still-open page
+            // learns it ended; reading it from a poll must never announce anything, or every
+            // page loaded in that window pops up a release the user never saw.
+            if (!fromSignalR || !state.key) {
+                clear();
+                return;
+            }
+
             var doneKey = notice.target + ':done:' + (notice.releaseId || notice.startedAtUtc || '');
 
             state.key = null;
@@ -291,20 +300,17 @@
 
             var releases = payload.Releases || payload.releases || [];
             var started = null;
-            var completed = null;
 
             for (var i = 0; i < releases.length; i++) {
                 var phase = (field(releases[i], 'Phase') || '').toLowerCase();
                 if (phase === STARTED && !started) started = releases[i];
-                if (phase === COMPLETED && !completed) completed = releases[i];
             }
 
             if (started) {
-                apply(started);
-            } else if (completed) {
-                apply(completed);
+                apply(started, false);
             } else {
-                // Nothing active - clears a banner left behind by a missed "complete" call.
+                // Nothing running: either it finished, or a "complete" call was missed. Either
+                // way take any banner down without announcing anything.
                 clear();
             }
 
@@ -318,7 +324,7 @@
 
     function start() {
         window.addEventListener('etalenter:release-status', function (event) {
-            apply(event.detail);
+            apply(event.detail, true);
             // A release just started or ended - the polling cadence changes with it.
             schedulePoll();
         });

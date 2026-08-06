@@ -807,7 +807,7 @@ $(function () {
 
   $("body").on(
     "focus",
-    '[placeholder="dd-mm-yyyy"],.datetimepicker,.datepicker',
+    '[placeholder="dd-mm-yyyy"],.datetimepicker,.datepicker,.dobdatepicker',
     function () {
       $(this)
         .datepicker({
