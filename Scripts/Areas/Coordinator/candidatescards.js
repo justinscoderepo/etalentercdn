@@ -295,6 +295,22 @@ $(document).ready(function () {
     }, 2000);
   });
 
+  $("body").on("change", "#HideTeamMembers", function (e, data) {
+    if ($(this).val() == "2") {
+      let templateId = $("#Template").val();
+      let key = templateId + "_Team Members Image Box";
+      setcache(key, '{"display":"none"}', true);
+    } else {
+      let templateId = $("#Template").val();
+      let key = templateId + "_Team Members Image Box";
+      remcache(key);
+    }
+
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
+  });
+
   $("body").on("change", "#HideProfileImages", function (e, data) {
     if ($(this).val() == "2") {
       let templateId = $("#Template").val();
