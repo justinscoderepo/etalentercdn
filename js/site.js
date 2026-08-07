@@ -1,5 +1,5 @@
 ﻿if ("serviceWorker" in navigator) {
-    console.log("PWA: Service Worker supported, starting registration...1");
+    console.log("PWA: Service Worker supported, starting registration...");
 
     // Register the service worker with a version query string to ensure the latest version is fetched
     navigator.serviceWorker

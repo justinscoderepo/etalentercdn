@@ -848,9 +848,23 @@ $("body").on("afterappendcomplete", ".candidateCardsList", function (e, data) {
   }
 });
 
+var CARD_DATE_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+function formatCardDate(isoDate, format) {
+  var parts = isoDate.split("-");
+  var year = parts[0], month = parseInt(parts[1], 10) - 1, day = parseInt(parts[2], 10);
+  var monthName = CARD_DATE_MONTHS[month];
+  if (format === "DD Month YYYY") {
+    return (day < 10 ? "0" + day : day) + " " + monthName + " " + year;
+  }
+  if (format === "Month DD, YYYY") {
+    return monthName + " " + (day < 10 ? "0" + day : day) + ", " + year;
+  }
+  return isoDate;
+}
+
 $("body").on(
   "afterappendcomplete change",
-  ".candidateCardsList,#Logo1Image,#Logo2Image,#LogoBackImage,#CertificateHeading,#Heading1,#Heading2,#Heading3,#Heading4,#Heading5,#Heading6,#BeforeUserName,#EventHeading,#RowsPerPage,#PageSizePrint,#BackgroundImage,#CardsPerRow,#pageside,#CardsZoom,#IdentityNumberFontSize,#CardsHeight,.certificateconfigkeys .globalcachevalues,#BeforeUserName,#BeforeCompetition,#BeforeRank,#BeforeGrade,#EndOfContent,#Signature1Name,#Signature1Heading,#Signature2Name,#Signature2Heading,#Signature3Name,#Signature3Heading",
+  ".candidateCardsList,#Logo1Image,#Logo2Image,#LogoBackImage,#CertificateHeading,#Heading1,#Heading2,#Heading3,#Heading4,#Heading5,#Heading6,#BeforeUserName,#EventHeading,#EventOrgName,#DateFormat,#RowsPerPage,#PageSizePrint,#BackgroundImage,#CardsPerRow,#pageside,#CardsZoom,#IdentityNumberFontSize,#CardsHeight,.certificateconfigkeys .globalcachevalues,#BeforeUserName,#BeforeCompetition,#BeforeRank,#BeforeGrade,#EndOfContent,#Signature1Name,#Signature1Heading,#Signature2Name,#Signature2Heading,#Signature3Name,#Signature3Heading",
   function (e, force) {
     $(".cardheaderlogo").attr("src", $("#Logo1Image").val());
     $(".cardheaderlogo2").attr("src", $("#Logo2Image").val());
@@ -875,6 +889,26 @@ $("body").on(
 
     $(".eventName[data-stylish='Event Name']").text($("#EventHeading").val());
     $(".eventName[data-stylish='Back Event Name']").text($("#EventBackHeading").val());
+
+    var orgNameValue = $.trim($("#EventOrgName").val());
+    $(".orgName[data-stylish='Organization Name']").text(orgNameValue);
+    $(".orgName[data-stylish='Organization Name']")
+      .closest("[data-stylish='Organization Name Box']")
+      .toggle(orgNameValue !== "");
+
+    var dateFormat = $("#DateFormat").val();
+    if (dateFormat && dateFormat !== "dd-MM-yyyy") {
+      $(".eventDate[data-stylish='Event Date']").each(function () {
+        var $this = $(this);
+        var startDate = $this.attr("data-startdate");
+        var endDate = $this.attr("data-enddate");
+        if (!startDate || !endDate) return;
+        var formatted = startDate === endDate
+          ? formatCardDate(startDate, dateFormat)
+          : formatCardDate(startDate, dateFormat) + " - " + formatCardDate(endDate, dateFormat);
+        $this.find("span").first().text(formatted);
+      });
+    }
 
     $(".certificateconfigkeys .globalcachevalues").each(function () {
       if ($("." + $(this).attr("id").toLowerCase()).length > 0) {
