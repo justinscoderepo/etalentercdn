@@ -1,0 +1,1 @@
+const e=[{Title:"Active",Order:1,CreatedBy:1,CreatedDate:"2018-09-26T23:37:43",ModifiedDate:"2019-09-20T22:34:50",STId:1,EventCategory:null},{Title:"Inactive",Order:2,CreatedBy:1,CreatedDate:"2018-09-26T23:37:47",ModifiedDate:"2019-09-20T22:34:53",STId:2,EventCategory:null}];export{e as s};
