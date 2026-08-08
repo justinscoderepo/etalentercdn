@@ -295,6 +295,14 @@ $(document).ready(function () {
     }, 2000);
   });
 
+  $("body").on("change", "#grouplist", function (e, data) {
+    let selectedOption = $(this).find("option:selected");
+    let participantType = selectedOption.attr("data-participanttype");
+    if (participantType && $("#CompetitionParticipantTypeList").val() != participantType) {
+      $("#CompetitionParticipantTypeList").val(participantType).trigger("change");
+    }
+  });
+
   $("body").on("change", "#HideTeamMembers", function (e, data) {
     if ($(this).val() == "2") {
       let templateId = $("#Template").val();
