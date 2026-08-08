@@ -1,0 +1,103 @@
+.timeline {
+    --uiTimelineMainColor: var(--timelineMainColor, #222);
+    --uiTimelineSecondaryColor: var(--timelineSecondaryColor, #fff);
+
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    position: relative;
+}
+
+.timeline:before {
+    background-color: var(--uiTimelineMainColor);
+    content: "";
+    height: 100%;
+    position: absolute;
+
+    top: 0;
+    width: 4px;
+}
+
+.timeline__group { position: relative; }
+
+.timeline__group:not(:first-of-type) { margin-top: 4rem; }
+
+.timeline__year {
+    background-color: var(--uiTimelineMainColor);
+    color: var(--uiTimelineSecondaryColor);
+    left: 0;
+
+    padding: .5rem 1.5rem;
+    position: absolute;
+    top: 0;
+}
+
+.timeline__box { position: relative; }
+
+.timeline__box:not(:last-of-type) { margin-bottom: 30px; }
+
+.timeline__box:before {
+    background-color: var(--uiTimelineMainColor);
+    content: "";
+    height: 2px;
+    left: 0;
+
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.timeline__date {
+    background-color: var(--uiTimelineMainColor);
+    box-sizing: border-box;
+    color: var(--uiTimelineSecondaryColor);
+    left: 0;
+    max-width: 65px;
+    min-width: 65px;
+    padding: .5rem 1.5rem;
+    position: absolute;
+    text-align: center;
+}
+
+.timeline__input {
+    background-color: #fefefe !important;
+    color: #244b80;
+    display: block;
+    font-size: .8em;
+    font-weight: bold;
+    margin: 10px 1px 14px 1px;
+    max-width: 35px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.timeline__post {
+    background-color: var(--uiTimelineSecondaryColor);
+    border-left: 3px solid var(--uiTimelineMainColor);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+    float: left;
+    padding: 1.5rem 1rem;
+    width: 100%;
+}
+
+
+.timeline:before { left: 30px; }
+
+.timeline__group { padding-top: 0px; }
+
+.timeline__box { padding-left: 80px; }
+
+.timeline__box:before {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline__date {
+    margin-top: -30px;
+    top: 50%;
+}
+
+.timeline {
+    --timelineMainColor: #1a3480;
+    font-size: 12px;
+}
