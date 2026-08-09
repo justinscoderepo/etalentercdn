@@ -180,7 +180,7 @@
         meta.textContent = isDone
             ? autoCloseText(AUTO_CLOSE_SECONDS)
             : 'Expected to finish in about ' + minutesRemaining(notice) + ' minutes.' +
-              (notice.releaseId ? ' (Release ' + notice.releaseId + ')' : '');
+              (notice.releaseId ? ' (' + notice.releaseId + ')' : '');
         meta.style.cssText = 'margin:0 0 20px;font-size:12px;color:#6b7280';
 
         var button = document.createElement('button');
@@ -216,7 +216,7 @@
         if (!runningModalMeta || runningModalKey !== key) return;
 
         runningModalMeta.textContent = 'Expected to finish in about ' + minutesRemaining(notice) + ' minutes.' +
-            (notice.releaseId ? ' (Release ' + notice.releaseId + ')' : '');
+            (notice.releaseId ? ' (' + notice.releaseId + ')' : '');
     }
 
     function autoCloseText(seconds) {
