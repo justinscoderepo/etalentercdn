@@ -1,0 +1,1 @@
+const a="etalenter.easyStart.pendingTemplate",n=(e,t="")=>{if(e)try{localStorage.setItem(a,JSON.stringify({templateKey:e,displayName:t}))}catch{}},r=()=>{try{const e=localStorage.getItem(a);if(!e)return null;const t=JSON.parse(e);return t?.templateKey?t:null}catch{return null}},l=()=>{try{localStorage.removeItem(a)}catch{}};export{l as c,r as g,n as s};
