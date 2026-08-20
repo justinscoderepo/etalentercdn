@@ -269,11 +269,16 @@ $(function () {
           }, 100);
         }
         console.log({ settings: settings });
-        if (window.location.href.indexOf("localhost") > -1) {
-          settings.url = "http://localhost:8888" + settings.url;
-        }
-        else if (window.location.href.indexOf("http") > -1) {
-          settings.url = window.siteConfig.apiUrl + settings.url;
+        // Absolute URLs (e.g. Google's oauth2.googleapis.com/tokeninfo) must not get
+        // the API base prepended: the concatenation is an unparseable URL and
+        // XMLHttpRequest.open() throws "Invalid URL" before any request is sent.
+        if (!/^(https?:)?\/\//i.test(settings.url)) {
+          if (window.location.href.indexOf("localhost") > -1) {
+            settings.url = "http://localhost:8888" + settings.url;
+          }
+          else if (window.location.href.indexOf("http") > -1) {
+            settings.url = window.siteConfig.apiUrl + settings.url;
+          }
         }
 
 
