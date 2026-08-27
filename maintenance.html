@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eTalenter - Under Maintenance</title>
+    <link rel="icon" type="image/png" href="https://justinscoderepo.github.io/etalentercdn/Content/Images/favicon.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .maintenance-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            margin: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: url('https://justinscoderepo.github.io/etalentercdn/Content/Images/favicon.png') center/contain no-repeat;
+        }
+
+        .maintenance-icon {
+            font-size: 80px;
+            color: #667eea;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .message {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .progress-container {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 8px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            border-radius: 10px;
+            width: 0%;
+            animation: loading 3s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        .retry-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .status-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .status-label {
+            color: #666;
+        }
+
+        .status-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .maintenance-container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .maintenance-icon {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-container">
+        <div class="logo"></div>
+        
+        <div class="maintenance-icon">🔧</div>
+        
+        <h1>We'll Be Right Back!</h1>
+        
+        <div class="subtitle">
+            eTalenter is currently undergoing scheduled maintenance
+        </div>
+        
+        <div class="message">
+            We're making some improvements to serve you better. This usually takes just a few minutes. 
+            Thank you for your patience!
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <div class="status-info">
+            <div class="status-item">
+                <span class="status-label">Status:</span>
+                <span class="status-value">Updating System <span class="spinner"></span></span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Estimated Time:</span>
+                <span class="status-value" id="estimated-time">2-3 minutes</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Last Updated:</span>
+                <span class="status-value" id="current-time"></span>
+            </div>
+        </div>
+        
+        <button class="retry-btn" onclick="checkStatus()">
+            🔄 Check Status
+        </button>
+        
+        <button class="retry-btn" onclick="window.location.reload()">
+            ↻ Refresh Page
+        </button>
+        
+        <div class="footer">
+            <p>If this page persists for more than 5 minutes, please contact support.</p>
+            <p>© 2025 eTalenter - Talent Management Platform</p>
+        </div>
+    </div>
+
+    <script>
+        // Update current time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleTimeString();
+        }
+        
+        // Check if application is back online
+        function checkStatus() {
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '⏳ Checking...';
+            btn.disabled = true;
+            
+            fetch('/', { 
+                method: 'HEAD',
+                cache: 'no-cache'
+            })
+            .then(response => {
+                if (response.ok) {
+                    btn.innerHTML = '✅ Back Online!';
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 1000);
+                } else {
+                    throw new Error('Still maintaining');
+                }
+            })
+            .catch(() => {
+                btn.innerHTML = '⚠️ Still Updating...';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 2000);
+            });
+        }
+        
+        // Auto-refresh every 30 seconds
+        let autoRefreshInterval;
+        
+        function startAutoRefresh() {
+            autoRefreshInterval = setInterval(() => {
+                checkStatus();
+            }, 30000); // Check every 30 seconds
+        }
+        
+        // Initialize
+        updateTime();
+        setInterval(updateTime, 1000); // Update time every second
+        
+        // Start auto-refresh after 1 minute
+        setTimeout(startAutoRefresh, 60000);
+        
+        // Countdown estimation
+        let estimatedMinutes = 3;
+        setInterval(() => {
+            if (estimatedMinutes > 0) {
+                estimatedMinutes--;
+                const timeElement = document.getElementById('estimated-time');
+                if (estimatedMinutes === 0) {
+                    timeElement.textContent = 'Almost ready...';
+                } else {
+                    timeElement.textContent = `${estimatedMinutes}-${estimatedMinutes + 1} minutes`;
+                }
+            }
+        }, 60000); // Update every minute
+    </script>
+</body>
+</html>
