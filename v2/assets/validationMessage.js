@@ -1,0 +1,1 @@
+import{j as e}from"./blueprint-vendor.js";import"./react-vendor.js";function n({message:t,type:r}){return e.jsx("p",{className:"text-danger font-medium text-left text-sm mt-1",children:t&&t})}export{n as V};

@@ -1,0 +1,1 @@
+import{j as a}from"./blueprint-vendor.js";import{r as e}from"./react-vendor.js";const s=e.createContext({suppressed:!1,setSuppressed:()=>{},items:null,setItems:()=>{}}),n=({children:t,items:r})=>{const[o,u]=e.useState(!1);return a.jsx(s.Provider,{value:{suppressed:o,setSuppressed:u,items:r},children:t})},c=()=>e.useContext(s);export{n as B,c as u};
