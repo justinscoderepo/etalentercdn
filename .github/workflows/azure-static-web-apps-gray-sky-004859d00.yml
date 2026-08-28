@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Deploy CDN (Azure SWA + GitHub Pages)
 
 on:
   push:
@@ -8,6 +8,15 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build_and_deploy_job:
@@ -45,3 +54,17 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GRAY_SKY_004859D00 }}
           action: "close"
+
+  deploy_github_pages_job:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    name: Deploy GitHub Pages (CDN fallback)
+    steps:
+      - uses: actions/checkout@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
