@@ -121,14 +121,7 @@
                     return Promise.resolve();
                 }
 
-                const versionPromise = fetch(`${baseUrl}/build-version.txt`, { cache: 'no-store' })
-                    .then(r => r.ok ? r.text() : Promise.reject(new Error(`build-version not found: ${r.status}`)))
-                    .catch(error => {
-                        console.warn('Build version fetch failed, falling back to timestamp:', error);
-                        return String(Date.now());
-                    });
-
-                return versionPromise.then(version => fetch(`${baseUrl}/vite/manifest.json`, { cache: 'no-store' })
+                return fetch(`${baseUrl}/vite/manifest.json`, { cache: 'no-store' })
                     .then(r => {
                         console.log('Manifest response status:', r.status);
                         if (!r.ok) throw new Error(`Manifest not found: ${r.status}`);
@@ -147,7 +140,7 @@
                             entry.css.forEach(cssFile => {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                link.href = `${baseUrl}/${cssFile}?v=${version}`;
+                                link.href = `${baseUrl}/${cssFile}`;
                                 document.head.appendChild(link);
                                 console.log('CSS loaded:', cssFile);
                             });
@@ -156,7 +149,7 @@
                             if (cssEntry && cssEntry.file) {
                                 const link = document.createElement('link');
                                 link.rel = 'stylesheet';
-                                 link.href = `${baseUrl}/${cssEntry.file.replace("dist/","")}?v=${version}`;
+                                 link.href = `${baseUrl}/${cssEntry.file.replace("dist/","")}`;
                                 document.head.appendChild(link);
                                 console.log('CSS loaded:', cssEntry.file);
                             } else {
@@ -166,7 +159,7 @@
 
                         const script = document.createElement('script');
                         script.type = 'module';
-                        script.src = `${baseUrl}/${entry.file}?v=${version}`;
+                        script.src = `${baseUrl}/${entry.file}`;
                         script.onload = () => {
                             window.__ETALENTER_V2_MAIN_LOADED__ = true;
                             console.log('MainWeb script loaded from:', entry.file);
@@ -176,7 +169,7 @@
                             document.getElementById('loading').innerHTML = `<div style="text-align: center;"><h2 style="color: #dc2626;">Error Loading App</h2><p style="color: #6b7280; margin: 16px 0;">Failed to load app bundle from ${sourceLabel}</p><button onclick="location.href='/Home'" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Go to Classic Mode</button><br><br><button onclick="location.reload()" style="background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Retry</button></div>`;
                         };
                         document.head.appendChild(script);
-                    }));
+                    });
             };
 
             loadFromManifest(primaryBaseUrl, primaryLabel)

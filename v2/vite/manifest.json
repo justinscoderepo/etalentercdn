@@ -3,23 +3,22 @@
     "file": "assets/AcademicCapIcon.js",
     "name": "AcademicCapIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_AdjustmentsHorizontalIcon.js": {
     "file": "assets/AdjustmentsHorizontalIcon.js",
     "name": "AdjustmentsHorizontalIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_AdminLayout.js": {
     "file": "assets/AdminLayout.js",
     "name": "AdminLayout",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
+      "_navigationUtils.js",
       "_scrollToTop.js",
       "_CircleStackIcon.js",
       "_XMarkIcon.js",
@@ -30,8 +29,7 @@
     "file": "assets/AdminTable.js",
     "name": "AdminTable",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_ChevronUpIcon.js",
       "_ChevronDownIcon.js",
       "_MagnifyingGlassIcon2.js"
@@ -41,8 +39,6 @@
     "file": "assets/AgeGroupTable.js",
     "name": "AgeGroupTable",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "src/components/table/formEditor.jsx",
       "_statuses.js",
@@ -62,110 +58,107 @@
     "file": "assets/AreaChart.js",
     "name": "AreaChart",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
+      "_navigationUtils.js",
       "_clsx.js",
-      "_with-selector.js",
-      "_mobx-vendor.js"
+      "_with-selector.js"
     ]
   },
   "_ArrowDownIcon.js": {
     "file": "assets/ArrowDownIcon.js",
     "name": "ArrowDownIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowDownTrayIcon.js": {
     "file": "assets/ArrowDownTrayIcon.js",
     "name": "ArrowDownTrayIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowLeftIcon.js": {
     "file": "assets/ArrowLeftIcon.js",
     "name": "ArrowLeftIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowPathIcon.js": {
     "file": "assets/ArrowPathIcon.js",
     "name": "ArrowPathIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowPathIcon2.js": {
     "file": "assets/ArrowPathIcon2.js",
     "name": "ArrowPathIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowRightIcon.js": {
     "file": "assets/ArrowRightIcon.js",
     "name": "ArrowRightIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowRightIcon2.js": {
     "file": "assets/ArrowRightIcon2.js",
     "name": "ArrowRightIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowTopRightOnSquareIcon.js": {
     "file": "assets/ArrowTopRightOnSquareIcon.js",
     "name": "ArrowTopRightOnSquareIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowUpIcon.js": {
     "file": "assets/ArrowUpIcon.js",
     "name": "ArrowUpIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowUpTrayIcon.js": {
     "file": "assets/ArrowUpTrayIcon.js",
     "name": "ArrowUpTrayIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowsPointingInIcon.js": {
     "file": "assets/ArrowsPointingInIcon.js",
     "name": "ArrowsPointingInIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowsPointingOutIcon.js": {
     "file": "assets/ArrowsPointingOutIcon.js",
     "name": "ArrowsPointingOutIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ArrowsUpDownIcon.js": {
     "file": "assets/ArrowsUpDownIcon.js",
     "name": "ArrowsUpDownIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_AssignmentMatrix.js": {
     "file": "assets/AssignmentMatrix.js",
     "name": "AssignmentMatrix",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_ArrowPathIcon2.js",
       "_CheckBadgeIcon.js",
@@ -178,51 +171,49 @@
     "file": "assets/Bars3Icon.js",
     "name": "Bars3Icon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_BookmarkIcon.js": {
     "file": "assets/BookmarkIcon.js",
     "name": "BookmarkIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_BreadcrumbContext.js": {
     "file": "assets/BreadcrumbContext.js",
     "name": "BreadcrumbContext",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_BuildingOffice2Icon.js": {
     "file": "assets/BuildingOffice2Icon.js",
     "name": "BuildingOffice2Icon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_BuildingOfficeIcon.js": {
     "file": "assets/BuildingOfficeIcon.js",
     "name": "BuildingOfficeIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CalendarDaysIcon.js": {
     "file": "assets/CalendarDaysIcon.js",
     "name": "CalendarDaysIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CandidatesTable.js": {
     "file": "assets/CandidatesTable.js",
     "name": "CandidatesTable",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_candidateProfileLink.js",
       "_chevrons-up-down.js",
       "_createLucideIcon.js"
@@ -232,169 +223,168 @@
     "file": "assets/ChartBarIcon.js",
     "name": "ChartBarIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChatBubbleBottomCenterTextIcon.js": {
     "file": "assets/ChatBubbleBottomCenterTextIcon.js",
     "name": "ChatBubbleBottomCenterTextIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CheckBadgeIcon.js": {
     "file": "assets/CheckBadgeIcon.js",
     "name": "CheckBadgeIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CheckCircleIcon.js": {
     "file": "assets/CheckCircleIcon.js",
     "name": "CheckCircleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CheckCircleIcon2.js": {
     "file": "assets/CheckCircleIcon2.js",
     "name": "CheckCircleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CheckCircleIcon3.js": {
     "file": "assets/CheckCircleIcon3.js",
     "name": "CheckCircleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CheckIcon.js": {
     "file": "assets/CheckIcon.js",
     "name": "CheckIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChevronDownIcon.js": {
     "file": "assets/ChevronDownIcon.js",
     "name": "ChevronDownIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChevronDownIcon2.js": {
     "file": "assets/ChevronDownIcon2.js",
     "name": "ChevronDownIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChevronLeftIcon.js": {
     "file": "assets/ChevronLeftIcon.js",
     "name": "ChevronLeftIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChevronLeftIcon2.js": {
     "file": "assets/ChevronLeftIcon2.js",
     "name": "ChevronLeftIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChevronLeftIcon3.js": {
     "file": "assets/ChevronLeftIcon3.js",
     "name": "ChevronLeftIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChevronRightIcon.js": {
     "file": "assets/ChevronRightIcon.js",
     "name": "ChevronRightIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChevronRightIcon2.js": {
     "file": "assets/ChevronRightIcon2.js",
     "name": "ChevronRightIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ChevronUpIcon.js": {
     "file": "assets/ChevronUpIcon.js",
     "name": "ChevronUpIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CircleStackIcon.js": {
     "file": "assets/CircleStackIcon.js",
     "name": "CircleStackIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ClipboardDocumentCheckIcon.js": {
     "file": "assets/ClipboardDocumentCheckIcon.js",
     "name": "ClipboardDocumentCheckIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ClipboardDocumentCheckIcon2.js": {
     "file": "assets/ClipboardDocumentCheckIcon2.js",
     "name": "ClipboardDocumentCheckIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ClipboardDocumentListIcon.js": {
     "file": "assets/ClipboardDocumentListIcon.js",
     "name": "ClipboardDocumentListIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ClockIcon.js": {
     "file": "assets/ClockIcon.js",
     "name": "ClockIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CloudArrowUpIcon.js": {
     "file": "assets/CloudArrowUpIcon.js",
     "name": "CloudArrowUpIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_Cog6ToothIcon.js": {
     "file": "assets/Cog6ToothIcon.js",
     "name": "Cog6ToothIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CogIcon.js": {
     "file": "assets/CogIcon.js",
     "name": "CogIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_CompetitionItemForm.js": {
     "file": "assets/CompetitionItemForm.js",
     "name": "CompetitionItemForm",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "src/components/table/formEditor.jsx"
     ]
   },
@@ -402,8 +392,7 @@
     "file": "assets/CompetitionItemsList.js",
     "name": "CompetitionItemsList",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_EventCategoryTemplateInstallCard.js",
       "_TrophyIcon.js",
       "_FunnelIcon.js",
@@ -416,19 +405,17 @@
     "file": "assets/CreditCardIcon.js",
     "name": "CreditCardIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_DemoKit.js": {
     "file": "assets/DemoKit.js",
     "name": "DemoKit",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_brand.js",
       "_PublicPageLayout.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_ViewportGateAnimations.js",
       "_ChevronDownIcon.js",
       "_VideoCameraIcon.js",
@@ -440,50 +427,48 @@
     "file": "assets/DevicePhoneMobileIcon.js",
     "name": "DevicePhoneMobileIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_DocumentArrowDownIcon.js": {
     "file": "assets/DocumentArrowDownIcon.js",
     "name": "DocumentArrowDownIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_DocumentCheckIcon.js": {
     "file": "assets/DocumentCheckIcon.js",
     "name": "DocumentCheckIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_DocumentDuplicateIcon.js": {
     "file": "assets/DocumentDuplicateIcon.js",
     "name": "DocumentDuplicateIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_DocumentTextIcon.js": {
     "file": "assets/DocumentTextIcon.js",
     "name": "DocumentTextIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_EnvelopeIcon.js": {
     "file": "assets/EnvelopeIcon.js",
     "name": "EnvelopeIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_EventCategoryTemplateInstallCard.js": {
     "file": "assets/EventCategoryTemplateInstallCard.js",
     "name": "EventCategoryTemplateInstallCard",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_SparklesIcon.js",
       "_CheckCircleIcon.js"
@@ -493,178 +478,174 @@
     "file": "assets/ExclamationTriangleIcon.js",
     "name": "ExclamationTriangleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ExclamationTriangleIcon2.js": {
     "file": "assets/ExclamationTriangleIcon2.js",
     "name": "ExclamationTriangleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_EyeIcon.js": {
     "file": "assets/EyeIcon.js",
     "name": "EyeIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_EyeIcon2.js": {
     "file": "assets/EyeIcon2.js",
     "name": "EyeIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_EyeSlashIcon.js": {
     "file": "assets/EyeSlashIcon.js",
     "name": "EyeSlashIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_EyeSlashIcon2.js": {
     "file": "assets/EyeSlashIcon2.js",
     "name": "EyeSlashIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_FileSaver.min.js": {
     "file": "assets/FileSaver.min.js",
     "name": "FileSaver.min",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_FunnelIcon.js": {
     "file": "assets/FunnelIcon.js",
     "name": "FunnelIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_GlobeAltIcon.js": {
     "file": "assets/GlobeAltIcon.js",
     "name": "GlobeAltIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_GoogleAccountPicker.js": {
     "file": "assets/GoogleAccountPicker.js",
     "name": "GoogleAccountPicker",
     "imports": [
-      "src/web/mainweb.jsx",
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_GoogleSignInButton.js": {
     "file": "assets/GoogleSignInButton.js",
     "name": "GoogleSignInButton",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_HomeIcon.js": {
     "file": "assets/HomeIcon.js",
     "name": "HomeIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_HomeIcon2.js": {
     "file": "assets/HomeIcon2.js",
     "name": "HomeIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_IdentificationIcon.js": {
     "file": "assets/IdentificationIcon.js",
     "name": "IdentificationIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_InformationCircleIcon.js": {
     "file": "assets/InformationCircleIcon.js",
     "name": "InformationCircleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_KeyIcon.js": {
     "file": "assets/KeyIcon.js",
     "name": "KeyIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_LockClosedIcon.js": {
     "file": "assets/LockClosedIcon.js",
     "name": "LockClosedIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_MagnifyingGlassIcon.js": {
     "file": "assets/MagnifyingGlassIcon.js",
     "name": "MagnifyingGlassIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_MagnifyingGlassIcon2.js": {
     "file": "assets/MagnifyingGlassIcon2.js",
     "name": "MagnifyingGlassIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_MapPinIcon.js": {
     "file": "assets/MapPinIcon.js",
     "name": "MapPinIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_MegaphoneIcon.js": {
     "file": "assets/MegaphoneIcon.js",
     "name": "MegaphoneIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_MicrophoneIcon.js": {
     "file": "assets/MicrophoneIcon.js",
     "name": "MicrophoneIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_MinusIcon.js": {
     "file": "assets/MinusIcon.js",
     "name": "MinusIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_NoSymbolIcon.js": {
     "file": "assets/NoSymbolIcon.js",
     "name": "NoSymbolIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_OldNewTabLayout.js": {
     "file": "assets/OldNewTabLayout.js",
     "name": "OldNewTabLayout",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_breadcrumb.js",
@@ -676,10 +657,8 @@
     "file": "assets/PageUnlockContext.js",
     "name": "PageUnlockContext",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_pageUnlocks.js",
       "src/web/mainweb.jsx",
+      "_pageUnlocks.js",
       "_navigationUtils.js",
       "_dialog.js",
       "_SparklesIcon.js"
@@ -689,14 +668,14 @@
     "file": "assets/PaperAirplaneIcon.js",
     "name": "PaperAirplaneIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ParticipantActionButtons.js": {
     "file": "assets/ParticipantActionButtons.js",
     "name": "ParticipantActionButtons",
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_PencilIcon.js",
       "_UserGroupIcon.js",
       "_TrashIcon.js"
@@ -706,78 +685,77 @@
     "file": "assets/PencilIcon.js",
     "name": "PencilIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PencilSquareIcon.js": {
     "file": "assets/PencilSquareIcon.js",
     "name": "PencilSquareIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PhoneIcon.js": {
     "file": "assets/PhoneIcon.js",
     "name": "PhoneIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PhotoIcon.js": {
     "file": "assets/PhotoIcon.js",
     "name": "PhotoIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PhotoIcon2.js": {
     "file": "assets/PhotoIcon2.js",
     "name": "PhotoIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PlayCircleIcon.js": {
     "file": "assets/PlayCircleIcon.js",
     "name": "PlayCircleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PlayIcon.js": {
     "file": "assets/PlayIcon.js",
     "name": "PlayIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PlusIcon.js": {
     "file": "assets/PlusIcon.js",
     "name": "PlusIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PlusIcon2.js": {
     "file": "assets/PlusIcon2.js",
     "name": "PlusIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PrinterIcon.js": {
     "file": "assets/PrinterIcon.js",
     "name": "PrinterIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_PublicPageLayout.js": {
     "file": "assets/PublicPageLayout.js",
     "name": "PublicPageLayout",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_brand.js",
       "_useThemeVariant.js",
@@ -798,22 +776,20 @@
     "file": "assets/RectangleGroupIcon.js",
     "name": "RectangleGroupIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_RectangleStackIcon.js": {
     "file": "assets/RectangleStackIcon.js",
     "name": "RectangleStackIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_RegisterFooter.js": {
     "file": "assets/RegisterFooter.js",
     "name": "RegisterFooter",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_GoogleSignInButton.js",
       "_UserIcon.js",
@@ -830,8 +806,7 @@
     "file": "assets/RequireWideViewport.js",
     "name": "RequireWideViewport",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_ViewportGateAnimations.js"
     ]
   },
@@ -839,22 +814,21 @@
     "file": "assets/RocketLaunchIcon.js",
     "name": "RocketLaunchIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ScaleIcon.js": {
     "file": "assets/ScaleIcon.js",
     "name": "ScaleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_SchemaForm.js": {
     "file": "assets/SchemaForm.js",
     "name": "SchemaForm",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_XMarkIcon.js",
       "_index.esm.js",
       "src/components/common/jsonEditor.jsx"
@@ -864,22 +838,20 @@
     "file": "assets/ShareIcon.js",
     "name": "ShareIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ShareIcon2.js": {
     "file": "assets/ShareIcon2.js",
     "name": "ShareIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_SharedAdminLayout.js": {
     "file": "assets/SharedAdminLayout.js",
     "name": "SharedAdminLayout",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_ArrowPathIcon.js",
       "_RocketLaunchIcon.js",
@@ -903,200 +875,197 @@
     "file": "assets/ShieldCheckIcon.js",
     "name": "ShieldCheckIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ShieldCheckIcon2.js": {
     "file": "assets/ShieldCheckIcon2.js",
     "name": "ShieldCheckIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_SparklesIcon.js": {
     "file": "assets/SparklesIcon.js",
     "name": "SparklesIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_Squares2X2Icon.js": {
     "file": "assets/Squares2X2Icon.js",
     "name": "Squares2X2Icon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_Squares2X2Icon2.js": {
     "file": "assets/Squares2X2Icon2.js",
     "name": "Squares2X2Icon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_StarIcon.js": {
     "file": "assets/StarIcon.js",
     "name": "StarIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_StarIcon2.js": {
     "file": "assets/StarIcon2.js",
     "name": "StarIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_StatusBadge.js": {
     "file": "assets/StatusBadge.js",
     "name": "StatusBadge",
     "imports": [
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_SwatchIcon.js": {
     "file": "assets/SwatchIcon.js",
     "name": "SwatchIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_TableCellsIcon.js": {
     "file": "assets/TableCellsIcon.js",
     "name": "TableCellsIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_TagIcon.js": {
     "file": "assets/TagIcon.js",
     "name": "TagIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_TagIcon2.js": {
     "file": "assets/TagIcon2.js",
     "name": "TagIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_TrashIcon.js": {
     "file": "assets/TrashIcon.js",
     "name": "TrashIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_TrashIcon2.js": {
     "file": "assets/TrashIcon2.js",
     "name": "TrashIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_TrophyIcon.js": {
     "file": "assets/TrophyIcon.js",
     "name": "TrophyIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_UserCircleIcon.js": {
     "file": "assets/UserCircleIcon.js",
     "name": "UserCircleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_UserGroupIcon.js": {
     "file": "assets/UserGroupIcon.js",
     "name": "UserGroupIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_UserGroupIcon2.js": {
     "file": "assets/UserGroupIcon2.js",
     "name": "UserGroupIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_UserIcon.js": {
     "file": "assets/UserIcon.js",
     "name": "UserIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_UserPlusIcon.js": {
     "file": "assets/UserPlusIcon.js",
     "name": "UserPlusIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_UsersIcon.js": {
     "file": "assets/UsersIcon.js",
     "name": "UsersIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_VideoCameraIcon.js": {
     "file": "assets/VideoCameraIcon.js",
     "name": "VideoCameraIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_ViewportGateAnimations.js": {
     "file": "assets/ViewportGateAnimations.js",
     "name": "ViewportGateAnimations",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_WrenchScrewdriverIcon.js": {
     "file": "assets/WrenchScrewdriverIcon.js",
     "name": "WrenchScrewdriverIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_XCircleIcon.js": {
     "file": "assets/XCircleIcon.js",
     "name": "XCircleIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_XMarkIcon.js": {
     "file": "assets/XMarkIcon.js",
     "name": "XMarkIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_XMarkIcon2.js": {
     "file": "assets/XMarkIcon2.js",
     "name": "XMarkIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_addOrganizationModal.js": {
     "file": "assets/addOrganizationModal.js",
     "name": "addOrganizationModal",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_box.js",
       "src/components/common/textBox.jsx",
       "src/components/modalForm.jsx",
@@ -1108,27 +1077,16 @@
     "file": "assets/aiHelper.js",
     "name": "aiHelper",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_validationMessage.js",
       "_XMarkIcon.js"
-    ]
-  },
-  "_blueprint-vendor.js": {
-    "file": "assets/blueprint-vendor.js",
-    "name": "blueprint-vendor",
-    "imports": [
-      "_react-vendor.js"
     ]
   },
   "_box.js": {
     "file": "assets/box.js",
     "name": "box",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -1136,8 +1094,6 @@
     "file": "assets/brand.js",
     "name": "brand",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -1145,8 +1101,7 @@
     "file": "assets/breadcrumb.js",
     "name": "breadcrumb",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_HomeIcon2.js"
     ]
@@ -1162,7 +1117,7 @@
     "file": "assets/candidateProfileLink.js",
     "name": "candidateProfileLink",
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_createLucideIcon.js"
     ]
   },
@@ -1170,8 +1125,7 @@
     "file": "assets/card.js",
     "name": "card",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_utils.js",
       "_clsx.js",
       "_MagnifyingGlassIcon2.js"
@@ -1181,8 +1135,6 @@
     "file": "assets/cardPreview.js",
     "name": "cardPreview",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -1200,6 +1152,90 @@
       "_createLucideIcon.js"
     ]
   },
+  "_chunk-0.js": {
+    "file": "assets/chunk-0.js",
+    "name": "chunk-0",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-11.js": {
+    "file": "assets/chunk-11.js",
+    "name": "chunk-11",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-21.js": {
+    "file": "assets/chunk-21.js",
+    "name": "chunk-21",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-23.js": {
+    "file": "assets/chunk-23.js",
+    "name": "chunk-23",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-24.js": {
+    "file": "assets/chunk-24.js",
+    "name": "chunk-24",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-25.js": {
+    "file": "assets/chunk-25.js",
+    "name": "chunk-25",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-26.js": {
+    "file": "assets/chunk-26.js",
+    "name": "chunk-26",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-27.js": {
+    "file": "assets/chunk-27.js",
+    "name": "chunk-27",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-29.js": {
+    "file": "assets/chunk-29.js",
+    "name": "chunk-29",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-3.js": {
+    "file": "assets/chunk-3.js",
+    "name": "chunk-3",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-4.js": {
+    "file": "assets/chunk-4.js",
+    "name": "chunk-4",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
+  "_chunk-6.js": {
+    "file": "assets/chunk-6.js",
+    "name": "chunk-6",
+    "imports": [
+      "_createFluentIcon.js"
+    ]
+  },
   "_clsx.js": {
     "file": "assets/clsx.js",
     "name": "clsx"
@@ -1212,7 +1248,7 @@
     "file": "assets/competitionItems.js",
     "name": "competitionItems",
     "imports": [
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
       "src/staticDb/competitionItems.json"
@@ -1233,8 +1269,7 @@
     "file": "assets/coordinatorRouter.js",
     "name": "coordinatorRouter",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutUtils.js",
       "_navigationUtils.js"
     ],
@@ -1319,21 +1354,27 @@
       "src/web/Admin/TableDesigner.jsx"
     ]
   },
+  "_createFluentIcon.js": {
+    "file": "assets/createFluentIcon.js",
+    "name": "createFluentIcon",
+    "imports": [
+      "src/web/mainweb.jsx",
+      "_emotion-hash.esm.js"
+    ]
+  },
   "_createLucideIcon.js": {
     "file": "assets/createLucideIcon.js",
     "name": "createLucideIcon",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_customCompetitionFields.js": {
     "file": "assets/customCompetitionFields.js",
     "name": "customCompetitionFields",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_box.js",
       "src/formBuilder/renderComponents.jsx",
       "_XMarkIcon.js",
@@ -1345,15 +1386,16 @@
     "file": "assets/data-grid-pagination.js",
     "name": "data-grid-pagination",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_utils.js",
       "_card.js",
       "_createLucideIcon.js",
       "_chevron-right.js",
       "_chevrons-up-down.js",
+      "_navigationUtils.js",
       "_floating-ui.react-dom.js",
-      "_floating-ui.dom.js"
+      "_floating-ui.dom.js",
+      "_tslib.es6.js"
     ]
   },
   "_dateHelper.js": {
@@ -1372,7 +1414,7 @@
     "file": "assets/description.js",
     "name": "description",
     "imports": [
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_keyboard.js"
     ]
   },
@@ -1380,8 +1422,7 @@
     "file": "assets/designShowcase.js",
     "name": "designShowcase",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_cardPreview.js"
     ]
   },
@@ -1389,12 +1430,11 @@
     "file": "assets/designStudio.js",
     "name": "designStudio",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_cardPreview.js",
       "_EyeSlashIcon2.js",
       "_EyeIcon.js",
+      "_navigationUtils.js",
       "_ArrowUpTrayIcon.js",
       "_TrashIcon.js",
       "_useConfirmation.js",
@@ -1420,7 +1460,7 @@
     "file": "assets/dialog.js",
     "name": "dialog",
     "imports": [
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_keyboard.js",
       "_use-tab-direction.js",
       "_description.js"
@@ -1431,7 +1471,7 @@
     "name": "disclosure",
     "imports": [
       "_use-resolve-button-type.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_keyboard.js",
       "_use-tab-direction.js",
       "_bugs.js"
@@ -1441,11 +1481,15 @@
     "file": "assets/easyStart2.js",
     "name": "easyStart"
   },
+  "_emotion-hash.esm.js": {
+    "file": "assets/emotion-hash.esm.js",
+    "name": "emotion-hash.esm"
+  },
   "_eventCategoryTemplates.js": {
     "file": "assets/eventCategoryTemplates.js",
     "name": "eventCategoryTemplates",
     "imports": [
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
       "src/staticDb/eventCategoryTemplates/4h-county-fair-judging.json",
@@ -1513,14 +1557,18 @@
     "file": "assets/exceljs.min.js",
     "name": "exceljs.min",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
+  },
+  "_extends.js": {
+    "file": "assets/extends.js",
+    "name": "extends"
   },
   "_featureGroups.js": {
     "file": "assets/featureGroups.js",
     "name": "featureGroups",
     "imports": [
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_VideoCameraIcon.js",
       "_ArrowRightIcon2.js",
       "_ArrowPathIcon2.js",
@@ -1539,7 +1587,7 @@
       "_Squares2X2Icon2.js",
       "_StarIcon2.js",
       "_SwatchIcon.js",
-      "src/web/mainweb.jsx",
+      "_navigationUtils.js",
       "_roleAccess.js"
     ]
   },
@@ -1552,21 +1600,14 @@
     "name": "floating-ui.react-dom",
     "imports": [
       "_floating-ui.dom.js",
-      "_react-vendor.js"
-    ]
-  },
-  "_icons-vendor.js": {
-    "file": "assets/icons-vendor.js",
-    "name": "icons-vendor",
-    "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx",
+      "_navigationUtils.js"
     ]
   },
   "_impersonation.js": {
     "file": "assets/impersonation.js",
     "name": "impersonation",
     "imports": [
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_switchRole.js"
     ]
@@ -1575,10 +1616,10 @@
     "file": "assets/index.es2.js",
     "name": "index.es",
     "imports": [
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_clsx.js",
-      "_blueprint-vendor.js",
       "_floating-ui.dom.js",
+      "_navigationUtils.js",
       "_floating-ui.react-dom.js"
     ]
   },
@@ -1586,28 +1627,28 @@
     "file": "assets/index.esm.js",
     "name": "index.esm",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_index.modern.js": {
     "file": "assets/index.modern.js",
     "name": "index.modern",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_index39.js": {
     "file": "assets/index39.js",
     "name": "index",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_jspdf.es.min.js": {
     "file": "assets/jspdf.es.min.js",
     "name": "jspdf.es.min",
     "imports": [
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
       "node_modules/html2canvas/dist/html2canvas.esm.js",
@@ -1619,8 +1660,7 @@
     "file": "assets/judgesAllotmentContainer.js",
     "name": "judgesAllotmentContainer",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_card.js",
       "_searchInput.js",
       "_navigationUtils.js",
@@ -1638,15 +1678,7 @@
     "file": "assets/keyboard.js",
     "name": "keyboard",
     "imports": [
-      "_react-vendor.js"
-    ]
-  },
-  "_konva-vendor.js": {
-    "file": "assets/konva-vendor.js",
-    "name": "konva-vendor",
-    "imports": [
-      "_react-vendor.js",
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_languages.js": {
@@ -1657,15 +1689,14 @@
     "file": "assets/layoutOuter.js",
     "name": "layoutOuter",
     "imports": [
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_layoutUtils.js": {
     "file": "assets/layoutUtils.js",
     "name": "layoutUtils",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_navigationUtils.js"
     ],
     "dynamicImports": [
@@ -1677,26 +1708,16 @@
     "file": "assets/logout.js",
     "name": "logout",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
       "src/web/mainweb.jsx"
-    ]
-  },
-  "_mobx-vendor.js": {
-    "file": "assets/mobx-vendor.js",
-    "name": "mobx-vendor",
-    "imports": [
-      "_react-vendor.js"
     ]
   },
   "_navVerticalTabs.js": {
     "file": "assets/navVerticalTabs.js",
     "name": "navVerticalTabs",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -1704,8 +1725,6 @@
     "file": "assets/navigationUtils.js",
     "name": "navigationUtils",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
@@ -1718,7 +1737,7 @@
     "file": "assets/pageHeader.js",
     "name": "pageHeader",
     "imports": [
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_pageUnlocks.js": {
@@ -1729,16 +1748,13 @@
     "file": "assets/proxy.js",
     "name": "proxy",
     "imports": [
-      "_react-vendor.js",
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_publicLayout.js": {
     "file": "assets/publicLayout.js",
     "name": "publicLayout",
     "imports": [
-      "_react-vendor.js",
-      "_blueprint-vendor.js",
       "src/web/mainweb.jsx",
       "_scrollToTop.js",
       "_logout.js",
@@ -1750,17 +1766,14 @@
     "file": "assets/publicRegistrationHelper.js",
     "name": "publicRegistrationHelper",
     "imports": [
-      "_blueprint-vendor.js",
       "src/web/mainweb.jsx",
-      "_customCompetitionFields.js",
-      "_react-vendor.js"
+      "_customCompetitionFields.js"
     ]
   },
   "_quizApi.js": {
     "file": "assets/quizApi.js",
     "name": "quizApi",
     "imports": [
-      "_blueprint-vendor.js",
       "src/web/mainweb.jsx"
     ],
     "assets": [
@@ -1837,22 +1850,16 @@
     "file": "assets/react-confetti.js",
     "name": "react-confetti",
     "imports": [
-      "_react-vendor.js",
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ]
-  },
-  "_react-vendor.js": {
-    "file": "assets/react-vendor.js",
-    "name": "react-vendor"
   },
   "_redirectionFlow.js": {
     "file": "assets/redirectionFlow.js",
     "name": "redirectionFlow",
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_ArrowRightIcon.js",
-      "_react-vendor.js",
       "_dialog.js"
     ]
   },
@@ -1860,8 +1867,6 @@
     "file": "assets/renderRegistrationForm.js",
     "name": "renderRegistrationForm",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_useConfirmation.js",
       "src/web/eventDetailedView.jsx",
@@ -1882,8 +1887,6 @@
     "imports": [
       "src/web/mainweb.jsx",
       "_exceljs.min.js",
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "_EyeIcon.js",
       "_EyeSlashIcon2.js",
       "_XMarkIcon.js",
@@ -1905,8 +1908,6 @@
     "file": "assets/scoringBox.js",
     "name": "scoringBox",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_ClipboardDocumentListIcon.js",
       "_CheckCircleIcon.js",
@@ -1921,15 +1922,15 @@
     "file": "assets/scrollToTop.js",
     "name": "scrollToTop",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx",
+      "_navigationUtils.js"
     ]
   },
   "_searchInput.js": {
     "file": "assets/searchInput.js",
     "name": "searchInput",
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_MagnifyingGlassIcon2.js"
     ]
   },
@@ -1958,18 +1959,20 @@
     "name": "tabs",
     "imports": [
       "_use-resolve-button-type.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_keyboard.js",
       "_dialog.js",
       "_use-tab-direction.js"
     ]
   },
+  "_tslib.es6.js": {
+    "file": "assets/tslib.es6.js",
+    "name": "tslib.es6"
+  },
   "_unitLevelCascadeSelect.js": {
     "file": "assets/unitLevelCascadeSelect.js",
     "name": "unitLevelCascadeSelect",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_unitLevelSelect.js",
       "_validationMessage.js"
@@ -1979,8 +1982,6 @@
     "file": "assets/unitLevelSelect.js",
     "name": "unitLevelSelect",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_roleAccess.js",
       "_ChevronDownIcon2.js"
@@ -1990,7 +1991,7 @@
     "file": "assets/use-resolve-button-type.js",
     "name": "use-resolve-button-type",
     "imports": [
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_keyboard.js"
     ]
   },
@@ -1998,16 +1999,16 @@
     "file": "assets/use-tab-direction.js",
     "name": "use-tab-direction",
     "imports": [
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_keyboard.js",
-      "_with-selector.js"
+      "_with-selector.js",
+      "_navigationUtils.js"
     ]
   },
   "_useAdminTable.js": {
     "file": "assets/useAdminTable.js",
     "name": "useAdminTable",
     "imports": [
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -2015,8 +2016,6 @@
     "file": "assets/useConfirmation.js",
     "name": "useConfirmation",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_CheckIcon.js",
       "_TrashIcon.js",
@@ -2029,14 +2028,14 @@
     "imports": [
       "_index39.js",
       "_useDrop.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_useDrop.js": {
     "file": "assets/useDrop.js",
     "name": "useDrop",
     "imports": [
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_index39.js"
     ]
   },
@@ -2044,15 +2043,14 @@
     "file": "assets/useQuery.js",
     "name": "useQuery",
     "imports": [
-      "_react-vendor.js",
-      "_blueprint-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_useThemeVariant.js": {
     "file": "assets/useThemeVariant.js",
     "name": "useThemeVariant",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_utils.js": {
@@ -2066,8 +2064,6 @@
     "file": "assets/v2Sidebar.js",
     "name": "v2Sidebar",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_impersonation.js",
       "_navigationUtils.js",
@@ -2092,7 +2088,19 @@
       "_BuildingOffice2Icon.js",
       "_pageUnlocks.js",
       "_PageUnlockContext.js",
-      "_icons-vendor.js",
+      "_chunk-25.js",
+      "_chunk-6.js",
+      "_chunk-27.js",
+      "_chunk-3.js",
+      "_chunk-0.js",
+      "_chunk-29.js",
+      "_chunk-26.js",
+      "_createFluentIcon.js",
+      "_chunk-11.js",
+      "_chunk-24.js",
+      "_chunk-23.js",
+      "_chunk-21.js",
+      "_chunk-4.js",
       "_MagnifyingGlassIcon.js",
       "_LockClosedIcon.js",
       "_StarIcon.js",
@@ -2115,15 +2123,14 @@
     "file": "assets/validationMessage.js",
     "name": "validationMessage",
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "_with-selector.js": {
     "file": "assets/with-selector.js",
     "name": "with-selector",
     "imports": [
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "node_modules/canvg/lib/index.es.js": {
@@ -2132,7 +2139,7 @@
     "src": "node_modules/canvg/lib/index.es.js",
     "isDynamicEntry": true,
     "imports": [
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_defineProperty.js"
     ]
   },
@@ -2396,8 +2403,6 @@
     "src": "src/components/common/ExtraPaymentOptions.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js"
     ]
@@ -2408,11 +2413,9 @@
     "src": "src/components/common/IframeRender.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_OldNewTabLayout.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -2425,11 +2428,9 @@
     "src": "src/components/common/ageDateBox.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_index.es2.js",
       "_index.esm.js",
-      "src/web/mainweb.jsx",
       "_validationMessage.js",
       "_ChevronLeftIcon.js",
       "_ChevronRightIcon2.js",
@@ -2437,6 +2438,7 @@
       "_CalendarDaysIcon.js",
       "_clsx.js",
       "_floating-ui.dom.js",
+      "_navigationUtils.js",
       "_floating-ui.react-dom.js"
     ]
   },
@@ -2446,8 +2448,6 @@
     "src": "src/components/common/ageWiseGroup.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
@@ -2460,10 +2460,8 @@
     "src": "src/components/common/checkBox.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_validationMessage.js"
     ]
   },
@@ -2473,10 +2471,8 @@
     "src": "src/components/common/competitionSelection.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_index.modern.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
+      "_index.modern.js",
       "_customCompetitionFields.js",
       "_index.esm.js",
       "_box.js",
@@ -2497,16 +2493,15 @@
     "src": "src/components/common/dateBox.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_index.es2.js",
       "_index.esm.js",
-      "src/web/mainweb.jsx",
       "_validationMessage.js",
       "_ChevronLeftIcon.js",
       "_ChevronRightIcon2.js",
       "_clsx.js",
       "_floating-ui.dom.js",
+      "_navigationUtils.js",
       "_floating-ui.react-dom.js"
     ]
   },
@@ -2516,8 +2511,6 @@
     "src": "src/components/common/htmlEditor.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js"
     ]
@@ -2528,8 +2521,6 @@
     "src": "src/components/common/jsonEditor.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_CheckIcon.js"
     ]
@@ -2540,10 +2531,9 @@
     "src": "src/components/common/markdownEditor.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js",
+      "_extends.js",
       "_index.modern.js",
       "_useThemeVariant.js"
     ]
@@ -2554,13 +2544,13 @@
     "src": "src/components/common/multiSelectBox.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_index.esm.js",
       "_defineProperty.js",
-      "_icons-vendor.js",
+      "_extends.js",
+      "_emotion-hash.esm.js",
+      "_navigationUtils.js",
       "_floating-ui.dom.js",
-      "src/web/mainweb.jsx",
       "_validationMessage.js"
     ]
   },
@@ -2570,10 +2560,8 @@
     "src": "src/components/common/nonPaymentSummary.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_computeTotalAmount.js",
-      "src/web/mainweb.jsx"
+      "src/web/mainweb.jsx",
+      "_computeTotalAmount.js"
     ]
   },
   "src/components/common/organizationSelection.jsx": {
@@ -2582,8 +2570,6 @@
     "src": "src/components/common/organizationSelection.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_roleAccess.js"
     ],
@@ -2597,8 +2583,6 @@
     "src": "src/components/common/payNowButton.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_computeTotalAmount.js",
       "_validationMessage.js",
@@ -2613,10 +2597,8 @@
     "src": "src/components/common/paymentSummary.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_computeTotalAmount.js",
-      "src/web/mainweb.jsx"
+      "src/web/mainweb.jsx",
+      "_computeTotalAmount.js"
     ]
   },
   "src/components/common/quickFillProfile.jsx": {
@@ -2625,8 +2607,6 @@
     "src": "src/components/common/quickFillProfile.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_MagnifyingGlassIcon2.js",
       "_XMarkIcon.js",
@@ -2640,10 +2620,8 @@
     "src": "src/components/common/renderTeamMembers.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "src/web/manageTeamParticipants.jsx",
-      "src/web/mainweb.jsx"
+      "src/web/mainweb.jsx",
+      "src/web/manageTeamParticipants.jsx"
     ]
   },
   "src/components/common/royalXpayPayment.jsx": {
@@ -2652,8 +2630,6 @@
     "src": "src/components/common/royalXpayPayment.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js",
       "_CheckCircleIcon.js",
@@ -2670,8 +2646,6 @@
     "src": "src/components/common/selectBox.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js",
       "_ChevronDownIcon2.js"
@@ -2683,8 +2657,6 @@
     "src": "src/components/common/textBox.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js",
       "_EyeSlashIcon.js",
@@ -2698,8 +2670,6 @@
     "src": "src/components/common/textareaInput.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js",
       "_EyeSlashIcon.js",
@@ -2712,10 +2682,8 @@
     "src": "src/components/common/toggleButtonGroup.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_validationMessage.js"
     ]
   },
@@ -2725,8 +2693,6 @@
     "src": "src/components/coordinator/liveActivityDashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js"
     ]
@@ -2737,10 +2703,8 @@
     "src": "src/components/documentUpload.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_validationMessage.js",
       "_XMarkIcon.js"
     ]
@@ -2751,8 +2715,7 @@
     "src": "src/components/iframeBox.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_XMarkIcon2.js"
     ]
   },
@@ -2762,8 +2725,6 @@
     "src": "src/components/layout/ConditionalLayoutWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_PageUnlockContext.js",
       "_breadcrumb.js",
@@ -2771,8 +2732,8 @@
       "_BreadcrumbContext.js",
       "_v2Sidebar.js",
       "_featureGroups.js",
-      "_pageUnlocks.js",
       "_navigationUtils.js",
+      "_pageUnlocks.js",
       "_dialog.js",
       "_keyboard.js",
       "_use-tab-direction.js",
@@ -2800,7 +2761,20 @@
       "_ScaleIcon.js",
       "_CheckBadgeIcon.js",
       "_BuildingOffice2Icon.js",
-      "_icons-vendor.js",
+      "_chunk-25.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js",
+      "_chunk-6.js",
+      "_chunk-27.js",
+      "_chunk-3.js",
+      "_chunk-0.js",
+      "_chunk-29.js",
+      "_chunk-26.js",
+      "_chunk-11.js",
+      "_chunk-24.js",
+      "_chunk-23.js",
+      "_chunk-21.js",
+      "_chunk-4.js",
       "_MagnifyingGlassIcon.js",
       "_LockClosedIcon.js",
       "_StarIcon.js",
@@ -2829,13 +2803,13 @@
     "src": "src/components/modalForm.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_XMarkIcon2.js",
       "_dialog.js",
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js"
     ]
   },
@@ -2845,10 +2819,8 @@
     "src": "src/components/newTeamParticipant.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_publicRegistrationHelper.js",
       "src/components/modalForm.jsx",
       "_customCompetitionFields.js",
@@ -2867,6 +2839,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js"
     ],
     "dynamicImports": [
@@ -2879,8 +2852,6 @@
     "src": "src/components/registrationIdBox.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js",
       "_CheckIcon.js"
@@ -2892,17 +2863,17 @@
     "src": "src/components/singleImageUpload.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_validationMessage.js",
+      "_tslib.es6.js",
       "_XMarkIcon.js",
       "_dialog.js",
       "_PhotoIcon.js",
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js"
     ]
   },
@@ -2912,10 +2883,8 @@
     "src": "src/components/table/formEditor.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "src/formBuilder/renderComponents.jsx",
       "src/components/modalForm.jsx",
       "_XCircleIcon.js",
@@ -2930,6 +2899,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js"
     ]
   },
@@ -2939,8 +2909,6 @@
     "src": "src/components/table/pagination.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_ChevronLeftIcon.js",
       "_ChevronRightIcon2.js"
@@ -2952,10 +2920,8 @@
     "src": "src/components/teamMembers.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_XMarkIcon.js",
       "_dialog.js",
       "_utils.js",
@@ -2964,6 +2930,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js",
       "_clsx.js"
     ],
@@ -2977,8 +2944,6 @@
     "src": "src/components/viewParticipant.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_box.js",
       "_publicRegistrationHelper.js",
@@ -2992,9 +2957,9 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js",
       "src/web/eventDetailedView.jsx",
-      "_navigationUtils.js",
       "_UserPlusIcon.js",
       "_UserGroupIcon.js",
       "_PaperAirplaneIcon.js",
@@ -3027,8 +2992,7 @@
     "src": "src/formBuilder/DevFillButton.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "src/formBuilder/builderPreviews.jsx": {
@@ -3037,8 +3001,7 @@
     "src": "src/formBuilder/builderPreviews.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
       "src/components/common/selectBox.jsx"
@@ -3050,8 +3013,7 @@
     "src": "src/formBuilder/contactComponents.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "src/formBuilder/contentComponents.jsx": {
@@ -3060,10 +3022,8 @@
     "src": "src/formBuilder/contentComponents.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.modern.js",
       "src/web/mainweb.jsx",
+      "_index.modern.js",
       "_DocumentArrowDownIcon.js",
       "_ArrowDownTrayIcon.js"
     ]
@@ -3074,13 +3034,11 @@
     "src": "src/formBuilder/eventComponents.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_index.modern.js",
       "_box.js",
-      "src/web/mainweb.jsx",
       "src/web/eventDetailedView.jsx",
       "_publicRegistrationHelper.js",
-      "_react-vendor.js",
       "_dateHelper.js",
       "_MapPinIcon.js",
       "_disclosure.js",
@@ -3112,8 +3070,6 @@
     "src": "src/formBuilder/formBuilder.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_DocumentDuplicateIcon.js",
       "_ClipboardDocumentCheckIcon.js",
@@ -3132,8 +3088,7 @@
     "src": "src/formBuilder/formBuilderPlayground.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_index39.js"
     ],
     "dynamicImports": [
@@ -3146,8 +3101,7 @@
     "src": "src/formBuilder/formInputs.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx"
     ]
   },
   "src/formBuilder/formSubmission.jsx": {
@@ -3156,10 +3110,8 @@
     "src": "src/formBuilder/formSubmission.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_CheckCircleIcon2.js"
     ],
     "dynamicImports": [
@@ -3172,8 +3124,6 @@
     "src": "src/formBuilder/liveEventComponents.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -3183,8 +3133,7 @@
     "src": "src/formBuilder/propertiesPanel.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_index.esm.js",
       "src/formBuilder/sidebar.jsx",
       "_XMarkIcon2.js",
@@ -3204,8 +3153,6 @@
     "src": "src/formBuilder/renderComponents.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_validationMessage.js",
       "_CheckCircleIcon2.js",
@@ -3281,8 +3228,7 @@
     "src": "src/formBuilder/sidebar.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_useDrag.js",
       "_index39.js",
       "_useDrop.js"
@@ -3654,8 +3600,6 @@
     "src": "src/web/Account/Login.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_GoogleSignInButton.js",
       "_navigationUtils.js",
@@ -3687,10 +3631,9 @@
     "src": "src/web/Admin/AdminDashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_AdminLayout.js",
       "src/web/mainweb.jsx",
+      "_AdminLayout.js",
+      "_navigationUtils.js",
       "_scrollToTop.js",
       "_CircleStackIcon.js",
       "_XMarkIcon.js",
@@ -3703,8 +3646,6 @@
     "src": "src/web/Admin/AdminEventCategories.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_SharedAdminLayout.js",
       "_AdminTable.js",
@@ -3742,14 +3683,12 @@
     "src": "src/web/Admin/AdminEventDetail.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_SharedAdminLayout.js",
       "_featureGroups.js",
       "_ArrowTopRightOnSquareIcon.js",
       "_StatusBadge.js",
       "_ArrowLeftIcon.js",
-      "src/web/mainweb.jsx",
       "_ArrowPathIcon.js",
       "_RocketLaunchIcon.js",
       "_logout.js",
@@ -3793,8 +3732,6 @@
     "src": "src/web/Admin/AdminEventList.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_SharedAdminLayout.js",
       "_AdminTable.js",
@@ -3829,8 +3766,6 @@
     "src": "src/web/Admin/AdminLookup.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_SharedAdminLayout.js",
       "_AdminTable.js",
@@ -3842,10 +3777,10 @@
       "_TrashIcon.js",
       "_ArrowLeftIcon.js",
       "_PlusIcon.js",
+      "_navigationUtils.js",
       "_ArrowPathIcon.js",
       "_RocketLaunchIcon.js",
       "_logout.js",
-      "_navigationUtils.js",
       "_scrollToTop.js",
       "_Bars3Icon.js",
       "_XMarkIcon.js",
@@ -3871,8 +3806,6 @@
     "src": "src/web/Admin/AdminOrganizations.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_SharedAdminLayout.js",
       "_AdminTable.js",
@@ -3911,23 +3844,21 @@
     "src": "src/web/Admin/AdminPanelDashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_SharedAdminLayout.js",
       "src/web/mainweb.jsx",
+      "_SharedAdminLayout.js",
       "_AreaChart.js",
       "_BuildingOffice2Icon.js",
       "_CalendarDaysIcon.js",
       "_UsersIcon.js",
       "_UserGroupIcon.js",
       "_ScaleIcon.js",
-      "_react-vendor.js",
       "_TagIcon.js",
       "_AdjustmentsHorizontalIcon.js",
       "_WrenchScrewdriverIcon.js",
+      "_navigationUtils.js",
       "_ArrowPathIcon.js",
       "_RocketLaunchIcon.js",
       "_logout.js",
-      "_navigationUtils.js",
       "_scrollToTop.js",
       "_Bars3Icon.js",
       "_XMarkIcon.js",
@@ -3935,8 +3866,7 @@
       "_CircleStackIcon.js",
       "_ChevronDownIcon.js",
       "_clsx.js",
-      "_with-selector.js",
-      "_mobx-vendor.js"
+      "_with-selector.js"
     ]
   },
   "src/web/Admin/AdminRenewalReminderDrafts.jsx": {
@@ -3945,8 +3875,6 @@
     "src": "src/web/Admin/AdminRenewalReminderDrafts.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_SharedAdminLayout.js",
       "_AdminTable.js",
@@ -3978,8 +3906,6 @@
     "src": "src/web/Admin/AdminStaticDataset.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_SharedAdminLayout.js",
       "_SchemaForm.js",
@@ -3988,9 +3914,9 @@
       "_ArrowLeftIcon.js",
       "_ArrowPathIcon.js",
       "_PlusIcon.js",
+      "_navigationUtils.js",
       "_RocketLaunchIcon.js",
       "_logout.js",
-      "_navigationUtils.js",
       "_scrollToTop.js",
       "_Bars3Icon.js",
       "_XMarkIcon.js",
@@ -4014,13 +3940,11 @@
     "src": "src/web/Admin/AdminUsers.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_SharedAdminLayout.js",
       "_AdminTable.js",
       "_StatusBadge.js",
       "_useAdminTable.js",
-      "_react-vendor.js",
-      "src/web/mainweb.jsx",
       "_ArrowPathIcon.js",
       "_RocketLaunchIcon.js",
       "_logout.js",
@@ -4047,10 +3971,9 @@
     "src": "src/web/Admin/TableDesigner.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_AdminLayout.js",
+      "_navigationUtils.js",
       "_scrollToTop.js",
       "_CircleStackIcon.js",
       "_XMarkIcon.js",
@@ -4063,10 +3986,9 @@
     "src": "src/web/Admin/TableManager.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_AdminLayout.js",
+      "_navigationUtils.js",
       "_scrollToTop.js",
       "_CircleStackIcon.js",
       "_XMarkIcon.js",
@@ -4079,8 +4001,6 @@
     "src": "src/web/BugReports/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_pageHeader.js"
     ]
@@ -4091,11 +4011,9 @@
     "src": "src/web/CompetitionSchedule/automateSchedule.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
-      "src/web/mainweb.jsx",
       "_index.esm.js",
       "_validationMessage.js",
       "_exceljs.min.js",
@@ -4110,10 +4028,8 @@
     "src": "src/web/CompetitionSchedule/manageSchedule.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_OldNewTabLayout.js",
@@ -4135,8 +4051,6 @@
     "src": "src/web/CompetitionStructure/Status.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -4155,8 +4069,6 @@
     "src": "src/web/CompetitionStructure/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_RequireWideViewport.js",
@@ -4205,13 +4117,12 @@
     "src": "src/web/Coordinator/CandidateProfile/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_navVerticalTabs.js",
       "_renderRegistrationForm.js",
-      "src/web/mainweb.jsx",
+      "_navigationUtils.js",
       "_UserCircleIcon.js",
       "_useConfirmation.js",
       "_CheckIcon.js",
@@ -4222,7 +4133,6 @@
       "_with-selector.js",
       "_description.js",
       "src/web/eventDetailedView.jsx",
-      "_navigationUtils.js",
       "_UserPlusIcon.js",
       "_UserGroupIcon.js",
       "_PaperAirplaneIcon.js",
@@ -4248,8 +4158,6 @@
     "src": "src/web/Coordinator/CandidateWiseResults/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -4259,8 +4167,6 @@
     "src": "src/web/Coordinator/CompetitionStatus/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_OldNewTabLayout.js",
       "_layoutOuter.js",
@@ -4283,11 +4189,9 @@
     "src": "src/web/Coordinator/CriteriaBreakdown/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_data-grid-pagination.js",
       "_useQuery.js",
-      "src/web/mainweb.jsx",
       "_OldNewTabLayout.js",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -4300,9 +4204,10 @@
       "_createLucideIcon.js",
       "_chevron-right.js",
       "_chevrons-up-down.js",
+      "_navigationUtils.js",
       "_floating-ui.react-dom.js",
       "_floating-ui.dom.js",
-      "_navigationUtils.js",
+      "_tslib.es6.js",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -4315,16 +4220,15 @@
     "src": "src/web/Coordinator/DesignStudio/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_RequireWideViewport.js",
       "_designStudio.js",
-      "_react-vendor.js",
       "_ViewportGateAnimations.js",
-      "src/web/mainweb.jsx",
       "_cardPreview.js",
       "_EyeSlashIcon2.js",
       "_EyeIcon.js",
+      "_navigationUtils.js",
       "_ArrowUpTrayIcon.js",
       "_TrashIcon.js",
       "_useConfirmation.js",
@@ -4361,16 +4265,15 @@
     "src": "src/web/Coordinator/DesignStudio/participationCertificateIndex.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_RequireWideViewport.js",
       "_designStudio.js",
-      "_react-vendor.js",
       "_ViewportGateAnimations.js",
-      "src/web/mainweb.jsx",
       "_cardPreview.js",
       "_EyeSlashIcon2.js",
       "_EyeIcon.js",
+      "_navigationUtils.js",
       "_ArrowUpTrayIcon.js",
       "_TrashIcon.js",
       "_useConfirmation.js",
@@ -4407,16 +4310,15 @@
     "src": "src/web/Coordinator/DesignStudio/rankCertificateIndex.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_RequireWideViewport.js",
       "_designStudio.js",
-      "_react-vendor.js",
       "_ViewportGateAnimations.js",
-      "src/web/mainweb.jsx",
       "_cardPreview.js",
       "_EyeSlashIcon2.js",
       "_EyeIcon.js",
+      "_navigationUtils.js",
       "_ArrowUpTrayIcon.js",
       "_TrashIcon.js",
       "_useConfirmation.js",
@@ -4453,11 +4355,9 @@
     "src": "src/web/Coordinator/JudgeScores/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_data-grid-pagination.js",
       "_useQuery.js",
-      "src/web/mainweb.jsx",
       "_OldNewTabLayout.js",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -4470,9 +4370,10 @@
       "_createLucideIcon.js",
       "_chevron-right.js",
       "_chevrons-up-down.js",
+      "_navigationUtils.js",
       "_floating-ui.react-dom.js",
       "_floating-ui.dom.js",
-      "_navigationUtils.js",
+      "_tslib.es6.js",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -4485,10 +4386,8 @@
     "src": "src/web/Coordinator/ManageCandidates/CandidateProfileEditor.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "src/components/table/formEditor.jsx",
       "src/web/mainweb.jsx",
+      "src/components/table/formEditor.jsx",
       "_unitLevelSelect.js",
       "_index.esm.js",
       "src/formBuilder/renderComponents.jsx",
@@ -4503,6 +4402,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js",
       "_XCircleIcon.js",
       "_CheckCircleIcon.js",
@@ -4516,8 +4416,6 @@
     "src": "src/web/Coordinator/ManageCandidates/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "src/web/Coordinator/ManageCandidates/CandidateProfileEditor.jsx",
       "_CandidatesTable.js",
@@ -4543,6 +4441,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js",
       "_XCircleIcon.js",
       "_CheckCircleIcon.js",
@@ -4552,7 +4451,6 @@
       "_candidateProfileLink.js",
       "_createLucideIcon.js",
       "_chevrons-up-down.js",
-      "_navigationUtils.js",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -4571,15 +4469,14 @@
     "src": "src/web/Coordinator/ManageCoordinators/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_UserGroupIcon.js",
       "_MagnifyingGlassIcon2.js",
       "_PlusIcon.js",
-      "_TrashIcon.js"
+      "_TrashIcon.js",
+      "_navigationUtils.js"
     ]
   },
   "src/web/Coordinator/ManageTeams/index.jsx": {
@@ -4588,10 +4485,8 @@
     "src": "src/web/Coordinator/ManageTeams/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_data-grid-pagination.js",
       "src/web/mainweb.jsx",
+      "_data-grid-pagination.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_OldNewTabLayout.js",
@@ -4603,6 +4498,7 @@
       "_UsersIcon.js",
       "_searchInput.js",
       "_PlusIcon.js",
+      "_navigationUtils.js",
       "_utils.js",
       "_clsx.js",
       "_createLucideIcon.js",
@@ -4610,7 +4506,7 @@
       "_chevrons-up-down.js",
       "_floating-ui.react-dom.js",
       "_floating-ui.dom.js",
-      "_navigationUtils.js",
+      "_tslib.es6.js",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -4634,10 +4530,8 @@
     "src": "src/web/Coordinator/PublishResults/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_exceljs.min.js",
       "src/web/mainweb.jsx",
+      "_exceljs.min.js",
       "_OldNewTabLayout.js",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -4663,13 +4557,11 @@
     "src": "src/web/Coordinator/Reports/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_RequireWideViewport.js",
       "_FileSaver.min.js",
-      "_react-vendor.js",
       "_index.esm.js",
-      "src/web/mainweb.jsx",
       "_reportTree.js",
       "_XMarkIcon.js",
       "_ArrowUpIcon.js",
@@ -4703,11 +4595,9 @@
     "src": "src/web/Coordinator/Reports/printCompetitionCandidates/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_FileSaver.min.js",
       "_jspdf.es.min.js",
-      "_react-vendor.js",
-      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_RequireWideViewport.js",
       "_reportTree.js",
@@ -4732,8 +4622,6 @@
     "src": "src/web/Coordinator/Results/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -4754,8 +4642,6 @@
     "src": "src/web/Coordinator/StickerBasedIndividualResults/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -4765,8 +4651,6 @@
     "src": "src/web/Coordinator/StickerBasedResults/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -4776,11 +4660,9 @@
     "src": "src/web/Coordinator/SubUnits/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_data-grid-pagination.js",
       "_useQuery.js",
-      "src/web/mainweb.jsx",
       "_addOrganizationModal.js",
       "src/components/modalForm.jsx",
       "_PencilSquareIcon.js",
@@ -4800,8 +4682,10 @@
       "_createLucideIcon.js",
       "_chevron-right.js",
       "_chevrons-up-down.js",
+      "_navigationUtils.js",
       "_floating-ui.react-dom.js",
       "_floating-ui.dom.js",
+      "_tslib.es6.js",
       "_index.esm.js",
       "_box.js",
       "src/components/common/textBox.jsx",
@@ -4816,7 +4700,6 @@
       "_use-tab-direction.js",
       "_with-selector.js",
       "_description.js",
-      "_navigationUtils.js",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -4829,10 +4712,8 @@
     "src": "src/web/Coordinator/TeamMembersManagement/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_data-grid-pagination.js",
       "src/web/mainweb.jsx",
+      "_data-grid-pagination.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_OldNewTabLayout.js",
@@ -4845,6 +4726,7 @@
       "_UsersIcon.js",
       "_searchInput.js",
       "_PlusIcon.js",
+      "_navigationUtils.js",
       "_utils.js",
       "_clsx.js",
       "_createLucideIcon.js",
@@ -4852,7 +4734,7 @@
       "_chevrons-up-down.js",
       "_floating-ui.react-dom.js",
       "_floating-ui.dom.js",
-      "_navigationUtils.js",
+      "_tslib.es6.js",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -4872,8 +4754,6 @@
     "src": "src/web/Coordinator/TokenSystem/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -4903,10 +4783,8 @@
     "src": "src/web/Coordinator/aiParticipantImport/manageAiParticipantImport.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_aiHelper.js",
@@ -4920,6 +4798,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js"
     ]
   },
@@ -4929,10 +4808,8 @@
     "src": "src/web/Coordinator/candidatesDetailedList.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_OldNewTabLayout.js",
       "_navigationUtils.js",
@@ -4982,7 +4859,7 @@
     "src": "src/web/Coordinator/competitionFlowGuide.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_SparklesIcon.js",
@@ -4990,7 +4867,6 @@
       "_WrenchScrewdriverIcon.js",
       "_BuildingOffice2Icon.js",
       "_UsersIcon.js",
-      "_react-vendor.js",
       "_TagIcon.js",
       "_TableCellsIcon.js",
       "_TrophyIcon.js",
@@ -5025,10 +4901,8 @@
     "src": "src/web/Coordinator/coordinatorActivityLog.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_AdminTable.js",
       "src/web/mainweb.jsx",
+      "_AdminTable.js",
       "_ChevronUpIcon.js",
       "_ChevronDownIcon.js",
       "_MagnifyingGlassIcon2.js"
@@ -5040,8 +4914,6 @@
     "src": "src/web/Coordinator/drawCard.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_pageHeader.js",
       "_layoutOuter.js",
@@ -5055,8 +4927,6 @@
     "src": "src/web/Coordinator/eventSubmission/eventSelectionPanel.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_rankPositions.js",
       "_CloudArrowUpIcon.js"
@@ -5068,8 +4938,6 @@
     "src": "src/web/Coordinator/eventSubmission/manageEventSubmission.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_DocumentArrowDownIcon.js"
     ],
@@ -5087,8 +4955,6 @@
     "src": "src/web/Coordinator/excelImport/excelImportComponent.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_useConfirmation.js",
       "_exceljs.min.js",
@@ -5103,6 +4969,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js"
     ]
   },
@@ -5112,8 +4979,6 @@
     "src": "src/web/Coordinator/excelImport/manageExcelImport.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js"
@@ -5132,12 +4997,10 @@
     "src": "src/web/Coordinator/liveResultPresentation.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_react-confetti.js",
       "_layoutOuter.js",
       "_pageHeader.js",
-      "src/web/mainweb.jsx",
       "_ArrowsPointingOutIcon.js",
       "_proxy.js"
     ]
@@ -5148,8 +5011,6 @@
     "src": "src/web/Coordinator/manageResultsStatus.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -5173,8 +5034,6 @@
     "src": "src/web/Coordinator/participantManagement/components/groupFilterTab.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_TagIcon.js"
     ]
@@ -5185,8 +5044,6 @@
     "src": "src/web/Coordinator/participantManagement/components/manageParticipantModal.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_index.esm.js",
       "src/formBuilder/renderComponents.jsx",
@@ -5194,6 +5051,7 @@
       "src/components/common/competitionSelection.jsx",
       "_XCircleIcon.js",
       "_CheckCircleIcon.js",
+      "_navigationUtils.js",
       "_validationMessage.js",
       "_CheckCircleIcon2.js",
       "_useDrop.js",
@@ -5219,8 +5077,6 @@
     "src": "src/web/Coordinator/participantManagement/components/organizationLevelManager.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_addOrganizationModal.js",
       "_roleAccess.js",
@@ -5240,6 +5096,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js"
     ]
   },
@@ -5249,8 +5106,6 @@
     "src": "src/web/Coordinator/participantManagement/components/participantFilterTab.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_UserGroupIcon.js",
       "_UserIcon.js"
@@ -5262,8 +5117,6 @@
     "src": "src/web/Coordinator/participantManagement/components/participantFilters.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_FunnelIcon.js",
       "_ChevronUpIcon.js",
@@ -5276,8 +5129,6 @@
     "src": "src/web/Coordinator/participantManagement/components/participantManagementLayout.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_ParticipantActionButtons.js",
       "src/components/table/pagination.jsx",
@@ -5310,8 +5161,6 @@
     "src": "src/web/Coordinator/participantManagement/manageBulkParticipants.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_RequireWideViewport.js",
@@ -5326,8 +5175,8 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
-      "_description.js",
       "_navigationUtils.js",
+      "_description.js",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -5350,16 +5199,15 @@
     "src": "src/web/Coordinator/publishToSocialMedia.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "node_modules/html2canvas/dist/html2canvas.esm.js",
       "node_modules/html-to-image/es/index.js",
-      "_react-vendor.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_navVerticalTabs.js",
-      "src/web/mainweb.jsx",
       "_keyboard.js",
       "_description.js",
+      "_navigationUtils.js",
       "_use-resolve-button-type.js",
       "_bugs.js",
       "_ShareIcon.js",
@@ -5372,11 +5220,9 @@
     "src": "src/web/Coordinator/resultPresentation.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_react-confetti.js",
       "_box.js",
-      "src/web/mainweb.jsx",
       "_proxy.js",
       "_UserIcon.js"
     ]
@@ -5387,8 +5233,6 @@
     "src": "src/web/Coordinator/sportsResultManagement.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -5404,8 +5248,6 @@
     "src": "src/web/EasyStart/InstallProgress.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -5423,13 +5265,11 @@
     "src": "src/web/EasyStart/Review.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_AssignmentMatrix.js",
       "_CompetitionItemsList.js",
-      "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_languages.js",
       "_CheckCircleIcon.js",
@@ -5453,18 +5293,16 @@
     "src": "src/web/Error/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_PageUnlockContext.js",
       "_scrollToTop.js",
       "_BreadcrumbContext.js",
       "_v2Sidebar.js",
+      "_navigationUtils.js",
       "_ArrowPathIcon.js",
       "_HomeIcon.js",
       "_ArrowLeftIcon.js",
       "_pageUnlocks.js",
-      "_navigationUtils.js",
       "_dialog.js",
       "_keyboard.js",
       "_use-tab-direction.js",
@@ -5490,7 +5328,20 @@
       "_ScaleIcon.js",
       "_CheckBadgeIcon.js",
       "_BuildingOffice2Icon.js",
-      "_icons-vendor.js",
+      "_chunk-25.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js",
+      "_chunk-6.js",
+      "_chunk-27.js",
+      "_chunk-3.js",
+      "_chunk-0.js",
+      "_chunk-29.js",
+      "_chunk-26.js",
+      "_chunk-11.js",
+      "_chunk-24.js",
+      "_chunk-23.js",
+      "_chunk-21.js",
+      "_chunk-4.js",
       "_MagnifyingGlassIcon.js",
       "_LockClosedIcon.js",
       "_StarIcon.js",
@@ -5503,11 +5354,9 @@
     "src": "src/web/Event/manageEvent.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
-      "src/web/mainweb.jsx",
       "src/components/table/formEditor.jsx",
       "_competitionTypes.js",
       "_roleAccess.js",
@@ -5520,6 +5369,7 @@
       "_EnvelopeIcon.js",
       "_PencilSquareIcon.js",
       "_DocumentDuplicateIcon.js",
+      "_navigationUtils.js",
       "src/formBuilder/renderComponents.jsx",
       "_validationMessage.js",
       "_CheckCircleIcon2.js",
@@ -5546,10 +5396,9 @@
     "src": "src/web/EventRegistrationWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "src/web/publicRegistrationOuter.jsx",
+      "_navigationUtils.js",
       "_publicLayout.js",
       "_scrollToTop.js",
       "_logout.js",
@@ -5567,7 +5416,6 @@
       "_dialog.js",
       "_description.js",
       "src/web/eventDetailedView.jsx",
-      "_navigationUtils.js",
       "_UserPlusIcon.js",
       "_UserGroupIcon.js",
       "_PaperAirplaneIcon.js",
@@ -5594,10 +5442,8 @@
     "src": "src/web/EventStages/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_OldNewTabLayout.js",
@@ -5620,10 +5466,8 @@
     "src": "src/web/Example/parameterNavigation.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_navigationUtils.js",
-      "_react-vendor.js",
-      "src/web/mainweb.jsx"
+      "src/web/mainweb.jsx",
+      "_navigationUtils.js"
     ]
   },
   "src/web/Home/Index.jsx": {
@@ -5632,11 +5476,9 @@
     "src": "src/web/Home/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_roleAccess.js",
-      "_react-vendor.js",
       "_AreaChart.js",
       "_UsersIcon.js",
       "_TrophyIcon.js",
@@ -5651,7 +5493,6 @@
       "_pageUnlocks.js",
       "_PageUnlockContext.js",
       "_with-selector.js",
-      "_mobx-vendor.js",
       "_dialog.js",
       "_keyboard.js",
       "_use-tab-direction.js",
@@ -5665,10 +5506,8 @@
     "src": "src/web/Home/Welcome.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js",
-      "_react-vendor.js",
       "_ArrowRightIcon.js",
       "_UserGroupIcon.js",
       "_TrophyIcon.js",
@@ -5681,8 +5520,6 @@
     "src": "src/web/Judge/judgesScoreCardRefactored.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -5703,8 +5540,6 @@
     "src": "src/web/JudgesAllotment/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_OldNewTabLayout.js",
       "_layoutOuter.js",
@@ -5739,8 +5574,8 @@
     "src": "src/web/MainPageUsersAndRoles.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
+      "src/web/mainweb.jsx",
+      "_navigationUtils.js"
     ],
     "dynamicImports": [
       "src/web/UsersAndRoles.jsx"
@@ -5752,8 +5587,6 @@
     "src": "src/web/MyRoles/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -5776,8 +5609,6 @@
     "src": "src/web/NotFound/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_ExclamationTriangleIcon.js",
@@ -5790,10 +5621,8 @@
     "src": "src/web/Profile/ProfileSettings.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_OldNewTabLayout.js",
@@ -5811,15 +5640,13 @@
     "src": "src/web/Public/CompetitionItem.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_navigationUtils.js",
       "_eventCategoryTemplates.js",
       "_competitionItems.js",
       "_competitionCategories.js",
       "_scoreLabels.js",
-      "src/web/mainweb.jsx",
       "_ArrowRightIcon2.js",
       "_TagIcon2.js",
       "_RectangleGroupIcon.js",
@@ -5848,13 +5675,11 @@
     "src": "src/web/Public/Competitions.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_navigationUtils.js",
       "_eventCategoryTemplates.js",
       "_competitionItems.js",
-      "src/web/mainweb.jsx",
       "_MagnifyingGlassIcon.js",
       "_TagIcon2.js",
       "_RectangleGroupIcon.js",
@@ -5881,12 +5706,10 @@
     "src": "src/web/Public/DesignBackgrounds.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_designShowcase.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_SwatchIcon.js",
       "_MagnifyingGlassIcon.js",
       "_brand.js",
@@ -5912,12 +5735,10 @@
     "src": "src/web/Public/DesignLook.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_designShowcase.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_ChevronLeftIcon3.js",
       "_ArrowRightIcon2.js",
       "_brand.js",
@@ -5943,12 +5764,10 @@
     "src": "src/web/Public/Designs.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_designShowcase.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_PhotoIcon2.js",
       "_MagnifyingGlassIcon.js",
       "_SwatchIcon.js",
@@ -5976,11 +5795,9 @@
     "src": "src/web/Public/EasyStart.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_easyStart2.js",
       "_eventCategoryTemplates.js",
       "_competitionItems.js",
@@ -6011,8 +5828,7 @@
     "src": "src/web/Public/EasyStartDemo.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_pageHeader.js",
       "src/web/Public/EasyStart.jsx",
@@ -6022,12 +5838,17 @@
       "_CompetitionItemsList.js",
       "_eventCategoryTemplates.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_PlayIcon.js",
       "_VideoCameraIcon.js",
       "_CheckCircleIcon.js",
       "_BuildingOffice2Icon.js",
-      "_icons-vendor.js",
+      "_chunk-25.js",
+      "_chunk-27.js",
+      "_chunk-29.js",
+      "_chunk-6.js",
+      "_chunk-0.js",
+      "_chunk-21.js",
+      "_chunk-23.js",
       "_brand.js",
       "_useThemeVariant.js",
       "_use-resolve-button-type.js",
@@ -6066,7 +5887,9 @@
       "_SparklesIcon.js",
       "_TrophyIcon.js",
       "_FunnelIcon.js",
-      "_PencilIcon.js"
+      "_PencilIcon.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js"
     ]
   },
   "src/web/Public/EventRegistrationDemo.jsx": {
@@ -6075,15 +5898,13 @@
     "src": "src/web/Public/EventRegistrationDemo.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_publicLayout.js",
       "_DemoKit.js",
       "_defaultComponents.js",
       "_eventCategoryTemplates.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_PlayIcon.js",
       "_ShieldCheckIcon.js",
       "_UserPlusIcon.js",
@@ -6095,7 +5916,12 @@
       "_UserGroupIcon.js",
       "_PlusIcon.js",
       "_HomeIcon2.js",
-      "_icons-vendor.js",
+      "_chunk-25.js",
+      "_chunk-0.js",
+      "_chunk-21.js",
+      "_chunk-3.js",
+      "_chunk-24.js",
+      "_chunk-11.js",
       "_brand.js",
       "_useThemeVariant.js",
       "_use-resolve-button-type.js",
@@ -6113,7 +5939,9 @@
       "_logout.js",
       "_disclosure.js",
       "_ViewportGateAnimations.js",
-      "_VideoCameraIcon.js"
+      "_VideoCameraIcon.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js"
     ],
     "dynamicImports": [
       "src/formBuilder/formBuilderPlayground.jsx"
@@ -6125,7 +5953,7 @@
     "src": "src/web/Public/Features.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_PublicPageLayout.js",
       "_TrophyIcon.js",
@@ -6136,8 +5964,6 @@
       "_CogIcon.js",
       "_CheckCircleIcon.js",
       "_ShieldCheckIcon2.js",
-      "_react-vendor.js",
-      "src/web/mainweb.jsx",
       "_brand.js",
       "_useThemeVariant.js",
       "_use-resolve-button-type.js",
@@ -6160,10 +5986,9 @@
     "src": "src/web/Public/HowToCreateEvent.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
+      "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_PublicPageLayout.js",
-      "_react-vendor.js",
       "_Cog6ToothIcon.js",
       "_UserGroupIcon.js",
       "_ScaleIcon.js",
@@ -6171,7 +5996,6 @@
       "_MegaphoneIcon.js",
       "_ArrowRightIcon.js",
       "_CheckCircleIcon.js",
-      "src/web/mainweb.jsx",
       "_brand.js",
       "_useThemeVariant.js",
       "_use-resolve-button-type.js",
@@ -6194,8 +6018,7 @@
     "src": "src/web/Public/JudgesDemo.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_DemoKit.js",
       "src/components/table/formEditor.jsx",
@@ -6206,9 +6029,12 @@
       "_PlayIcon.js",
       "_UserPlusIcon.js",
       "_CheckCircleIcon.js",
-      "_icons-vendor.js",
+      "_chunk-27.js",
+      "_chunk-25.js",
+      "_chunk-29.js",
+      "_chunk-6.js",
+      "_chunk-3.js",
       "_navigationUtils.js",
-      "src/web/mainweb.jsx",
       "_brand.js",
       "_useThemeVariant.js",
       "_use-resolve-button-type.js",
@@ -6247,7 +6073,9 @@
       "_UserIcon.js",
       "_StarIcon.js",
       "_StarIcon2.js",
-      "_TrashIcon.js"
+      "_TrashIcon.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js"
     ]
   },
   "src/web/Public/ManageCompetitionsDemo.jsx": {
@@ -6256,8 +6084,7 @@
     "src": "src/web/Public/ManageCompetitionsDemo.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_DemoKit.js",
       "_AgeGroupTable.js",
@@ -6267,13 +6094,18 @@
       "_competitionCategories.js",
       "_scoreLabels.js",
       "_rankPositions.js",
-      "src/web/mainweb.jsx",
       "_PlayIcon.js",
       "_PlusIcon.js",
       "_PencilIcon.js",
       "_CheckCircleIcon.js",
       "_tabs.js",
-      "_icons-vendor.js",
+      "_chunk-25.js",
+      "_chunk-29.js",
+      "_chunk-27.js",
+      "_chunk-11.js",
+      "_chunk-3.js",
+      "_chunk-6.js",
+      "_chunk-21.js",
       "_navigationUtils.js",
       "_brand.js",
       "_useThemeVariant.js",
@@ -6315,7 +6147,9 @@
       "src/components/modalForm.jsx",
       "_XMarkIcon2.js",
       "_dialog.js",
-      "_description.js"
+      "_description.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js"
     ]
   },
   "src/web/Public/ManageParticipantsDemo.jsx": {
@@ -6324,8 +6158,7 @@
     "src": "src/web/Public/ManageParticipantsDemo.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_DemoKit.js",
       "_CandidatesTable.js",
@@ -6333,7 +6166,6 @@
       "_ParticipantActionButtons.js",
       "_candidateProfileLink.js",
       "_defaultComponents.js",
-      "src/web/mainweb.jsx",
       "_PlayIcon.js",
       "_PlusIcon.js",
       "_TrashIcon.js",
@@ -6345,7 +6177,13 @@
       "_CheckIcon.js",
       "_PencilSquareIcon.js",
       "_CheckCircleIcon.js",
-      "_icons-vendor.js",
+      "_chunk-27.js",
+      "_chunk-25.js",
+      "_chunk-29.js",
+      "_chunk-6.js",
+      "_chunk-21.js",
+      "_chunk-3.js",
+      "_chunk-11.js",
       "_navigationUtils.js",
       "_brand.js",
       "_useThemeVariant.js",
@@ -6377,7 +6215,9 @@
       "_dialog.js",
       "_description.js",
       "_XCircleIcon.js",
-      "_PencilIcon.js"
+      "_PencilIcon.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js"
     ],
     "dynamicImports": [
       "src/formBuilder/formBuilderPlayground.jsx"
@@ -6389,13 +6229,11 @@
     "src": "src/web/Public/ManageUnitsDemo.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_DemoKit.js",
-      "src/web/mainweb.jsx",
       "_PlayIcon.js",
-      "_icons-vendor.js",
+      "_chunk-26.js",
       "_BuildingOffice2Icon.js",
       "_PlusIcon.js",
       "_MagnifyingGlassIcon2.js",
@@ -6403,6 +6241,9 @@
       "_PencilSquareIcon.js",
       "_TrashIcon.js",
       "_CheckCircleIcon.js",
+      "_chunk-25.js",
+      "_chunk-29.js",
+      "_chunk-27.js",
       "_navigationUtils.js",
       "_brand.js",
       "_useThemeVariant.js",
@@ -6418,7 +6259,9 @@
       "_scrollToTop.js",
       "_ShareIcon2.js",
       "_ViewportGateAnimations.js",
-      "_VideoCameraIcon.js"
+      "_VideoCameraIcon.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js"
     ]
   },
   "src/web/Public/OptOutReminder.jsx": {
@@ -6427,11 +6270,10 @@
     "src": "src/web/Public/OptOutReminder.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_CheckCircleIcon.js",
-      "_XCircleIcon.js"
+      "_XCircleIcon.js",
+      "_navigationUtils.js"
     ]
   },
   "src/web/Public/Pricing.jsx": {
@@ -6440,13 +6282,11 @@
     "src": "src/web/Public/Pricing.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_PublicPageLayout.js",
       "_ChevronDownIcon.js",
       "_MagnifyingGlassIcon2.js",
-      "src/web/mainweb.jsx",
       "_UserGroupIcon.js",
       "_GlobeAltIcon.js",
       "_RocketLaunchIcon.js",
@@ -6474,14 +6314,12 @@
     "src": "src/web/Public/PrintIdCardsDemo.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_PublicPageLayout.js",
       "_DemoKit.js",
       "_designShowcase.js",
       "_cardPreview.js",
       "_sheetExport.js",
-      "src/web/mainweb.jsx",
       "_PlayIcon.js",
       "_RectangleStackIcon.js",
       "_PhotoIcon.js",
@@ -6494,7 +6332,13 @@
       "_PrinterIcon.js",
       "_ArrowDownTrayIcon.js",
       "_CheckCircleIcon.js",
-      "_icons-vendor.js",
+      "_chunk-25.js",
+      "_chunk-29.js",
+      "_chunk-6.js",
+      "_chunk-11.js",
+      "_chunk-3.js",
+      "_chunk-26.js",
+      "_chunk-27.js",
       "_navigationUtils.js",
       "_brand.js",
       "_useThemeVariant.js",
@@ -6513,7 +6357,9 @@
       "_ViewportGateAnimations.js",
       "_VideoCameraIcon.js",
       "_jspdf.es.min.js",
-      "node_modules/html-to-image/es/index.js"
+      "node_modules/html-to-image/es/index.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js"
     ]
   },
   "src/web/Public/Register.jsx": {
@@ -6522,8 +6368,6 @@
     "src": "src/web/Public/Register.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_GoogleSignInButton.js",
       "_navigationUtils.js",
@@ -6561,11 +6405,10 @@
     "src": "src/web/Public/RenewalUnsubscribe.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_CheckCircleIcon.js",
-      "_XCircleIcon.js"
+      "_XCircleIcon.js",
+      "_navigationUtils.js"
     ]
   },
   "src/web/Public/Roles.jsx": {
@@ -6574,8 +6417,7 @@
     "src": "src/web/Public/Roles.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_PublicPageLayout.js",
       "_ShieldCheckIcon2.js",
@@ -6588,7 +6430,6 @@
       "_DocumentTextIcon.js",
       "_UserCircleIcon.js",
       "_CheckCircleIcon.js",
-      "src/web/mainweb.jsx",
       "_brand.js",
       "_useThemeVariant.js",
       "_use-resolve-button-type.js",
@@ -6611,8 +6452,6 @@
     "src": "src/web/Public/publicEventView.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
@@ -6625,10 +6464,8 @@
     "src": "src/web/Quiz/AssignQuizMasters.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "src/web/JudgesAllotment/index.jsx",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
+      "src/web/JudgesAllotment/index.jsx",
       "_OldNewTabLayout.js",
       "_navigationUtils.js",
       "_breadcrumb.js",
@@ -6662,10 +6499,8 @@
     "src": "src/web/Quiz/PublicQuizPlay.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_quizApi.js",
-      "src/web/mainweb.jsx"
+      "src/web/mainweb.jsx",
+      "_quizApi.js"
     ]
   },
   "src/web/Quiz/QuizPrepare.jsx": {
@@ -6674,8 +6509,6 @@
     "src": "src/web/Quiz/QuizPrepare.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -6695,8 +6528,6 @@
     "src": "src/web/Quiz/QuizPresent.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_quizApi.js",
       "_navigationUtils.js",
@@ -6709,8 +6540,6 @@
     "src": "src/web/Quiz/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -6719,10 +6548,12 @@
       "_quizApi.js",
       "_navigationUtils.js",
       "_quizShared.js",
-      "_icons-vendor.js",
+      "_chunk-27.js",
       "_utils.js",
       "_clsx.js",
-      "_MagnifyingGlassIcon2.js"
+      "_MagnifyingGlassIcon2.js",
+      "_createFluentIcon.js",
+      "_emotion-hash.esm.js"
     ]
   },
   "src/web/ScoreLog/View/index.jsx": {
@@ -6731,8 +6562,6 @@
     "src": "src/web/ScoreLog/View/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ]
   },
@@ -6742,8 +6571,6 @@
     "src": "src/web/SendReminders.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_useConfirmation.js",
       "_EnvelopeIcon.js",
@@ -6758,6 +6585,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js"
     ]
   },
@@ -6767,10 +6595,8 @@
     "src": "src/web/SetUp/EligibleRegistrationNumbers/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_DocumentTextIcon.js",
@@ -6786,10 +6612,8 @@
     "src": "src/web/SetUp/EventsList/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_useQuery.js",
       "src/web/mainweb.jsx",
+      "_useQuery.js",
       "_navigationUtils.js",
       "_switchRole.js",
       "src/components/table/formEditor.jsx",
@@ -6840,12 +6664,10 @@
     "src": "src/web/SetUp/IdPrefix/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_OldNewTabLayout.js",
       "_layoutOuter.js",
       "_pageHeader.js",
-      "src/web/mainweb.jsx",
       "_useConfirmation.js",
       "src/components/table/formEditor.jsx",
       "_PencilSquareIcon.js",
@@ -6884,8 +6706,6 @@
     "src": "src/web/SetUp/ManageCompetitionItems/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -6936,8 +6756,6 @@
     "src": "src/web/SetUp/ManageEventLevels/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -6946,8 +6764,8 @@
       "_ArrowPathIcon.js",
       "_PencilIcon.js",
       "_TrashIcon.js",
-      "_dialog.js",
       "_navigationUtils.js",
+      "_dialog.js",
       "_breadcrumb.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
@@ -6964,8 +6782,6 @@
     "src": "src/web/SetUp/ManageGroups/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -7017,10 +6833,8 @@
     "src": "src/web/SetUp/MaxParticipation/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_competitionCategories.js",
@@ -7036,12 +6850,10 @@
     "src": "src/web/SetUp/ScoreSettings/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
+      "src/web/mainweb.jsx",
       "_OldNewTabLayout.js",
       "_layoutOuter.js",
       "_pageHeader.js",
-      "src/web/mainweb.jsx",
       "src/components/table/formEditor.jsx",
       "_useConfirmation.js",
       "_PencilSquareIcon.js",
@@ -7082,13 +6894,20 @@
     "src": "src/web/SetUp/eventAdvancedSettings.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_pageHeader.js",
-      "_icons-vendor.js"
+      "_chunk-27.js",
+      "_chunk-6.js",
+      "_createFluentIcon.js",
+      "_chunk-3.js",
+      "_chunk-21.js",
+      "_chunk-25.js",
+      "_chunk-26.js",
+      "_chunk-0.js",
+      "_chunk-4.js",
+      "_emotion-hash.esm.js"
     ]
   },
   "src/web/Settings/Features/index.jsx": {
@@ -7097,8 +6916,6 @@
     "src": "src/web/Settings/Features/index.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_pageHeader.js",
       "_layoutOuter.js",
@@ -7121,8 +6938,6 @@
     "src": "src/web/Settings/themeSettings.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -7135,8 +6950,6 @@
     "src": "src/web/UsersAndRoles.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_layoutOuter.js",
       "_pageHeader.js",
@@ -7152,6 +6965,7 @@
       "_redirectionFlow.js",
       "_PencilSquareIcon.js",
       "_ExclamationTriangleIcon.js",
+      "_navigationUtils.js",
       "_CheckIcon.js",
       "_dialog.js",
       "_keyboard.js",
@@ -7162,7 +6976,6 @@
       "_roleAccess.js",
       "_ChevronDownIcon2.js",
       "_validationMessage.js",
-      "_navigationUtils.js",
       "_ArrowRightIcon.js"
     ],
     "dynamicImports": [
@@ -7176,8 +6989,6 @@
     "src": "src/web/contactInfo.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
@@ -7199,9 +7010,7 @@
     "src": "src/web/enterOTP.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
       "src/web/mainweb.jsx",
-      "_react-vendor.js",
       "src/components/common/textBox.jsx",
       "_validationMessage.js",
       "_EyeSlashIcon.js",
@@ -7215,8 +7024,6 @@
     "src": "src/web/eventDetailedView.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_UserPlusIcon.js",
@@ -7233,8 +7040,6 @@
     "src": "src/web/forgotPassword.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js"
     ]
@@ -7245,10 +7050,6 @@
     "src": "src/web/mainweb.jsx",
     "isEntry": true,
     "isDynamicEntry": true,
-    "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js"
-    ],
     "dynamicImports": [
       "src/config/data/tenants.json",
       "src/web/router/wrappers/CoordinatorWrapper.jsx",
@@ -7271,8 +7072,6 @@
     "src": "src/web/managePublicRegistrationForm.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_pageHeader.js",
       "_layoutOuter.js",
@@ -7293,8 +7092,6 @@
     "src": "src/web/manageTeamParticipants.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
@@ -7308,10 +7105,8 @@
     "src": "src/web/openAiCompetitionStructure.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_index.esm.js",
       "src/web/mainweb.jsx",
+      "_index.esm.js",
       "_layoutOuter.js",
       "_pageHeader.js",
       "_aiHelper.js",
@@ -7326,13 +7121,12 @@
     "src": "src/web/publicRegistrationForm.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_publicLayout.js",
       "src/web/mainweb.jsx",
+      "_publicLayout.js",
       "_renderRegistrationForm.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
+      "_navigationUtils.js",
       "_logout.js",
       "_brand.js",
       "_disclosure.js",
@@ -7347,7 +7141,6 @@
       "_dialog.js",
       "_description.js",
       "src/web/eventDetailedView.jsx",
-      "_navigationUtils.js",
       "_UserPlusIcon.js",
       "_UserGroupIcon.js",
       "_PaperAirplaneIcon.js",
@@ -7376,13 +7169,12 @@
     "src": "src/web/publicRegistrationOuter.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
-      "_publicLayout.js",
       "src/web/mainweb.jsx",
+      "_publicLayout.js",
       "_renderRegistrationForm.js",
       "_HomeIcon2.js",
       "_scrollToTop.js",
+      "_navigationUtils.js",
       "_logout.js",
       "_brand.js",
       "_disclosure.js",
@@ -7397,7 +7189,6 @@
       "_dialog.js",
       "_description.js",
       "src/web/eventDetailedView.jsx",
-      "_navigationUtils.js",
       "_UserPlusIcon.js",
       "_UserGroupIcon.js",
       "_PaperAirplaneIcon.js",
@@ -7428,8 +7219,6 @@
     "src": "src/web/renderEventDetailedView.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx"
     ],
     "dynamicImports": [
@@ -7442,8 +7231,6 @@
     "src": "src/web/renderUsersList.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_useConfirmation.js",
       "_publicRegistrationHelper.js",
@@ -7454,6 +7241,7 @@
       "_keyboard.js",
       "_use-tab-direction.js",
       "_with-selector.js",
+      "_navigationUtils.js",
       "_description.js",
       "_customCompetitionFields.js",
       "_index.esm.js",
@@ -7467,7 +7255,6 @@
       "_XMarkIcon.js",
       "_PlusIcon.js",
       "src/web/eventDetailedView.jsx",
-      "_navigationUtils.js",
       "_UserPlusIcon.js",
       "_UserGroupIcon.js",
       "_PaperAirplaneIcon.js",
@@ -7481,11 +7268,9 @@
     "src": "src/web/router/wrappers/CandidateWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
-      "_layoutUtils.js",
-      "_navigationUtils.js"
+      "_navigationUtils.js",
+      "_layoutUtils.js"
     ],
     "dynamicImports": [
       "src/web/BugReports/index.jsx",
@@ -7506,8 +7291,6 @@
     "src": "src/web/router/wrappers/ContentAdminWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_coordinatorRouter.js",
@@ -7523,12 +7306,10 @@
     "src": "src/web/router/wrappers/CoordinatorWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
+      "_navigationUtils.js",
       "_coordinatorRouter.js",
-      "_layoutUtils.js",
-      "_navigationUtils.js"
+      "_layoutUtils.js"
     ],
     "dynamicImports": [
       "src/web/Error/index.jsx"
@@ -7540,11 +7321,9 @@
     "src": "src/web/router/wrappers/DrawMasterWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
-      "_layoutUtils.js",
-      "_navigationUtils.js"
+      "_navigationUtils.js",
+      "_layoutUtils.js"
     ],
     "dynamicImports": [
       "src/web/BugReports/index.jsx",
@@ -7564,11 +7343,9 @@
     "src": "src/web/router/wrappers/GuardianWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
-      "_layoutUtils.js",
-      "_navigationUtils.js"
+      "_navigationUtils.js",
+      "_layoutUtils.js"
     ],
     "dynamicImports": [
       "src/web/BugReports/index.jsx",
@@ -7589,8 +7366,6 @@
     "src": "src/web/router/wrappers/GuestWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js"
     ],
@@ -7631,11 +7406,9 @@
     "src": "src/web/router/wrappers/JudgeWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
-      "_layoutUtils.js",
-      "_navigationUtils.js"
+      "_navigationUtils.js",
+      "_layoutUtils.js"
     ],
     "dynamicImports": [
       "src/web/BugReports/index.jsx",
@@ -7654,8 +7427,6 @@
     "src": "src/web/router/wrappers/ProjectorWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_coordinatorRouter.js",
@@ -7671,11 +7442,9 @@
     "src": "src/web/router/wrappers/QuizMasterWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
-      "_layoutUtils.js",
-      "_navigationUtils.js"
+      "_navigationUtils.js",
+      "_layoutUtils.js"
     ],
     "dynamicImports": [
       "src/web/Quiz/index.jsx",
@@ -7692,11 +7461,9 @@
     "src": "src/web/router/wrappers/SubCoordinatorWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
-      "_layoutUtils.js",
-      "_navigationUtils.js"
+      "_navigationUtils.js",
+      "_layoutUtils.js"
     ],
     "dynamicImports": [
       "src/web/BugReports/index.jsx",
@@ -7725,8 +7492,6 @@
     "src": "src/web/router/wrappers/SuperAdminWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
       "_navigationUtils.js",
       "_coordinatorRouter.js",
@@ -7753,11 +7518,9 @@
     "src": "src/web/router/wrappers/UserWrapper.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_blueprint-vendor.js",
-      "_react-vendor.js",
       "src/web/mainweb.jsx",
-      "_layoutUtils.js",
-      "_navigationUtils.js"
+      "_navigationUtils.js",
+      "_layoutUtils.js"
     ],
     "dynamicImports": [
       "src/web/Home/Index.jsx",
