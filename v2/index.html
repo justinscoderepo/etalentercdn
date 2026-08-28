@@ -104,11 +104,12 @@
         } else {
             const localBaseUrl = window.location.origin + '/v2';
             const cdnBaseUrl = 'https://justinscoderepo.github.io/etalentercdn/v2';
-            const canUseCdnFallback = !window.isLocalhost;
-            let preferredAssetSource = localBaseUrl;
-            if(window.isLocalhost){
-                preferredAssetSource = localBaseUrl;
-            }
+            // The app's own host never actually serves the v2 bundle in production (its
+            // SPA catch-all returns index.html with a 200 for any unknown path), so trying
+            // current-origin first there is a guaranteed-fail request on every load. Only
+            // localhost (dev/local build) legitimately serves its own bundle.
+            const primaryBaseUrl = window.isLocalhost ? localBaseUrl : cdnBaseUrl;
+            const primaryLabel = window.isLocalhost ? 'localhost (current-origin)' : 'CDN';
 
             const loadFromManifest = (baseUrl, sourceLabel) => {
                 console.log(`Production mode - loading manifest from ${sourceLabel}:`, baseUrl);
@@ -178,11 +179,11 @@
                     }));
             };
 
-            loadFromManifest(localBaseUrl, window.isLocalhost ? 'localhost (current-origin)' : 'current-origin')
+            loadFromManifest(primaryBaseUrl, primaryLabel)
                 .catch((error) => {
-                    if (!canUseCdnFallback) throw error;
-                    console.warn('Current-origin manifest load failed; falling back to CDN.', error);
-                    return loadFromManifest(cdnBaseUrl, 'CDN');
+                    if (window.isLocalhost) throw error; // no fallback available locally
+                    console.warn(`${primaryLabel} manifest load failed; falling back to current-origin.`, error);
+                    return loadFromManifest(localBaseUrl, 'current-origin');
                 })
                 .catch(error => {
                     console.error('Manifest load failed:', error);
