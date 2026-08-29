@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<style>
+  body { background: #222; }
+  .outer {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border: 2px solid red;
+    position: relative;
+    background: #333;
+  }
+  .inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    zoom: 119%;
+    background: rgba(0,255,0,0.2);
+  }
+  .footer {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    background: #0d233e;
+    color: #fff;
+    text-align: center;
+    padding: 13px 0;
+  }
+</style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner">
+      content
+      <div class="footer">etalenter footer band</div>
+    </div>
+  </div>
+</body>
+</html>
