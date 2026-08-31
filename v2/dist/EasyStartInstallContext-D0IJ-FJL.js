@@ -1,0 +1,1 @@
+import{r as t,j as n}from"./main-CyR6qrt2.js";const a=t.createContext({status:null,setStatus:()=>{}}),l=({children:e})=>{const[s,r]=t.useState(null),o=t.useMemo(()=>({status:s,setStatus:r}),[s]);return n.jsx(a.Provider,{value:o,children:e})},x=()=>t.useContext(a);export{l as E,x as u};
