@@ -1,4 +1,4 @@
-/*@font-face {
+﻿/*@font-face {
     font-family: 'Quicksand-Light';
     src: url(Quicksand/Quicksand-Light.ttf) format("truetype")
 }
@@ -1661,7 +1661,7 @@ div#contentbox.inIframe { margin-top: 0px; }
     overflow-y: auto;
     position: fixed;
     top: 48px;
-    transition: width 2s;
+    transition: width .2s ease;
     z-index: 123;
 }
 
@@ -3115,6 +3115,49 @@ div.totalfees {
 .leftmenuouterbox.minimizemenu { width: 60px; }
 
 .leftmenuouterbox.menuhidden { width: 0px; }
+
+/* Azure-style collapse/expand chevron, pinned to the top-right of the menu rail.
+   sticky (not absolute) so it stays visible while the menu itself scrolls. */
+.menucollapsebar {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #2a5b97;
+    padding: 2px 4px;
+}
+
+.minimizemenu .menucollapsebar {
+    justify-content: center;
+    padding: 2px 0;
+}
+
+a.menucollapsetoggle {
+    color: #dfe8f5;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    padding: 5px 8px;
+    text-decoration: none;
+}
+
+a.menucollapsetoggle:hover,
+a.menucollapsetoggle:focus {
+    background-color: rgba(255,255,255,.15);
+    border-radius: 3px;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.menucollapsetoggle .fas { font-size: 18px; }
+
+a.menucollapsetoggle .expandicon { display: none; }
+
+.minimizemenu a.menucollapsetoggle .collapseicon { display: none; }
+
+.minimizemenu a.menucollapsetoggle .expandicon { display: inline-block; }
+
 
 .form-group.table-cell-new { /* padding-top: 3px; */ }
 

@@ -46,7 +46,7 @@ var applymenustyle = function () {
             "width",
             $(window).width() - 60 + "px"
           );
-        }, 1000);
+        }, 200);
       }
     } else {
       converttotstyle(
@@ -988,39 +988,26 @@ $(function () {
   });
 
   window.showmenu = function () {
-    if (
-      $(".leftmenuouterbox ").hasClass("minimizemenu") &&
-      !$("#contentbox").attr("menumaximized")
-    ) {
-      if (!$(".leftmenuouterbox ").hasClass("removingclass")) {
-        $(".leftmenuouterbox ").addClass("removingclass");
-        setTimeout(function () {
-          $(".leftmenuouterbox ").removeClass("removingclass");
-          $(".leftmenuouterbox ").addClass("maximizemenu");
-        }, 500);
-      }
-      $(".leftmenuouterbox ").removeClass("minimizemenu");
-      $("#contentbox").attr("menumaximized", true);
-      $(".menubarbox").show();
-      applymenustyle();
-    }
+    $(".leftmenuouterbox")
+      .removeClass("minimizemenu")
+      .addClass("maximizemenu");
+    $("#contentbox").attr("menumaximized", true);
+    $(".menubarbox").show();
+    applymenustyle();
   };
   window.hidemenu = function () {
-    if (!$(".leftmenuouterbox ").hasClass("removingclass")) {
-      $(".leftmenuouterbox ").addClass("removingclass");
-      setTimeout(function () {
-        $(".leftmenuouterbox ").removeClass("removingclass");
-        $(".leftmenuouterbox ").addClass("minimizemenu");
-      }, 500);
-    }
-    $(".leftmenuouterbox ").removeClass("maximizemenu");
-
+    $(".leftmenuouterbox")
+      .removeClass("maximizemenu")
+      .addClass("minimizemenu");
     $("#contentbox").removeAttr("menumaximized");
     applymenustyle();
   };
+  // Clicking the content area only closes the menu on small screens, where the
+  // menu overlays the page. On desktop the chevron toggle is the only control.
   $("body").on("click", "#contentbox[menumaximized]", function () {
-    hidemenu();
-    applymenustyle();
+    if ($(window).width() <= 768) {
+      hidemenu();
+    }
   });
 
   window.detectIframeClickAndCloseMenu = function () {
@@ -1030,22 +1017,24 @@ $(function () {
       iframe.onload = function () {
         const iframeDocument = iframe.contentWindow.document;
 
-        // Listen for clicks inside the iframe
+        // Listen for clicks inside the iframe (small screens only - on desktop
+        // the menu is closed by the chevron toggle, not by clicking the page)
         iframeDocument.addEventListener("click", function () {
-          window.hidemenu();
+          if ($(window).width() <= 768) {
+            window.hidemenu();
+          }
         });
       };
     }
   };
   window.detectIframeClickAndCloseMenu();
-  $("body").on("click", ".open-nav", function (e) {
-    if ($(".leftmenuouterbox ").hasClass("minimizemenu")) {
+  $("body").on("click", ".open-nav, .menucollapsetoggle", function (e) {
+    e.preventDefault();
+    if ($(".leftmenuouterbox").hasClass("minimizemenu")) {
       showmenu();
     } else {
       hidemenu();
     }
-
-    applymenustyle();
   });
   if ($(".menubarbox").length == 0) {
     $(".open-nav").hide();
@@ -1082,12 +1071,8 @@ $(function () {
     }
   });
   var mouseover = false;
-  $("body").on("mouseover", ".leftmenuouterbox", function (e) {
-    if ($(window).width() > 768) {
-      showmenu();
-      applymenustyle();
-    }
-  });
+  // Hover-to-expand removed: the menu is expanded/collapsed only by the chevron
+  // toggle in the rail (or the header Menu button).
   $("body").on("click", ".backtomenu", function (e) {
     $(".parentmenus").show();
     lastMenuRequest = "";

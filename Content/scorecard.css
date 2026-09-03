@@ -154,3 +154,64 @@ select#competitionoptdropdown {
 .scorerow[data-isactive="false"]{
     display: none !important;
 }
+
+/* Scoped overrides so the Privacy control isn't caught by this theme's global
+   uppercase/navy label styling and hidden (opacity:0) native-checkbox styling,
+   which are meant for its custom checkbox-label widget elsewhere on the page. */
+#ScorecardPrivacyControls {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+#ScorecardPrivacyLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    text-transform: none;
+    color: #333;
+    font-weight: normal;
+    font-size: 13px;
+    width: auto;
+    cursor: pointer;
+}
+#ScorecardPrivacyEnabled {
+    opacity: 1;
+    position: static;
+    width: 13px;
+    height: 13px;
+    margin: 0;
+}
+
+/* Scorecard privacy (blur) mode — never applies to .scorestar / the drag overlay,
+   only to plain numeric/text score fields, so a real judge can still read stars
+   while an onlooker can't read the exact digits. */
+.scorecard-privacy-on .individualscoreinput,
+.scorecard-privacy-on .scorebyinput,
+.scorecard-privacy-on #Notes {
+    filter: blur(4px);
+    transition: filter .15s;
+}
+.scorecard-privacy-on .individualscoreinput:focus,
+.scorecard-privacy-on .scorebyinput:focus,
+.scorecard-privacy-on #Notes:focus {
+    filter: none;
+}
+.scorecard-privacy-on.scorecard-privacy-revealed .individualscoreinput,
+.scorecard-privacy-on.scorecard-privacy-revealed .scorebyinput,
+.scorecard-privacy-on.scorecard-privacy-revealed #Notes {
+    filter: none;
+}
+
+/* Left-pane participant list marks. Blurring .CandidateScore itself (rather than
+   wrapping its text in a span) because scorecard.js calls .text(totalScore) on this
+   exact element after every save, which would wipe out any inner span on next update.
+   .CandidateAbsentStatus ("X") is left alone — attendance isn't a confidential score. */
+.scorecard-privacy-on .CandidateScore {
+    filter: blur(4px);
+    transition: filter .15s;
+}
+.scorecard-privacy-on.scorecard-privacy-revealed .CandidateScore {
+    filter: none;
+}

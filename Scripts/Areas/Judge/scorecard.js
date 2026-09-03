@@ -1162,4 +1162,49 @@ function changeToFinish() {
     });
   }
 
+  // Scorecard privacy (blur) mode — persisted per user via UsersRolesJson/SaveScorecardPrivacy.
+  var scorecardPrivacyRevealTimer = null;
+
+  function applyScorecardPrivacyState() {
+    var enabled = $("#ScorecardPrivacyEnabled").is(":checked");
+    $("body").toggleClass("scorecard-privacy-on", enabled);
+    $("#ScorecardPrivacyReveal").toggleClass("disabled", !enabled);
+  }
+
+  $(document).ready(function () {
+    if (userObj && userObj.user && userObj.user.UserRoleId) {
+      $.post("/UsersRolesJson/Get", { UserRoleId: userObj.user.UserRoleId, Select: "JsonSettings" }, function (data) {
+        var row = data && data.Results && data.Results[0];
+        var settings = {};
+        try {
+          settings = row && row.JsonSettings ? JSON.parse(row.JsonSettings) : {};
+        } catch (e) {}
+        $("#ScorecardPrivacyEnabled").prop("checked", settings.ScorecardPrivacyEnabled === true);
+        applyScorecardPrivacyState();
+      });
+    }
+  });
+
+  $("body").on("change", "#ScorecardPrivacyEnabled", function () {
+    var checked = $(this).is(":checked");
+    applyScorecardPrivacyState();
+    $.post("/UsersRolesJson/SaveScorecardPrivacy", { Enabled: checked }, function (data) {
+      if (!data || !data.Results) {
+        $("#ScorecardPrivacyEnabled").prop("checked", !checked);
+        applyScorecardPrivacyState();
+        alert("Failed to save privacy setting. Please try again.", false, false, false, "w");
+      }
+    });
+  });
+
+  $("body").on("click", "#ScorecardPrivacyReveal", function (e) {
+    e.preventDefault();
+    if (!$("#ScorecardPrivacyEnabled").is(":checked")) return;
+    $("body").addClass("scorecard-privacy-revealed");
+    clearTimeout(scorecardPrivacyRevealTimer);
+    scorecardPrivacyRevealTimer = setTimeout(function () {
+      $("body").removeClass("scorecard-privacy-revealed");
+    }, 5000);
+  });
+
 })(jQuery);

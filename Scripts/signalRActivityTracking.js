@@ -1,9 +1,13 @@
 /**
  * SignalR Activity Tracking for MVC Views
- * Single Source of Truth: Uses window.SignalRService from React build
- * Loaded via ViteHelper manifest system - no duplication
+ * DISCONTINUED - commented out (not deleted) per request. Backend hub (AppHub.cs) is unchanged.
+ * This file's only effect was reporting this page's views/screenshots to the coordinator
+ * Live Activity Dashboard (also commented out on the React side). Nothing else in MVC used
+ * the connection this file opened - releaseNotice.js already falls back to polling when there
+ * is no SignalR connection, so removing this does not affect it.
  */
 
+/*
 (function () {
     'use strict';
 
@@ -48,14 +52,14 @@
 
         waitForSignalRService(function() {
             console.log('✅ Using SignalRService from React build (single source of truth)');
-            
+
             // Verify html-to-image library is available
             if (window.htmlToImage) {
                 console.log('✅ html-to-image library loaded (screenshot capture enabled)');
             } else {
                 console.warn('⚠️ html-to-image library not found (screenshot capture disabled)');
             }
-            
+
             // Connect using the shared SignalR service
             window.SignalRService.connect(userData.user, userData.token);
 
@@ -102,3 +106,4 @@
     }
 
 })();
+*/
