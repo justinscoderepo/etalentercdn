@@ -1,0 +1,1 @@
+import{j as e}from"./main-CKDy-Vw6.js";const r=({children:t})=>e.jsx("div",{className:" print:p-0","data-testid":"page-content",children:e.jsx("div",{className:"flex grow rounded-xl bg-contentBgOuter",children:e.jsx("div",{className:"flex flex-col grow w-full pt-2 print:p-0",children:e.jsx("div",{className:"p-5 px-7 pb-24 w-full print:p-0",children:t})})})});export{r as L};
