@@ -987,6 +987,25 @@ $(function () {
     });
   });
 
+  // Remembered across reloads: whatever the user last chose with the chevron
+  // toggle on a desktop-width screen. Below 768px the menu overlays the page,
+  // so its state there is transient and never written to storage.
+  var MENU_COLLAPSED_KEY = "etalenterMenuCollapsed";
+  window.readMenuCollapsedPreference = function () {
+    try {
+      return window.localStorage.getItem(MENU_COLLAPSED_KEY);
+    } catch (e) {
+      return null; // storage blocked (private mode)
+    }
+  };
+  window.storeMenuCollapsedPreference = function (collapsed) {
+    try {
+      window.localStorage.setItem(MENU_COLLAPSED_KEY, collapsed ? "true" : "false");
+    } catch (e) {
+      /* storage blocked - the preference just will not persist */
+    }
+  };
+
   window.showmenu = function () {
     $(".leftmenuouterbox")
       .removeClass("minimizemenu")
@@ -1030,12 +1049,25 @@ $(function () {
   window.detectIframeClickAndCloseMenu();
   $("body").on("click", ".open-nav, .menucollapsetoggle", function (e) {
     e.preventDefault();
-    if ($(".leftmenuouterbox").hasClass("minimizemenu")) {
+    var collapsed = $(".leftmenuouterbox").hasClass("minimizemenu");
+    if (collapsed) {
       showmenu();
     } else {
       hidemenu();
     }
+    if ($(window).width() > 768) {
+      storeMenuCollapsedPreference(!collapsed);
+    }
   });
+  // The menu renders collapsed and .menubarbox is hidden until now, so
+  // restoring the remembered state here costs no visible flicker.
+  if (
+    $(".leftmenuouterbox").length > 0 &&
+    $(window).width() > 768 &&
+    readMenuCollapsedPreference() === "false"
+  ) {
+    showmenu();
+  }
   if ($(".menubarbox").length == 0) {
     $(".open-nav").hide();
     applymenustyle();
