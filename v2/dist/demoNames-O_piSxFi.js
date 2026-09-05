@@ -1,0 +1,1 @@
+const a=["Aarav Mehta","Diya Reddy","Kabir Nair","Ishaan Rao","Ananya Iyer","Vihaan Menon","Saanvi Pillai","Arjun Varma","Myra Krishnan","Reyansh Bhat","Kiara Suresh","Advait Kulkarni","Zara Fernandes","Devansh Joshi","Anika Desai","Rohan Kapoor","Meera Chandran","Yuvraj Singh","Tara Bose","Nikhil Sinha"];function r(n){return a[n%a.length]}export{r as d};
