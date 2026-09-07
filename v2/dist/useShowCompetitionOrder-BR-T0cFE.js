@@ -1,1 +1,0 @@
-import{p as r}from"./main-DhlJxTJK.js";const s=o=>Number(o?.AllowDisplayCompetitionOrder)===1,i=()=>{const{eventDetails:o,user:e}=r(),t=o?.AllowDisplayCompetitionOrder!=null?o:e;return s(t)};export{s as c,i as u};

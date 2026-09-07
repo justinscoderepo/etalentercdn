@@ -1,1 +1,0 @@
-import{q as r}from"./main-DXsNt6v2.js";const s=o=>Number(o?.AllowDisplayCompetitionOrder)===1,i=()=>{const{eventDetails:o,user:e}=r(),t=o?.AllowDisplayCompetitionOrder!=null?o:e;return s(t)};export{s as c,i as u};
