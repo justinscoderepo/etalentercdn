@@ -1,0 +1,222 @@
+﻿.wizard {
+    background: #fff;
+    margin: 20px auto;
+}
+
+.wizard .nav-tabs {
+    border-bottom-color: #e0e0e0;
+    margin: 40px auto;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.wizard > div.wizard-inner { position: relative }
+
+.connecting-line {
+    background: #e0e0e0;
+    height: 2px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 80%;
+    z-index: 1
+}
+
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+    border: 0;
+    border-bottom-color: transparent;
+    color: #555;
+    cursor: default;
+}
+
+span.round-tab {
+    border: 2px solid #e0e0e0;
+    border-radius: 100px;
+    display: inline-block;
+    font-size: 25px;
+    height: 70px;
+    left: 0;
+    line-height: 70px;
+    text-align: center;
+    width: 70px;
+}
+
+span.round-tab i { color: #555 }
+
+.wizard li.active span.round-tab { border: 2px solid #5bc0de }
+
+.wizard li.active span.round-tab i { color: #262a2b }
+
+span.round-tab:hover {
+    border: 2px solid #333;
+    color: #333;
+}
+
+.wizard .nav-tabs > li {
+    float: left;
+    width: 25%;
+}
+
+.wizard li:after {
+    border: 5px solid transparent;
+    border-bottom-color: #5bc0de;
+    bottom: 0;
+    content: " ";
+    left: 46%;
+    margin: 0 auto;
+    opacity: 0;
+    position: absolute;
+    transition: .1s ease-in-out
+}
+
+.wizard li.active:after {
+    border: 10px solid transparent;
+    border-bottom-color: #5bc0de;
+    bottom: 0;
+    content: " ";
+    left: 46%;
+    margin: 0 auto;
+    opacity: 1;
+    position: absolute;
+}
+
+.wizard .nav-tabs > li a {
+    border-radius: 100%;
+    float: left;
+    height: 70px;
+    margin: 20px auto;
+    padding: 0;
+    width: 70px;
+}
+
+.wizard .nav-tabs > li a:hover { background: transparent }
+
+.wizard .tab-pane {
+    display: none;
+    padding-top: 50px;
+    position: relative;
+}
+
+.wizard h3 { margin-top: 0 }
+
+@media (max-width: 585px) {
+    .wizard {
+        height: auto !important;
+        width: 90%;
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        height: 50px;
+        line-height: 50px;
+        width: 50px;
+    }
+
+    .wizard .nav-tabs > li a {
+        height: 50px;
+        line-height: 50px;
+        width: 50px;
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        left: 35%;
+        position: absolute;
+    }
+}
+
+.bs-calltoaction {
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 15px 25px;
+    position: relative;
+    width: auto;
+}
+
+.bs-calltoaction > .row {
+    display: table;
+    width: calc(100% + 30px)
+}
+
+.bs-calltoaction > .row > [class^="col-"], .bs-calltoaction > .row > [class*=" col-"] {
+    display: table-cell;
+    float: none;
+    vertical-align: middle
+}
+
+.cta-contents {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.cta-title {
+    margin: 0 auto 15px;
+    padding: 0
+}
+
+.cta-desc { padding: 0 }
+
+.cta-desc p:last-child { margin-bottom: 0 }
+
+.cta-button {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+@media (max-width: 991px) {
+    .bs-calltoaction > .row {
+        display: block;
+        width: auto
+    }
+
+    .bs-calltoaction > .row > [class^="col-"], .bs-calltoaction > .row > [class*=" col-"] {
+        display: block;
+        float: none;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    .cta-contents { text-align: center }
+}
+
+.bs-calltoaction.bs-calltoaction-default {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+}
+
+.bs-calltoaction.bs-calltoaction-primary {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+}
+
+.bs-calltoaction.bs-calltoaction-info {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    color: #fff;
+}
+
+.bs-calltoaction.bs-calltoaction-success {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: #fff;
+}
+
+.bs-calltoaction.bs-calltoaction-warning {
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    color: #fff;
+}
+
+.bs-calltoaction.bs-calltoaction-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+}
+
+.bs-calltoaction.bs-calltoaction-primary .cta-button .btn, .bs-calltoaction.bs-calltoaction-info .cta-button .btn, .bs-calltoaction.bs-calltoaction-success .cta-button .btn, .bs-calltoaction.bs-calltoaction-warning .cta-button .btn, .bs-calltoaction.bs-calltoaction-danger .cta-button .btn { border-color: #fff }
