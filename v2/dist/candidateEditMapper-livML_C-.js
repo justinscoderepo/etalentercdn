@@ -1,0 +1,1 @@
+const i=(e,a)=>({...e,Candidate:e.UserRoleId,CandidateUser:e.User,UserImage:e.UserProfilePicture||"",LevelSettings:e.LevelSettings||Object.fromEntries((a||[]).filter(t=>Number(e[t.LevelName])>0).map(t=>[t.LevelName,String(e[t.LevelName])])),participations:[]});export{i as c};
