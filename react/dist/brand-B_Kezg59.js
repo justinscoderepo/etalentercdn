@@ -1,0 +1,1 @@
+const t="https://etalenter.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-12-2026-11_08_310-PM-e1781298646764.png",e="https://etalenter.com/wp-content/uploads/2026/09/3a6d2106-d19b-44ce-ba2c-f9602cc761a4-e1789510384839-1.png";export{e as E,t as a};
