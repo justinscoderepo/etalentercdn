@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" width="240" height="300" role="img" aria-label="Bronze medal">
+  <defs>
+    <linearGradient id="ribbonMain-bronze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3B9AEB"/>
+      <stop offset="100%" stop-color="#1D6FC2"/>
+    </linearGradient>
+    <linearGradient id="ribbonShadow-bronze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F4E92"/>
+      <stop offset="100%" stop-color="#12437A"/>
+    </linearGradient>
+    <radialGradient id="rimGrad-bronze" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#F2B27F"/>
+      <stop offset="55%" stop-color="#D9884A"/>
+      <stop offset="100%" stop-color="#A05F27"/>
+    </radialGradient>
+    <radialGradient id="ringGrad-bronze" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#C9793E"/>
+      <stop offset="100%" stop-color="#8F5220"/>
+    </radialGradient>
+    <radialGradient id="faceGrad-bronze" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#FBDCC0"/>
+      <stop offset="45%" stop-color="#E39C5D"/>
+      <stop offset="100%" stop-color="#B06B31"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ribbon -->
+  <polygon points="90,158 150,158 179,292 120,251 61,292" fill="url(#ribbonMain-bronze)"/>
+  <polygon points="106,158 134,158 120,251" fill="url(#ribbonShadow-bronze)" opacity="0.55"/>
+
+  <!-- Scalloped rim -->
+  <g fill="url(#rimGrad-bronze)">
+    <circle cx="120.0" cy="22.0" r="15.5"/>
+    <circle cx="142.9" cy="25.6" r="15.5"/>
+    <circle cx="163.5" cy="36.1" r="15.5"/>
+    <circle cx="179.9" cy="52.5" r="15.5"/>
+    <circle cx="190.4" cy="73.1" r="15.5"/>
+    <circle cx="194.0" cy="96.0" r="15.5"/>
+    <circle cx="190.4" cy="118.9" r="15.5"/>
+    <circle cx="179.9" cy="139.5" r="15.5"/>
+    <circle cx="163.5" cy="155.9" r="15.5"/>
+    <circle cx="142.9" cy="166.4" r="15.5"/>
+    <circle cx="120.0" cy="170.0" r="15.5"/>
+    <circle cx="97.1" cy="166.4" r="15.5"/>
+    <circle cx="76.5" cy="155.9" r="15.5"/>
+    <circle cx="60.1" cy="139.5" r="15.5"/>
+    <circle cx="49.6" cy="118.9" r="15.5"/>
+    <circle cx="46.0" cy="96.0" r="15.5"/>
+    <circle cx="49.6" cy="73.1" r="15.5"/>
+    <circle cx="60.1" cy="52.5" r="15.5"/>
+    <circle cx="76.5" cy="36.1" r="15.5"/>
+    <circle cx="97.1" cy="25.6" r="15.5"/>
+    <circle cx="120" cy="96" r="74"/>
+  </g>
+
+  <!-- Embossed ring + face -->
+  <circle cx="120" cy="96" r="62" fill="url(#ringGrad-bronze)"/>
+  <circle cx="120" cy="96" r="50" fill="url(#faceGrad-bronze)"/>
+
+  <!-- Fine concentric texture -->
+  <circle cx="120" cy="96" r="42" fill="none" stroke="#A05F27" stroke-width="0.75" opacity="0.35"/>
+  <circle cx="120" cy="96" r="34" fill="none" stroke="#A05F27" stroke-width="0.75" opacity="0.3"/>
+  <circle cx="120" cy="96" r="26" fill="none" stroke="#A05F27" stroke-width="0.75" opacity="0.25"/>
+
+  <!-- Gloss highlight -->
+  <ellipse cx="100" cy="72" rx="26" ry="16" fill="#FFFFFF" opacity="0.3" transform="rotate(-25 100 72)"/>
+</svg>

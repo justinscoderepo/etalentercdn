@@ -1,0 +1,26 @@
+/* Self-hosted custom fonts not available on Google Fonts.
+   Each font lives in its own folder under Content/fonts/{fontname}/. */
+
+@font-face {
+    font-family: 'Telegraf';
+    src: url('/Content/fonts/telegraf/TelegrafRegular_272984568a25d8528fe2de8b20b29011.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Telegraf';
+    src: url('/Content/fonts/telegraf/Telegraf%20UltraLight%20200.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Telegraf';
+    src: url('/Content/fonts/telegraf/Telegraf%20UltraBold%20800.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
