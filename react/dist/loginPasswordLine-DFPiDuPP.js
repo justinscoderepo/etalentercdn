@@ -1,0 +1,1 @@
+function s(e,o){return e?`🔑Password: ${e}`:`🔑Password: not shown. You already have an eTalenter account, so your password is the one you set yourself.%0AForgot it? Reset it here:%0A${encodeURIComponent(`${o}/v2/ForgotPasswordPage`)}`}export{s as b};
