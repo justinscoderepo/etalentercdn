@@ -47,6 +47,24 @@
         window.INITIAL_ROUTE = window.location.pathname === '/v2/' || window.location.pathname === '/v2' ? 'dashboard' : window.location.pathname.replace('/v2/', '');
         window.isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     </script>
+    <!-- Google tag (gtag.js) - GA4 property G-HRD4N8WQZ8, shared with etalenter.com and the
+         MVC public pages so the blog -> sign-up -> public event page funnel lands in one
+         property (same _ga cookie on the etalenter.com root domain, no cross-domain setup).
+         Not loaded on localhost so local runs never pollute the reports. -->
+    <script>
+        (function () {
+            if (window.isLocalhost) return;
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-HRD4N8WQZ8');
+            var tag = document.createElement('script');
+            tag.async = true;
+            tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-HRD4N8WQZ8';
+            document.head.appendChild(tag);
+        })();
+    </script>
     <base href="/v2/">
 </head>
 <body>
