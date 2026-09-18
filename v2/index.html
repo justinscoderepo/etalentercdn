@@ -47,24 +47,6 @@
         window.INITIAL_ROUTE = window.location.pathname === '/v2/' || window.location.pathname === '/v2' ? 'dashboard' : window.location.pathname.replace('/v2/', '');
         window.isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     </script>
-    <!-- Google tag (gtag.js) - GA4 property G-HRD4N8WQZ8, shared with etalenter.com and the
-         MVC public pages so the blog -> sign-up -> public event page funnel lands in one
-         property (same _ga cookie on the etalenter.com root domain, no cross-domain setup).
-         Not loaded on localhost so local runs never pollute the reports. -->
-    <script>
-        (function () {
-            if (window.isLocalhost) return;
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', 'G-HRD4N8WQZ8');
-            var tag = document.createElement('script');
-            tag.async = true;
-            tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-HRD4N8WQZ8';
-            document.head.appendChild(tag);
-        })();
-    </script>
     <base href="/v2/">
 </head>
 <body>
@@ -122,12 +104,11 @@
         } else {
             const localBaseUrl = window.location.origin + '/v2';
             const cdnBaseUrl = 'https://justinscoderepo.github.io/etalentercdn/v2';
-            // The app's own host never actually serves the v2 bundle in production (its
-            // SPA catch-all returns index.html with a 200 for any unknown path), so trying
-            // current-origin first there is a guaranteed-fail request on every load. Only
-            // localhost (dev/local build) legitimately serves its own bundle.
-            const primaryBaseUrl = window.isLocalhost ? localBaseUrl : cdnBaseUrl;
-            const primaryLabel = window.isLocalhost ? 'localhost (current-origin)' : 'CDN';
+            const canUseCdnFallback = !window.isLocalhost;
+            let preferredAssetSource = localBaseUrl;
+            if(window.isLocalhost){
+                preferredAssetSource = localBaseUrl;
+            }
 
             const loadFromManifest = (baseUrl, sourceLabel) => {
                 console.log(`Production mode - loading manifest from ${sourceLabel}:`, baseUrl);
@@ -190,11 +171,11 @@
                     });
             };
 
-            loadFromManifest(primaryBaseUrl, primaryLabel)
+            loadFromManifest(localBaseUrl, window.isLocalhost ? 'localhost (current-origin)' : 'current-origin')
                 .catch((error) => {
-                    if (window.isLocalhost) throw error; // no fallback available locally
-                    console.warn(`${primaryLabel} manifest load failed; falling back to current-origin.`, error);
-                    return loadFromManifest(localBaseUrl, 'current-origin');
+                    if (!canUseCdnFallback) throw error;
+                    console.warn('Current-origin manifest load failed; falling back to CDN.', error);
+                    return loadFromManifest(cdnBaseUrl, 'CDN');
                 })
                 .catch(error => {
                     console.error('Manifest load failed:', error);
