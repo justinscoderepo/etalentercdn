@@ -1,0 +1,1 @@
+import{t as r}from"./main-CERUsC41.js";const s=o=>Number(o?.AllowDisplayCompetitionOrder)===1,i=()=>{const{eventDetails:o,user:t}=r(),e=o?.AllowDisplayCompetitionOrder!=null?o:t;return s(e)};export{s as c,i as u};
