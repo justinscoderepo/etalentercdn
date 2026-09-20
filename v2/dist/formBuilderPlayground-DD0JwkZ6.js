@@ -1,0 +1,1 @@
+import{j as r,p as a,_ as o}from"./main-C6teQd88.js";import{D as s,H as t}from"./index-DvYgT98M.js";import"./index-DDv54Bm-.js";const d=a.lazy(()=>o(()=>import("./formBuilder-CWjGIgab.js"),[])),n=e=>r.jsx(s,{backend:t,children:r.jsx("div",{className:"bg-surface p-5 flex ",children:r.jsx(d,{...e})})});export{n as default};
