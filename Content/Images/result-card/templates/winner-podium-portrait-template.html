@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Winner Podium Card</title>
+</head>
+<body style="margin:0; padding:0; background:#111; display:flex; align-items:center; justify-content:center; min-height:100vh;">
+
+<div id="result-card-grouped0"
+     style="position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+            width:800px; height:1000px; padding-bottom:20px; box-sizing:border-box;
+            background-image:url('https://etalenter.com/wp-content/uploads/2025/04/bgsamples1.png');
+            background-size:cover; background-position:center; background-repeat:no-repeat;">
+
+  <!-- â”€â”€ Header: banner image + event title â”€â”€ -->
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center; position:relative; width:100%;">
+
+    <!-- Event logo -->
+    <div style="width:100%; display:flex; justify-content:center; align-items:center; margin-top:10px;">
+      <img src="https://justinscoderepo.github.io/etalentercdn/Content/Images/ealenterlogo.png" alt="Event Logo"
+           style="max-height:60px; max-width:70%; object-fit:contain; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.5));" />
+    </div>
+
+    <!-- Banner strip -->
+    <div style="width:100%; height:170px; margin-top:8px; border-radius:8px;
+          background-size:cover; background-position:center; background-repeat:no-repeat;
+          background-image:url('https://etalenterfiles2.blob.core.windows.net/photos/292/63476_639129189893248980_5bcbcc5c-e63a-4fca-8df2-4a8f3fb3d095.jpg?sv=2026-02-06&se=2126-04-27T18%3A36%3A29Z&sr=b&sp=r&sig=RuPflKv5wVP4EyiIdAxDZXZJlmaP%2Fuo3qMEiTFM9Kdg%3D');">
+    </div>
+
+    <!-- Competition title bar -->
+    <div style="width:100%; padding:4px 0; background-color:rgba(11,11,11,0.4);">
+      <div style="font-family:'Sanchez',Georgia,serif; font-size:30px; font-weight:700; text-transform:uppercase;
+                  padding:0 16px; text-align:center;
+                  background:linear-gradient(135deg,#f6d365 0%,#fda085 100%);
+                  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+                  background-clip:text; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.5));">
+        {{CompetitionTitle}}
+      </div>
+    </div>
+  </div>
+
+  <!-- â”€â”€ 1st Place (centre, larger) â”€â”€ -->
+  <div style="display:flex; flex-direction:row; justify-content:center; align-items:flex-end; gap:16px; margin-top:auto; padding:0 16px;">
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+
+      <!-- Photo -->
+      <div style="width:190px; aspect-ratio:4/5; border:4px solid #fff; border-radius:12px;
+                  box-shadow:0 4px 16px rgba(0,0,0,0.4); background-color:#fff;
+                  background-size:cover; background-position:center; background-repeat:no-repeat;
+                  background-image:url('{{Winner1Photo}}'), url('https://justinscoderepo.github.io/etalentercdn/Content/Images/userIcon.png');">
+      </div>
+
+      <!-- Name -->
+      <div style="font-family:'Sanchez',Georgia,serif; font-size:24px; font-weight:700; margin-top:6px;
+                  text-transform:uppercase; color:#fff; text-align:center; white-space:nowrap;">
+        {{Winner1Name}}
+      </div>
+
+      <!-- Sub-label -->
+      <div style="font-size:14px; font-weight:600; color:#fff; text-align:center;">{{Winner1SubLabel}}</div>
+
+      <!-- Prize label + icon -->
+      <div style="display:flex; flex-direction:row; justify-content:center; align-items:center; gap:4px; margin-top:4px;">
+        <div style="font-family:'Sanchez',Georgia,serif; font-size:16px; color:#fff;
+                    white-space:nowrap; transform:rotate(-6deg);">
+          {{Winner1PrizeLabel}}
+        </div>
+        <div style="width:96px; height:96px; filter:saturate(0);
+                    background-size:cover; background-position:center; background-repeat:no-repeat;
+                    background-image:url('https://justinscoderepo.github.io/etalentercdn/Content/Images/result-card/winner_icon_1.png');">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- â”€â”€ 2nd & 3rd Place (side by side, smaller) â”€â”€ -->
+  <div style="display:flex; flex-direction:row; justify-content:center; align-items:flex-end; gap:32px; margin-top:auto; padding:0 32px;">
+
+    <!-- 2nd Place -->
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+      <div style="width:140px; aspect-ratio:4/5; border:4px solid #fff; border-radius:12px;
+                  box-shadow:0 4px 16px rgba(0,0,0,0.4); background-color:#fff;
+                  background-size:cover; background-position:center; background-repeat:no-repeat;
+                  background-image:url('{{Winner2Photo}}'), url('https://justinscoderepo.github.io/etalentercdn/Content/Images/userIcon.png');">
+      </div>
+      <div style="font-family:'Sanchez',Georgia,serif; font-size:18px; font-weight:600; margin-top:6px;
+                  text-transform:uppercase; color:#fff; text-align:center; white-space:nowrap;">
+        {{Winner2Name}}
+      </div>
+      <div style="font-size:14px; font-weight:600; color:#fff; text-align:center;">{{Winner2SubLabel}}</div>
+      <div style="display:flex; flex-direction:row; justify-content:center; align-items:center; gap:4px; margin-top:4px;">
+        <div style="font-family:'Sanchez',Georgia,serif; font-size:14px; color:#fff;
+                    white-space:nowrap; transform:rotate(-6deg);">
+          {{Winner2PrizeLabel}}
+        </div>
+        <div style="width:64px; height:64px; filter:saturate(0);
+                    background-size:cover; background-position:center; background-repeat:no-repeat;
+                    background-image:url('https://justinscoderepo.github.io/etalentercdn/Content/Images/result-card/winner_icon_2.png');">
+        </div>
+      </div>
+    </div>
+
+    <!-- 3rd Place -->
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+      <div style="width:140px; aspect-ratio:4/5; border:4px solid #fff; border-radius:12px;
+                  box-shadow:0 4px 16px rgba(0,0,0,0.4); background-color:#fff;
+                  background-size:cover; background-position:center; background-repeat:no-repeat;
+                  background-image:url('{{Winner3Photo}}'), url('https://justinscoderepo.github.io/etalentercdn/Content/Images/userIcon.png');">
+      </div>
+      <div style="font-family:'Sanchez',Georgia,serif; font-size:18px; font-weight:600; margin-top:6px;
+                  text-transform:uppercase; color:#fff; text-align:center; white-space:nowrap;">
+        {{Winner3Name}}
+      </div>
+      <div style="font-size:14px; font-weight:600; color:#fff; text-align:center;">{{Winner3SubLabel}}</div>
+      <div style="display:flex; flex-direction:row; justify-content:center; align-items:center; gap:4px; margin-top:4px;">
+        <div style="font-family:'Sanchez',Georgia,serif; font-size:14px; color:#fff;
+                    white-space:nowrap; transform:rotate(-6deg);">
+          {{Winner3PrizeLabel}}
+        </div>
+        <div style="width:64px; height:64px; filter:saturate(0);
+                    background-size:cover; background-position:center; background-repeat:no-repeat;
+                    background-image:url('https://justinscoderepo.github.io/etalentercdn/Content/Images/result-card/winner_icon_3.png');">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- â”€â”€ eTalenter logo watermark â”€â”€ -->
+  <img alt="Etalenter"
+       style="position:absolute; right:4px; bottom:4px; width:64px;"
+       src="https://i0.wp.com/etalenter.com/wp-content/uploads/2019/07/cropped-cropped-E_T_LOGO_HEADER_WHITE.png" />
+
+</div>
+
+</body>
+</html>
