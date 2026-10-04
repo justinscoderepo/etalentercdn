@@ -1,1 +1,0 @@
-import{j as r,p as a,_ as o}from"./main-DT8ds180.js";import{D as s,H as t}from"./index-LplpX03l.js";import"./index-3YMtupRF.js";const d=a.lazy(()=>o(()=>import("./formBuilder-Bx-ORQU9.js"),[])),n=e=>r.jsx(s,{backend:t,children:r.jsx("div",{className:"bg-surface p-5 flex ",children:r.jsx(d,{...e})})});export{n as default};
