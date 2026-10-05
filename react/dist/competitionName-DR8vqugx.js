@@ -1,0 +1,1 @@
+const s=o=>String(o??"").trim().replace(/\s+/g," "),i=(o,n)=>{const r=s(o),t=s(n);if(!r)return t;if(!t)return r;const e=r.toLowerCase(),c=t.toLowerCase();return c===e||c.startsWith(`${e} `)?t:`${r} ${t}`},u=(o,n)=>{const r=s(n),t=s(o);if(!r)return t;const e=r.toLowerCase();return t.toLowerCase().startsWith(`${e} ${e} `)?t.slice(r.length+1):t};export{u as d,i as j};
