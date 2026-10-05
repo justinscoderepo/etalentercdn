@@ -1,0 +1,1 @@
+const n="etalenter:hide-sidebar";const t=(e=1400)=>{typeof window>"u"||window.innerWidth>e||window.dispatchEvent(new CustomEvent(n))},i=e=>(window.addEventListener(n,e),()=>window.removeEventListener(n,e));export{t as h,i as o};

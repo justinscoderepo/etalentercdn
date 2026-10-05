@@ -1,0 +1,1 @@
+const e=({cellPadding:c=-1,cellPaddingX:s,cellPaddingY:t,density:r="normal"}={})=>{const n=r==="compact"?{x:4,y:1}:r==="wide"?{x:10,y:8}:{x:8,y:6},l=(x,o)=>x!=null&&x>=0?x:c>=0?c:n[o];return{x:l(s,"x"),y:l(t,"y")}},a=c=>{const{x:s,y:t}=e(c);return`${t}px ${s}px`};export{a as c,e as r};
