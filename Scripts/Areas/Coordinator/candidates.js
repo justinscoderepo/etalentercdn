@@ -9,6 +9,24 @@ var allowedRegIdNumbers = [];
 var isReadOnlyAccess = false; // Will be overridden from server
 (function ($) {
   let freezeParticipation = false;
+  // The bulk list loads after the page is ready, so this runs again each time a list finishes loading;
+  // otherwise rows that arrive later stay editable.
+  function applyBulkFreezeLock() {
+    if (window.location.href.indexOf("BulkParticipants") === -1) return;
+    if (freezeParticipation || isReadOnlyAccess) {
+      // Disable all input fields
+      $("#bulkusersleftlist input,#bulkusersleftlist  select,#bulkusersleftlist  textarea,#bulkusersleftlist  button[type='submit']").not("[type='hidden']").prop("disabled", true).addClass("disabled");
+
+      // Disable add new buttons
+      $(".addnewCandidatebulk, .createnewuser, .table-addnewrow button").not("[type='hidden']").prop("disabled", true).addClass("disabled");
+
+      // Disable delete/edit buttons
+      $(".deleterow, .resetidentity, .uploadimagebutton").not("[type='hidden']").prop("disabled", true).addClass("disabled");
+    }
+  }
+  $("body").on("afterappendcomplete", function () {
+    applyBulkFreezeLock();
+  });
   $(document).ready(function () {
     // Override with server-side freeze settings if they exist
     if (typeof window.freezeParticipation !== 'undefined' && window.freezeParticipation === true) {
@@ -22,19 +40,8 @@ var isReadOnlyAccess = false; // Will be overridden from server
       userObj.user.JsonSettings;
     if (window.location.href.indexOf("BulkParticipants") > -1) {
 
-      // Apply read-only mode if freeze is active
-      if (freezeParticipation || isReadOnlyAccess) {
-        // Disable all input fields
-        $("#bulkusersleftlist input,#bulkusersleftlist  select,#bulkusersleftlist  textarea,#bulkusersleftlist  button[type='submit']").not("[type='hidden']").prop("disabled", true).addClass("disabled");
-
-        // Disable add new buttons
-        $(".addnewCandidatebulk, .createnewuser, .table-addnewrow button").not("[type='hidden']").prop("disabled", true).addClass("disabled");
-
-        // Disable delete/edit buttons
-        $(".deleterow, .resetidentity, .uploadimagebutton").not("[type='hidden']").prop("disabled", true).addClass("disabled");
-
-
-      }
+      // Apply read-only mode if freeze is active (again whenever a list finishes loading, see below)
+      applyBulkFreezeLock();
       try {
 
         if (jsonSettings) {

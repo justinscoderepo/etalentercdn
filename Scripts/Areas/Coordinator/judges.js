@@ -13,6 +13,12 @@ var isReadOnlyAccess = false; // Will be overridden from server
     }
 
     // Apply read-only mode if freeze is active
+    applyFreezeLock();
+  });
+
+  // The lists on these pages load after the page is ready, so the lock is applied again each time a
+  // list finishes loading; otherwise rows that arrive later stay editable.
+  function applyFreezeLock() {
     if (freezeParticipation || isReadOnlyAccess) {
       // Disable all input fields
       $(".datarow input,.datarow  select,table  textarea,.datarow  button[type='submit']").not("[type='hidden']").prop("disabled", true).addClass("disabled");
@@ -24,8 +30,10 @@ var isReadOnlyAccess = false; // Will be overridden from server
       $(".deleterow, .resetidentity, .uploadimagebutton").not("[type='hidden']").prop("disabled", true).addClass("disabled");
 
       $(".table-cell-actions ").remove();
-
     }
+  }
+  $("body").on("afterappendcomplete", function () {
+    applyFreezeLock();
   });
 
   $("body").on(

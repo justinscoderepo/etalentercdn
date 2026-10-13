@@ -1,0 +1,1 @@
+import{j as s,q as e,L as t,_ as a}from"./main--O07Jco6.js";const i=e.lazy(()=>a(()=>import("./index-haHBTQx1.js"),[])),n=()=>s.jsx(e.Suspense,{fallback:s.jsx(t,{info:"Loading event submission..."}),children:s.jsx(i,{showSubmit:!0,pickSourceEvent:!0})});export{n as default};
