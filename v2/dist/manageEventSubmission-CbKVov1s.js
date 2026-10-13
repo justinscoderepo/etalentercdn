@@ -1,0 +1,1 @@
+import{j as s,q as e,L as t,_ as a}from"./main-CEqpQ4h-.js";const i=e.lazy(()=>a(()=>import("./index-27P8T703.js"),[])),n=()=>s.jsx(e.Suspense,{fallback:s.jsx(t,{info:"Loading event submission..."}),children:s.jsx(i,{showSubmit:!0,pickSourceEvent:!0})});export{n as default};
