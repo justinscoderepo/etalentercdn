@@ -1,0 +1,22 @@
+import{E}from"./jspdf.es.min-DgC6XaD-.js";import R from"./html2canvas.esm-DXEQVQnt.js";import{a as B}from"./sheetExport-CYZSVi2N.js";const k=1.5,T=8e3,P=1700,S=(n,a)=>Promise.race([n,new Promise(o=>setTimeout(o,a))]),A=async n=>{const a=[...n.images].filter(o=>!o.complete).map(o=>new Promise(r=>o.onload=o.onerror=r));await S(Promise.all([n.fonts?.ready,...a]),8e3),await new Promise(o=>setTimeout(o,100))},I=(n,a)=>{const o=t=>t.getBoundingClientRect().top,r=[],l=[];for(const t of n.body.querySelectorAll("*")){const e=n.defaultView.getComputedStyle(t);if((e.breakBefore==="page"||e.pageBreakBefore==="always")&&l.push(o(t)),(e.breakAfter==="page"||e.pageBreakAfter==="always")&&l.push(t.getBoundingClientRect().bottom),!(t.tagName==="TR"?!t.querySelector("table"):t.childElementCount===0))continue;const s=t.getBoundingClientRect();s.height>0&&r.push([s.top,s.bottom])}r.sort((t,e)=>t[0]-e[0]);const f=[];for(const t of r){const e=f[f.length-1];e&&t[0]<e[1]-.5?e[1]=Math.max(e[1],t[1]):f.push([...t])}l.sort((t,e)=>t-e);const c=n.documentElement.scrollHeight,p=[0];let i=0;for(;c-i>1;){let t=Math.min(i+a,c);const e=l.find(d=>d>i+1&&d<t-1);if(e!=null)t=e;else if(t<c){const d=f.find(s=>s[0]<t&&s[1]>t);d&&d[0]>i+1&&(t=d[0])}p.push(t),i=t}return p},$=(n,a,o)=>{const r=n.defaultView.scrollY,l=f=>{for(const c of f.children){const p=c.getBoundingClientRect();p.bottom+r<=a||p.top+r>=o?c.style.visibility="hidden":c.childElementCount&&l(c)}};l(n.body)},H=async(n,{fileBase:a,pageWidthMm:o,pageHeightMm:r,marginMm:l=10,windowWidth:f=1200,onProgress:c})=>{const p=document.createElement("iframe");p.style.cssText=`position:fixed;top:0;left:-100000px;width:${f}px;height:${P}px;border:0;`,document.body.appendChild(p);try{const i=p.contentDocument;i.open(),i.write(n),i.close(),B(i.body),await A(i);const t=i.documentElement.scrollWidth,e=o-l*2,d=e/t,s=I(i,(r-l*2)/d),b=s.length-1,y=new E({unit:"mm",format:[o,r],orientation:"portrait"});let h=0;for(;h<b;){const m=s[h];let u=h;for(;u+1<b&&s[u+2]-m<=T;)u++;const C=s[u+1],w=await R(i.body,{scale:k,x:0,y:m,width:t,height:Math.ceil(C-m),windowWidth:f,windowHeight:P,scrollX:0,scrollY:0,useCORS:!0,backgroundColor:"#ffffff",logging:!1,onclone:x=>$(x,m,C)});for(;h<=u;h++){const x=s[h+1]-s[h],g=document.createElement("canvas");g.width=w.width,g.height=Math.max(1,Math.round(x*k));const v=g.getContext("2d");v.fillStyle="#ffffff",v.fillRect(0,0,g.width,g.height),v.drawImage(w,0,Math.round((s[h]-m)*k),w.width,g.height,0,0,g.width,g.height),h>0&&y.addPage([o,r],"portrait"),y.addImage(g.toDataURL("image/jpeg",.85),"JPEG",l,l,e,x*d,void 0,"FAST"),c?.(h+1,b)}w.width=w.height=0}y.save(`${a}.pdf`)}finally{p.remove()}},Y=({title:n,css:a,body:o})=>`<!doctype html><html><head><meta charset="utf-8"><title>${n}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet"><style>${a}</style></head><body>${o}</body></html>`,q=n=>`
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "${n}", "Segoe UI", Roboto, sans-serif; font-weight: 600; font-size: 14px; line-height: 1.5; color: #000; }
+  .rpt-group { margin-bottom: 24px; }
+  .rpt-group h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+  table { width: 100%; border-collapse: collapse; }
+  thead { display: table-header-group; }
+  .rpt-group h3 { color: var(--rpt-group-color, #000); }
+  th { text-align: left; font-weight: 600; border-bottom: 3px solid var(--rpt-group-color, #0c73c5); padding: 6px 12px 6px 0; }
+  td { border-bottom: 1px solid rgba(104,102,102,0.35); padding: 6px 12px 6px 0; vertical-align: top; }
+  tr { break-inside: avoid; }
+  td.upper { text-transform: uppercase; }
+  th.rpt-score { min-width: 200px; }
+  .rpt-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 2px 0; }
+  .rpt-line .rpt-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .rpt-line .rpt-val { font-weight: 500; white-space: nowrap; }
+  .rpt-total { background: #f3f4f6; padding: 2px 4px; margin: 0 -4px; border-radius: 4px; }
+  .rpt-total span:first-child { font-weight: 500; }
+  .rpt-total .rpt-val { font-weight: 600; }
+  .rpt-bad { color: #dc2626; font-weight: 500; }
+  svg.rpt-icon { width: 12px; height: 12px; vertical-align: middle; display: inline-block; }
+`;export{q as a,H as d,Y as p};
