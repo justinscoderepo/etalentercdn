@@ -1,0 +1,1 @@
+const i=e=>[e.GroupName,e.ItemTitle,e.CompetitionGender!==3&&e.GenderTitle,e.CompetitionLanguage!==4&&e.LanguageName].filter(Boolean).join(" ").replace(/\s+/g," ").trim(),n=e=>{if(!e)return"";const t=new Date(e);return Number.isNaN(t.getTime())?"":t.toLocaleString(void 0,{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})};export{i as c,n as f};
