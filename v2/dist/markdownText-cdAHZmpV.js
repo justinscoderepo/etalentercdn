@@ -1,0 +1,3 @@
+const a=/^#{1,6}\s/,c=/^([-*_])\1{2,}$/,o=/^([-*+•]|\d+[.)])\s+/,l=e=>e.replace(/^>\s*/,"").replace(o,"").replace(/!\[([^\]]*)\]\([^)]*\)/g,"$1").replace(/\[([^\]]+)\]\([^)]*\)/g,"$1").replace(/(\*\*|__|\*|_|`)/g,"").trim(),g=e=>String(e||"").split(`
+`).map(t=>t.trim()).filter(t=>t&&!a.test(t)&&!c.test(t)).map(l).filter(Boolean).join(" "),f=(e,t=160)=>{const s=[];for(const p of String(e||"").split(`
+`)){const n=p.trim();if(!n||a.test(n)||c.test(n)||o.test(n)){if(s.length)break;continue}s.push(l(n))}const r=s.length?s.join(" ").trim():g(e);if(r.length<=t)return r;const i=r.slice(0,t);return`${i.slice(0,Math.max(i.lastIndexOf(" "),t-25)).trim()}…`};export{g as a,f as m};
