@@ -1,0 +1,1 @@
+function _(a,A){const n=A?a?.MaximumParticipationPerGroup:a?.MaximumParticipationPerCandidate,t=parseInt(n,10);return Number.isNaN(t)||t<=0?A?1:10:t}const r=10;function P(a){const A=parseInt(a?.MaximumBulkChangeCount,10);return Number.isNaN(A)||A<=0?r:A}export{_ as a,P as g};
