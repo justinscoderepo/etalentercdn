@@ -1,0 +1,1 @@
+import{j as r}from"./main-C0rChKx4.js";import{b as n,C as l}from"./reportCharts-CkWyqeXU.js";const m=({charts:s,style:e})=>{if(e?.showCharts===!1)return null;const t=n(s);return t?r.jsxs(r.Fragment,{children:[r.jsx("style",{children:l}),r.jsx("div",{dangerouslySetInnerHTML:{__html:t}})]}):null};export{m as R};
