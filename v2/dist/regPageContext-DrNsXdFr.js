@@ -1,1 +1,0 @@
-import{a as t}from"./main-Cgyj3aqL.js";const e=()=>{},o={page:{Event:{}},tabs:[],docs:{},nav:{onTab:e,onRegister:e,onItem:e},route:{sub:void 0,query:""},editing:!1},n=t.createContext(o),a=()=>t.useContext(n);export{o as E,n as R,a as u};
