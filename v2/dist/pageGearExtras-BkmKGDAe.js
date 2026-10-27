@@ -1,1 +1,0 @@
-import{a as s}from"./main-CVQ8jCP8.js";let a=[];const t=new Set,r=e=>{a=e,t.forEach(c=>c())},o=e=>(t.add(e),()=>t.delete(e)),n=()=>s.useSyncExternalStore(o,()=>a),E=e=>{s.useEffect(()=>{r(e||[])},[e]),s.useEffect(()=>()=>r([]),[])};export{E as a,n as u};
