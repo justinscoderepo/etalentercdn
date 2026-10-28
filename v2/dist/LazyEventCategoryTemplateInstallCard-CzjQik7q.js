@@ -1,0 +1,1 @@
+import{j as t,a,_ as r}from"./main-Dy5PLGD8.js";const s=a.lazy(()=>r(()=>import("./EventCategoryTemplateInstallCard-Blm7twnO.js"),[]));function n(e){return t.jsx(a.Suspense,{fallback:null,children:t.jsx(s,{...e})})}export{n as L};
