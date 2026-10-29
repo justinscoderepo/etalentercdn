@@ -1,0 +1,1 @@
+import{a as t}from"./main-DoZdz0Qz.js";const e=()=>{},s={page:{Event:{}},tabs:[],docs:{},nav:{onTab:e,onRegister:e,onItem:e},route:{sub:void 0,query:""},editing:!1},a=t.createContext(s),u=()=>t.useContext(a),c=()=>{const{page:o,editing:n}=u();return!!n||!!o?.PublicEvent?.EventPublished};export{s as E,a as R,c as a,u};
