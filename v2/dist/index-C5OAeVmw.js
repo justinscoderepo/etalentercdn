@@ -1,0 +1,1 @@
+import{_ as e}from"./main-C9StAhIw.js";import{registerPlugin as o}from"./index-B3yXpw1Q.js";const i=o("Browser",{web:()=>e(()=>import("./web-M7W1p_tU.js"),[]).then(r=>new r.BrowserWeb)});export{i as Browser};
