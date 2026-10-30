@@ -1,0 +1,1 @@
+const e=[{Title:"Yes",Order:1,CreatedBy:1,CreatedDate:"2018-09-27T19:27:04",ModifiedDate:"2019-09-20T22:35:01",YId:1,EventCategory:null},{Title:"No",Order:2,CreatedBy:1,CreatedDate:"2018-09-27T19:27:07",ModifiedDate:"2019-09-20T22:35:02",YId:2,EventCategory:null}];export{e as default};

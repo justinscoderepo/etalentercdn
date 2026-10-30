@@ -1,0 +1,1 @@
+const e=[{Title:"Individual",Status:1,Order:1,CreatedBy:1,CreatedDate:"2018-09-27T19:27:41",ModifiedDate:"2019-09-20T22:34:31",EPTId:1},{Title:"Team",Status:1,Order:2,CreatedBy:1,CreatedDate:"2018-09-27T19:27:48",ModifiedDate:"2019-09-20T22:34:33",EPTId:2}];export{e as default};

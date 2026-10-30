@@ -1,0 +1,1 @@
+const e=[{Designation:"Leader",EventCategory:5,Status:1,Event:null,Order:null,CreatedBy:1,CreatedDate:"2018-11-14T02:54:42",ModifiedDate:"2018-11-14T02:54:42",DesignationId:1},{Designation:"Member",EventCategory:5,Status:1,Event:null,Order:null,CreatedBy:1,CreatedDate:"2018-11-14T02:54:47",ModifiedDate:"2018-11-14T02:54:47",DesignationId:2}];export{e as default};

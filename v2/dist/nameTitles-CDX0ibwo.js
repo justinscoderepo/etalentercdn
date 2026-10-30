@@ -1,0 +1,1 @@
+const e=[{NameTitle:"Male",Order:1,CreatedBy:1,CreatedDate:"2018-09-26T23:39:21",ModifiedDate:"2019-09-20T22:34:14",ENTId:1},{NameTitle:"Female",Order:2,CreatedBy:1,CreatedDate:"2018-09-26T23:39:29",ModifiedDate:"2019-09-20T22:34:17",ENTId:2}];export{e as default};
