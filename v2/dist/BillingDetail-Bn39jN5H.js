@@ -1,0 +1,1 @@
+import{j as s}from"./main-CxMN-sXT.js";const i=({label:e,value:t})=>s.jsxs("div",{className:"min-w-0",children:[s.jsx("dt",{className:"text-xs text-onSurfaceVariant",children:e}),s.jsx("dd",{className:"text-sm font-medium text-onSurface break-words",children:t||"-"})]});export{i as B};
