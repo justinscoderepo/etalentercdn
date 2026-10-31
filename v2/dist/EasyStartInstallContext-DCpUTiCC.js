@@ -1,1 +1,0 @@
-import{a as t,j as n}from"./main-B4o5cScN.js";const a=t.createContext({status:null,setStatus:()=>{}}),l=({children:e})=>{const[s,o]=t.useState(null),r=t.useMemo(()=>({status:s,setStatus:o}),[s]);return n.jsx(a.Provider,{value:r,children:e})},x=()=>t.useContext(a);export{l as E,x as u};
