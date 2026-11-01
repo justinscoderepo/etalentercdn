@@ -190,6 +190,7 @@
                         script.src = `${baseUrl}/${entry.file}`;
                         script.onload = () => {
                             window.__ETALENTER_V2_MAIN_LOADED__ = true;
+                            window.__ETALENTER_V2_ENTRY__ = { baseUrl: baseUrl, file: entry.file };
                             console.log('MainWeb script loaded from:', entry.file);
                             document.body.classList.add('loaded');
                         };
