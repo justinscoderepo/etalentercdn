@@ -1,0 +1,1 @@
+import{a2 as n,a as r}from"./main-BIokQ3nH.js";import{w as a,h as d}from"./settings-BlJ--RMw.js";function u(e){const{advancedSettings:t}=n(),s=t?.HiddenResultLevels;return r.useMemo(()=>Array.isArray(e)?a(e,d({HiddenResultLevels:s})):e,[e,s])}export{u};
