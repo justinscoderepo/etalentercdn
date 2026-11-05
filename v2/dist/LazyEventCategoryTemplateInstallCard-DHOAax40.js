@@ -1,1 +1,0 @@
-import{j as t,a,_ as r}from"./main-C9Etc8Zs.js";const s=a.lazy(()=>r(()=>import("./EventCategoryTemplateInstallCard-B7IZv5HL.js"),[]));function n(e){return t.jsx(a.Suspense,{fallback:null,children:t.jsx(s,{...e})})}export{n as L};
