@@ -1,0 +1,1 @@
+const i=["School","College","Organization","Religious","Other"],s=e=>Number(e)===1?"Yes":Number(e)===2?"No":"Not set",n=(e,o)=>e.find(t=>t.CompetitionTypeId===Number(o))?.CompetitionTypeName||"";export{i as O,n as c,s as p};
