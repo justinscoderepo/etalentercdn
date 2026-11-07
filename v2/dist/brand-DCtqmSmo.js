@@ -1,0 +1,1 @@
+const t="https://justinscoderepo.github.io/etalentercdn/Content/Images/brand/etalenter-logo-2026-06.png",e="https://justinscoderepo.github.io/etalentercdn/Content/Images/brand/etalenter-logo-color-2026-09.png";export{t as E,e as a};
