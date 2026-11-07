@@ -1,1 +1,0 @@
-import{a0 as r}from"./main-BBb9x7h6.js";const s=o=>Number(o?.AllowDisplayCompetitionOrder)===1,i=()=>{const{eventDetails:o,user:e}=r(),t=o?.AllowDisplayCompetitionOrder!=null?o:e;return s(t)};export{s as c,i as u};

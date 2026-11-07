@@ -1,0 +1,1 @@
+import{a1 as n,a as r}from"./main-YWL27-BH.js";import{w as a,h as d}from"./settings-DBTdq2MM.js";function u(e){const{advancedSettings:t}=n(),s=t?.HiddenResultLevels;return r.useMemo(()=>Array.isArray(e)?a(e,d({HiddenResultLevels:s})):e,[e,s])}export{u};
