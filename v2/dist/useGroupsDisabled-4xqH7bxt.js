@@ -1,1 +1,0 @@
-import{ae as s}from"./main-B6t5yjrh.js";const t=e=>e===!0||typeof e=="string"&&["yes","true","1","enabled"].includes(e.trim().toLowerCase()),n=()=>{const{advancedSettings:e}=s();return t(e?.DisableGroups)};export{n as u};

@@ -1,0 +1,1 @@
+import{ae as s}from"./main-D_7pYM7m.js";const t=e=>e===!0||typeof e=="string"&&["yes","true","1","enabled"].includes(e.trim().toLowerCase()),n=()=>{const{advancedSettings:e}=s();return t(e?.DisableGroups)};export{n as u};
