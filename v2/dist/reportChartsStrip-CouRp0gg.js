@@ -1,0 +1,1 @@
+import{j as r}from"./main-DFljVErD.js";import{c as n,C as l}from"./reportCharts-BIDMy8Vw.js";const m=({charts:s,style:e})=>{if(e?.showCharts===!1)return null;const t=n(s);return t?r.jsxs(r.Fragment,{children:[r.jsx("style",{children:l}),r.jsx("div",{dangerouslySetInnerHTML:{__html:t}})]}):null};export{m as R};
