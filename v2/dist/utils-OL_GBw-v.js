@@ -1,0 +1,1 @@
+function e(...r){return r.filter(Boolean).join(" ")}function s(r){if(!r||typeof r!="string")return"";const t=r.trim();return/^(\/|#|\.|\?)/.test(t)||t.startsWith("//")||/^https?:\/\//i.test(t)||!/^[a-z][a-z0-9+.-]*:/i.test(t)?t:""}export{e as c,s};

@@ -1,0 +1,1 @@
+import{a2 as r,r as n}from"./main-UK3E3OIl.js";import{w as d,h as o}from"./settings-DBTdq2MM.js";function u(e){const{advancedSettings:t}=r(),s=t?.HiddenResultLevels;return n.useMemo(()=>Array.isArray(e)?d(e,o({HiddenResultLevels:s})):e,[e,s])}export{u};

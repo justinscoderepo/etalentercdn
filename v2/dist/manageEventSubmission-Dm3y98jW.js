@@ -1,0 +1,1 @@
+import{j as s,aa as e,L as a,_ as t}from"./main-UK3E3OIl.js";const i=e.lazy(()=>t(()=>import("./index-DIYPalvt.js"),[])),n=()=>s.jsx(e.Suspense,{fallback:s.jsx(a,{info:"Loading event submission..."}),children:s.jsx(i,{showSubmit:!0,pickSourceEvent:!0})});export{n as default};
