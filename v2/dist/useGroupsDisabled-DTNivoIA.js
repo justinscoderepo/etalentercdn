@@ -1,1 +1,0 @@
-import{T as e}from"./main-CuD6K4i3.js";const t=s=>s===!0||typeof s=="string"&&["yes","true","1","enabled"].includes(s.trim().toLowerCase()),n=()=>{const{advancedSettings:s}=e();return t(s?.DisableGroups)};export{n as u};

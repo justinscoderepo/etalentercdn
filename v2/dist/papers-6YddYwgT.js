@@ -1,0 +1,1 @@
+const a={"a3-portrait":{css:"A3",jspdf:{format:"a3",orientation:"portrait"},width:1083.2,height:1547.84},"a4-landscape":{css:"A4 landscape",jspdf:{format:"a4",orientation:"landscape"},width:1083.2,height:753.7}},o="a3-portrait",p=t=>a[t?.paperSize]||a[o];export{p};
