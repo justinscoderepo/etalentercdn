@@ -1,0 +1,1 @@
+import{j as t,r as a,_ as r}from"./main-Dd3enRuW.js";const s=a.lazy(()=>r(()=>import("./EventCategoryTemplateInstallCard-B36L-rWZ.js"),[]));function n(e){return t.jsx(a.Suspense,{fallback:null,children:t.jsx(s,{...e})})}export{n as L};
