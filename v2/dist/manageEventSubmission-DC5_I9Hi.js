@@ -1,1 +1,0 @@
-import{j as s,a9 as e,L as t,_ as a}from"./main-CATJY6g3.js";const i=e.lazy(()=>a(()=>import("./index-DB_KoGp5.js"),[])),n=()=>s.jsx(e.Suspense,{fallback:s.jsx(t,{info:"Loading event submission..."}),children:s.jsx(i,{showSubmit:!0,pickSourceEvent:!0})});export{n as default};
