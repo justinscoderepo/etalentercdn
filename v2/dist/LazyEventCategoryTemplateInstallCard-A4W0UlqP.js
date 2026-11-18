@@ -1,1 +1,0 @@
-import{j as t,r as a,_ as r}from"./main-DMBO6KHz.js";const s=a.lazy(()=>r(()=>import("./EventCategoryTemplateInstallCard-Ftp9WU0U.js"),[]));function n(e){return t.jsx(a.Suspense,{fallback:null,children:t.jsx(s,{...e})})}export{n as L};
