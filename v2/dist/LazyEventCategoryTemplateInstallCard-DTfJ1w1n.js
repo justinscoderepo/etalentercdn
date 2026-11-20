@@ -1,1 +1,0 @@
-import{j as t,r as a,_ as r}from"./main-CL-O2-Hx.js";const s=a.lazy(()=>r(()=>import("./EventCategoryTemplateInstallCard-Bk1AX2ed.js"),[]));function n(e){return t.jsx(a.Suspense,{fallback:null,children:t.jsx(s,{...e})})}export{n as L};
