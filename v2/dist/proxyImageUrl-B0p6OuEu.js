@@ -1,1 +1,0 @@
-import{a4 as e,l as c}from"./main-Df4RqKNf.js";const s=["freepik.com","cdn-icons","flaticon.com","nicepng.com"],a=o=>!o||!e(o)?null:s.some(n=>o.includes(n))?o:`${c}/PublicJson/GetImage?fullUrl=${encodeURIComponent(o)}`;export{a as b};
