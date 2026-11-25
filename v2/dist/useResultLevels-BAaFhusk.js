@@ -1,1 +1,0 @@
-import{a1 as r,r as n}from"./main-CsqnhBUK.js";import{w as d,h as o}from"./settings-Bv7ocDZE.js";function u(e){const{advancedSettings:t}=r(),s=t?.HiddenResultLevels;return n.useMemo(()=>Array.isArray(e)?d(e,o({HiddenResultLevels:s})):e,[e,s])}export{u};
