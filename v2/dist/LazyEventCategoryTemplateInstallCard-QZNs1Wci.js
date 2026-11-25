@@ -1,0 +1,1 @@
+import{j as t,r as a,_ as r}from"./main-DkjQhOGc.js";const s=a.lazy(()=>r(()=>import("./EventCategoryTemplateInstallCard-DXN_ZvHM.js"),[]));function n(e){return t.jsx(a.Suspense,{fallback:null,children:t.jsx(s,{...e})})}export{n as L};
